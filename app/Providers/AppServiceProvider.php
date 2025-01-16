@@ -12,6 +12,15 @@ use Illuminate\Support\ServiceProvider;
 class AppServiceProvider extends ServiceProvider
 {
     /**
+     * The path to your application's "home" route.
+     *
+     * Typically, users are redirected here after authentication.
+     *
+     * @var string
+     */
+    public const HOME = '/home';
+
+    /**
      * The path to the "home" route for your application.
      *
      * Typically, users are redirected here after authentication.
@@ -36,6 +45,8 @@ class AppServiceProvider extends ServiceProvider
         Paginator::defaultView('vendor.pagination.default');
 
         $this->bootRoute();
+
+        $this->bootRoute();
     }
 
     public function bootRoute(): void
@@ -44,5 +55,12 @@ class AppServiceProvider extends ServiceProvider
             return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
         });
 
+    }
+
+    public function bootRoute(): void
+    {
+        RateLimiter::for('api', function (Request $request) {
+            return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
+        });
     }
 }
