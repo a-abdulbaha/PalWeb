@@ -17,6 +17,7 @@ use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\Office\LessonPlannerController;
 use App\Http\Controllers\Office\SpeechMakerController;
 use App\Http\Controllers\Office\WordLoggerController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\PushSubscriptionController;
 use App\Http\Controllers\RootController;
 use App\Http\Controllers\SearchGenieController;
@@ -36,6 +37,7 @@ use App\Http\Resources\UserResource;
 use App\Models\Audio;
 use App\Models\Deck;
 use App\Models\Dialog;
+use App\Models\Page;
 use App\Models\Pronunciation;
 use App\Models\Sentence;
 use App\Models\Term;
@@ -100,20 +102,22 @@ Route::get('/', function () {
     ]);
 })->name('homepage');
 
-Route::get('/wiki/{page}', function ($page) {
-    //    View::share('pageDescription', 'Dive into the most detailed publicly-accessible descriptive grammar of Palestinian Arabic ever; practical enough for learners, rigorous enough for linguists. Everything you need to understand the intricacies of the language is right here.');
+Route::prefix('/wiki')->controller(PageController::class)->group(function () {
+    Route::get('/', function () {
+        return Page::where('slug', 'about')->exists()
+            ? to_route('wiki.show', 'about')
+            : to_route('wiki.edit');
+    })->name('wiki.index');
 
-    $componentPath = resource_path("js/Pages/Wiki/Pages/{$page}.vue");
+    Route::middleware('admin')->group(function () {
+        Route::get('/edit/{page?}', 'edit')->name('wiki.edit');
+        Route::post('/', 'store')->name('wiki.store');
+        Route::patch('/{page}', 'update')->name('wiki.update');
+        Route::delete('/{page}', 'destroy')->name('wiki.destroy');
+    });
 
-    if (file_exists($componentPath)) {
-        return Inertia::render("Wiki/Pages/{$page}", [
-            'section' => 'wiki',
-            'page' => $page,
-        ]);
-    }
-
-    return Inertia::render('Error', ['status' => 404]);
-})->name('wiki.show');
+    Route::get('/{page:slug}', 'show')->name('wiki.show');
+});
 
 Route::get('/coming-soon', function () {
     return Inertia::render('ComingSoon');
@@ -208,7 +212,7 @@ Route::middleware(['auth'])->prefix('/hub')->group(function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::prefix('/academy')->middleware(['student'])->group(function () {
         Route::controller(UnitController::class)->group(function () {
-            Route::get('/', 'index')->name('units.index');
+            Route::get('/units', 'index')->name('units.index');
             Route::get('/units/{unit:position}', 'show')->name('units.show');
         });
 
@@ -345,10 +349,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
             Route::get('/lesson/{lesson}/activity', 'lessonActivity')->name('lesson-planner.lesson-activity');
         });
 
-        Route::controller(LessonController::class)->group(function () {
-            Route::get('/lessons/search', 'search')->name('lessons.search');
-        });
-
         Route::prefix('/feedback')->controller(FeedbackCommentController::class)->group(function () {
             Route::get('/', 'index')->name('feedback.index');
             Route::post('/', 'store')->name('todo.store');
@@ -360,6 +360,35 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::patch('/update-preferences', [UserController::class, 'updatePreferences'])->name('users.preferences.update');
 
     Route::get('/toggle-view/{role?}', [UserController::class, 'toggleView'])->name('admin.toggle-view');
+});
+
+Route::prefix('/api')->group(function () {
+    Route::prefix('/activities')->controller(ActivityController::class)->group(function () {
+        Route::get('/{activity}', 'fetch')->name('api.activities.fetch');
+    });
+
+    Route::prefix('/decks')->controller(DeckController::class)->group(function () {
+        Route::get('/search', 'search')->name('api.decks.search');
+    });
+
+    Route::prefix('/dialogs')->controller(DialogController::class)->group(function () {
+        Route::get('/search', 'search')->name('api.dialogs.search');
+    });
+
+    Route::prefix('/lessons')->controller(LessonController::class)->group(function () {
+        Route::get('/{lesson}', 'fetch')->name('api.lessons.fetch');
+    });
+
+    Route::prefix('/units')->controller(UnitController::class)->group(function () {
+        Route::get('/{unit}', 'fetch')->name('api.units.fetch');
+        Route::get('/search', 'search')->name('api.units.search');
+    });
+
+    Route::prefix('/wiki')->controller(PageController::class)->group(function () {
+        Route::get('/tree', 'getWikiTree')->name('api.wiki.tree');
+        Route::get('/search', 'search')->name('api.wiki.search');
+        Route::get('/{page}', 'fetch')->name('api.wiki.fetch');
+    });
 });
 
 Route::middleware('auth')
