@@ -14,6 +14,33 @@
 Search Tools
  */
 
+html[lang="ar"] {
+    .popup-menu,
+    .deck-author-name,
+    .audio-item,
+    .pronunciation-item-data,
+    .window-section-head,
+    .rw-test-status,
+    .user-item,
+    .badges-container,
+    .form-body,
+    .theme-preview,
+    .nav-sidebar-body,
+    .term-headword-data,
+    .featured-title,
+    .window-header,
+    .card-item,
+    .gloss-item,
+    .footer-links-wrapper,
+    .app-logo-wrapper h1,
+    .app-tooltip,
+    .score-stats-detail-wrapper,
+    .score-item-wrapper
+    {
+        direction: rtl;
+    }
+}
+
 .search-filters-container {
     display: grid;
     gap: 1.2rem;
@@ -305,6 +332,7 @@ button.toggle-button {
     background: var(--color-pastel-medium);
     cursor: pointer;
     transition: 0.1s background ease;
+    direction: ltr;
 
     &:focus {
         outline: 0.2rem solid var(--color-dark-primary);

@@ -7,7 +7,7 @@ import AppNotification from "../components/AppNotification.vue";
 import {useNotificationStore} from "../stores/NotificationStore.js";
 import {useSearchStore} from "../stores/SearchStore.js";
 import {usePage} from "@inertiajs/vue3";
-import {onMounted, watch} from "vue";
+import {computed, onMounted, watch} from "vue";
 import ModalWrapper from "../components/Modals/ModalWrapper.vue";
 import {useUserStore} from "../stores/UserStore.js";
 import i18n from "../i18n.js";
@@ -27,6 +27,22 @@ const NotificationStore = useNotificationStore();
 
 const page = usePage();
 const {browserOnline} = useConnectionStatus(Echo);
+
+const locale = computed(() => page.props.locale ?? 'en');
+const syncDocumentLocale = (newLocale) => {
+    document.documentElement.lang = newLocale;
+};
+
+watch(
+    locale,
+    (newLocale) => {
+        if (newLocale) {
+            i18n.global.locale.value = newLocale;
+            syncDocumentLocale(newLocale);
+        }
+    },
+    {immediate: true}
+);
 
 let lastBrowserOnlineState = browserOnline.value;
 let hasSeenInitialConnectionState = false;
