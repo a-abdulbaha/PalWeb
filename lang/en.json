@@ -87,7 +87,26 @@
             "link-discord": "Link Discord",
             "unlink-discord": "Unlink Discord",
             "get-help": "getHelp",
-            "send-feedback": "Send Feedback"
+            "send-feedback": "Send Feedback",
+            "portals": {
+                "hub": "hub",
+                "wiki": "wiki"
+            },
+            "admin-actions": {
+                "restore-admin-view": "Restore Admin View",
+                "view-as-student": "View as Student",
+                "view-as-pal": "View as Pal"
+            }
+        },
+        "sticky": {
+            "search": "Search",
+            "settings": "Settings",
+            "menu": "Menu",
+            "push-subscribe-hint": "Enable Notifications in Settings to get a daily reminder to review your Cards!"
+        },
+        "auth": {
+            "user-avatar": "User Avatar",
+            "resend-link": "Resend Link"
         }
     },
     "user": {
@@ -100,7 +119,8 @@
         },
         "subscriptions": {
             "manage": "manage"
-        }
+        },
+        "profile": "profile"
     },
     "speaker": {
         "speaker": "speaker",
@@ -150,6 +170,498 @@
         },
         "check": "check"
     },
+    "install": {
+        "button": "Install App",
+        "hint": "Click the Install Button to download PalWeb to your device for easier access!",
+        "unavailable": "App installation is not available in this browser."
+    },
+    "layout": {
+        "notifications": {
+            "offline": "You have gone offline. While offline, the site will not work as expected. Please wait until you are back online to continue using PalWeb.",
+            "online": "You are back online!"
+        }
+    },
+    "models": {
+        "terms": "terms",
+        "sentences": "sentences",
+        "decks": "decks",
+        "audios": "audios",
+        "speakers": "speakers",
+        "badges": "badges"
+    },
+    "search": {
+        "genie": {
+            "title": "Search Genie",
+            "insert-title": "Insert {model}",
+            "empty": "Nothing yet.",
+            "see-all-results": "See All Results",
+            "tooltips": {
+                "navigate": "Navigate to this item's page.",
+                "insert": "Add this item to the set."
+            }
+        },
+        "filters": {
+            "placeholder": "Search",
+            "match": {
+                "root": "Match Root",
+                "term": "Match Term",
+                "gloss": "Match Gloss"
+            },
+            "sort": {
+                "alphabetical-root": "Alphabetical by Root",
+                "alphabetical": "Alphabetical",
+                "frequency": "by Frequency",
+                "latest": "by Latest",
+                "popularity": "by Popularity",
+                "pinned": "by Pinned"
+            }
+        }
+    },
+    "term": {
+        "category": {
+            "verb": "verb",
+            "noun": "noun",
+            "adjective": "adjective",
+            "numeral": "numeral",
+            "adverb": "adverb",
+            "preposition": "preposition",
+            "conjunction": "conjunction",
+            "determiner": "determiner",
+            "particle": "particle",
+            "phrase": "phrase",
+            "affix": "affix"
+        },
+        "filters": {
+            "category": "category",
+            "categories": {
+                "verbs": "verbs",
+                "nouns": "nouns",
+                "adjectives": "adjectives",
+                "numerals": "numerals",
+                "adverbs": "adverbs",
+                "prepositions": "prepositions",
+                "conjunctions": "conjunctions",
+                "determiners": "determiners",
+                "particles": "particles",
+                "phrases": "phrases",
+                "affixes": "affixes"
+            },
+            "attribute": "attribute",
+            "attributes": {
+                "masculine": "masculine",
+                "feminine": "feminine",
+                "plural": "plural",
+                "collective": "collective",
+                "demonym": "demonym",
+                "defect": "defect",
+                "pseudo": "pseudo",
+                "clitic": "clitic",
+                "idiom": "idiom"
+            },
+            "form": {
+                "label": "Form",
+                "option": "Form {form}"
+            },
+            "singular": "Singular",
+            "plural": "Plural",
+            "pattern-groups": {
+                "derived-terms": "Derived Terms",
+                "named-patterns": "Named Patterns",
+                "length": "Length {length}",
+                "length-range": "Length {start} / {end}",
+                "sound": "Sound"
+            },
+            "patterns": {
+                "active-participle-abbr": "Act. Part.",
+                "relative-adjective-abbr": "Relative Adj.",
+                "intensive-adjective-abbr": "Intensive Adj.",
+                "nominalized-adjective-abbr": "Nominalized Adj."
+            }
+        }
+    },
+    "modals": {
+        "popup": {
+            "types": {
+                "help": "help"
+            }
+        },
+        "settings": {
+            "title": "settings",
+            "fields": {
+                "color-theme": "Color Theme",
+                "language": "Language",
+                "notifications": "notifications"
+            },
+            "theme-description": {
+                "PalWebOS": "PalWeb's original theme. Modern & playful; for those who remember when the Internet used to be fun.",
+                "Watermelon": "Juicy like its namesake. Refreshment for the eyes; a perfect counterbalance to hot summer days.",
+                "Nabatean": "Ancient stones the color of rust, sand as far as the eyes can see; an oasis in the distance.",
+                "Jerusalem": "Intricate tilework of turquoise & lapis lazuli; homes protected from winter by the eponymous stone.",
+                "Falastin": "Most influential newspaper in Ottoman & Mandatory Palestine, a symbol of Palestinian national identity.",
+                "Msaxxan": "Roasted chicken baked with caramelized onion, saffron, sumac & fried pine nuts over taboon bread.",
+                "Zatoon": "Olives & Olives & Olives & Olives & Olives & Olives & Olives & Olives & Olives & Olives & Olives"
+            },
+            "theme-preview": "theme preview",
+            "notifications": {
+                "enable-error": "Could not enable notifications.",
+                "disable-error": "Could not disable notifications."
+            }
+        },
+        "nav-guard": {
+            "title": "warning: unsaved changes",
+            "warning-icon": "Warning",
+            "confirm": "Confirm",
+            "cancel": "Cancel"
+        },
+        "purge-scores": {
+            "title": "Purge Scores",
+            "confirm": "Are you sure you want to delete these Scores? This action cannot be undone.",
+            "fields": {
+                "time-limit": "Time Limit"
+            },
+            "time-limits": {
+                "none": "None",
+                "day": "1 Day",
+                "week": "1 Week",
+                "month": "1 Month",
+                "year": "1 Year"
+            },
+            "keep": {
+                "highest": "Keep Highest",
+                "latest": "Keep Latest"
+            },
+            "submit": "purge"
+        },
+        "send-feedback": {
+            "title": "send feedback",
+            "placeholder": "Is something broken? Is a word missing from the Dictionary? Let us know!",
+            "submit": "Submit"
+        },
+        "send-mail": {
+            "title": "send mail",
+            "fields": {
+                "subject": "Subject"
+            },
+            "placeholder": "What would you like to say?",
+            "submit": "Send"
+        },
+        "auth": {
+            "fields": {
+                "name": "Name",
+                "username": "Username",
+                "arabic-name": "Arabic Name",
+                "email": "Email",
+                "password": "Password",
+                "confirm-password": "Confirm Password"
+            },
+            "sign-in": {
+                "title": "sign in",
+                "action": "Sign In!",
+                "sign-up-prompt": "New to PalWeb?",
+                "remember-me": "Remember Me",
+                "submit": "Sign In",
+                "discord": "Use Discord"
+            },
+            "sign-up": {
+                "title": "sign up",
+                "action": "Sign Up!",
+                "sign-in-prompt": "Already have an account?",
+                "randomize-name": "Randomize",
+                "submit": "Sign Up"
+            },
+            "forgot-password": {
+                "title": "forgot password",
+                "action": "Forgot?",
+                "prompt": "No password? No problem. Write down your email address & I'll send you a reset link.",
+                "submit": "Send Link"
+            }
+        }
+    },
+    "actions": {
+        "common": {
+            "view": "View {model}",
+            "edit": "Edit {model}",
+            "delete": "Delete {model}",
+            "copy": "Copy {model}"
+        },
+        "models": {
+            "activity": "Activity",
+            "card": "Card",
+            "deck": "Deck",
+            "dialog": "Dialog",
+            "lesson": "Lesson",
+            "root": "Root",
+            "scores": "Scores",
+            "sentence": "Sentence",
+            "term": "Term",
+            "user": "User"
+        },
+        "card": {
+            "master": "Master Card",
+            "restore": "Restore Card",
+            "suspend": "Suspend Card",
+            "reset": "Reset Card"
+        },
+        "deck": {
+            "empty": "The Deck is empty.",
+            "study": "Study Deck",
+            "share-link": "Share Link",
+            "export-csv": "Export CSV"
+        },
+        "user": {
+            "grant-student-role": "Grant Student Role",
+            "revoke-student-role": "Revoke Student Role"
+        }
+    },
+    "charts": {
+        "variant": "variant {number}",
+        "cliticization": {
+            "title": "cliticization"
+        },
+        "conjugation": {
+            "title": "conjugation",
+            "derivatives": "derivatives",
+            "tenses": {
+                "present": "present",
+                "past": "past",
+                "command": "command"
+            }
+        },
+        "inflection": {
+            "title": "inflections"
+        }
+    },
+    "components": {
+        "common": {
+            "anonymous": "Anonymous",
+            "anonymous-bracketed": "[anonymous]",
+            "by": "by",
+            "by-author": "by {author}",
+            "copied": "Copied to clipboard.",
+            "copy-error": "Could not copy text:",
+            "never": "Never",
+            "hide": "Hide",
+            "expand": "Expand",
+            "see-all": "See All",
+            "boolean": {
+                "true": "true",
+                "false": "false"
+            },
+            "sections": {
+                "stats": "stats",
+                "terms": "terms"
+            },
+            "counts": {
+                "terms": "{count} Terms"
+            },
+            "alt": {
+                "avatar": "Avatar",
+                "star": "Star",
+                "term-image": "Term Image",
+                "user-avatar": "User Avatar"
+            }
+        },
+        "activity": {
+            "title": "activity",
+            "start": "Start Activity"
+        },
+        "hint": {
+            "dismiss": "Dismiss"
+        },
+        "notification": {
+            "types": {
+                "success": "success",
+                "error": "error",
+                "warning": "warning",
+                "info": "info"
+            }
+        },
+        "avatar-picker": {
+            "title": "avatar",
+            "custom": "custom",
+            "my-uploads": "my uploads",
+            "upload-new": "upload new",
+            "defaults": "defaults",
+            "confirm-delete": "Delete this uploaded avatar?",
+            "errors": {
+                "file-size": "Avatar images must be 5MB or smaller.",
+                "file-type": "Avatar images must be JPG, JPEG, PNG, or WEBP files.",
+                "upload-limit": "You may upload up to {count} custom avatars.",
+                "crop": "The Avatar could not be cropped.",
+                "upload": "The Avatar could not be uploaded.",
+                "delete": "The Avatar could not be deleted."
+            },
+            "notifications": {
+                "uploaded": "OK, your Avatar was successfully uploaded.",
+                "deleted": "OK, your Avatar was successfully deleted."
+            },
+            "tips": {
+                "upload-limit": "You may upload up to {count} custom avatars. Delete one before uploading another.",
+                "upload-format": "You may upload an image in the JPG, JPEG, PNG, or WEBP formats (max. 5MB)."
+            }
+        },
+        "card": {
+            "not-encountered": "You haven't encountered this Term yet.",
+            "mastery-tooltip": "Your Mastery Score for this Term is {score} ({label}), meaning {message}.",
+            "fields": {
+                "mastery-score": "Mastery Score",
+                "times-seen": "Times Seen",
+                "last-seen": "Last Seen",
+                "due-on": "Due On"
+            }
+        },
+        "comment": {
+            "created-on": "on {date}."
+        },
+        "deck": {
+            "title": "deck",
+            "empty": "This Deck is empty.",
+            "locked": "You haven't unlocked this Deck in the Academy yet.",
+            "no-description": "Sadly, {author} hasn't told us anything about this Deck yet.",
+            "created-by": "Created by {author} on {date}.",
+            "terms": {
+                "load-error": "Unable to load Deck Terms."
+            }
+        },
+        "dialog": {
+            "title": "dialog",
+            "locked": "You haven't unlocked this Dialog in the Academy yet.",
+            "sections": {
+                "media": "media",
+                "options": "options",
+                "transcript": "transcript"
+            },
+            "options": {
+                "show-terms": "Show Terms",
+                "show-transcription": "Show Transcription"
+            }
+        },
+        "lesson": {
+            "number": "Lesson {number}",
+            "scored-perfect": "Scored 100% ({count}/{total})",
+            "start-quiz": "Start Quiz",
+            "open": "open lesson",
+            "no-skills": "(No Skills have been added to the Lesson yet.)",
+            "sections": {
+                "skills": "skills"
+            }
+        },
+        "pronunciation": {
+            "borrowed": "(Borrowed)"
+        },
+        "score": {
+            "student-required": "You must be a Student to enable Scores.",
+            "quizzed-on": "Quizzed on {date}.",
+            "new-record": "new record!",
+            "answered-correctly": "You answered {correct} out of {total} questions correctly.",
+            "review-answers": "Review your answers below.",
+            "history": "See Score History",
+            "feedback": {
+                "flawless": "Flawless!",
+                "impressive": "Impressive!",
+                "getting-there": "You’re getting there!",
+                "great-start": "Off to a great start!",
+                "keep-practicing": "Better keep practicing!"
+            },
+            "stats": {
+                "latest-score": "Latest Score",
+                "highest-score": "Highest Score",
+                "average-score": "Average Score",
+                "latest-quiz": "Latest Quiz",
+                "highest-quiz": "Highest Quiz",
+                "times-quizzed": "Times Quizzed"
+            },
+            "quiz": {
+                "type": "Quiz Type",
+                "types": {
+                    "glosses": "glosses",
+                    "sentences": "sentences",
+                    "terms": "terms"
+                },
+                "options": {
+                    "strictTerms": "strictTerms",
+                    "strictGloss": "strictGloss",
+                    "withTranslation": "withTranslation"
+                }
+            }
+        },
+        "search-select": {
+            "placeholder": "Search",
+            "searching": "Searching...",
+            "no-results": "No results."
+        },
+        "sentence": {
+            "title": "sentence",
+            "loading": "Loading Sentence..."
+        },
+        "speaker": {
+            "title": "speaker",
+            "data-title": "Speaker Data",
+            "anonymous-number": "Speaker #{id}",
+            "location": "{ar} ({en})",
+            "from-location": "Speaker from {ar} ({en})",
+            "fields": {
+                "dialect": "Dialect",
+                "location": "Location",
+                "fluency": "Fluency",
+                "gender": "Gender",
+                "audios": "Audios"
+            },
+            "dialects": {
+                "palestinian-bedouin": "Palestinian Bedouin",
+                "palestinian-druze": "Palestinian Druze",
+                "central-urban-palestinian": "Central Urban Palestinian",
+                "northern-urban-palestinian": "Northern Urban Palestinian",
+                "central-rural-palestinian": "Central Rural Palestinian",
+                "northern-rural-palestinian": "Northern Rural Palestinian",
+                "central-palestinian": "Central Palestinian",
+                "northern-palestinian": "Northern Palestinian",
+                "urban-palestinian": "Urban Palestinian",
+                "rural-palestinian": "Rural Palestinian",
+                "general-palestinian": "General Palestinian"
+            },
+            "fluency": {
+                "1": "Beginner",
+                "2": "Intermediate",
+                "3": "Advanced",
+                "4": "Fluent",
+                "5": "Native"
+            },
+            "gender": {
+                "male": "male",
+                "female": "female",
+                "other": "other"
+            }
+        },
+        "term": {
+            "construct": "construct:",
+            "editor-note": "editor’s note",
+            "featured": "featured",
+            "featured-in": "Featured In",
+            "references": {
+                "see": "see:",
+                "alt": "alt.",
+                "or": "or"
+            },
+            "relatives": {
+                "synonym-abbr": "syn.",
+                "antonym-abbr": "ant."
+            },
+            "sections": {
+                "info": "info",
+                "glosses": "glosses"
+            },
+            "deck-toggle": {
+                "loading": "Loading Decks",
+                "none": "No Decks Available."
+            }
+        },
+        "user": {
+            "no-bio": "Sadly, {name} hasn't told us anything about themselves yet.",
+            "joined-on": "Joined on {date} ({ago}).",
+            "unknown-location": "Earth, probably."
+        }
+    },
     "wiki": "wiki",
     "lessons": "lessons",
     "texts": "texts",
@@ -157,27 +669,6 @@
     "word-of-the-day": "word of the day",
     "random-term": "random term",
     "latest-terms": "latest terms",
-    "category": "category",
-    "verbs": "verbs",
-    "nouns": "nouns",
-    "determiners": "determiners",
-    "adjectives": "adjectives",
-    "adverbs": "adverbs",
-    "prepositions": "prepositions",
-    "conjunctions": "conjunctions",
-    "particles": "particles",
-    "numerals": "numerals",
-    "phrases": "phrases",
-    "verb": "verb",
-    "noun": "noun",
-    "determiner": "determiner",
-    "adjective": "adjective",
-    "adverb": "adverb",
-    "preposition": "preposition",
-    "conjunction": "conjunction",
-    "particle": "particle",
-    "numeral": "numeral",
-    "phrase": "phrase",
     "pronouns": "pronouns",
     "questions": "questions",
     "subtype": "subtype",
@@ -194,7 +685,6 @@
     "new": "new",
     "edit": "edit",
     "info": "info",
-    "components": "components",
     "origin": "origin",
     "inherited": "inherited",
     "borrowed": "borrowed",
@@ -509,7 +999,19 @@
     "pin.added": "Pinned :thing!",
     "pin.removed": "Unpinned :thing!",
     "badges.get": "You got the \":badge\" Badge! Good job!",
-    "footer.about": "About",
-    "footer.ajp": "What is AJP?",
-    "footer.subscribe": "Subscribe"
+    "dismiss": "Dismiss",
+    "footer": {
+        "links": {
+            "about": {
+                "title": "About",
+                "faq": "FAQ",
+                "palweb": "PalWeb",
+                "spoken-arabic": "Spoken Arabic"
+            },
+            "donate": {
+                "title": "Donate",
+                "subscribe": "Subscribe"
+            }
+        }
+    }
 }

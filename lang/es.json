@@ -58,6 +58,10 @@
                 "title": "deckMaster",
                 "subtitle": "crea & estudia Barajas"
             },
+            "card-dealer": {
+                "title": "cardDealer",
+                "subtitle": "repetición espaciada de Cartas"
+            },
             "sound-booth": {
                 "title": "soundBooth",
                 "subtitle": "inmortaliza el árabe palestino"
@@ -82,7 +86,27 @@
             "change-password": "Cambiar Contraseña",
             "link-discord": "Conectar Discord",
             "get-help": "Ayuda",
-            "send-feedback": "Enviar Feedback"
+            "send-feedback": "Enviar Feedback",
+            "portals": {
+                "hub": "hub",
+                "wiki": "wiki"
+            },
+            "admin-actions": {
+                "restore-admin-view": "Restaurarse como Admin",
+                "view-as-student": "Ver como Estudiante",
+                "view-as-pal": "Ver como Pal"
+            },
+            "unlink-discord": "Desconectar Discord"
+        },
+        "sticky": {
+            "search": "Búsqueda",
+            "settings": "Ajustes",
+            "menu": "Menú",
+            "push-subscribe-hint": "Enciende tus Notificaciones en Ajustes para recibir un recordatorio diario para estudiar tus Cartas!"
+        },
+        "auth": {
+            "user-avatar": "Avatar del Usuario",
+            "resend-link": "Reenviar Enlace"
         }
     },
     "user": {
@@ -95,7 +119,8 @@
         },
         "subscriptions": {
             "manage": "gestionar"
-        }
+        },
+        "profile": "perfil"
     },
     "speaker": {
         "speaker": "hablante",
@@ -145,32 +170,503 @@
         },
         "check": "revisar"
     },
+    "install": {
+        "button": "Instalar App",
+        "hint": "¡Haz click en el botón de Instalar para descargar PalWeb a tu dispositivo y acceder más fácilmente!",
+        "unavailable": "La instalación de la app no está disponible en este navegador."
+    },
+    "layout": {
+        "notifications": {
+            "offline": "Te has desconectado. Mientras estés desconectado, el sitio no funcionará como esperado. Por favor espera a que se reestablezca la conexión para seguir usando PalWeb.",
+            "online": "¡Se ha reestablecido la conexión!"
+        }
+    },
+    "models": {
+        "terms": "términos",
+        "sentences": "oraciones",
+        "decks": "barajas",
+        "audios": "audios",
+        "speakers": "hablantes",
+        "badges": "insignias"
+    },
+    "search": {
+        "genie": {
+            "title": "Search Genie",
+            "insert-title": "Insertar {model}",
+            "empty": "Aún no hay nada.",
+            "see-all-results": "Ver todos los resultados.",
+            "tooltips": {
+                "navigate": "Navegar a la página de este elemento.",
+                "insert": "Añadir este elemento al conjunto."
+            }
+        },
+        "filters": {
+            "placeholder": "Buscar",
+            "match": {
+                "root": "Asociar Raíz",
+                "term": "Asociar Término",
+                "gloss": "Asociar Definición"
+            },
+            "sort": {
+                "alphabetical-root": "Alfabético por Raíz",
+                "alphabetical": "Alfabético",
+                "frequency": "más Frecuente",
+                "latest": "más Reciente",
+                "popularity": "más Popular",
+                "pinned": "mis Pines"
+            }
+        }
+    },
+    "term": {
+        "category": {
+            "verb": "verbo",
+            "noun": "nombre",
+            "adjective": "adjetivo",
+            "numeral": "numeral",
+            "adverb": "adverbio",
+            "preposition": "preposición",
+            "conjunction": "conjunción",
+            "determiner": "determinador",
+            "particle": "partícula",
+            "phrase": "frase",
+            "affix": "afijo"
+        },
+        "filters": {
+            "category": "categoría",
+            "categories": {
+                "verbs": "verbos",
+                "nouns": "nombres",
+                "adjectives": "adjetivos",
+                "numerals": "numerales",
+                "adverbs": "adverbios",
+                "prepositions": "preposiciones",
+                "conjunctions": "conjunciones",
+                "determiners": "determinadores",
+                "particles": "partículas",
+                "phrases": "expresiones",
+                "affixes": "afijos"
+            },
+            "attribute": "atributos",
+            "attributes": {
+                "masculine": "masculino",
+                "feminine": "femenino",
+                "plural": "plural",
+                "collective": "colectivo",
+                "demonym": "gentilicio",
+                "defect": "defecto",
+                "pseudo": "seudo",
+                "clitic": "clítico",
+                "idiom": "frase hecha"
+            },
+            "form": {
+                "label": "forma",
+                "option": "forma {form}"
+            },
+            "singular": "singular",
+            "plural": "plural",
+            "pattern-groups": {
+                "derived-terms": "Términos Derivados",
+                "named-patterns": "Patrones Nombrados",
+                "length": "Longitud {length}",
+                "length-range": "Longitud {start} / {end}",
+                "sound": "sólido"
+            },
+            "patterns": {
+                "active-participle-abbr": "Act. Part.",
+                "relative-adjective-abbr": "Relative Adj.",
+                "intensive-adjective-abbr": "Intensive Adj.",
+                "nominalized-adjective-abbr": "Nominalized Adj."
+            }
+        }
+    },
+    "modals": {
+        "popup": {
+            "types": {
+                "help": "ayuda"
+            }
+        },
+        "settings": {
+            "title": "ajustes",
+            "fields": {
+                "color-theme": "Paleta",
+                "language": "Idioma",
+                "notifications": "notificaciones"
+            },
+            "theme-description": {
+                "PalWebOS": "La paleta original de PalWeb. Moderna & juguetona; para los que recuerdan cuando el internet era divertido.",
+                "Watermelon": "Jugosa como su tocaya. Un refresco para los ojos; contrapeso perfecto para los días calientes de verano.",
+                "Nabatean": "Piedras antiguas de color óxido, arena hasta donde alcanza la vista; un oasis en la distancia.",
+                "Jerusalem": "Intrincados azulejos de turquesa y lapislázuli; hogares protegidos del invierno por la piedra del mismo nombre.",
+                "Falastin": "Periódico más influyente de la Palestina otomana y el Mandato Británico, símbolo de la nación palestina.",
+                "Msaxxan": "Pollo asado horneado con cebolla caramelizada, azafrán, zumaque y piñones fritos sobre pan taboon.",
+                "Zatoon": "Aceitunas & Aceitunas & Aceitunas & Aceitunas & Aceitunas & Aceitunas & Aceitunas & Aceitunas & Aceitunas"
+            },
+            "theme-preview": "previsualización",
+            "notifications": {
+                "enable-error": "No se pudo encender las notificaciones.",
+                "disable-error": "No se pudo apagar las notificaciones."
+            }
+        },
+        "nav-guard": {
+            "title": "advertencia: cambios no guardados",
+            "warning-icon": "Advertencia",
+            "confirm": "Confirmar",
+            "cancel": "Cancelar"
+        },
+        "purge-scores": {
+            "title": "Purgar Puntajes",
+            "confirm": "Estás seguro de que quieres eliminar estos Puntajes? Esta acción no puede ser revertida.",
+            "fields": {
+                "time-limit": "Plazo"
+            },
+            "time-limits": {
+                "none": "Ninguno",
+                "day": "1 Día",
+                "week": "1 Semana",
+                "month": "1 Mes",
+                "year": "1 Año"
+            },
+            "keep": {
+                "highest": "Mantener el más alto",
+                "latest": "Mantener el más reciente"
+            },
+            "submit": "purgar"
+        },
+        "send-feedback": {
+            "title": "enviar feedback",
+            "placeholder": "¿Algo no funciona? ¿Falta alguna palabra en el Diccionario? ¡Dínos!",
+            "submit": "Enviar"
+        },
+        "send-mail": {
+            "title": "enviar correo",
+            "fields": {
+                "subject": "Asunto"
+            },
+            "placeholder": "¿Qué te gustaría decir?",
+            "submit": "Enviar"
+        },
+        "auth": {
+            "fields": {
+                "name": "Nombre",
+                "username": "Nombre de Usuario",
+                "arabic-name": "Nombre Árabe",
+                "email": "Correo Electrónico",
+                "password": "Contraseña",
+                "confirm-password": "Confirmar Contraseña"
+            },
+            "sign-in": {
+                "title": "iniciar sesión",
+                "action": "¡Inicia Sesión!",
+                "sign-up-prompt": "¿Nuevo en PalWeb?",
+                "remember-me": "Recuérdame",
+                "submit": "Iniciar Sesión",
+                "discord": "Usar Discord"
+            },
+            "sign-up": {
+                "title": "registrarse",
+                "action": "¡Regístrate!",
+                "sign-in-prompt": "¿Ya tienes una cuenta?",
+                "randomize-name": "Aleatorizar",
+                "submit": "Registrarse"
+            },
+            "forgot-password": {
+                "title": "contraseña olvidada",
+                "action": "¿La olvidaste?",
+                "prompt": "¿Sin contraseña? Sin problema. Escribe tu dirección de correo electrónico y te enviaré un enlace de restablecimiento.",
+                "submit": "Enviar Enlace"
+            }
+        }
+    },
+    "actions": {
+        "common": {
+            "view": "Ver {model}",
+            "edit": "Editar {model}",
+            "delete": "Eliminar {model}",
+            "copy": "Copiar {model}"
+        },
+        "models": {
+            "activity": "Actividad",
+            "card": "Carta",
+            "deck": "Baraja",
+            "dialog": "Diálogo",
+            "lesson": "Lección",
+            "root": "Raíz",
+            "scores": "Puntajes",
+            "sentence": "Oración",
+            "term": "Término",
+            "user": "Usuario"
+        },
+        "card": {
+            "master": "Dominar Carta",
+            "restore": "Restaurar Carta",
+            "suspend": "Suspender Carta",
+            "reset": "Resetear Carta"
+        },
+        "deck": {
+            "empty": "La Baraja está vacía.",
+            "study": "Estudiar Baraja",
+            "share-link": "Compartir Enlace",
+            "export-csv": "Exportar CSV"
+        },
+        "user": {
+            "grant-student-role": "Otorgar Rol de Estudiante",
+            "revoke-student-role": "Revocar Rol de Estudiante"
+        }
+    },
+    "charts": {
+        "variant": "variante {number}",
+        "cliticization": {
+            "title": "clitización"
+        },
+        "conjugation": {
+            "title": "conjugación",
+            "derivatives": "derivados",
+            "tenses": {
+                "present": "presente",
+                "past": "pasado",
+                "command": "comando"
+            }
+        },
+        "inflection": {
+            "title": "inflecciones"
+        }
+    },
+    "components": {
+        "common": {
+            "anonymous": "Anónimo",
+            "anonymous-bracketed": "[anónimo]",
+            "by": "por",
+            "by-author": "por {author}",
+            "copied": "Copiado al portapapeles.",
+            "copy-error": "No se pudo copiar el texto:",
+            "never": "Nunca",
+            "hide": "Ocultar",
+            "expand": "Expandir",
+            "see-all": "Ver Todo",
+            "boolean": {
+                "true": "verdadero",
+                "false": "falso"
+            },
+            "sections": {
+                "stats": "estadísticas",
+                "terms": "términos"
+            },
+            "counts": {
+                "terms": "{count} Términos"
+            },
+            "alt": {
+                "avatar": "Avatar",
+                "star": "Estrella",
+                "term-image": "Imágen del Término",
+                "user-avatar": "Avatar del Usuario"
+            }
+        },
+        "activity": {
+            "title": "actividad",
+            "start": "Iniciar Actividad"
+        },
+        "hint": {
+            "dismiss": "Descartar"
+        },
+        "notification": {
+            "types": {
+                "success": "éxito",
+                "error": "error",
+                "warning": "advertencia",
+                "info": "información"
+            }
+        },
+        "avatar-picker": {
+            "title": "avatar",
+            "custom": "personalizado",
+            "my-uploads": "mis subidas",
+            "upload-new": "subir nuevo",
+            "defaults": "predeterminados",
+            "confirm-delete": "¿Eliminar este Avatar subido?",
+            "errors": {
+                "file-size": "Los Avatares deben ser de 5MB o menos.",
+                "file-type": "Los Avatares deben ser archivos JPG, JPEG, PNG o WEBP.",
+                "upload-limit": "Puedes subir hasta {count} Avatares personalizados.",
+                "crop": "El Avatar no pudo ser recortado.",
+                "upload": "El Avatar no pudo ser subido.",
+                "delete": "El Avatar no pudo ser eliminado."
+            },
+            "notifications": {
+                "uploaded": "OK, tu Avatar se subió con éxito.",
+                "deleted": "OK, tu Avatar se eliminó con éxito."
+            },
+            "tips": {
+                "upload-limit": "Puedes subir hasta {count} avatares personalizados. Elimina uno antes de subir otro.",
+                "upload-format": "Puedes subir una imagen en formato JPG, JPEG, PNG o WEBP (máximo 5MB)."
+            }
+        },
+        "card": {
+            "not-encountered": "Aún no has encontrado este Término.",
+            "mastery-tooltip": "Tu Puntaje de Maestría para este Término es {score} ({label}), lo que significa {message}.",
+            "fields": {
+                "mastery-score": "Puntaje de Maestría",
+                "times-seen": "Veces visto",
+                "last-seen": "Última vez visto",
+                "due-on": "Fecha de entrega"
+            }
+        },
+        "comment": {
+            "created-on": "el {date}."
+        },
+        "deck": {
+            "title": "baraja",
+            "empty": "Esta Baraja está vacía.",
+            "locked": "Aún no has desbloqueado esta Baraja en la Academia.",
+            "no-description": "Lamentablemente, {author} aún no nos ha contado nada sobre esta Baraja.",
+            "created-by": "Creada por {author} el {date}.",
+            "terms": {
+                "load-error": "No se pudo cargar los Términos de la Baraja."
+            }
+        },
+        "dialog": {
+            "title": "diálogo",
+            "locked": "Aún no has desbloqueado este Diálogo en la Academia.",
+            "sections": {
+                "media": "multimedia",
+                "options": "opciones",
+                "transcript": "transcripción"
+            },
+            "options": {
+                "show-terms": "Mostrar Términos",
+                "show-transcription": "Mostrar Transcripción"
+            }
+        },
+        "lesson": {
+            "number": "Lección {number}",
+            "scored-perfect": "Sacaste un 100% ({count}/{total})",
+            "start-quiz": "Comenzar Quiz",
+            "open": "abrir Lección",
+            "no-skills": "(Ninguna habilidad ha sido agregada a esta Lección aún.)",
+            "sections": {
+                "skills": "habilidades"
+            }
+        },
+        "pronunciation": {
+            "borrowed": "(Prestado)"
+        },
+        "score": {
+            "student-required": "Debes ser un Estudiante para habilitar Puntajes.",
+            "quizzed-on": "Quiz completado el {date}.",
+            "new-record": "nuevo record!",
+            "answered-correctly": "Contestaste a {correct} de {total} preguntas correctamente.",
+            "review-answers": "Revisa tus respuestas a continuación.",
+            "history": "Ver Historial de Puntajes",
+            "feedback": {
+                "flawless": "¡Impecable!",
+                "impressive": "¡Impresionante!",
+                "getting-there": "¡Ya casi llegas!",
+                "great-start": "¡Buen comienzo!",
+                "keep-practicing": "¡Sigue practicando!"
+            },
+            "stats": {
+                "latest-score": "Último Puntaje",
+                "highest-score": "Puntaje más alto",
+                "average-score": "Puntaje promedio",
+                "latest-quiz": "Último Quiz",
+                "highest-quiz": "Quiz más alto",
+                "times-quizzed": "Quizzes realizados"
+            },
+            "quiz": {
+                "type": "Tipo de Quiz",
+                "types": {
+                    "glosses": "definiciones",
+                    "sentences": "oraciones",
+                    "terms": "términos"
+                },
+                "options": {
+                    "strictTerms": "strictTerms",
+                    "strictGloss": "strictGloss",
+                    "withTranslation": "withTranslation"
+                }
+            }
+        },
+        "search-select": {
+            "placeholder": "Buscar",
+            "searching": "Buscando...",
+            "no-results": "Ningún resultado."
+        },
+        "sentence": {
+            "title": "oración",
+            "loading": "Cargando Oración..."
+        },
+        "speaker": {
+            "title": "hablante",
+            "data-title": "Datos del Hablante",
+            "anonymous-number": "Hablante #{id}",
+            "location": "{ar} ({en})",
+            "from-location": "Hablante de {ar} ({en})",
+            "fields": {
+                "dialect": "Dialecto",
+                "location": "Ubicación",
+                "fluency": "Fluidez",
+                "gender": "Género",
+                "audios": "Audios"
+            },
+            "dialects": {
+                "palestinian-bedouin": "Palestino Beduino",
+                "palestinian-druze": "Palestino Druso",
+                "central-urban-palestinian": "Palestino Central Urbano",
+                "northern-urban-palestinian": "Palestino Norteño Urbano",
+                "central-rural-palestinian": "Palestino Central Rural",
+                "northern-rural-palestinian": "Palestino Norteño Rural",
+                "central-palestinian": "Palestino Central",
+                "northern-palestinian": "Palestino Norteño",
+                "urban-palestinian": "Palestino Urbano",
+                "rural-palestinian": "Palestino Rural",
+                "general-palestinian": "Palestino General"
+            },
+            "fluency": {
+                "1": "Principiante",
+                "2": "Intermedio",
+                "3": "Avanzado",
+                "4": "Fluido",
+                "5": "Native"
+            },
+            "gender": {
+                "male": "masculino",
+                "female": "femenino",
+                "other": "otro"
+            }
+        },
+        "term": {
+            "construct": "forma de construcción:",
+            "editor-note": "nota del editor",
+            "featured": "destacado",
+            "featured-in": "aparece en",
+            "references": {
+                "see": "ver:",
+                "alt": "alt.",
+                "or": "o"
+            },
+            "relatives": {
+                "synonym-abbr": "sin.",
+                "antonym-abbr": "ant."
+            },
+            "sections": {
+                "info": "información",
+                "glosses": "definiciones"
+            },
+            "deck-toggle": {
+                "loading": "Cargando Barajas",
+                "none": "No hay Barajas disponibles."
+            }
+        },
+        "user": {
+            "no-bio": "Lamentablemente, {name} aún no nos ha contado nada sobre sí mismo.",
+            "joined-on": "Alta el {date} ({ago}).",
+            "unknown-location": "La Tierra, probablemente."
+        }
+    },
     "documentation": "documentación",
     "dictionary": "diccionario",
     "lessons": "cursos",
     "texts": "textos",
     "all": "todos",
-    "category": "categoría",
-    "verbs": "verbos",
-    "nouns": "nombres",
-    "determiners": "determinadores",
-    "adjectives": "adjetivos",
-    "adverbs": "adverbios",
-    "prepositions": "preposiciones",
-    "conjunctions": "conjunciones",
-    "particles": "partículas",
-    "numerals": "numerales",
-    "phrases": "frases",
-    "verb": "verbo",
-    "noun": "nombre",
-    "determiner": "determinador",
-    "adjective": "adjetivo",
-    "adverb": "adverbio",
-    "preposition": "preposicion",
-    "conjunction": "conjuncion",
-    "particle": "partícula",
-    "numeral": "numeral",
-    "phrase": "frase",
     "pronouns": "pronombres",
     "questions": "preguntas",
     "subtype": "subtipo",
@@ -187,7 +683,6 @@
     "new": "nuevo",
     "edit": "editar",
     "info": "info",
-    "components": "componentes",
     "origin": "orígen",
     "inherited": "heredado",
     "borrowed": "prestado",
@@ -269,9 +764,9 @@
     "signup.already": "¿Ya estás registrado?",
     "mail.greeting": "Hola",
     "mail.farewell": "Sinceramente",
-    "mail.subject.registered": "Bienvenido a it-Tafsir! \uD83D\uDE4C",
-    "mail.subject.verified": "Cuenta it-Tafsir Verificada! \uD83C\uDF89",
-    "mail.subject.subscribed": "Bienvenido al Plan Estudiante! \uD83E\uDDE0",
+    "mail.subject.registered": "Bienvenido a it-Tafsir! 🙌",
+    "mail.subject.verified": "Cuenta it-Tafsir Verificada! 🎉",
+    "mail.subject.subscribed": "Bienvenido al Plan Estudiante! 🧠",
     "mail.subject.passwordchanged": "Contraseña it-Tafsir Cambiada ⚠️",
     "mail.registered": "We're so excited to have you join us at it-Tafsir! But first, would you mind clicking this link to verify your email address?",
     "mail.verified": "Awesome — thank you for verifying your account! We invite all verified users to join our Discord server to get to know others interested in Palestine & Palestinian Arabic — just click the link below. See you there!",
@@ -324,7 +819,19 @@
     "verification.send.link": "resend link",
     "pin.added": "Término añadido a Palabras Marcadas!",
     "pin.removed": "Término eliminado de Palabras Marcadas!",
-    "footer.about": "Sobre",
-    "footer.ajp": "¿Qué es AJP?",
-    "footer.subscribe": "Suscribirse"
+    "dismiss": "Descartar",
+    "footer": {
+        "links": {
+            "about": {
+                "title": "Sobre",
+                "faq": "FAQ",
+                "palweb": "PalWeb",
+                "spoken-arabic": "el Árabe Hablado"
+            },
+            "donate": {
+                "title": "Donar",
+                "subscribe": "Suscribirse"
+            }
+        }
+    }
 }

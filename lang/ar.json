@@ -1,30 +1,672 @@
 {
+    "meta": {
+        "app": {
+            "title": "بالويب",
+            "subtitle": "شبكة اللهجة الفلسطينيّة!"
+        }
+    },
+    "nav": {
+        "sticky": {
+            "search": "بحث",
+            "settings": "إعدادات",
+            "menu": "قائمة",
+            "push-subscribe-hint": "من الإعدادات إسمح بتلقّي الإشعارات للتذكير اليوميّ لدراسة كروتك"
+        },
+        "auth": {
+            "user-avatar": "صورة أفاتار للمستخدم",
+            "resend-link": "إعادة إرسال الرابط"
+        },
+        "sidebar": {
+            "home": {
+                "title": "الصفحة الرئيسيّة"
+            },
+            "academy": {
+                "title": "الأكاديمية",
+                "subtitle": "للطلّاب فقط"
+            },
+            "library": {
+                "title": "المكتبة",
+                "subtitle": "شبكة اللهجة الفلسطينيّة"
+            },
+            "workbench": {
+                "title": "ورشة العمل",
+                "subtitle": "أدوات تعمل بقاعدة البيانات"
+            },
+            "office": {
+                "title": "المكتب",
+                "subtitle": "للمعلّمين فقط"
+            },
+            "lessons": {
+                "title": "دروس",
+                "subtitle": "تعلّم اللهجة الفلسطينيّة"
+            },
+            "dialogs": {
+                "title": "محادثات",
+                "subtitle": "إدخال اللغة الطبيعية"
+            },
+            "scores": {
+                "title": "علامات",
+                "subtitle": "شاهد تاريخ علامتك"
+            },
+            "dictionary": {
+                "title": "قاموس",
+                "subtitle": "Term::all()"
+            },
+            "corpus": {
+                "title": "مدوّنة لغويّة",
+                "subtitle": "Sentence::all()"
+            },
+            "decks": {
+                "title": "رزم",
+                "subtitle": "Deck::all()"
+            },
+            "audios": {
+                "title": "تسجيلات الصوت",
+                "subtitle": "Audio::all()"
+            },
+            "deck-master": {
+                "title": "مسؤول الرزم",
+                "subtitle": "إبني ودرس الرزم"
+            },
+            "card-dealer": {
+                "title": "موزّع الكروت",
+                "subtitle": "دراسة خلال التكرار المتباعد"
+            },
+            "sound-booth": {
+                "title": "كبينة التسجيل",
+                "subtitle": "حفظ اللهجة الفلسطينية"
+            },
+            "word-logger": {
+                "title": "مسجّل الكلمات",
+                "subtitle": "تحكّم بمدخلات الفاموس"
+            },
+            "speech-maker": {
+                "title": "صانع الخطابات",
+                "subtitle": "إصنع جمل ومحادثات"
+            },
+            "lesson-planner": {
+                "title": "مخطّط الدروس",
+                "subtitle": "إصنع دروس وأنشطة"
+            },
+            "portals": {
+                "hub": "hub",
+                "wiki": "wiki"
+            },
+            "my-admin": "للإدارة",
+            "send-mail": "أرسل بريد إلكترونيّ",
+            "view-feedback": "شاهد التغذية الراجعة",
+            "admin-actions": {
+                "restore-admin-view": "استعادة عرض المدير",
+                "view-as-student": "شاهد كطالب",
+                "view-as-pal": "شاهد كرفيق"
+            },
+            "my-account": "حسابي",
+            "manage-subscription": "إدارة الإشتراك",
+            "change-password": "تغيير كلمة السرّ",
+            "link-discord": "ربط بديسكورد",
+            "unlink-discord": "إلغاء ربط بديسكورد",
+            "get-help": "الحصول على مساعدة",
+            "send-feedback": "إرسال تغذية راجعة"
+        }
+    },
+    "user": {
+        "roles": {
+            "student": "طالب",
+            "teacher": "معلّم",
+            "admin": "مدير",
+            "pal": "رفيق",
+            "guest": "ضيف"
+        },
+        "subscriptions": {
+            "manage": "أدر"
+        },
+        "profile": "الملف الشخصيّ"
+    },
+    "speaker": {
+        "speaker": "ناطق",
+        "dialect": "لهجة",
+        "location": "موقع",
+        "fluency": "مستوى الطلاقة",
+        "gender": "جنس"
+    },
+    "sound-booth": {
+        "test": {
+            "waiting": {
+                "title": "بالانتظار",
+                "subtitle": "إضغط للتحقق من صوت المايك."
+            },
+            "recording": {
+                "title": "يسجّل",
+                "subtitle": "تحدّث للمايك."
+            },
+            "listening": {
+                "title": "يستمع",
+                "subtitle": "كيف يبدو الصوت؟."
+            }
+        },
+        "queue": {
+            "queue": "قائمة الإنتظار",
+            "status": {
+                "full": "لديك 100 عنصر في قائمة الإنتظار.",
+                "empty": "القائمة فارغة."
+            },
+            "load": {
+                "button": "حمّل رزمة",
+                "message": "حمّل جميع المصطلحات في رزمة للتسجيل."
+            },
+            "auto": {
+                "button": "جلب العناصر",
+                "message": "ملأ قائمة الانتظار تلقائيًا بما يصل إلى 100 عنصر."
+            },
+            "clear": {
+                "button": "إحذف قائمة الإنتظار",
+                "message": "إحذف جميع العناصر من قائمة الإنتظار."
+            }
+        },
+        "record": {
+            "record": "سجّل",
+            "upload": "حمّل",
+            "prompt-start": "سجّل شيء لتبدأ!"
+        },
+        "check": "إفحص"
+    },
+    "install": {
+        "button": "Install App",
+        "hint": "Click the Install Button to download PalWeb to your device for easier access!",
+        "unavailable": "App installation is not available in this browser."
+    },
+    "layout": {
+        "notifications": {
+            "offline": "You have gone offline. While offline, the site will not work as expected. Please wait until you are back online to continue using PalWeb.",
+            "online": "You are back online!"
+        }
+    },
+    "models": {
+        "terms": "مصطلحات",
+        "sentences": "جمل",
+        "decks": "رزم",
+        "audios": "تسجلات صوت",
+        "speakers": "ناطقون",
+        "badges": "شارات"
+    },
+    "search": {
+        "genie": {
+            "title": "جنّي البحث",
+            "insert-title": "أدخل {model}",
+            "empty": "لا يوجد شيء حتى الآن",
+            "see-all-results": "شاهد جميع النتائج",
+            "tooltips": {
+                "navigate": "تصفّح العنصر",
+                "insert": "أضفّ العنصر للمجموعة"
+            }
+        },
+        "filters": {
+            "placeholder": "دوّر",
+            "match": {
+                "root": "طابق الجذر",
+                "term": "طابق المصطلح",
+                "gloss": "طابق المعنى"
+            },
+            "sort": {
+                "alphabetical-root": "الترتيب الأبجديّ حسب الجذر",
+                "alphabetical": "الترتيب الأبجديّ",
+                "frequency": "حسب التكرار",
+                "latest": "حسب التوقيت",
+                "popularity": "حسب الشعبيّة",
+                "pinned": "محفوطات"
+            }
+        }
+    },
+    "term": {
+        "category": {
+            "verb": "فعل",
+            "noun": "إسم",
+            "adjective": "صفة",
+            "numeral": "عدد",
+            "adverb": "ظرف",
+            "preposition": "حرف جرّ",
+            "conjunction": "حرف عطف",
+            "determiner": "محدّد",
+            "particle": "أداة",
+            "phrase": "عبارة",
+            "affix": "حرف زائد"
+        },
+        "filters": {
+            "category": "تصنيف",
+            "categories": {
+                "verbs": "أفعال",
+                "nouns": "أسامي",
+                "adjectives": "صفات",
+                "numerals": "أعداد",
+                "adverbs": "ظروف",
+                "prepositions": "حروف جرّ",
+                "conjunctions": "حروف عطف",
+                "determiners": "محدّدات",
+                "particles": "أدوات",
+                "phrases": "عبارات",
+                "affixes": "حروف زائدة"
+            },
+            "attribute": "خاصية",
+            "attributes": {
+                "masculine": "مذكّر",
+                "feminine": "مؤنّث",
+                "plural": "جمع",
+                "collective": "جماعيّ",
+                "demonym": "جغرافيّ",
+                "defect": "صفة مشبهة",
+                "pseudo": "فعل زائف",
+                "clitic": "ضميمة",
+                "idiom": "تعبير اصطلاحي"
+            },
+            "form": {
+                "label": "وزن",
+                "option": "وزن {form}"
+            },
+            "singular": "مفرد",
+            "plural": "جمع",
+            "pattern-groups": {
+                "derived-terms": "المصطلحات المشتقّة",
+                "named-patterns": "الأنماط المسمّاة",
+                "length": "طول {length}",
+                "length-range": "طول {start} / {end}",
+                "sound": "سليم"
+            },
+            "patterns": {
+                "active-participle-abbr": "اسم فاعل",
+                "relative-adjective-abbr": "صفة نسبيّة",
+                "intensive-adjective-abbr": "وزن فعلان",
+                "nominalized-adjective-abbr": "Nominalized Adj."
+            }
+        }
+    },
+    "modals": {
+        "popup": {
+            "types": {
+                "help": "مساعدة"
+            }
+        },
+        "settings": {
+            "title": "إعدادات",
+            "fields": {
+                "color-theme": "لوحة الألوان",
+                "language": "اللغة",
+                "notifications": "الإشعارات"
+            },
+            "theme-description": {
+                "PalWebOS": "قالب بالويب الأصلي. عصري ومرح؛ لأولئك الذين يتذكرون أيام كان فيها الإنترنت ممتعاً.",
+                "Watermelon": "شهيّ كاسمه. منعش للعيون؛ توازن مثاليّ لأيام الصيف الحارة.",
+                "Nabatean": "أحجار قديمة بلون الصدأ، ورمال تمتد على مد البصر؛ وواحة في الأفق.",
+                "Jerusalem": "أعمال بلاط معقدة من الفيروز واللازورد؛ منازل محمية من الشتاء بواسطة الحجر الذي يحمل نفس الاسم.",
+                "Falastin": "الصحيفة الأكثر تأثيراً في فلسطين العثمانية وفلسطين الانتدابية، ورمز للهوية الوطنية الفلسطينية.",
+                "Msaxxan": "دجاج مشوي مخبوز مع البصل المكرمل والزعفران والسماق والصنوبر المقلي فوق خبز الطابون.",
+                "Zatoon": "زتون و زتون و زتون و زتون و زتون و زتون و زتون و زتون و زتون و زتون و زتون و زتون و."
+            },
+            "theme-preview": "معاينة لوحة الألوان",
+            "notifications": {
+                "enable-error": "تعذر تفعيل الإشعارات.",
+                "disable-error": "تعذر إلغاء تفعيل الإشعارات."
+            }
+        },
+        "nav-guard": {
+            "title": "تحذير: تغييرات غير محفوظة",
+            "warning-icon": "تحذير",
+            "confirm": "تأكيد",
+            "cancel": "إلغاء"
+        },
+        "purge-scores": {
+            "title": "محو العلامات",
+            "confirm": "هل أنت متأكد من أنك تريد حذف هذه العلامات؟ لا يمكن التراجع عن هذا الإجراء.",
+            "fields": {
+                "time-limit": "الحد الزمنيّ"
+            },
+            "time-limits": {
+                "none": "لا شيء",
+                "day": "يوم",
+                "week": "أسبوع",
+                "month": "شهر",
+                "year": "سنة"
+            },
+            "keep": {
+                "highest": "إحفظ أعلى العلامات",
+                "latest": "إحفظ العلامات الأخيرة"
+            },
+            "submit": "محو"
+        },
+        "send-feedback": {
+            "title": "إرسل تغدية راجعة",
+            "placeholder": "هل هناك مشكلة؟ هل هناك كلمات مفقودة من القاموس؟ اخبرنا!",
+            "submit": "قدّم"
+        },
+        "send-mail": {
+            "title": "أرسل بريد إلكتروني",
+            "fields": {
+                "subject": "الموضوع"
+            },
+            "placeholder": "ماذا تريد أن تقول؟",
+            "submit": "أرسل"
+        },
+        "auth": {
+            "fields": {
+                "name": "الاسم",
+                "username": "اسم المستخدم",
+                "arabic-name": "الاسم العربيّ",
+                "email": "البريد الإلكتروني",
+                "password": "كلمة السرّ",
+                "confirm-password": "تأكيد كلمة السرّ"
+            },
+            "sign-in": {
+                "title": "تسجيل الدخول",
+                "action": "تسجيل الدخول!",
+                "sign-up-prompt": "جديد على بالويب؟",
+                "remember-me": "تذكرني",
+                "submit": "تسجيل الدخول",
+                "discord": "استخدم ديسكورد"
+            },
+            "sign-up": {
+                "title": "تسجيل جديد",
+                "action": "تسجيل جديد!",
+                "sign-in-prompt": "هل لديك حساب؟",
+                "randomize-name": "إختيار عشوائي",
+                "submit": "تسجيل جديد"
+            },
+            "forgot-password": {
+                "title": "نسيت كلمة السرّ",
+                "action": "نسيت?",
+                "prompt": "لا كلمة سر؟ لا مشكلة. اكتب عنوان بريدك الإلكتروني وسأرسل لك رابطًا لإعادة تعيينه.",
+                "submit": "أرسل رابط"
+            }
+        }
+    },
+    "actions": {
+        "common": {
+            "view": "شاهد {model}",
+            "edit": "تعديل {model}",
+            "delete": "حذف {model}",
+            "copy": "نسخ {model}"
+        },
+        "models": {
+            "activity": "نشاط",
+            "card": "كرت",
+            "deck": "رزمة",
+            "dialog": "محادثة",
+            "lesson": "درس",
+            "root": "جذر",
+            "scores": "علامات",
+            "sentence": "جملة",
+            "term": "مصطلح",
+            "user": "مستخدم"
+        },
+        "card": {
+            "master": "إتقن الكرت",
+            "restore": "استعادة الكرت",
+            "suspend": "تعليق الكرت",
+            "reset": "إعادة تعيين الكرت"
+        },
+        "deck": {
+            "empty": "الرزمة فارغة.",
+            "study": "دراسة الرزمة",
+            "share-link": "مشاركة الرابط",
+            "export-csv": "تصدير CSV"
+        },
+        "user": {
+            "grant-student-role": "منح دور الطالب",
+            "revoke-student-role": "إلغاء دور الطالب"
+        }
+    },
+    "charts": {
+        "variant": "فرع {number}",
+        "cliticization": {
+            "title": "إضافة الضميمة"
+        },
+        "conjugation": {
+            "title": "تصريف الفعل",
+            "derivatives": "المشتقّات",
+            "tenses": {
+                "present": "المضارع",
+                "past": "الماضي",
+                "command": "الأمر"
+            }
+        },
+        "inflection": {
+            "title": "تصريف الصفة"
+        }
+    },
+    "components": {
+        "common": {
+            "anonymous": "مجهول",
+            "anonymous-bracketed": "[مجهول]",
+            "by": "لـ",
+            "by-author": "لـ{author}",
+            "copied": "تم نسخ إلى الحافظة.",
+            "copy-error": "تعذر نسخ النص:",
+            "never": "لم يقم بالفعل",
+            "hide": "إخفاء",
+            "expand": "توسيع",
+            "see-all": "شاهد الكلّ",
+            "boolean": {
+                "true": "صحّ",
+                "false": "غلط"
+            },
+            "sections": {
+                "stats": "الإحصائيات",
+                "terms": "المصطلحات"
+            },
+            "counts": {
+                "terms": "{count} مصطلح"
+            },
+            "alt": {
+                "avatar": "صورة أفاتار",
+                "star": "نجمة",
+                "term-image": "صورة المصطلح",
+                "user-avatar": "صورة أفاتار المستخدم"
+            }
+        },
+        "activity": {
+            "title": "نشاط",
+            "start": "بدء النشاط"
+        },
+        "hint": {
+            "dismiss": "إصرف"
+        },
+        "notification": {
+            "types": {
+                "success": "نجاح",
+                "error": "غلط",
+                "warning": "تحذير",
+                "info": "معلومات"
+            }
+        },
+        "avatar-picker": {
+            "title": "صورة أفاتار",
+            "custom": "مخصص",
+            "my-uploads": "التحميلات الخاصة بي",
+            "upload-new": "تحميل جديد",
+            "defaults": "الافتراضي",
+            "confirm-delete": "هل تريد حذف صورة الأفاتار؟",
+            "errors": {
+                "file-size": "يجب أن يكون حجم صورة الأفاتار 5 ميغابايت أو أقل.",
+                "file-type": "يجب أن تكون صورة الأفاتار ملفات JPG أو JPEG أو PNG أو WEBP.",
+                "upload-limit": "يمكنك تحميل حتى {count} صورة أفاتار.",
+                "crop": "صورة الأفاتار لا يمكن تقطيعها.",
+                "upload": "صورة الأفاتار لا يمكن تحميلها.",
+                "delete": "صورة الأفاتار لا يمكن حذفها."
+            },
+            "notifications": {
+                "uploaded": "حسنًا، صورة الأفاتار الخصّة بك تمّ رفعها بنحاج.",
+                "deleted": "حسنًا، صورة الأفاتار الخصّة بك تمّ حذفها بنحاج."
+            },
+            "tips": {
+                "upload-limit": "يمكنك تحميل حتى {count} صورة أفاتار. حذف واحدة قبل تحميل أخرى.",
+                "upload-format": "يمكنك تحميل صورة في تنسيقات JPG، JPEG، PNG، أو WEBP (أقصى 5 ميغابايت)."
+            }
+        },
+        "card": {
+            "not-encountered": "لم تستكشف هذه المصطلح بعد.",
+            "mastery-tooltip": "درجة إتقانك لهذا الفصل الدراسي هي {score} ({label}), مما يعني أن {message}.",
+            "fields": {
+                "mastery-score": "درجة الإتقان",
+                "times-seen": "عدد المشاهدة",
+                "last-seen": "آخر مشاهدة",
+                "due-on": "تاريخ الاستحقاق"
+            }
+        },
+        "comment": {
+            "created-on": "بـ{date}."
+        },
+        "deck": {
+            "title": "رزمة",
+            "empty": "هذه الرزمة فارغة.",
+            "locked": "لم تقم بفتح هذه الرزمة بعد في الأكاديمية.",
+            "no-description": "للأسف، لم يخبرنا {author} بعد عن هذه الرزمة.",
+            "created-by": "تم إنشاؤها بواسطة {author} بـ{date}.",
+            "terms": {
+                "load-error": "تعذّر تحميل مصطلحات الرزم."
+            }
+        },
+        "dialog": {
+            "title": "محادثة",
+            "locked": "لم تقم بفتح هذه المحادثة بعد في الأكاديمية.",
+            "sections": {
+                "media": "وسائط",
+                "options": "خيارات",
+                "transcript": "النصّ"
+            },
+            "options": {
+                "show-terms": "عرض المصطلحات",
+                "show-transcription": "عرض النصّ"
+            }
+        },
+        "lesson": {
+            "number": "درس {number}",
+            "scored-perfect": "حصلت على 100% ({count}/{total})",
+            "start-quiz": "ابدأ الامتحان",
+            "open": "فتح الدرس",
+            "no-skills": "(لم يتم إضافة مهارات بعد)",
+            "sections": {
+                "skills": "مهارات"
+            }
+        },
+        "pronunciation": {
+            "borrowed": "(مستعار)"
+        },
+        "score": {
+            "student-required": "يجب أن تكون طالب لتتمكّن من حصول على علامات.",
+            "quizzed-on": "تم الامتحان بـ{date}.",
+            "new-record": "سجل جديد!",
+            "answered-correctly": "أجبت على {correct} من {total} أسئلة بشكل صحيح.",
+            "review-answers": "راجع إجاباتك بالأسفل.",
+            "history": "انظر سجل النتائج",
+            "feedback": {
+                "flawless": "مثالي!",
+                "impressive": "أبدعت!",
+                "getting-there": "عمّ تقرّب ع هدفك!",
+                "great-start": "بداية رائعة!",
+                "keep-practicing": "التكرار بعلّم الشطّار!"
+            },
+            "stats": {
+                "latest-score": "آخر علامة",
+                "highest-score": "أعلى علامة",
+                "average-score": "متوسط العلامات",
+                "latest-quiz": "الامتحان الأخير",
+                "highest-quiz": "أعلى امتحان",
+                "times-quizzed": "عدد الامتحانات"
+            },
+            "quiz": {
+                "type": "نوع الامتحان",
+                "types": {
+                    "glosses": "المهاني",
+                    "sentences": "الجمل",
+                    "terms": "الكلمات"
+                },
+                "options": {
+                    "strictTerms": "strictTerms",
+                    "strictGloss": "strictGloss",
+                    "withTranslation": "withTranslation"
+                }
+            }
+        },
+        "search-select": {
+            "placeholder": "إبحث",
+            "searching": "يبحث",
+            "no-results": "لا نتائج"
+        },
+        "sentence": {
+            "title": "جملة",
+            "loading": "يتمّ تحميل الجملة..."
+        },
+        "speaker": {
+            "title": "الناطق",
+            "data-title": "معلومات الناطق",
+            "anonymous-number": "الناطق #{id}",
+            "location": "{ar} ({en})",
+            "from-location": "ناطق من {ar} ({en})",
+            "fields": {
+                "dialect": "الهجة",
+                "location": "الموقع",
+                "fluency": "مستوى الطلاقة",
+                "gender": "الجنس",
+                "audios": "تسجيلات الصوت"
+            },
+            "dialects": {
+                "palestinian-bedouin": "فلسطيني بدويّ",
+                "palestinian-druze": "فلسطيني درزيّ",
+                "central-urban-palestinian": "فلسطيني مدنيّ أوسط",
+                "northern-urban-palestinian": "فلسطيني مدنيّ شماليّ",
+                "central-rural-palestinian": "فلسطيني فلّاحيّ أوسط",
+                "northern-rural-palestinian": "فلسطيني فلّاحيّ شماليّ",
+                "central-palestinian": "فلسطيني أوسط",
+                "northern-palestinian": "فلسطيني شماليّ",
+                "urban-palestinian": "فلسطيني مدنيّ",
+                "rural-palestinian": "فلسطيني فلّاحيّ",
+                "general-palestinian": "فلسطيني عامّ"
+            },
+            "fluency": {
+                "1": "مبتدأ",
+                "2": "متوسط",
+                "3": "متقدم",
+                "4": "يتكلّم بطلاقة",
+                "5": "اللغة الأمّ"
+            },
+            "gender": {
+                "male": "ذكر",
+                "female": "أنثى",
+                "other": "غير ذلك"
+            }
+        },
+        "term": {
+            "construct": "إضافة:",
+            "editor-note": "ملاحظات المحرّر",
+            "featured": "كلمة اليوم",
+            "featured-in": "يظهر في",
+            "references": {
+                "see": "شاهد:",
+                "alt": "بديل",
+                "or": "أو"
+            },
+            "relatives": {
+                "synonym-abbr": "مرادفات",
+                "antonym-abbr": "عكس"
+            },
+            "sections": {
+                "info": "معلومات",
+                "glosses": "معاني"
+            },
+            "deck-toggle": {
+                "loading": "جاري تحميل الرزم",
+                "none": "لا يوجد رزم متاحة."
+            }
+        },
+        "user": {
+            "no-bio": "للأسف {name} لم يخبرنا بشيء عنه بعد.",
+            "joined-on": "انضم بـ{date} ({ago}).",
+            "unknown-location": "الارض، ربما."
+        }
+    },
     "documentation": "توثيق",
     "dictionary": "قاموس",
     "lessons": "دروس",
     "texts": "نصوص",
     "all": "الجميع",
-    "category": "تصنيف",
-    "verbs": "أفعال",
-    "nouns": "أسامي",
-    "determiners": "محدّدات",
-    "adjectives": "صفات",
-    "adverbs": "ظروف",
-    "prepositions": "حروف جرّ",
-    "conjunctions": "حروف عطف",
-    "particles": "أدوات",
-    "numerals": "أعداد",
-    "phrases": "عبارات",
-    "verb": "فعل",
-    "noun": "إسم",
-    "determiner": "محدّد",
-    "adjective": "صفة",
-    "adverb": "ظرف",
-    "preposition": "حرف جرّ",
-    "conjunction": "حرف عطف",
-    "particle": "أداة",
-    "numeral": "عدد",
-    "phrase": "عبارة",
     "pronouns": "ضمائر",
     "questions": "أسئلة",
     "subtype": "تصنيف فرعي",
@@ -41,7 +683,6 @@
     "new": "جديد",
     "edit": "عدّل",
     "info": "معلومات",
-    "components": "مكوّنات",
     "origin": "أصل",
     "inherited": "موروث",
     "borrowed": "مستعار",
@@ -178,7 +819,19 @@
     "verification.send.link": "عيد إبعت الرابط",
     "pin.added": "تمّت إضافة الكلمة عالكلمات المحفوظة",
     "pin.removed": "تمّت إزالة الكلمة من الكلمات المحفوظة",
-    "footer.about": "عنّنا",
-    "footer.ajp": "شو هي اللهجة الفلسطينيّة؟",
-    "footer.subscribe": "إشترك"
+    "dismiss": "إغلاق",
+    "footer": {
+        "links": {
+            "about": {
+                "title": "عنّنا",
+                "faq": "الأسئلة الشائعة",
+                "palweb": "بالويب",
+                "spoken-arabic": "العربيّ المحكيّ"
+            },
+            "donate": {
+                "title": "تبرّع",
+                "subscribe": "إشترك"
+            }
+        }
+    }
 }
