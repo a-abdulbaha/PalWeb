@@ -37,27 +37,27 @@
                 "subtitle": "للمعلّمين فقط"
             },
             "lessons": {
-                "title": "دروس",
+                "title": "الدروس",
                 "subtitle": "تعلّم اللهجة الفلسطينيّة"
             },
             "dialogs": {
-                "title": "محادثات",
+                "title": "المحادثات",
                 "subtitle": "إدخال اللغة الطبيعية"
             },
             "scores": {
-                "title": "علامات",
+                "title": "العلامات",
                 "subtitle": "شاهد تاريخ علامتك"
             },
             "dictionary": {
-                "title": "قاموس",
+                "title": "القاموس",
                 "subtitle": "Term::all()"
             },
             "corpus": {
-                "title": "مدوّنة لغويّة",
+                "title": "المدوّنة اللغويّة",
                 "subtitle": "Sentence::all()"
             },
             "decks": {
-                "title": "رزم",
+                "title": "الرزم",
                 "subtitle": "Deck::all()"
             },
             "audios": {
@@ -89,8 +89,8 @@
                 "subtitle": "إصنع دروس وأنشطة"
             },
             "portals": {
-                "hub": "hub",
-                "wiki": "wiki"
+                "hub": "المركز",
+                "wiki": "الويكي"
             },
             "my-admin": "للإدارة",
             "send-mail": "أرسل بريد إلكترونيّ",
@@ -213,8 +213,9 @@
                 "alphabetical": "الترتيب الأبجديّ",
                 "frequency": "حسب التكرار",
                 "latest": "حسب التوقيت",
-                "popularity": "حسب الشعبيّة",
-                "pinned": "محفوطات"
+                "pinned": "محفوطات",
+                "fluency": "by Fluency",
+                "popularity": "حسب الشعبيّة"
             }
         }
     },
@@ -298,6 +299,11 @@
             "highest": "لقد تعلمت هذا المصطلح"
         }
     },
+    "teacher": {
+        "bio": "teacher bio",
+        "bio-placeholder": "Sadly, {user} hasn't told us anything about themselves as a Teacher yet. They should probably fix that soon.",
+        "create": "create teacher profile"
+    },
     "modals": {
         "popup": {
             "types": {
@@ -330,7 +336,10 @@
             "title": "تحذير: تغييرات غير محفوظة",
             "warning-icon": "تحذير",
             "confirm": "تأكيد",
-            "cancel": "إلغاء"
+            "cancel": "إلغاء",
+            "messages": {
+                "unsaved-changes": "You have unsaved changes. Are you sure you want to leave this page? Unsaved changes will be lost."
+            }
         },
         "purge-scores": {
             "title": "محو العلامات",
@@ -371,7 +380,8 @@
                 "arabic-name": "الاسم العربيّ",
                 "email": "البريد الإلكتروني",
                 "password": "كلمة السرّ",
-                "confirm-password": "تأكيد كلمة السرّ"
+                "confirm-password": "تأكيد كلمة السرّ",
+                "bio": "Bio"
             },
             "sign-in": {
                 "title": "تسجيل الدخول",
@@ -413,7 +423,9 @@
             "scores": "علامات",
             "sentence": "جملة",
             "term": "مصطلح",
-            "user": "مستخدم"
+            "user": "مستخدم",
+            "speaker": "ناطق",
+            "teacher": "معلّم"
         },
         "card": {
             "master": "إتقن الكرت",
@@ -676,12 +688,49 @@
             }
         },
         "user": {
-            "no-bio": "للأسف {name} لم يخبرنا بشيء عنه بعد.",
-            "joined-on": "انضم بـ{date} ({ago}).",
-            "unknown-location": "الارض، ربما."
+            "bio-placeholder": "للأسف {name} لم يخبرنا بشيء عنه بعد.",
+            "location-placeholder": "الارض، ربما.",
+            "joined-on": "انضم بـ{date} ({ago})."
         }
     },
     "pages": {
+        "common": {
+            "index": "index",
+            "loading": "Loading {model}...",
+            "load-error": "Unable to load {model}.",
+            "displaying-all": "Displaying all {count} {model} in the Library.",
+            "displaying-none": "No {model} matching this query.",
+            "displaying-results": "Displaying {count} {model} matching this query.",
+            "not-found": "Sorry, the requested {model} could not be found.",
+            "edit": {
+                "save": "Save",
+                "reset": "Reset"
+            }
+        },
+        "terms": {
+            "index": {
+                "title": "dictionary"
+            }
+        },
+        "sentences": {
+            "index": {
+                "title": "corpus"
+            }
+        },
+        "decks": {
+            "index": {
+                "title": "deck library"
+            }
+        },
+        "audios": {
+            "index": {
+                "title": "audio library"
+            },
+            "speaker": {
+                "is-private": "Your Profile is currently set to Private.",
+                "empty": "{speaker} has not uploaded any Audios yet."
+            }
+        },
         "users": {
             "index": {
                 "hub": "المركز",
@@ -690,6 +739,9 @@
                 "creators": "المبدعين",
                 "create-prompt": "دورك تعمل واحد!",
                 "record-prompt": "دورك تسجّل كمان!"
+            },
+            "show": {
+                "empty": "{user} has not created any public Decks yet."
             }
         },
         "deck-master": {

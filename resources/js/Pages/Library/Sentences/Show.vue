@@ -35,6 +35,6 @@ watch(
     <div id="app-body">
         <LoadingSpinner v-if="isLoadingSentence"/>
         <SentenceContainer v-else-if="sentence" :model="sentence"/>
-        <div v-else-if="sentenceNotFound" class="loading-state"><p>Unable to load Sentence.</p></div>
+        <div v-else-if="sentenceNotFound" class="loading-state"><p>{{ $t('pages.common.load-error', { model: $t('actions.models.sentence') }) }}</p></div>
     </div>
 </template>

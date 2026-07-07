@@ -90,10 +90,10 @@ const sortingMessage = computed(() => {
                 </Link>
                 <Link :href="route('terms.random')" class="material-symbols-rounded">keyboard_double_arrow_right</Link>
             </div>
-            <div class="window-section-head"><h1>dictionary</h1></div>
+            <div class="window-section-head"><h1>{{ $t('pages.terms.index.title') }}</h1></div>
 
             <TermFeatured :model="featuredTerm"/>
-            <div class="window-section-head"><h2>index</h2></div>
+            <div class="window-section-head"><h2>{{ $t('pages.common.index') }}</h2></div>
 
             <div class="letters-array">
                 <button
@@ -108,7 +108,7 @@ const sortingMessage = computed(() => {
 
             <template v-if="loading">
                 <AppTip>
-                    <p>Loading...</p>
+                    <p>{{ $t('pages.common.loading', { model: $t('models.terms') }) }}</p>
                 </AppTip>
                 <LoadingSpinner/>
             </template>

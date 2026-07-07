@@ -182,13 +182,13 @@
         }
     },
     "models": {
-        "terms": "terms",
-        "sentences": "sentences",
-        "decks": "decks",
-        "audios": "audios",
-        "speakers": "speakers",
-        "badges": "badges",
-        "teachers": "teachers"
+        "terms": "Terms",
+        "sentences": "Sentences",
+        "decks": "Decks",
+        "audios": "Audios",
+        "speakers": "Speakers",
+        "badges": "Badges",
+        "teachers": "Teachers"
     },
     "search": {
         "genie": {
@@ -213,8 +213,9 @@
                 "alphabetical": "Alphabetical",
                 "frequency": "by Frequency",
                 "latest": "by Latest",
-                "popularity": "by Popularity",
-                "pinned": "by Pinned"
+                "pinned": "by Pinned",
+                "fluency": "by Fluency",
+                "popularity": "by Popularity"
             }
         }
     },
@@ -298,6 +299,11 @@
             "highest": "you've fully mastered this Term"
         }
     },
+    "teacher": {
+        "bio": "teacher bio",
+        "bio-placeholder": "Sadly, {user} hasn't told us anything about themselves as a Teacher yet. They should probably fix that soon.",
+        "create": "create teacher profile"
+    },
     "modals": {
         "popup": {
             "types": {
@@ -330,7 +336,10 @@
             "title": "warning: unsaved changes",
             "warning-icon": "Warning",
             "confirm": "Confirm",
-            "cancel": "Cancel"
+            "cancel": "Cancel",
+            "messages": {
+                "unsaved-changes": "You have unsaved changes. Are you sure you want to leave this page? Unsaved changes will be lost."
+            }
         },
         "purge-scores": {
             "title": "Purge Scores",
@@ -371,7 +380,8 @@
                 "arabic-name": "Arabic Name",
                 "email": "Email",
                 "password": "Password",
-                "confirm-password": "Confirm Password"
+                "confirm-password": "Confirm Password",
+                "bio": "Bio"
             },
             "sign-in": {
                 "title": "sign in",
@@ -413,7 +423,9 @@
             "scores": "Scores",
             "sentence": "Sentence",
             "term": "Term",
-            "user": "User"
+            "user": "User",
+            "speaker": "Speaker",
+            "teacher": "Teacher"
         },
         "card": {
             "master": "Master Card",
@@ -676,12 +688,49 @@
             }
         },
         "user": {
-            "no-bio": "Sadly, {name} hasn't told us anything about themselves yet.",
-            "joined-on": "Joined on {date} ({ago}).",
-            "unknown-location": "Earth, probably."
+            "bio-placeholder": "Sadly, {name} hasn't told us anything about themselves yet.",
+            "location-placeholder": "Earth, probably.",
+            "joined-on": "Joined on {date} ({ago})."
         }
     },
     "pages": {
+        "common": {
+            "index": "index",
+            "loading": "Loading {model}...",
+            "load-error": "Unable to load {model}.",
+            "displaying-all": "Displaying all {count} {model} in the Library.",
+            "displaying-none": "No {model} matching this query.",
+            "displaying-results": "Displaying {count} {model} matching this query.",
+            "not-found": "Sorry, the requested {model} could not be found.",
+            "edit": {
+                "save": "Save",
+                "reset": "Reset"
+            }
+        },
+        "terms": {
+            "index": {
+                "title": "dictionary"
+            }
+        },
+        "sentences": {
+            "index": {
+                "title": "corpus"
+            }
+        },
+        "decks": {
+            "index": {
+                "title": "deck library"
+            }
+        },
+        "audios": {
+            "index": {
+                "title": "audio library"
+            },
+            "speaker": {
+                "is-private": "Your Profile is currently set to Private.",
+                "empty": "{speaker} has not uploaded any Audios yet."
+            }
+        },
         "users": {
             "index": {
                 "hub": "hub",
@@ -690,6 +739,9 @@
                 "creators": "creators",
                 "create-prompt": "Create your own!",
                 "record-prompt": "Record your own!"
+            },
+            "show": {
+                "empty": "{user} has not created any public Decks yet."
             }
         },
         "deck-master": {

@@ -43,7 +43,7 @@ const copyText = (event) => {
                             {{ user.bio }}
                         </template>
                         <template v-else>
-                            <i>{{ $t('components.user.no-bio', {name: user.name}) }}</i>
+                            <i>{{ $t('components.user.bio-placeholder', {name: user.name}) }}</i>
                         </template>
                     </div>
                     <div class="user-comment-data">
@@ -55,7 +55,7 @@ const copyText = (event) => {
                 <div class="user-tag">
                     <div class="material-symbols-rounded">location_on</div>
                     <span v-if="user.home">{{ user.home }}</span>
-                    <span v-else>{{ $t('components.user.unknown-location') }}</span>
+                    <span v-else>{{ $t('components.user.location-placeholder') }}</span>
                 </div>
                 <div class="user-tag">
                     <div class="material-symbols-rounded">lips</div>

@@ -35,6 +35,6 @@ watch(
     <div id="app-body">
         <LoadingSpinner v-if="isLoadingDeck"/>
         <DeckContainer v-else-if="deck" :model="deck"/>
-        <div v-else-if="deckNotFound" class="loading-state"><p>Unable to load Deck.</p></div>
+        <div v-else-if="deckNotFound" class="loading-state"><p>{{ $t('pages.common.load-error', { model: $t('actions.models.deck') }) }}</p></div>
     </div>
 </template>

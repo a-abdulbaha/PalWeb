@@ -162,6 +162,8 @@ const updateUser = (updatedUser) => {
 defineOptions({
     layout: Layout
 });
+
+const localeKey = (value) => value?.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 </script>
 
 <template>
@@ -170,7 +172,7 @@ defineOptions({
         <LoadingSpinner v-if="isLoadingUserForm"/>
         <template v-else-if="userNotFound">
             <AppTip>
-                <p>Sorry, the requested User could not be found.</p>
+                <p>{{ $t('pages.common.not-found', {model: $t('action.models.user')}) }}</p>
             </AppTip>
             <Link class="portal-button" :href="route('users.index')">
                 Back to Community
@@ -188,7 +190,7 @@ defineOptions({
                 <div class="window-header-url">www.palweb.app/hub/users/{user}</div>
             </div>
             <div class="window-section-head">
-                <h1>profile</h1>
+                <h1>{{ $t('user.profile') }}</h1>
                 <Link :href="route('users.show', user?.username ?? props.username)" class="material-symbols-rounded">
                     visibility
                 </Link>
@@ -202,7 +204,7 @@ defineOptions({
                 <div class="user-data-wrapper">
                     <div class="form-body">
                         <div class="field-item">
-                            <label>Name</label>
+                            <label>{{ $t('modals.auth.fields.name') }}</label>
                             <div class="field-input">
                                 <input type="text" v-model="userForm.name" placeholder="Rafiq" required>
                                 <div class="field-chars"
@@ -213,7 +215,7 @@ defineOptions({
                             <div v-if="userErrors.name" v-text="userErrors.name" class="field-error"/>
                         </div>
                         <div class="field-item">
-                            <label>Username</label>
+                            <label>{{ $t('modals.auth.fields.username') }}</label>
                             <div class="field-input">
                                 <input type="text" v-model="userForm.username" placeholder="permanent.intifada"
                                        required>
@@ -226,7 +228,7 @@ defineOptions({
                         </div>
                         <div class="field-item">
                             <div style="display: flex; align-items: center; gap: 3.2rem;">
-                                <label>Arabic Name</label>
+                                <label>{{ $t('modals.auth.fields.arabic-name') }}</label>
                                 <button type="button" @click="userForm.ar_name = generateArabicName()">
                                     Randomize
                                 </button>
@@ -243,10 +245,10 @@ defineOptions({
                     </div>
                     <div class="user-comment">
                         <textarea class="user-comment-content" v-model="userForm.bio"
-                                  :placeholder="`Sadly, ${userForm.name} hasn't told us anything about themselves yet.`"
+                                  :placeholder="$t('components.user.bio-placeholder', {name: userForm.name})"
                         />
                         <div class="user-comment-data">
-                            Joined on {{ user?.created_at }} ({{ user?.created_ago }}).
+                            {{ $t('components.user.joined-on', {date: user?.created_at, ago: user?.created_ago}) }}
                         </div>
                         <div v-if="userErrors.bio" v-text="userErrors.bio" class="field-error"/>
                     </div>
@@ -255,19 +257,31 @@ defineOptions({
                             <div class="material-symbols-rounded">location_on</div>
                             <input type="text" v-model="userForm.home"
                                    style="background: none"
-                                   placeholder="Earth, probably."
+                                   :placeholder="$t('components.user.location-placeholder')"
                             />
                         </div>
                         <div v-if="userErrors.home" v-text="userErrors.home" class="field-error"/>
                         <div class="user-tag">
                             <div class="material-symbols-rounded">lips</div>
                             <select v-model="userForm.dialect_id">
-                                <option :value="8">Central Urban Palestinian</option>
-                                <option :value="9">Northern Urban Palestinian</option>
-                                <option :value="10">Central Rural Palestinian</option>
-                                <option :value="11">Northern Rural Palestinian</option>
-                                <option :value="6">Palestinian Bedouin</option>
-                                <option :value="7">Palestinian Druze</option>
+                                <option :value="8">
+                                    {{ $t(`components.speaker.dialects.${localeKey('Central Urban Palestinian')}`) }}
+                                </option>
+                                <option :value="9">
+                                    {{ $t(`components.speaker.dialects.${localeKey('Northern Urban Palestinian')}`) }}
+                                </option>
+                                <option :value="10">
+                                    {{ $t(`components.speaker.dialects.${localeKey('Central Rural Palestinian')}`) }}
+                                </option>
+                                <option :value="11">
+                                    {{ $t(`components.speaker.dialects.${localeKey('Northern Rural Palestinian')}`) }}
+                                </option>
+                                <option :value="6">
+                                    {{ $t(`components.speaker.dialects.${localeKey('Palestinian Bedouin')}`) }}
+                                </option>
+                                <option :value="7">
+                                    {{ $t(`components.speaker.dialects.${localeKey('Palestinian Druze')}`) }}
+                                </option>
                             </select>
                         </div>
                     </div>
@@ -275,15 +289,15 @@ defineOptions({
             </div>
             <div class="window-footer">
                 <button :disabled="isSavingUser || !isUserDirty || !isValidUserRequest" @click="saveUser">
-                    save
+                    {{ $t('pages.common.edit.save') }}
                 </button>
                 <button :disabled="isSavingUser || !isUserDirty" @click="resetUser()">
-                    reset
+                    {{ $t('pages.common.edit.reset') }}
                 </button>
             </div>
 
             <div v-if="canManageTeacher" class="window-section-head">
-                <h2>teacher</h2>
+                <h2>{{ $t('actions.models.teacher') }}</h2>
                 <button v-if="!teacherFormExists" @click="initializeTeacherForm" class="material-symbols-rounded">add
                 </button>
                 <button v-else-if="teacherExists" @click="removeTeacher" :disabled="isDeletingTeacher"
@@ -304,7 +318,7 @@ defineOptions({
                 </AppTip>
                 <div class="form-body">
                     <div class="field-item">
-                        <label>Email</label>
+                        <label>{{ $t('modals.auth.fields.email') }}</label>
                         <div class="field-input">
                             <input type="email" v-model="teacherForm.email" placeholder="teacher@example.com" required>
                             <div class="field-chars" :class="{'invalid': teacherForm.email.length > 255}"
@@ -314,7 +328,7 @@ defineOptions({
                     </div>
 
                     <div class="field-item">
-                        <label>Bio</label>
+                        <label>{{ $t('modals.auth.fields.bio') }}</label>
                         <div class="field-input">
                             <textarea v-model="teacherForm.bio" rows="10"
                                       placeholder="What would you like us to know about you as a teacher?"/>
@@ -327,10 +341,10 @@ defineOptions({
                 <div class="window-footer">
                     <button :disabled="isSavingTeacher || !isTeacherDirty || !isValidTeacherRequest"
                             @click="saveTeacher">
-                        save
+                        {{ $t('pages.common.edit.save') }}
                     </button>
                     <button :disabled="isSavingTeacher || !isTeacherDirty" @click="resetTeacher()">
-                        reset
+                        {{ $t('pages.common.edit.reset') }}
                     </button>
                 </div>
             </template>
@@ -348,7 +362,7 @@ defineOptions({
 
     <ModalWrapper v-model="showAlert">
         <NavGuard
-            message="You have unsaved changes. Are you sure you want to leave this page? Unsaved changes will be lost."
+            :message="$t('modals.nav-guard.messages.unsaved-changes')"
             @confirm="handleConfirm"
             @cancel="handleCancel"
         />

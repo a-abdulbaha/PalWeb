@@ -49,8 +49,7 @@ defineOptions({
                             {{ user.teacher.bio }}
                         </template>
                         <template v-else>
-                            <i>Sadly, {{ user.name }} hasn't told us anything about themselves as a Teacher
-                                yet. They should probably fix that soon.</i>
+                            <i>{{ $t('teacher.bio-placeholder', {user: user.name}) }}</i>
                         </template>
                     </div>
                 </CommentItem>

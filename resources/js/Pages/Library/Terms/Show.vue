@@ -43,6 +43,6 @@ const pageTitle = computed(() => {
     <div id="app-body">
         <LoadingSpinner v-if="isLoadingTerms"/>
         <TermContainer v-else-if="terms?.length > 0" v-for="term in terms" :key="term.id" :model="term"/>
-        <div v-else-if="termsNotFound" class="loading-state"><p>Unable to load Term.</p></div>
+        <div v-else-if="termsNotFound" class="loading-state"><p>{{ $t('pages.common.load-error', { model: $t('actions.models.term') }) }}</p></div>
     </div>
 </template>

@@ -159,7 +159,7 @@
                 "message": "Llena la Lista automáticamente con hasta 100 artículos."
             },
             "clear": {
-                "button": "limpiar lista",
+                "button": "vaciar lista",
                 "message": "Saca todos los artículos de la Lista."
             }
         },
@@ -182,13 +182,13 @@
         }
     },
     "models": {
-        "terms": "términos",
-        "sentences": "oraciones",
-        "decks": "barajas",
-        "audios": "audios",
-        "speakers": "hablantes",
-        "badges": "insignias",
-        "teachers": "profes"
+        "terms": "Términos",
+        "sentences": "Oraciones",
+        "decks": "Barajas",
+        "audios": "Audios",
+        "speakers": "Hablantes",
+        "badges": "Insignias",
+        "teachers": "Profes"
     },
     "search": {
         "genie": {
@@ -213,8 +213,9 @@
                 "alphabetical": "Alfabético",
                 "frequency": "más Frecuente",
                 "latest": "más Reciente",
-                "popularity": "más Popular",
-                "pinned": "mis Pines"
+                "pinned": "mis Pines",
+                "fluency": "mayor Fluidez",
+                "popularity": "más Popular"
             }
         }
     },
@@ -298,6 +299,11 @@
             "highest": "has dominado este Término completamente"
         }
     },
+    "teacher": {
+        "bio": "bio del profe",
+        "bio-placeholder": "Lamentablemente, {user} aún no nos ha contado nada sobre de sí mismo como Profesor. Deberían arreglar eso pronto.",
+        "create": "crear perfil de profe"
+    },
     "modals": {
         "popup": {
             "types": {
@@ -330,7 +336,10 @@
             "title": "advertencia: cambios no guardados",
             "warning-icon": "Advertencia",
             "confirm": "Confirmar",
-            "cancel": "Cancelar"
+            "cancel": "Cancelar",
+            "messages": {
+                "unsaved-changes": "Tienes cambios no guardados. ¿Estás seguro de que quieres abandonar esta página? Se perderán los cambios no guardados."
+            }
         },
         "purge-scores": {
             "title": "Purgar Puntajes",
@@ -371,7 +380,8 @@
                 "arabic-name": "Nombre Árabe",
                 "email": "Correo Electrónico",
                 "password": "Contraseña",
-                "confirm-password": "Confirmar Contraseña"
+                "confirm-password": "Confirmar Contraseña",
+                "bio": "Bio"
             },
             "sign-in": {
                 "title": "iniciar sesión",
@@ -413,7 +423,9 @@
             "scores": "Puntajes",
             "sentence": "Oración",
             "term": "Término",
-            "user": "Usuario"
+            "user": "Usuario",
+            "speaker": "Hablante",
+            "teacher": "Profe"
         },
         "card": {
             "master": "Dominar Carta",
@@ -676,20 +688,60 @@
             }
         },
         "user": {
-            "no-bio": "Lamentablemente, {name} aún no nos ha contado nada sobre sí mismo.",
-            "joined-on": "Alta el {date} ({ago}).",
-            "unknown-location": "La Tierra, probablemente."
+            "bio-placeholder": "Lamentablemente, {name} aún no nos ha contado nada sobre sí mismo.",
+            "location-placeholder": "La Tierra, probablemente.",
+            "joined-on": "Alta el {date} ({ago})."
         }
     },
     "pages": {
+        "common": {
+            "index": "índice",
+            "loading": "Cargando {model}...",
+            "load-error": "No se pudo cargar {model}.",
+            "displaying-all": "Mostrando todos los {count} {model} en la Biblioteca.",
+            "displaying-none": "Ningún {model} coincide con esta consulta.",
+            "displaying-results": "Mostrando {count} {model} que coinciden con esta consulta.",
+            "not-found": "Disculpa, no se pudo encontrar el {model} solicitado.",
+            "edit": {
+                "save": "guardar",
+                "reset": "resetear"
+            }
+        },
+        "terms": {
+            "index": {
+                "title": "diccionario"
+            }
+        },
+        "sentences": {
+            "index": {
+                "title": "corpus"
+            }
+        },
+        "decks": {
+            "index": {
+                "title": "biblioteca de barajas"
+            }
+        },
+        "audios": {
+            "index": {
+                "title": "biblioteca de audios"
+            },
+            "speaker": {
+                "is-private": "Tu Perfil actualmente está puesto en Privado.",
+                "empty": "{speaker} aún no ha subido ningún Audio."
+            }
+        },
         "users": {
             "index": {
                 "hub": "centro",
                 "latest": "recientes",
                 "popular": "populares",
                 "creators": "creadores",
-                "create-prompt": "Crea el tuyo!",
+                "create-prompt": "Crea la tuya!",
                 "record-prompt": "Graba el tuyo!"
+            },
+            "show": {
+                "empty": "{user} aún no ha subido ninguna Baraja pública."
             }
         },
         "deck-master": {
