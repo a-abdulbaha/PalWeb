@@ -95,9 +95,9 @@ defineOptions({
 <template>
     <Head title="Deck Master"/>
     <div id="app-head">
-        <h1>Deck Master</h1>
+        <h1>{{ $t('pages.deck-master.title') }}</h1>
         <div @click="toggleMode" id="app-mode-toggle" :class="mode">
-            <div class="app-mode-toggle-slider" :class="{active: mode === 'study'}">{{ mode }}</div>
+            <div class="app-mode-toggle-slider" :class="{active: mode === 'study'}">{{ $t('pages.deck-master.' + mode) }}</div>
         </div>
     </div>
 
@@ -143,7 +143,7 @@ defineOptions({
             <ScoreStats :model="DeckStudyStore.data.deck"/>
             <div v-if="DeckStudyStore.data.deck" class="window-footer">
                 <button @click="toStudy">
-                    Select Deck
+                    {{ $t('pages.deck-master.select-deck') }}
                 </button>
             </div>
         </QuizzerWindow>

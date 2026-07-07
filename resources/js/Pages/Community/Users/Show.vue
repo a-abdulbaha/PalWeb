@@ -56,7 +56,7 @@ defineOptions({
                 <div class="window-header-url">www.palweb.app/hub/users/{user}</div>
             </div>
             <div class="window-section-head">
-                <h1>profile</h1>
+                <h1>{{ $t('user.profile')}}</h1>
                 <UserActions v-if="UserStore.isAdmin" :model="user"/>
                 <Link v-else-if="user.id === UserStore.user.id"
                       :href="route('users.edit', user.username)" class="material-symbols-rounded">edit
@@ -109,13 +109,13 @@ defineOptions({
             </UserItem>
 
             <div class="window-section-head">
-                <h2>decks</h2>
+                <h2>{{ $t('models.decks') }}</h2>
             </div>
             <div class="search-filters-container">
                 <div class="search-filters">
                     <select v-model="filters.sort">
-                        <option value="latest">by Latest</option>
-                        <option value="alphabetical">Alphabetical</option>
+                        <option value="latest">{{ $t('search.filters.sort.latest') }}</option>
+                        <option value="alphabetical">{{ $t('search.filters.sort.alphabetical') }}</option>
                     </select>
                 </div>
             </div>
@@ -133,7 +133,7 @@ defineOptions({
         </div>
 
         <div class="badges-container">
-            <div class="featured-title l">Badges</div>
+            <div class="featured-title l">{{ $t('models.badges') }}</div>
             <div class="badge-wrapper">
                 <BadgeItem v-for="badge in unlockedBadges" :badge="badge" :key="badge.id"/>
             </div>
@@ -171,7 +171,7 @@ defineOptions({
         width: 6.4rem;
         position: absolute;
         top: -2.0rem;
-        right: 3.2rem;
+        inset-inline-end: 3.2rem;
         transition: 0.3s cubic-bezier(.18, .89, .32, 1.28);
     }
 

@@ -122,7 +122,7 @@ watch(() => props.deckId, async () => {
                 </template>
             </AppTip>
             <div class="window-section-head">
-                <h1>deck</h1>
+                <h1>{{ $t('components.deck.title') }}</h1>
                 <PinButton v-if="deck?.id" modelType="deck" :model="deck"/>
                 <DeckActions v-if="deck?.id" :model="deck"/>
             </div>
@@ -136,14 +136,14 @@ watch(() => props.deckId, async () => {
                         <textarea class="user-comment-content" v-model="form.description"
                                   :placeholder="`Sadly, ${form.author.name} hasn't told us anything about this Deck yet.`"
                         />
-                    <div v-if="form.id" class="user-comment-data">Created by {{ form.author.name }} on
-                        {{ form.created_at }}.
+                    <div v-if="form.id" class="user-comment-data">
+                        {{ $t('components.deck.created-by', {author: form.author.name, date: form.created_at}) }}
                     </div>
                 </template>
             </UserItem>
 
             <div class="window-section-head">
-                <h2>terms</h2>
+                <h2>{{ $t('models.terms') }}</h2>
             </div>
             <draggable :list="form.terms" itemKey="id" handle=".handle"
                        @end="updatePosition()"
