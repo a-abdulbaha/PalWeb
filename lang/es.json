@@ -558,11 +558,11 @@
             "review-answers": "Revisa tus respuestas a continuación.",
             "history": "Ver Historial de Puntajes",
             "feedback": {
-                "flawless": "¡Impecable!",
-                "impressive": "¡Impresionante!",
-                "getting-there": "¡Ya casi llegas!",
-                "great-start": "¡Buen comienzo!",
-                "keep-practicing": "¡Sigue practicando!"
+                "highest": "¡Impecable!",
+                "high": "¡Impresionante!",
+                "medium": "¡Ya casi llegas!",
+                "low": "¡Buen comienzo!",
+                "lowest": "¡Sigue practicando!"
             },
             "stats": {
                 "latest-score": "Último Puntaje",
@@ -600,7 +600,7 @@
             "data-title": "Datos del Hablante",
             "anonymous-number": "Hablante #{id}",
             "location": "{ar} ({en})",
-            "from-location": "Hablante de {ar} ({en})",
+            "byline": "Hablante {gender} {fluency} de {ar} ({en})",
             "fields": {
                 "dialect": "Dialecto",
                 "location": "Ubicación",
@@ -629,9 +629,9 @@
                 "5": "Native"
             },
             "gender": {
-                "male": "masculino",
-                "female": "femenino",
-                "other": "otro"
+                "male": "Hombre",
+                "female": "Mujer",
+                "other": "Otro"
             }
         },
         "term": {

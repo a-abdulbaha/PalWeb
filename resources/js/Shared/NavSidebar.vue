@@ -11,6 +11,9 @@ import SignUp from "../components/Modals/SignUp.vue";
 import ModalWrapper from "../components/Modals/ModalWrapper.vue";
 import SendFeedback from "../components/Modals/SendFeedback.vue";
 import SendMail from "../components/Modals/SendMail.vue";
+import {useI18n} from "vue-i18n";
+
+const { locale } = useI18n();
 
 const UserStore = useUserStore();
 const NavigationStore = useNavigationStore();
@@ -108,7 +111,7 @@ onMounted(() => {
                         </button>
                         <div>{{ $t('nav.sidebar.' + NavigationStore.data.section + '.title') }}</div>
                     </div>
-                    <Carousel
+                    <Carousel :dir="locale === 'ar' ? 'rtl' : 'ltr'"
                         :items-to-show="1"
                         ref="carouselRef"
                         @slide-start="onSlideStart"
@@ -269,12 +272,12 @@ onMounted(() => {
 
                     <div class="nav-portal-wrapper">
                         <div @click="navigateOrPrompt('users.index')" class="nav-portal">
-                            <img src="/img/globe-africa.svg" alt="Hub"/>
-                            <div>hub</div>
+                            <img src="/img/globe-africa.svg" :alt="$t('nav.sidebar.portals.hub')"/>
+                            <div>{{ $t('nav.sidebar.portals.hub') }}</div>
                         </div>
                         <Link :href="route('wiki.index')" class="nav-portal">
-                            <img src="/img/globe-america.svg" alt="Wiki"/>
-                            <div>wiki</div>
+                            <img src="/img/globe-america.svg" :alt="$t('nav.sidebar.portals.wiki')"/>
+                            <div>{{ $t('nav.sidebar.portals.wiki') }}</div>
                         </Link>
                     </div>
                 </div>
@@ -286,14 +289,14 @@ onMounted(() => {
                         <Link :href="route('feedback.index')">{{ $t('nav.sidebar.view-feedback') }}</Link>
 
                         <button v-if="!UserStore.isAdmin" @click="router.get(route('admin.toggle-view'))">
-                            Restore Admin View
+                            {{ $t('nav.sidebar.admin-actions.restore-admin-view') }}
                         </button>
                         <template v-else>
                             <button @click="router.get(route('admin.toggle-view', 'student'))">
-                                View as Student
+                                {{ $t('nav.sidebar.admin-actions.view-as-student') }}
                             </button>
                             <button @click="router.get(route('admin.toggle-view', 'pal'))">
-                                View as Pal
+                                {{ $t('nav.sidebar.admin-actions.view-as-pal') }}
                             </button>
                         </template>
                     </div>
@@ -474,7 +477,7 @@ onMounted(() => {
 
         div {
             flex-grow: 1;
-            text-align: right;
+            text-align: end;
         }
 
         & > * {

@@ -13,6 +13,9 @@ import {useUserStore} from "../stores/UserStore.js";
 import i18n from "../i18n.js";
 import BackgroundPattern from "./Backgrounds/BackgroundPattern.vue";
 import {useConnectionStatus} from "../composables/useConnectionStatus.js";
+import {useI18n} from "vue-i18n";
+
+const { t } = useI18n();
 
 defineProps({
     section: {
@@ -73,14 +76,14 @@ watch(browserOnline, (isOnline) => {
 
     if (!isOnline) {
         NotificationStore.addNotification(
-            "You've gone offline. While offline, the site won't work as expected. Please wait until you're back online to continue using PalWeb.",
+            t('layout.notifications.offline'),
             'warning',
             5000
         );
         return;
     }
 
-    NotificationStore.addNotification("You're back online!", 'success', 3000);
+    NotificationStore.addNotification(t('layout.notifications.online'), 'success', 3000);
 }, {immediate: true});
 
 watch(() => page.props.flash.notification,

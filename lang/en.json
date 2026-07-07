@@ -558,11 +558,11 @@
             "review-answers": "Review your answers below.",
             "history": "See Score History",
             "feedback": {
-                "flawless": "Flawless!",
-                "impressive": "Impressive!",
-                "getting-there": "You’re getting there!",
-                "great-start": "Off to a great start!",
-                "keep-practicing": "Better keep practicing!"
+                "highest": "Flawless!",
+                "high": "Impressive!",
+                "medium": "You’re getting there!",
+                "low": "Off to a great start!",
+                "lowest": "Better keep practicing!"
             },
             "stats": {
                 "latest-score": "Latest Score",
@@ -600,7 +600,7 @@
             "data-title": "Speaker Data",
             "anonymous-number": "Speaker #{id}",
             "location": "{ar} ({en})",
-            "from-location": "Speaker from {ar} ({en})",
+            "byline": "{fluency} {gender} Speaker from {ar} ({en})",
             "fields": {
                 "dialect": "Dialect",
                 "location": "Location",
@@ -629,9 +629,9 @@
                 "5": "Native"
             },
             "gender": {
-                "male": "male",
-                "female": "female",
-                "other": "other"
+                "male": "Male",
+                "female": "Female",
+                "other": "Other"
             }
         },
         "term": {

@@ -558,11 +558,11 @@
             "review-answers": "راجع إجاباتك بالأسفل.",
             "history": "انظر سجل النتائج",
             "feedback": {
-                "flawless": "مثالي!",
-                "impressive": "أبدعت!",
-                "getting-there": "عمّ تقرّب ع هدفك!",
-                "great-start": "بداية رائعة!",
-                "keep-practicing": "التكرار بعلّم الشطّار!"
+                "highest": "مثالي!",
+                "high": "أبدعت!",
+                "medium": "عمّ تقرّب ع هدفك!",
+                "low": "بداية رائعة!",
+                "lowest": "التكرار بعلّم الشطّار!"
             },
             "stats": {
                 "latest-score": "آخر علامة",
@@ -600,7 +600,7 @@
             "data-title": "معلومات الناطق",
             "anonymous-number": "الناطق #{id}",
             "location": "{ar} ({en})",
-            "from-location": "ناطق من {ar} ({en})",
+            "byline": "ناطق {gender} {fluency} من {ar} ({en})",
             "fields": {
                 "dialect": "الهجة",
                 "location": "الموقع",
