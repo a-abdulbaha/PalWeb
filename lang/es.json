@@ -187,7 +187,8 @@
         "decks": "barajas",
         "audios": "audios",
         "speakers": "hablantes",
-        "badges": "insignias"
+        "badges": "insignias",
+        "teachers": "profes"
     },
     "search": {
         "genie": {
@@ -660,6 +661,24 @@
             "no-bio": "Lamentablemente, {name} aún no nos ha contado nada sobre sí mismo.",
             "joined-on": "Alta el {date} ({ago}).",
             "unknown-location": "La Tierra, probablemente."
+        }
+    },
+    "pages": {
+        "users": {
+            "index": {
+                "hub": "centro",
+                "latest": "recientes",
+                "popular": "populares",
+                "creators": "creadores",
+                "create-prompt": "Crea el tuyo!",
+                "record-prompt": "Graba el tuyo!"
+            }
+        },
+        "deck-master": {
+            "title": "deck master",
+            "build": "build",
+            "study": "study",
+            "select-deck": "select deck"
         }
     },
     "documentation": "documentación",

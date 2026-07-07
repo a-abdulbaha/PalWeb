@@ -187,7 +187,8 @@
         "decks": "decks",
         "audios": "audios",
         "speakers": "speakers",
-        "badges": "badges"
+        "badges": "badges",
+        "teachers": "teachers"
     },
     "search": {
         "genie": {
@@ -660,6 +661,24 @@
             "no-bio": "Sadly, {name} hasn't told us anything about themselves yet.",
             "joined-on": "Joined on {date} ({ago}).",
             "unknown-location": "Earth, probably."
+        }
+    },
+    "pages": {
+        "users": {
+            "index": {
+                "hub": "hub",
+                "latest": "latest",
+                "popular": "popular",
+                "creators": "creators",
+                "create-prompt": "Create your own!",
+                "record-prompt": "Record your own!"
+            }
+        },
+        "deck-master": {
+            "title": "deck master",
+            "build": "build",
+            "study": "study",
+            "select-deck": "select deck"
         }
     },
     "wiki": "wiki",

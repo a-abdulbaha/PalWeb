@@ -19,7 +19,6 @@ html[lang="ar"] {
     .deck-author-name,
     .audio-item,
     .pronunciation-item-data,
-    .window-section-head,
     .rw-test-status,
     .user-item,
     .badges-container,
@@ -35,9 +34,17 @@ html[lang="ar"] {
     .app-logo-wrapper h1,
     .app-tooltip,
     .score-stats-detail-wrapper,
-    .score-item-wrapper
+    .score-item-wrapper,
+    .portal-button,
+    .user-scorecard-body,
+    .window-container
     {
         direction: rtl;
+    }
+
+    .term-references
+    {
+        flex-flow: row wrap
     }
 }
 

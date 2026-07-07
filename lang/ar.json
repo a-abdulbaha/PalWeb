@@ -187,7 +187,8 @@
         "decks": "رزم",
         "audios": "تسجلات صوت",
         "speakers": "ناطقون",
-        "badges": "شارات"
+        "badges": "شارات",
+        "teachers": "معلّمين"
     },
     "search": {
         "genie": {
@@ -660,6 +661,24 @@
             "no-bio": "للأسف {name} لم يخبرنا بشيء عنه بعد.",
             "joined-on": "انضم بـ{date} ({ago}).",
             "unknown-location": "الارض، ربما."
+        }
+    },
+    "pages": {
+        "users": {
+            "index": {
+                "hub": "المركز",
+                "latest": "الأحدث",
+                "popular": "الشعبية",
+                "creators": "المبدعين",
+                "create-prompt": "دورك تعمل واحد!",
+                "record-prompt": "دورك تسجّل كمان!"
+            }
+        },
+        "deck-master": {
+            "title": "مسؤول الرزم",
+            "build": "إبني",
+            "study": "أدرس",
+            "select-deck": "اختر رزمة"
         }
     },
     "documentation": "توثيق",
