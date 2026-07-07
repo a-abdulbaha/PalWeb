@@ -272,11 +272,11 @@ onMounted(() => {
 
                     <div class="nav-portal-wrapper">
                         <div @click="navigateOrPrompt('users.index')" class="nav-portal">
-                            <img src="/img/globe-africa.svg" :alt="$t('nav.sidebar.portals.hub')"/>
+                            <img src="/img/sphere-wireframe.svg" :alt="$t('nav.sidebar.portals.hub')"/>
                             <div>{{ $t('nav.sidebar.portals.hub') }}</div>
                         </div>
                         <Link :href="route('wiki.index')" class="nav-portal">
-                            <img src="/img/globe-america.svg" :alt="$t('nav.sidebar.portals.wiki')"/>
+                            <img src="/img/sphere-wireframe.svg" :alt="$t('nav.sidebar.portals.wiki')"/>
                             <div>{{ $t('nav.sidebar.portals.wiki') }}</div>
                         </Link>
                     </div>
@@ -566,13 +566,13 @@ onMounted(() => {
 }
 
 .nav-portal-wrapper {
-    display: flex;
-    justify-content: space-around;
-    padding: 1.6rem 0.8rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1.6rem 3.2rem;
+    gap: 3.2rem;
 
     .nav-portal {
         display: grid;
-        justify-items: center;
         align-items: center;
         grid-template-areas: 1fr / 1fr;
         cursor: pointer;
@@ -582,23 +582,24 @@ onMounted(() => {
         }
 
         div {
+            text-box: trim-both cap alphabetic;
+            text-align: center;
             text-transform: uppercase;
             font-family: var(--display-font);
             font-size: 3.6rem;
             line-height: 0.8;
-            padding-inline: 0.8rem;
-            padding-block-end: 0.4rem;
+            padding: 1.2rem 0.8rem;
             color: var(--color-polar-light);
             background: var(--color-medium-secondary);
         }
 
         img {
-            width: 8.0rem;
+            padding-inline: 0.4rem;
         }
 
         &:hover div {
-            color: var(--color-medium-secondary);
-            background: var(--color-accent-light);
+            color: var(--color-dark-primary);
+            background: var(--color-accent-medium);
         }
     }
 }

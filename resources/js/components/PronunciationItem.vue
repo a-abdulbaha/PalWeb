@@ -115,6 +115,7 @@ onMounted(() => {
     display: flex;
     flex-flow: row-reverse wrap;
     background: var(--color-accent-light);
+    direction: ltr;
 
     .pronunciation-item-term,
     .pronunciation-item-data {
