@@ -34,8 +34,7 @@ class CardResource extends JsonResource
             'suspended_at' => $this->suspended_at?->translatedFormat('Y-m-d'),
             'mastery_score' => $this->mastery_score,
             'mastery_rank' => $level->value,
-            'mastery_label' => $level->label(),
-            'mastery_message' => $level->message(),
+            'mastery_key' => $level->label(),
             'next_intervals' => $this->next_intervals ?? [],
         ];
     }

@@ -280,6 +280,24 @@
             }
         }
     },
+    "card": {
+        "mastery-level": {
+            "new": "New",
+            "lowest": "Rusty",
+            "low": "Learning",
+            "medium": "Solid",
+            "high": "Confident",
+            "highest": "Mastered"
+        },
+        "mastery-message": {
+            "new": "this Term is new to you",
+            "lowest": "your knowledge of this Term is spotty",
+            "low": "this Term is familiar to you",
+            "medium": "you have a grasp of this Term",
+            "high": "this Term is easy for you",
+            "highest": "you've fully mastered this Term"
+        }
+    },
     "modals": {
         "popup": {
             "types": {

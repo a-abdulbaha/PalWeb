@@ -280,6 +280,24 @@
             }
         }
     },
+    "card": {
+        "mastery-level": {
+            "new": "Nuevo",
+            "lowest": "Inestable",
+            "low": "Aprendiendo",
+            "medium": "Estable",
+            "high": "Confiado",
+            "highest": "Dominado"
+        },
+        "mastery-message": {
+            "new": "este Término es nuevo para ti",
+            "lowest": "tu conocimiento de este Término es irregular",
+            "low": "este Término es familiar para ti",
+            "medium": "tienes una noción de este Término",
+            "high": "este Término es fácil para ti",
+            "highest": "has dominado este Término completamente"
+        }
+    },
     "modals": {
         "popup": {
             "types": {

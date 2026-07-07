@@ -4,6 +4,9 @@ import {route} from 'ziggy-js';
 import {useUserStore} from "../../../../stores/UserStore.js";
 import {useTooltip} from "../../../../composables/useTooltip.js";
 import AppTooltip from "../../../../components/AppTooltip.vue";
+import {useI18n} from "vue-i18n";
+
+const {t} = useI18n();
 
 const UserStore = useUserStore();
 
@@ -65,7 +68,7 @@ const masteryBarSegments = computed(() => {
         if (!acc[rank]) {
             acc[rank] = {
                 rank: rank,
-                label: card.mastery_label,
+                label: t(`card.mastery-level.${card.mastery_key}`),
                 count: 0,
                 points: 0
             };

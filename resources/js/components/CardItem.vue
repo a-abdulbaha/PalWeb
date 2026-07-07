@@ -22,8 +22,8 @@ const appTooltip = ref(null);
             <div class="level-icon material-symbols-rounded" :class="'mastery-level__'+card.mastery_rank"
                  @mousemove="appTooltip.showTooltip($t('components.card.mastery-tooltip', {
                      score: formatter.format(card.mastery_score),
-                     label: card.mastery_label,
-                     message: card.mastery_message
+                     label: $t(`card.mastery-level.${card.mastery_key}`),
+                     message: $t(`card.mastery-message.${card.mastery_key}`)
                  }), $event);"
                  @mouseleave="appTooltip.hideTooltip()"
             >network_intelligence
@@ -34,7 +34,7 @@ const appTooltip = ref(null);
                     <span>{{ $t('components.card.fields.mastery-score') }}:</span>
                     <span style="text-transform: capitalize">
                     {{ formatter.format(card.mastery_score) }}
-                    ({{ card.mastery_label }})</span>
+                    ({{ $t(`card.mastery-level.${card.mastery_key}`) }})</span>
                 </div>
                 <div>
                     <span>{{ $t('components.card.fields.times-seen') }}:</span>

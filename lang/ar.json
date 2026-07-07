@@ -280,6 +280,24 @@
             }
         }
     },
+    "card": {
+        "mastery-level": {
+            "new": "جديد",
+            "lowest": "غير ثابت",
+            "low": "في التعلّم",
+            "medium": "ثابت",
+            "high": "واثق",
+            "highest": "متقن"
+        },
+        "mastery-message": {
+            "new": "هذا المصطلح جديد لك",
+            "lowest": "معلوماتك عن هذا المصطلح مفاجئة",
+            "low": "هذا المصطلح مألوف لك",
+            "medium": "لديك فهم جيد لهذا المصطلح",
+            "high": "هذا المصطلح سهل لك",
+            "highest": "لقد تعلمت هذا المصطلح"
+        }
+    },
     "modals": {
         "popup": {
             "types": {
@@ -503,7 +521,7 @@
         },
         "card": {
             "not-encountered": "لم تستكشف هذه المصطلح بعد.",
-            "mastery-tooltip": "درجة إتقانك لهذا الفصل الدراسي هي {score} ({label}), مما يعني أن {message}.",
+            "mastery-tooltip": "درجة إتقانك لهذا المصطلح هي {score} ({label})، مما يعني أن {message}.",
             "fields": {
                 "mastery-score": "درجة الإتقان",
                 "times-seen": "عدد المشاهدة",
