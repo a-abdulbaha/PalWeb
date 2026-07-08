@@ -171,14 +171,14 @@
         "check": "إفحص"
     },
     "install": {
-        "button": "Install App",
-        "hint": "Click the Install Button to download PalWeb to your device for easier access!",
-        "unavailable": "App installation is not available in this browser."
+        "button": "تنزيل التطبيق",
+        "hint": "إضغظ على زر التنزيل لتنزيل بالويب على جهازك للوصول إليها بسهولة!",
+        "unavailable": "تنزيل التطبيق غير متاح على هذا الجهاز"
     },
     "layout": {
         "notifications": {
-            "offline": "You have gone offline. While offline, the site will not work as expected. Please wait until you are back online to continue using PalWeb.",
-            "online": "You are back online!"
+            "offline": "التطبيق غير متّصل بالإنترنت، مما يعني أنّ التطبيق لن يعمل بالشكل المتوقّع. يرجل الانتظار لإعادة الاتّصال لتتمكّن من الاستخدام بالويب",
+            "online": "التطبيق متّصل مجدّدًا!"
         }
     },
     "models": {
@@ -300,9 +300,9 @@
         }
     },
     "teacher": {
-        "bio": "teacher bio",
-        "bio-placeholder": "Sadly, {user} hasn't told us anything about themselves as a Teacher yet. They should probably fix that soon.",
-        "create": "create teacher profile"
+        "bio": "وصف المعلّم",
+        "bio-placeholder": "للأسف، لم يخبرنا {user} بعد عن نفسه كمعلّم. يجب على المعلّم العمل على ذلك في أقرب وقت ممكن.",
+        "create": "انشئ ملف شخصيّ للمعلّم"
     },
     "modals": {
         "popup": {
@@ -338,7 +338,7 @@
             "confirm": "تأكيد",
             "cancel": "إلغاء",
             "messages": {
-                "unsaved-changes": "You have unsaved changes. Are you sure you want to leave this page? Unsaved changes will be lost."
+                "unsaved-changes": "لديك تغييرات غير محفوظة. هل أنت متأكد من أنك تريد ترك هذه الصفحة؟ سيتم فقدان التغييرات."
             }
         },
         "purge-scores": {
@@ -695,40 +695,40 @@
     },
     "pages": {
         "common": {
-            "index": "index",
-            "loading": "Loading {model}...",
-            "load-error": "Unable to load {model}.",
-            "displaying-all": "Displaying all {count} {model} in the Library.",
-            "displaying-none": "No {model} matching this query.",
-            "displaying-results": "Displaying {count} {model} matching this query.",
-            "not-found": "Sorry, the requested {model} could not be found.",
+            "index": "فهرس",
+            "loading": "جاري التحميل {model}...",
+            "load-error": "غير قادر على التحميل {model}.",
+            "displaying-all": "عرض جميع {count} {model} في المكتبة.",
+            "displaying-none": "لا يوجد {model} تطابق لهذا الطلب.",
+            "displaying-results": "عرض {count} {model} مطابقًا لهذا الطلب.",
+            "not-found": "للأسف لا يوجد نتائج.",
             "edit": {
-                "save": "Save",
-                "reset": "Reset"
+                "save": "حفظ",
+                "reset": "إعادة ضبط"
             }
         },
         "terms": {
             "index": {
-                "title": "dictionary"
+                "title": "القاموس"
             }
         },
         "sentences": {
             "index": {
-                "title": "corpus"
+                "title": "المدوّنة اللغويّة"
             }
         },
         "decks": {
             "index": {
-                "title": "deck library"
+                "title": "مكتبة الرزم"
             }
         },
         "audios": {
             "index": {
-                "title": "audio library"
+                "title": "مكتبة التسجيلات الصوتيّة"
             },
             "speaker": {
-                "is-private": "Your Profile is currently set to Private.",
-                "empty": "{speaker} has not uploaded any Audios yet."
+                "is-private": "ملفّك حاليَّا بالوضع الخاصّ.",
+                "empty": "{speaker} لم يرفع أي تسجيلات صوت بعد."
             }
         },
         "users": {
@@ -741,7 +741,7 @@
                 "record-prompt": "دورك تسجّل كمان!"
             },
             "show": {
-                "empty": "{user} has not created any public Decks yet."
+                "empty": "{user} لم ينشئ أي رزم عامة بعد."
             }
         },
         "deck-master": {
