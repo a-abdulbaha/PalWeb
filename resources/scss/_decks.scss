@@ -6,12 +6,11 @@
 }
 
 .deck-item-container {
+    direction: ltr;
     font-family: var(--head-font);
 }
 
 .deck-item {
-    direction: ltr;
-
     .model-item-content {
         border-inline-end: 0.1rem solid var(--color-dark-primary);
     }

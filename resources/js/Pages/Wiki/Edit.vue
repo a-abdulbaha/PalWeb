@@ -116,13 +116,13 @@ const {showAlert, handleConfirm, handleCancel} = useNavGuard(hasNavigationGuard)
 <template>
     <Head :title="page?.id ? `Edit Wiki: ${page?.title || 'Page'}` : 'Create Wiki Page'"/>
     <div id="app-head">
-        <h1>wiki</h1>
+        <h1>{{ $t('nav.sidebar.portals.wiki') }}</h1>
     </div>
     <div id="app-body">
         <LoadingSpinner v-if="isLoadingForm"/>
         <template v-else-if="pageNotFound">
             <AppTip>
-                <p>Sorry, the requested Page could not be found.</p>
+                <p>{{ $t('pages.common.not-found') }}</p>
             </AppTip>
             <Link class="portal-button" :href="route('wiki.index')">
                 Back to Wiki
@@ -132,27 +132,27 @@ const {showAlert, handleConfirm, handleCancel} = useNavGuard(hasNavigationGuard)
         <template v-else>
             <div class="form-body" style="width: min(96rem, 100%); padding: 0">
                 <div class="featured-title l">
-                    <span v-if="page?.id">Edit: {{ form.title || 'Page' }}</span>
-                    <span v-else>Create: {{ form.title || 'Page' }}</span>
+                    <span v-if="page?.id">{{ $t('pages.common.edit.edit', {title: form.title || 'Page'}) }}</span>
+                    <span v-else>{{ $t('pages.common.edit.create', {title: form.title || 'Page'}) }}</span>
                 </div>
 
                 <div class="field-item">
-                    <label>Slug</label>
+                    <label>{{ $t('components.page.fields.slug') }}</label>
                     <input type="text" v-model="form.slug" placeholder="page-slug-goes-here" required>
                 </div>
 
                 <div class="field-item">
-                    <label>Title</label>
+                    <label>{{ $t('components.page.fields.title') }}</label>
                     <input type="text" v-model="form.title" placeholder="Page Title" required>
                 </div>
 
                 <div class="field-item">
-                    <label>Summary</label>
+                    <label>{{ $t('components.page.fields.summary') }}</label>
                     <textarea v-model="form.summary" placeholder="Page Summary"/>
                 </div>
 
                 <div class="field-item">
-                    <label>Locale</label>
+                    <label>{{ $t('components.page.fields.locale') }}</label>
                     <select v-model="form.locale">
                         <option value="en">English</option>
                         <option value="ar">عربيّ</option>
@@ -162,7 +162,7 @@ const {showAlert, handleConfirm, handleCancel} = useNavGuard(hasNavigationGuard)
 
                 <SearchSelect
                     v-model="form.parent_id"
-                    label="Parent"
+                    :label="$t('components.page.fields.parent')"
                     :initial-title="selectedParent?.title"
                     :search="searchPages"
                     :error="validationErrors[`parent_id`]"
@@ -180,9 +180,9 @@ const {showAlert, handleConfirm, handleCancel} = useNavGuard(hasNavigationGuard)
                 </SearchSelect>
 
                 <div class="field-item">
-                    <label>Position</label>
+                    <label>{{ $t('components.page.fields.position') }}</label>
                     <div class="page-position-field">
-                        <span>Page</span>
+                        <span>{{ $t('actions.models.page') }}</span>
                         <input type="number" v-model="form.position" min="1">
                         <span>@ {{ pagePositionParentTitle }}</span>
                         <button
@@ -190,7 +190,7 @@ const {showAlert, handleConfirm, handleCancel} = useNavGuard(hasNavigationGuard)
                             @click="showPagePositionModal = true"
                             :disabled="isLoadingTree"
                         >
-                            Select Position
+                            {{ $t('actions.common.select', {thing: 'position'}) }}
                         </button>
                     </div>
                 </div>
@@ -204,13 +204,13 @@ const {showAlert, handleConfirm, handleCancel} = useNavGuard(hasNavigationGuard)
                     <p>The Wiki page is currently {{ form.status }}.</p>
 
                     <template v-if="Object.keys(validationErrors).length">
-                        <p style="font-weight: 700">The Page cannot be saved in the current state.</p>
+                        <p style="font-weight: 700">{{ $t('pages.common.edit.has-validation-errors', {model: 'Page'}) }}</p>
                         <ul>
                             <li v-for="(issue, i) in validationErrors" :key="i">{{ issue }}</li>
                         </ul>
                     </template>
                     <template v-if="!isPublishable">
-                        <p style="font-weight: 700">The Page cannot be published in the current state.</p>
+                        <p style="font-weight: 700">{{ $t('pages.common.edit.has-publish-issues', {model: 'Page'}) }}</p>
                         <ul>
                             <li v-for="(issue, i) in publishIssues" :key="i">{{ issue }}</li>
                         </ul>
@@ -225,7 +225,7 @@ const {showAlert, handleConfirm, handleCancel} = useNavGuard(hasNavigationGuard)
                         @click="savePage({ publish: form.status === 'published' })"
                         :disabled="isSaving || !hasNavigationGuard || !isValidRequest || (form.status === 'published' && !isPublishable)"
                     >
-                        Save
+                        {{ $t('pages.common.edit.save') }}
                     </button>
 
                     <button
@@ -233,7 +233,7 @@ const {showAlert, handleConfirm, handleCancel} = useNavGuard(hasNavigationGuard)
                         :disabled="!hasNavigationGuard"
                         @click="reset()"
                     >
-                        Reset
+                        {{ $t('pages.common.edit.reset') }}
                     </button>
 
                     <button
@@ -247,11 +247,11 @@ const {showAlert, handleConfirm, handleCancel} = useNavGuard(hasNavigationGuard)
                     </button>
 
                     <button v-if="pageId" type="button" @click="deletePage()">
-                        Delete Page
+                        {{ $t('actions.common.delete', {model: 'Page'}) }}
                     </button>
 
                     <Link v-if="page" :href="route('wiki.show', page.slug)">
-                        View Page
+                        {{ $t('actions.common.view', {model: 'Page'}) }}
                     </Link>
                     <Link v-else :href="route('wiki.index')">
                         Back to Wiki
@@ -263,7 +263,7 @@ const {showAlert, handleConfirm, handleCancel} = useNavGuard(hasNavigationGuard)
 
     <ModalWrapper v-model="showAlert">
         <NavGuard
-            message="You have unsaved changes. Are you sure you want to leave this page? Unsaved changes will be lost."
+            :message="$t('modals.nav-guard.messages.unsaved-changes')"
             @confirm="handleConfirm"
             @cancel="handleCancel"
         />

@@ -183,6 +183,10 @@
     },
     "models": {
         "terms": "مصطلحات",
+        "spellings": "spellings",
+        "attributes": "attributes",
+        "pronunciations": "pronunciations",
+        "patterns": "patterns",
         "sentences": "جمل",
         "decks": "رزم",
         "audios": "تسجلات صوت",
@@ -279,6 +283,14 @@
                 "intensive-adjective-abbr": "وزن فعلان",
                 "nominalized-adjective-abbr": "Nominalized Adj."
             }
+        },
+        "data": {
+            "etymology": "etymology",
+            "type": "type",
+            "inherited": "inherited",
+            "hybrid": "hybrid",
+            "borrowed": "borrowed",
+            "source": "source"
         }
     },
     "card": {
@@ -303,6 +315,20 @@
         "bio": "وصف المعلّم",
         "bio-placeholder": "للأسف، لم يخبرنا {user} بعد عن نفسه كمعلّم. يجب على المعلّم العمل على ذلك في أقرب وقت ممكن.",
         "create": "انشئ ملف شخصيّ للمعلّم"
+    },
+    "pronunciation": {
+        "fields": {
+            "transcription": "transcription",
+            "phonemic": "phonemic",
+            "phonetic": "phonetic",
+            "dialects": "dialects",
+            "borrowed": "borrowed"
+        }
+    },
+    "pattern": {
+        "type": {
+            "singular": "singular"
+        }
     },
     "modals": {
         "popup": {
@@ -411,7 +437,8 @@
             "view": "شاهد {model}",
             "edit": "تعديل {model}",
             "delete": "حذف {model}",
-            "copy": "نسخ {model}"
+            "copy": "نسخ {model}",
+            "select": "select {thing}"
         },
         "models": {
             "activity": "نشاط",
@@ -577,6 +604,17 @@
                 "skills": "مهارات"
             }
         },
+        "page": {
+            "fields": {
+                "slug": "slug",
+                "title": "title",
+                "summary": "summary",
+                "locale": "locale",
+                "parent": "parent",
+                "position": "position"
+            },
+            "is-draft": "This Page is a draft. It is only visible to administrators."
+        },
         "pronunciation": {
             "borrowed": "(مستعار)"
         },
@@ -703,8 +741,13 @@
             "displaying-results": "عرض {count} {model} مطابقًا لهذا الطلب.",
             "not-found": "للأسف لا يوجد نتائج.",
             "edit": {
+                "edit": "edit {title}",
+                "create": "create {title}",
                 "save": "حفظ",
-                "reset": "إعادة ضبط"
+                "reset": "إعادة ضبط",
+                "has-validation-errors": "The {model} cannot be saved in the current state.",
+                "has-publish-issues": "The {model} cannot be published in the current state.",
+                "has-confirmable-issues": "Are you sure the {model} is complete?"
             }
         },
         "terms": {
