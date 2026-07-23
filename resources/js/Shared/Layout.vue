@@ -57,6 +57,10 @@ onMounted(() => {
         window.Echo.private(`users.${userId}`)
             .listen('LessonProgressUpdated', (e) => {
                 NotificationStore.addNotification(e.message, e.type);
+            })
+            .listen('UserNotificationSent', (e) => {
+                console.log(e);
+                NotificationStore.addNotification(e.message, e.type);
             });
     }
 });
