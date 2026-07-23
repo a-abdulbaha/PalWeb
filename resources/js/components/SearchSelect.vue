@@ -191,7 +191,6 @@ onBeforeUnmount(() => {
                 @focus="openDropdown"
                 @click="openDropdown"
             >
-
             <button
                 v-if="modelValue && !disabled"
                 type="button"
@@ -236,9 +235,9 @@ onBeforeUnmount(() => {
 }
 
 .search-select-bar {
-    position: relative;
     display: flex;
     align-items: center;
+    gap: 0.8rem;
 
     input {
         width: 100%;
@@ -250,10 +249,8 @@ onBeforeUnmount(() => {
     }
 
     .search-select-clear {
-        position: absolute;
-        right: 0.8rem;
         cursor: pointer;
-        font-size: 1.8rem;
+        font-size: 2.4rem;
         color: var(--color-medium-primary);
     }
 }
