@@ -192,6 +192,7 @@
         "title": "speaker",
         "data-title": "Speaker Data",
         "byline": "{fluency} {gender} Speaker from {ar} ({en})",
+        "anonymous-bracketed": "[anonymous]",
         "anonymous-number": "Speaker #{id}",
         "audios": "audios",
         "fields": {
@@ -545,8 +546,6 @@
     },
     "components": {
         "common": {
-            "anonymous": "Anonymous",
-            "anonymous-bracketed": "[anonymous]",
             "by": "by",
             "by-author": "by {author}",
             "copied": "Copied to clipboard.",
@@ -775,6 +774,13 @@
             },
             "show": {
                 "empty": "{user} has not created any public Decks yet."
+            },
+            "edit": {
+                "messages": {
+                    "teacher-eligible": "You are eligible to create a Teacher profile. Click the + button to start creating one now.",
+                    "teacher-instructions": "Fill out the following form to create your Teacher profile. It will only be created once you Save.",
+                    "teacher-bio-placeholder": "What would you like us to know about you as a teacher?"
+                }
             }
         },
         "wiki": {
@@ -870,10 +876,8 @@
             }
         }
     },
-    "signin": "sign in",
     "signin.message": "Welcome back, :user!",
     "signin.message.head": "Hey!",
-    "signout": "sign out",
     "signout.message": "See you soon, :user!",
     "signout.message.head": "Bye!",
     "created": "Created :thing!",

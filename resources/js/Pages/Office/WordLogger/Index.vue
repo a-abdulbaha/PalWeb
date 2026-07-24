@@ -18,7 +18,7 @@ defineOptions({
         <h1>{{ $t('pages.word-logger.title') }}</h1>
     </div>
     <div id="app-body">
-        <Link :href="route('word-logger.term')">{{ $t('pages.common.edit.create', {title: 'Term'}) }}</Link>
+        <Link :href="route('word-logger.term')">{{ $t('forms.actions.create', {title: $t('actions.model.term')}) }}</Link>
         <h1>From Sentences</h1>
         <div class="missing-terms">
             <div v-for="term in fromSentences">

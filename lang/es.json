@@ -192,6 +192,7 @@
         "title": "hablante",
         "data-title": "Datos del Hablante",
         "byline": "Hablante {gender} {fluency} de {ar} ({en})",
+        "anonymous-bracketed": "[anónimo]",
         "anonymous-number": "Hablante #{id}",
         "audios": "Audios",
         "fields": {
@@ -545,8 +546,6 @@
     },
     "components": {
         "common": {
-            "anonymous": "Anónimo",
-            "anonymous-bracketed": "[anónimo]",
             "by": "por",
             "by-author": "por {author}",
             "copied": "Copiado al portapapeles.",
@@ -775,6 +774,13 @@
             },
             "show": {
                 "empty": "{user} aún no ha subido ninguna Baraja pública."
+            },
+            "edit": {
+                "messages": {
+                    "teacher-eligible": "Eres elegible para crear un perfil de Profe. Haz click en el botón + para comenzar a crear el tuyo ahora.",
+                    "teacher-instructions": "Llena el siguiente formulario para crear tu perfil de Profe. Solo será creado al Guardar.",
+                    "teacher-bio-placeholder": "¿Qué te gustaría que supieramos sobre ti como profesor?"
+                }
             }
         },
         "wiki": {
@@ -870,10 +876,8 @@
             }
         }
     },
-    "signin": "ingresar",
     "signin.message": "Bienvenido de vuelta, :user!",
     "signin.message.head": "Hola!",
-    "signout": "salir",
     "signout.message": "Hasta pronto, :user!",
     "signout.message.head": "Chao!",
     "created": ":thing creado con éxito!",

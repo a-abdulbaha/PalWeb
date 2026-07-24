@@ -192,6 +192,7 @@
         "title": "الناطق",
         "data-title": "معلومات الناطق",
         "byline": "ناطق {gender} {fluency} من {ar} ({en})",
+        "anonymous-bracketed": "[مجهول]",
         "anonymous-number": "الناطق #{id}",
         "audios": "تسجيلات الصوت",
         "fields": {
@@ -545,8 +546,6 @@
     },
     "components": {
         "common": {
-            "anonymous": "مجهول",
-            "anonymous-bracketed": "[مجهول]",
             "by": "لـ",
             "by-author": "لـ{author}",
             "copied": "تم نسخ إلى الحافظة.",
@@ -775,6 +774,13 @@
             },
             "show": {
                 "empty": "{user} لم ينشئ أي رزم عامة بعد."
+            },
+            "edit": {
+                "messages": {
+                    "teacher-eligible": "You are eligible to create a Teacher profile. Click the + button to start creating one now.",
+                    "teacher-instructions": "Fill out the following form to create your Teacher profile. It will only be created once you Save.",
+                    "teacher-bio-placeholder": "What would you like us to know about you as a teacher?"
+                }
             }
         },
         "wiki": {
@@ -870,21 +876,19 @@
             }
         }
     },
-    "signin": "sign in",
-    "signin.message": "Welcome back, :user!",
-    "signin.message.head": "Hey!",
-    "signout": "sign out",
-    "signout.message": "See you soon, :user!",
-    "signout.message.head": "Bye!",
-    "created": "Created :thing!",
-    "updated": "Updated :thing!",
-    "deleted": "Deleted :thing!",
+    "signin.message": "أهلًا بعودتك، يا :user!",
+    "signin.message.head": "هلا!",
+    "signout.message": "منشوفك قريبًا، يا :user!",
+    "signout.message.head": "سلامات!",
+    "created": "تمّ إنشاء :thing بنجاح!",
+    "updated": "تمّ تحديث :thing بنجاح!",
+    "deleted": "تمّ حذف :thing بنجاح!",
     "pin.added": "تمّت إضافة :thing عالكلمات المحفوظة",
     "pin.removed": "تمّت إزالة :thing من الكلمات المحفوظة",
-    "deck.copied": "Created a copy of \":deck\"!",
-    "decks.term.added": "Added :term to \":deck\"!",
-    "decks.term.removed": "Removed :term from \":deck\"!",
-    "badges.get": "You got the \":badge\" Badge! Good job!",
+    "deck.copied": "تمّ إنشاء نسخة لـ\":deck\"!",
+    "decks.term.added": "تمّت إضافة :term إلى \":deck\"!",
+    "decks.term.removed": "تمّت إزالة :term من \":deck\"!",
+    "badges.get": "حصلت على شارة \":badge\"! أبدعت!",
 
     "documentation": "توثيق",
     "dictionary": "قاموس",

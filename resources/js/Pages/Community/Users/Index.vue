@@ -28,7 +28,7 @@ defineOptions({
 <template>
     <Head title="Community Hub"/>
     <div id="app-head">
-        <Link :href="route('users.index')"><h1>{{ $t('pages.users.index.hub') }}</h1></Link>
+        <Link :href="route('users.index')"><h1>{{ $t('pages.users.index.title') }}</h1></Link>
     </div>
 
     <div id="app-body">
