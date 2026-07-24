@@ -38,7 +38,7 @@ const {sentence, isLoading} = useSentence(props);
                         <div>{{ sentence.dialog.title }}</div>
                     </Link>
                     <div>
-                        <div>{{ $t('components.speaker.title') }}</div>
+                        <div>{{ $t('components.sentence.speaker') }}</div>
                         <div>{{ sentence.speaker }}</div>
                     </div>
                 </div>

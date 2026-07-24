@@ -149,8 +149,8 @@ onMounted(() => {
                                         'disabled': !['student', 'admin'].includes(UserStore.highestRole)
                                      }"
                                 >
-                                    <div>{{ $t('nav.sidebar.lessons.title') }}</div>
-                                    <div>{{ $t('nav.sidebar.lessons.subtitle') }}</div>
+                                    <div>{{ $t('pages.lessons.index.title') }}</div>
+                                    <div>{{ $t('pages.lessons.index.subtitle') }}</div>
                                 </div>
                                 <div @click="navigateOrPrompt('dialogs.index')"
                                      class="nav-carousel-page-item"
@@ -159,8 +159,8 @@ onMounted(() => {
                                          'disabled': !['student', 'admin'].includes(UserStore.highestRole)
                                      }"
                                 >
-                                    <div>{{ $t('nav.sidebar.dialogs.title') }}</div>
-                                    <div>{{ $t('nav.sidebar.dialogs.subtitle') }}</div>
+                                    <div>{{ $t('pages.dialogs.index.title') }}</div>
+                                    <div>{{ $t('pages.dialogs.index.subtitle') }}</div>
                                 </div>
                                 <div @click="navigateOrPrompt('scores.index')"
                                      class="nav-carousel-page-item"
@@ -169,8 +169,8 @@ onMounted(() => {
                                          'disabled': !['student', 'admin'].includes(UserStore.highestRole)
                                      }"
                                 >
-                                    <div>{{ $t('nav.sidebar.scores.title') }}</div>
-                                    <div>{{ $t('nav.sidebar.scores.subtitle') }}</div>
+                                    <div>{{ $t('pages.scores.index.title') }}</div>
+                                    <div>{{ $t('pages.scores.index.subtitle') }}</div>
                                 </div>
                             </div>
                             <div class="nav-carousel-section" :style="{ zIndex: zIndices.library }">
@@ -178,15 +178,15 @@ onMounted(() => {
                                       class="nav-carousel-page-item"
                                       :class="{ 'active': ['Library/Terms/Index', 'Library/Terms/Show'].includes($page.component) }"
                                 >
-                                    <div>{{ $t('nav.sidebar.dictionary.title') }}</div>
-                                    <div>{{ $t('nav.sidebar.dictionary.subtitle') }}</div>
+                                    <div>{{ $t('pages.terms.index.title') }}</div>
+                                    <div>{{ $t('pages.terms.index.subtitle') }}</div>
                                 </Link>
                                 <Link :href="route('sentences.index')"
                                       class="nav-carousel-page-item"
                                       :class="{ 'active': ['Library/Sentences/Index', 'Library/Sentences/Show'].includes($page.component) }"
                                 >
-                                    <div>{{ $t('nav.sidebar.corpus.title') }}</div>
-                                    <div>{{ $t('nav.sidebar.corpus.subtitle') }}</div>
+                                    <div>{{ $t('pages.sentences.index.title') }}</div>
+                                    <div>{{ $t('pages.sentences.index.subtitle') }}</div>
                                 </Link>
                                 <div @click="navigateOrPrompt('decks.index')"
                                      class="nav-carousel-page-item"
@@ -195,8 +195,8 @@ onMounted(() => {
                                          'disabled': !UserStore.isUser
                                      }"
                                 >
-                                    <div>{{ $t('nav.sidebar.decks.title') }}</div>
-                                    <div>{{ $t('nav.sidebar.decks.subtitle') }}</div>
+                                    <div>{{ $t('pages.decks.index.title') }}</div>
+                                    <div>{{ $t('pages.decks.index.subtitle') }}</div>
                                 </div>
                                 <div @click="navigateOrPrompt('audios.index')"
                                      class="nav-carousel-page-item"
@@ -205,8 +205,8 @@ onMounted(() => {
                                          'disabled': !UserStore.isUser
                                      }"
                                 >
-                                    <div>{{ $t('nav.sidebar.audios.title') }}</div>
-                                    <div>{{ $t('nav.sidebar.audios.subtitle') }}</div>
+                                    <div>{{ $t('pages.audios.index.title') }}</div>
+                                    <div>{{ $t('pages.audios.index.subtitle') }}</div>
                                 </div>
                             </div>
                             <div class="nav-carousel-section" :style="{ zIndex: zIndices.workbench }">
@@ -217,8 +217,8 @@ onMounted(() => {
                                          'disabled': !UserStore.isUser
                                      }"
                                 >
-                                    <div>{{ $t('nav.sidebar.deck-master.title') }}</div>
-                                    <div>{{ $t('nav.sidebar.deck-master.subtitle') }}</div>
+                                    <div>{{ $t('pages.deck-master.title') }}</div>
+                                    <div>{{ $t('pages.deck-master.subtitle') }}</div>
                                 </div>
                                 <div @click="navigateOrPrompt('card-dealer.index')"
                                      class="nav-carousel-page-item"
@@ -227,8 +227,8 @@ onMounted(() => {
                                          'disabled': !['student', 'admin'].includes(UserStore.highestRole)
                                      }"
                                 >
-                                    <div>{{ $t('nav.sidebar.card-dealer.title') }}</div>
-                                    <div>{{ $t('nav.sidebar.card-dealer.subtitle') }}</div>
+                                    <div>{{ $t('pages.card-dealer.title') }}</div>
+                                    <div>{{ $t('pages.card-dealer.subtitle') }}</div>
                                 </div>
                                 <div @click="navigateOrPrompt('sound-booth.index')"
                                      class="nav-carousel-page-item"
@@ -237,8 +237,8 @@ onMounted(() => {
                                          'disabled': !UserStore.isUser
                                      }"
                                 >
-                                    <div>{{ $t('nav.sidebar.sound-booth.title') }}</div>
-                                    <div>{{ $t('nav.sidebar.sound-booth.subtitle') }}</div>
+                                    <div>{{ $t('pages.sound-booth.title') }}</div>
+                                    <div>{{ $t('pages.sound-booth.subtitle') }}</div>
                                 </div>
                             </div>
                             <div class="nav-carousel-section" :style="{ zIndex: zIndices.office }">
@@ -247,24 +247,24 @@ onMounted(() => {
                                     class="nav-carousel-page-item"
                                     :class="{ 'active': $page.component === 'Office/WordLogger/Index' }"
                                 >
-                                    <div>{{ $t('nav.sidebar.word-logger.title') }}</div>
-                                    <div>{{ $t('nav.sidebar.word-logger.subtitle') }}</div>
+                                    <div>{{ $t('pages.word-logger.title') }}</div>
+                                    <div>{{ $t('pages.word-logger.subtitle') }}</div>
                                 </div>
                                 <div
                                     @click="navigateOrPrompt('speech-maker.index')"
                                     class="nav-carousel-page-item"
                                     :class="{ 'active': $page.component === 'Office/SpeechMaker/SpeechMaker' }"
                                 >
-                                    <div>{{ $t('nav.sidebar.speech-maker.title') }}</div>
-                                    <div>{{ $t('nav.sidebar.speech-maker.subtitle') }}</div>
+                                    <div>{{ $t('pages.speech-maker.title') }}</div>
+                                    <div>{{ $t('pages.speech-maker.subtitle') }}</div>
                                 </div>
                                 <div
                                     @click="navigateOrPrompt('lesson-planner.index')"
                                     class="nav-carousel-page-item"
                                     :class="{ 'active': $page.component === 'Office/LessonPlanner/Course' }"
                                 >
-                                    <div>{{ $t('nav.sidebar.lesson-planner.title') }}</div>
-                                    <div>{{ $t('nav.sidebar.lesson-planner.subtitle') }}</div>
+                                    <div>{{ $t('pages.lesson-planner.title') }}</div>
+                                    <div>{{ $t('pages.lesson-planner.subtitle') }}</div>
                                 </div>
                             </div>
                         </Slide>
@@ -272,12 +272,12 @@ onMounted(() => {
 
                     <div class="nav-portal-wrapper">
                         <div @click="navigateOrPrompt('users.index')" class="nav-portal">
-                            <img src="/img/sphere-wireframe.svg" :alt="$t('nav.sidebar.portals.hub')"/>
-                            <div>{{ $t('nav.sidebar.portals.hub') }}</div>
+                            <img src="/img/sphere-wireframe.svg" :alt="$t('pages.users.index.title')"/>
+                            <div>{{ $t('pages.users.index.title') }}</div>
                         </div>
                         <Link :href="route('wiki.index')" class="nav-portal">
-                            <img src="/img/sphere-wireframe.svg" :alt="$t('nav.sidebar.portals.wiki')"/>
-                            <div>{{ $t('nav.sidebar.portals.wiki') }}</div>
+                            <img src="/img/sphere-wireframe.svg" :alt="$t('pages.wiki.title')"/>
+                            <div>{{ $t('pages.wiki.title') }}</div>
                         </Link>
                     </div>
                 </div>

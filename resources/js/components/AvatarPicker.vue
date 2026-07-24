@@ -106,11 +106,11 @@ const getFileExtension = (file) => {
 
 const validateStagedFile = (file) => {
     if (file.size > maxAvatarFileSize) {
-        return t('components.avatar-picker.errors.file-size');
+        return t('modals.avatar-picker.errors.file-size');
     }
 
     if (!allowedAvatarMimeTypes.includes(file.type) || !allowedAvatarExtensions.includes(getFileExtension(file))) {
-        return t('components.avatar-picker.errors.file-type');
+        return t('modals.avatar-picker.errors.file-type');
     }
 
     return null;
@@ -124,7 +124,7 @@ const handleUploadSelection = (event) => {
     if (!file) return;
 
     if (hasReachedAvatarLimit.value) {
-        uploadError.value = t('components.avatar-picker.errors.upload-limit', {count: maxUploadedAvatars});
+        uploadError.value = t('modals.avatar-picker.errors.upload-limit', {count: maxUploadedAvatars});
         NotificationStore.addNotification(uploadError.value, 'error');
         return;
     }
@@ -150,12 +150,12 @@ const getCroppedAvatarBlob = async () => {
     const result = cropper.value?.getResult();
 
     if (!result?.canvas) {
-        throw new Error(t('components.avatar-picker.errors.crop'));
+        throw new Error(t('modals.avatar-picker.errors.crop'));
     }
 
     return await new Promise((resolve, reject) => {
         result.canvas.toBlob((blob) => {
-            blob ? resolve(blob) : reject(new Error(t('components.avatar-picker.errors.crop')));
+            blob ? resolve(blob) : reject(new Error(t('modals.avatar-picker.errors.crop')));
         }, uploadFile.value.type, 0.92);
     });
 };
@@ -180,12 +180,12 @@ const uploadAvatar = async () => {
         ]);
 
         clearUploadPreview();
-        NotificationStore.addNotification(t('components.avatar-picker.notifications.uploaded'), 'success');
+        NotificationStore.addNotification(t('modals.avatar-picker.notifications.uploaded'), 'success');
 
     } catch (error) {
         uploadError.value = error?.response?.data?.errors?.avatar?.[0]
             ?? error?.response?.data?.message
-            ?? t('components.avatar-picker.errors.upload');
+            ?? t('modals.avatar-picker.errors.upload');
 
         NotificationStore.addNotification(uploadError.value, 'error');
 
@@ -199,7 +199,7 @@ const zoomCropper = (factor) => {
 };
 
 const deleteAvatar = async (avatar) => {
-    if (!confirm(t('components.avatar-picker.confirm-delete'))) return;
+    if (!confirm(t('modals.avatar-picker.confirm-delete'))) return;
 
     deletingAvatarIds.value = new Set([...deletingAvatarIds.value, avatar.id]);
 
@@ -219,11 +219,11 @@ const deleteAvatar = async (avatar) => {
             emit('user-updated', savedUser);
         }
 
-        NotificationStore.addNotification(t('components.avatar-picker.notifications.deleted'), 'success');
+        NotificationStore.addNotification(t('modals.avatar-picker.notifications.deleted'), 'success');
 
     } catch (error) {
         NotificationStore.addNotification(
-            error?.response?.data?.message ?? t('components.avatar-picker.errors.delete'),
+            error?.response?.data?.message ?? t('modals.avatar-picker.errors.delete'),
             'error',
         );
 
@@ -243,16 +243,16 @@ onBeforeUnmount(() => {
     <ModalWrapper v-model="isOpen">
         <div class="window-container modal-container">
             <div class="window-section-head">
-                <h1>{{ $t('components.avatar-picker.title') }}</h1>
+                <h1>{{ $t('modals.avatar-picker.title') }}</h1>
             </div>
             <div class="modal-container-body">
                 <template v-if="canSelectCustomAvatar || localUploadedAvatars.length">
                     <div class="window-section-head">
-                        <h2>{{ $t('components.avatar-picker.custom') }}</h2>
+                        <h2>{{ $t('modals.avatar-picker.custom') }}</h2>
                     </div>
                     <template v-if="localUploadedAvatars.length">
                         <div class="window-section-head">
-                            <h3>{{ $t('components.avatar-picker.my-uploads') }}</h3>
+                            <h3>{{ $t('modals.avatar-picker.my-uploads') }}</h3>
                         </div>
                         <AppTip v-if="!canSelectCustomAvatar">
                             <p>You cannot use a custom avatar while your Student subscription is inactive. You may
@@ -285,14 +285,14 @@ onBeforeUnmount(() => {
                     </template>
                     <template v-if="canSelectCustomAvatar">
                         <div class="window-section-head">
-                            <h3>{{ $t('components.avatar-picker.upload-new') }}</h3>
+                            <h3>{{ $t('modals.avatar-picker.upload-new') }}</h3>
                         </div>
                         <AppTip>
                             <p v-if="hasReachedAvatarLimit">
-                                {{ $t('components.avatar-picker.tips.upload-limit', {count: maxUploadedAvatars}) }}
+                                {{ $t('modals.avatar-picker.messages.upload-limit', {count: maxUploadedAvatars}) }}
                             </p>
                             <p v-else>
-                                {{ $t('components.avatar-picker.tips.upload-format') }}
+                                {{ $t('modals.avatar-picker.messages.upload-format') }}
                             </p>
                         </AppTip>
                         <section v-if="canCreateCustomAvatar" class="avatar-picker-section avatar-upload-section">
@@ -340,7 +340,7 @@ onBeforeUnmount(() => {
 
                 <WindowSection>
                     <template #title>
-                        <h2>{{ $t('components.avatar-picker.defaults') }}</h2>
+                        <h2>{{ $t('modals.avatar-picker.defaults') }}</h2>
                     </template>
                     <template #content>
                         <section class="avatar-picker-section">

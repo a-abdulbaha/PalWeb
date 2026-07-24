@@ -28,15 +28,15 @@ const {isPlaying, playAudio} = useAudio(props.model.url);
             <div>{{ $t('components.common.by') }}
                 <Link :href="route('speaker.show', model.speaker)">
                     {{ model.speaker.user.private
-                    ? t('components.speaker.anonymous-number', {id: model.speaker.id})
+                    ? t('speaker.anonymous-number', {id: model.speaker.id})
                     : model.speaker.user.name
                     }}
                 </Link>
             </div>
             <div class="audio-item-info">
-                {{ $t('components.speaker.byline', {
-                    fluency: $t(`components.speaker.fluency.${model.speaker.fluency}`),
-                    gender: $t(`components.speaker.gender.${model.speaker.gender}`),
+                {{ $t('speaker.byline', {
+                    fluency: $t(`speaker.fluency.${model.speaker.fluency}`),
+                    gender: $t(`speaker.gender.${model.speaker.gender}`),
                     ar: model.speaker.location.name_ar,
                     en: model.speaker.location.name_en
                 }) }}

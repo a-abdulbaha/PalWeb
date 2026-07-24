@@ -31,18 +31,18 @@ const signUp = () => {
 <template>
     <div class="window-container modal-container">
         <div class="window-section-head">
-            <h1>{{ $t('modals.auth.sign-up.title') }}</h1>
+            <h1>{{ $t('modals.sign-up.title') }}</h1>
         </div>
         <AppTip>
             <p>
-                {{ $t('modals.auth.sign-up.sign-in-prompt') }}
-                <button @click="emit('signIn')">{{ $t('modals.auth.sign-in.action') }}</button>
+                {{ $t('modals.sign-up.sign-in-prompt') }}
+                <button @click="emit('signIn')">{{ $t('modals.sign-in.action') }}</button>
             </p>
         </AppTip>
         <form @submit.prevent="signUp">
             <div class="modal-container-body form-body">
                 <div class="field-item">
-                    <label>{{ $t('modals.auth.fields.name') }}</label>
+                    <label>{{ $t('user.fields.name') }}</label>
                     <div class="field-input">
                         <input type="text" v-model="form.name" placeholder="Rafiq" required>
                         <div class="field-chars"
@@ -53,7 +53,7 @@ const signUp = () => {
                     <div v-if="form.errors.name" v-text="form.errors.name" class="field-error"/>
                 </div>
                 <div class="field-item">
-                    <label>{{ $t('modals.auth.fields.username') }}</label>
+                    <label>{{ $t('user.fields.username') }}</label>
                     <div class="field-input">
                         <input type="text" v-model="form.username" placeholder="permanent.intifada" required>
                         <div class="field-chars"
@@ -65,9 +65,9 @@ const signUp = () => {
                 </div>
                 <div class="field-item">
                     <div style="display: flex; align-items: center; gap: 3.2rem;">
-                        <label>{{ $t('modals.auth.fields.arabic-name') }}</label>
+                        <label>{{ $t('user.fields.arabic-name') }}</label>
                         <button type="button" @click="form.ar_name = generateArabicName()">
-                            {{ $t('modals.auth.sign-up.randomize-name') }}
+                            {{ $t('modals.sign-up.randomize-name') }}
                         </button>
                     </div>
                     <div class="field-input">
@@ -80,7 +80,7 @@ const signUp = () => {
                     <div v-if="form.errors.ar_name" v-text="form.errors.ar_name" class="field-error"/>
                 </div>
                 <div class="field-item">
-                    <label>{{ $t('modals.auth.fields.email') }}</label>
+                    <label>{{ $t('user.fields.email') }}</label>
                     <div class="field-input">
                         <input type="text" v-model="form.email" placeholder="free@palestine.com" required>
                         <div class="field-chars"
@@ -91,7 +91,7 @@ const signUp = () => {
                     <div v-if="form.errors.email" v-text="form.errors.email" class="field-error"/>
                 </div>
                 <div class="field-item">
-                    <label>{{ $t('modals.auth.fields.password') }}</label>
+                    <label>{{ $t('user.fields.password') }}</label>
                     <div class="field-input">
                         <input type="password" v-model="form.password" placeholder="Lenin1917!" required>
                         <div class="field-chars"
@@ -102,7 +102,7 @@ const signUp = () => {
                     <div v-if="form.errors.password" v-text="form.errors.password" class="field-error"/>
                 </div>
                 <div class="field-item">
-                    <label>{{ $t('modals.auth.fields.confirm-password') }}</label>
+                    <label>{{ $t('user.fields.confirm-password') }}</label>
                     <div class="field-input">
                         <input type="password" v-model="form.password_confirmation" placeholder="Lenin1917!" required>
                         <div class="field-chars"
@@ -114,7 +114,7 @@ const signUp = () => {
             </div>
             <div class="window-footer">
                 <button type="submit" :disabled="form.processing || !isValidRequest">
-                    {{ $t('modals.auth.sign-up.submit') }}
+                    {{ $t('modals.sign-up.submit') }}
                 </button>
             </div>
         </form>

@@ -76,23 +76,23 @@ const localeKey = (value) => value?.toString().toLowerCase().replace(/[^a-z0-9]+
                 <div class="search-filters">
                     <select v-model="filters.dialect" :class="filters.dialect ? 'persisting' : ''"
                             @change="updateFilter('dialect', filters.dialect)">
-                        <option value="">{{ $t('components.speaker.fields.dialect') }}</option>
+                        <option value="">{{ $t('speaker.fields.dialect') }}</option>
                         <option v-for="dialect in dialects" :key="dialect.id" :value="dialect.id">
-                            {{ $t(`components.speaker.dialects.${localeKey(dialect.name)}`) }}
+                            {{ $t(`dialect.${localeKey(dialect.name)}`) }}
                         </option>
                     </select>
                     <select v-model="filters.location" :class="filters.location ? 'persisting' : ''"
                             @change="updateFilter('location', filters.location)">
-                        <option value="">{{ $t('components.speaker.fields.location') }}</option>
+                        <option value="">{{ $t('speaker.fields.location') }}</option>
                         <option v-for="location in locations" :key="location.id" :value="location.id">
                             {{ location.name_ar }}
                         </option>
                     </select>
                     <select v-model="filters.gender" :class="filters.gender ? 'persisting' : ''"
                             @change="updateFilter('gender', filters.gender)">
-                        <option value="">{{ $t('components.speaker.fields.gender') }}</option>
-                        <option value="male">{{ $t('components.speaker.gender.male') }}</option>
-                        <option value="female">{{ $t('components.speaker.gender.female') }}</option>
+                        <option value="">{{ $t('speaker.fields.gender') }}</option>
+                        <option value="male">{{ $t('speaker.gender.male') }}</option>
+                        <option value="female">{{ $t('speaker.gender.female') }}</option>
                     </select>
                     <select v-model="filters.sort" @change="updateFilter('sort', filters.sort)">
                         <option value="latest">{{ $t('search.filters.sort.latest') }}</option>

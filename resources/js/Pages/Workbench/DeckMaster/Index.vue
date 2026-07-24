@@ -96,7 +96,7 @@ defineOptions({
     <Head title="Deck Master"/>
     <div id="app-head">
         <h1>{{ $t('pages.deck-master.title') }}</h1>
-        <div @click="toggleMode" id="app-mode-toggle" :class="mode">
+        <div @click="toggleMode" class="app-mode-toggle" :class="mode">
             <div class="app-mode-toggle-slider" :class="{active: mode === 'study'}">{{ $t('pages.deck-master.' + mode) }}</div>
         </div>
     </div>

@@ -56,7 +56,7 @@ const {sentence, isLoading, isCurrentTerm} = useSentence(props);
                 <div>{{ sentence.dialog.title }}</div>
             </Link>
             <div v-if="speaker">
-                <div>{{ $t('components.speaker.title') }}</div>
+                <div>{{ $t('components.sentence.speaker') }}</div>
                 <div>{{ sentence.speaker }}</div>
             </div>
         </div>

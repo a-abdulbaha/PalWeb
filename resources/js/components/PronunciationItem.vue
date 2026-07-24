@@ -43,7 +43,7 @@ onMounted(() => {
             </Link>
             <div class="pronunciation-item-data">
                 <span class="pronunciation-item-dialect">
-                    {{ $t(`components.speaker.dialects.${localeKey(model.dialect.name)}`) }}
+                    {{ $t(`dialect.${localeKey(model.dialect.name)}`) }}
                 </span>
                 <span class="pronunciation-item-phonology">{{
                         model.borrowed === true ? $t('components.pronunciation.borrowed') : ''

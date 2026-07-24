@@ -16,11 +16,11 @@ const appTooltip = ref(null);
 
 <template>
     <div class="card-item">
-        <p v-if="!card">{{ $t('components.card.not-encountered') }}</p>
+        <p v-if="!card">{{ $t('card.messages.not-encountered') }}</p>
 
         <template v-else>
             <div class="level-icon material-symbols-rounded" :class="'mastery-level__'+card.mastery_rank"
-                 @mousemove="appTooltip.showTooltip($t('components.card.mastery-tooltip', {
+                 @mousemove="appTooltip.showTooltip($t('card.messages.mastery-tooltip', {
                      score: formatter.format(card.mastery_score),
                      label: $t(`card.mastery-level.${card.mastery_key}`),
                      message: $t(`card.mastery-message.${card.mastery_key}`)
@@ -31,21 +31,21 @@ const appTooltip = ref(null);
 
             <div class="card-stats">
                 <div>
-                    <span>{{ $t('components.card.fields.mastery-score') }}:</span>
+                    <span>{{ $t('card.fields.mastery-score') }}:</span>
                     <span style="text-transform: capitalize">
                     {{ formatter.format(card.mastery_score) }}
                     ({{ $t(`card.mastery-level.${card.mastery_key}`) }})</span>
                 </div>
                 <div>
-                    <span>{{ $t('components.card.fields.times-seen') }}:</span>
+                    <span>{{ $t('card.fields.times-seen') }}:</span>
                     <span>{{ card.repetitions }}</span>
                 </div>
                 <div>
-                    <span>{{ $t('components.card.fields.last-seen') }}:</span>
+                    <span>{{ $t('card.fields.last-seen') }}:</span>
                     <span>{{ card.last_reviewed_at_human ?? $t('components.common.never') }}</span>
                 </div>
                 <div>
-                    <span>{{ $t('components.card.fields.due-on') }}:</span>
+                    <span>{{ $t('card.fields.due-on') }}:</span>
                     <span>{{ card.due_at_human ?? $t('components.common.never') }}</span>
                 </div>
             </div>

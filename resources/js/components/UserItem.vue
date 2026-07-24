@@ -59,7 +59,7 @@ const copyText = (event) => {
                 </div>
                 <div class="user-tag">
                     <div class="material-symbols-rounded">lips</div>
-                    <span>{{ $t(`components.speaker.dialects.${localeKey(user.dialect.name)}`) }}</span>
+                    <span>{{ $t(`dialect.${localeKey(user.dialect.name)}`) }}</span>
                 </div>
                 <div class="user-tag" v-if="user.teacher">
                     <div class="material-symbols-rounded">mail</div>

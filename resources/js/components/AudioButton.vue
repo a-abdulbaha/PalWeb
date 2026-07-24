@@ -25,7 +25,7 @@ const isUserAudio = computed(() =>
 
 const showDialectTooltip = (event) => {
     if (!isUserAudio.value) {
-        appTooltip.value?.showTooltip(t(`components.speaker.dialects.${localeKey(props.pronunciation.dialect.name)}`), event);
+        appTooltip.value?.showTooltip(t(`dialect.${localeKey(props.pronunciation.dialect.name)}`), event);
     }
 };
 
