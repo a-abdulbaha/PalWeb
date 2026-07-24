@@ -85,7 +85,7 @@ watch(() => props.deckId, async () => {
         <LoadingSpinner v-if="isLoadingForm"/>
         <template v-else-if="deckNotFound">
             <AppTip>
-                <p>Sorry, the requested Deck could not be found.</p>
+                <p>{{ $t('pages.common.not-found', {model: $t('actions.models.deck')}) }}</p>
             </AppTip>
             <Link class="portal-button" :href="route('deck-master.index')">Back to Deck Master</Link>
         </template>

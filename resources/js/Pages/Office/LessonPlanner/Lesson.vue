@@ -146,13 +146,13 @@ const removeUnlockCondition = (i) => {
 <template>
     <Head :title="`Lesson Planner: Lesson ${lesson?.global_position}`"/>
     <div id="app-head">
-        <h1>lesson planner</h1>
+        <h1>{{ $t('pages.lesson-planner.title') }}</h1>
     </div>
     <div id="app-body">
         <LoadingSpinner v-if="isLoadingForm"/>
         <template v-else-if="lessonNotFound">
             <AppTip>
-                <p>Sorry, but the requested Lesson does not exist.</p>
+                <p>{{ $t('pages.common.not-found', {model: $t('actions.models.lesson')}) }}</p>
             </AppTip>
             <Link class="portal-button" :href="route('lesson-planner.index')">
                 Back to Lesson Planner

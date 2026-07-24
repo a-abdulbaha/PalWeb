@@ -711,7 +711,6 @@
         "common": {
             "index": "فهرس",
             "loading": "جاري التحميل {model}...",
-            "load-error": "غير قادر على التحميل {model}.",
             "displaying-all": "عرض جميع {count} {model} في المكتبة.",
             "displaying-none": "لا يوجد {model} تطابق لهذا الطلب.",
             "displaying-results": "عرض {count} {model} مطابقًا لهذا الطلب.",

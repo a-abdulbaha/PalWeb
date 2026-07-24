@@ -65,6 +65,9 @@ watch(
             <div class="window-section-head"><h1>{{ $t('actions.models.speaker') }}</h1></div>
 
             <LoadingSpinner v-if="isLoadingSpeaker"/>
+            <AppTip v-else-if="speakerNotFound">
+                <p>{{ $t('pages.common.not-found', {model: $t('actions.models.speaker')}) }}</p>
+            </AppTip>
             <template v-else-if="speaker">
                 <AppTip v-if="speaker.user.id === UserStore.user?.id && speaker.user.private">
                     <p>{{ $t('pages.audios.speaker.is-private') }}</p>
@@ -96,9 +99,6 @@ watch(
                     </AppTip>
                 </template>
             </template>
-            <div v-else-if="speakerNotFound" class="loading-state">
-                <p>{{ $t('pages.common.load-error', {model: $t('actions.models.speaker')}) }}</p>
-            </div>
         </div>
     </div>
 </template>

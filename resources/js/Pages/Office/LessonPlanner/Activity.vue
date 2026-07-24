@@ -70,13 +70,13 @@ const {showAlert, handleConfirm, handleCancel} = useNavGuard(hasNavigationGuard)
 <template>
     <Head title="Academy: Lessons"/>
     <div id="app-head">
-        <h1>lesson planner</h1>
+        <h1>{{ $t('pages.lesson-planner.title') }}</h1>
     </div>
     <div id="app-body">
         <LoadingSpinner v-if="isLoadingForm"/>
         <template v-else-if="activityNotFound">
             <AppTip>
-                <p>Sorry, the requested Activity could not be found.</p>
+                <p>{{ $t('pages.common.not-found', {model: $t('actions.models.activity')}) }}</p>
             </AppTip>
             <Link class="portal-button" :href="route('lesson-planner.index')">
                 Back to Lesson Planner

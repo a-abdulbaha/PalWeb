@@ -88,7 +88,7 @@ watch(() => props.sentenceId, async () => {
         <LoadingSpinner v-if="isLoadingForm"/>
         <template v-else-if="sentenceNotFound">
             <AppTip>
-                <p>Sorry, the requested Sentence could not be found.</p>
+                <p>{{ $t('pages.common.not-found', {model: $t('actions.models.sentence')}) }}</p>
             </AppTip>
             <Link class="portal-button" :href="route('speech-maker.index')">
                 Back to Speech Maker

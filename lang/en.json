@@ -711,7 +711,6 @@
         "common": {
             "index": "index",
             "loading": "Loading {model}...",
-            "load-error": "Unable to load {model}.",
             "displaying-all": "Displaying all {count} {model} in the Library.",
             "displaying-none": "No {model} matching this query.",
             "displaying-results": "Displaying {count} {model} matching this query.",

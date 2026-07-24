@@ -84,13 +84,13 @@ const removeLesson = (lesson) => {
     <Head :title="`Lesson Planner: Unit ${unit?.position}`"/>
 
     <div id="app-head">
-        <h1>lesson planner</h1>
+        <h1>{{ $t('pages.lesson-planner.title') }}</h1>
     </div>
     <div id="app-body">
         <LoadingSpinner v-if="isLoadingForm"/>
         <template v-else-if="unitNotFound">
             <AppTip>
-                <p>Sorry, the requested Unit could not be found.</p>
+                <p>{{ $t('pages.common.not-found', {model: $t('actions.models.unit')}) }}</p>
             </AppTip>
             <Link class="portal-button" :href="route('lesson-planner.index')">
                 Back to Lesson Planner

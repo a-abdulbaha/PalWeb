@@ -116,13 +116,13 @@ const {showAlert, handleConfirm, handleCancel} = useNavGuard(hasNavigationGuard)
 <template>
     <Head :title="page?.id ? `Edit Wiki: ${page?.title || 'Page'}` : 'Create Wiki Page'"/>
     <div id="app-head">
-        <h1>wiki</h1>
+        <h1>{{ $t('pages.wiki.title') }}</h1>
     </div>
     <div id="app-body">
         <LoadingSpinner v-if="isLoadingForm"/>
         <template v-else-if="pageNotFound">
             <AppTip>
-                <p>Sorry, the requested Page could not be found.</p>
+                <p>{{ $t('pages.common.not-found', {model: $t('actions.models.page')}) }}</p>
             </AppTip>
             <Link class="portal-button" :href="route('wiki.index')">
                 Back to Wiki

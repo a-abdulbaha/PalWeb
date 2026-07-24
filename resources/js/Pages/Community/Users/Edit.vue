@@ -204,7 +204,7 @@ const localeKey = (value) => value?.toString().toLowerCase().replace(/[^a-z0-9]+
                 <div class="user-data-wrapper">
                     <div class="form-body">
                         <div class="field-item">
-                            <label>{{ $t('modals.auth.fields.name') }}</label>
+                            <label>{{ $t('user.fields.name') }}</label>
                             <div class="field-input">
                                 <input type="text" v-model="userForm.name" placeholder="Rafiq" required>
                                 <div class="field-chars"
@@ -215,7 +215,7 @@ const localeKey = (value) => value?.toString().toLowerCase().replace(/[^a-z0-9]+
                             <div v-if="userErrors.name" v-text="userErrors.name" class="field-error"/>
                         </div>
                         <div class="field-item">
-                            <label>{{ $t('modals.auth.fields.username') }}</label>
+                            <label>{{ $t('user.fields.username') }}</label>
                             <div class="field-input">
                                 <input type="text" v-model="userForm.username" placeholder="permanent.intifada"
                                        required>
@@ -228,7 +228,7 @@ const localeKey = (value) => value?.toString().toLowerCase().replace(/[^a-z0-9]+
                         </div>
                         <div class="field-item">
                             <div style="display: flex; align-items: center; gap: 3.2rem;">
-                                <label>{{ $t('modals.auth.fields.arabic-name') }}</label>
+                                <label>{{ $t('user.fields.arabic-name') }}</label>
                                 <button type="button" @click="userForm.ar_name = generateArabicName()">
                                     Randomize
                                 </button>
@@ -265,22 +265,22 @@ const localeKey = (value) => value?.toString().toLowerCase().replace(/[^a-z0-9]+
                             <div class="material-symbols-rounded">lips</div>
                             <select v-model="userForm.dialect_id">
                                 <option :value="8">
-                                    {{ $t(`components.speaker.dialects.${localeKey('Central Urban Palestinian')}`) }}
+                                    {{ $t(`dialect.${localeKey('Central Urban Palestinian')}`) }}
                                 </option>
                                 <option :value="9">
-                                    {{ $t(`components.speaker.dialects.${localeKey('Northern Urban Palestinian')}`) }}
+                                    {{ $t(`dialect.${localeKey('Northern Urban Palestinian')}`) }}
                                 </option>
                                 <option :value="10">
-                                    {{ $t(`components.speaker.dialects.${localeKey('Central Rural Palestinian')}`) }}
+                                    {{ $t(`dialect.${localeKey('Central Rural Palestinian')}`) }}
                                 </option>
                                 <option :value="11">
-                                    {{ $t(`components.speaker.dialects.${localeKey('Northern Rural Palestinian')}`) }}
+                                    {{ $t(`dialect.${localeKey('Northern Rural Palestinian')}`) }}
                                 </option>
                                 <option :value="6">
-                                    {{ $t(`components.speaker.dialects.${localeKey('Palestinian Bedouin')}`) }}
+                                    {{ $t(`dialect.${localeKey('Palestinian Bedouin')}`) }}
                                 </option>
                                 <option :value="7">
-                                    {{ $t(`components.speaker.dialects.${localeKey('Palestinian Druze')}`) }}
+                                    {{ $t(`dialect.${localeKey('Palestinian Druze')}`) }}
                                 </option>
                             </select>
                         </div>
@@ -289,10 +289,10 @@ const localeKey = (value) => value?.toString().toLowerCase().replace(/[^a-z0-9]+
             </div>
             <div class="window-footer">
                 <button :disabled="isSavingUser || !isUserDirty || !isValidUserRequest" @click="saveUser">
-                    {{ $t('pages.common.edit.save') }}
+                    {{ $t('forms.actions.save') }}
                 </button>
                 <button :disabled="isSavingUser || !isUserDirty" @click="resetUser()">
-                    {{ $t('pages.common.edit.reset') }}
+                    {{ $t('forms.actions.reset') }}
                 </button>
             </div>
 
@@ -305,10 +305,8 @@ const localeKey = (value) => value?.toString().toLowerCase().replace(/[^a-z0-9]+
                 </button>
             </div>
             <AppTip v-if="canCreateTeacher">
-                <p v-if="!teacherFormExists">You are eligible to create a Teacher profile. Click the + button to start
-                    creating one now.</p>
-                <p v-else>Fill out the following information to create your Teacher profile. It will only be created
-                    once you Save.</p>
+                <p v-if="!teacherFormExists">{{ $t('pages.users.edit.messages.teacher-eligible') }}</p>
+                <p v-else>{{ $t('pages.users.edit.messages.teacher-instructions') }}</p>
             </AppTip>
             <template v-if="canManageTeacher && teacherFormExists">
                 <AppTip v-if="!isStudent">
@@ -318,7 +316,7 @@ const localeKey = (value) => value?.toString().toLowerCase().replace(/[^a-z0-9]+
                 </AppTip>
                 <div class="form-body">
                     <div class="field-item">
-                        <label>{{ $t('modals.auth.fields.email') }}</label>
+                        <label>{{ $t('user.fields.email') }}</label>
                         <div class="field-input">
                             <input type="email" v-model="teacherForm.email" placeholder="teacher@example.com" required>
                             <div class="field-chars" :class="{'invalid': teacherForm.email.length > 255}"
@@ -328,10 +326,10 @@ const localeKey = (value) => value?.toString().toLowerCase().replace(/[^a-z0-9]+
                     </div>
 
                     <div class="field-item">
-                        <label>{{ $t('modals.auth.fields.bio') }}</label>
+                        <label>{{ $t('user.fields.bio') }}</label>
                         <div class="field-input">
                             <textarea v-model="teacherForm.bio" rows="10"
-                                      placeholder="What would you like us to know about you as a teacher?"/>
+                                      :placeholder="$t('pages.users.edit.messages.bio-placeholder')"/>
                             <div class="field-chars" :class="{'invalid': teacherForm.bio.length > 5000}"
                                  v-text="5000 - teacherForm.bio.length"/>
                         </div>
@@ -341,10 +339,10 @@ const localeKey = (value) => value?.toString().toLowerCase().replace(/[^a-z0-9]+
                 <div class="window-footer">
                     <button :disabled="isSavingTeacher || !isTeacherDirty || !isValidTeacherRequest"
                             @click="saveTeacher">
-                        {{ $t('pages.common.edit.save') }}
+                        {{ $t('forms.actions.save') }}
                     </button>
                     <button :disabled="isSavingTeacher || !isTeacherDirty" @click="resetTeacher()">
-                        {{ $t('pages.common.edit.reset') }}
+                        {{ $t('forms.actions.reset') }}
                     </button>
                 </div>
             </template>

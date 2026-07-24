@@ -112,13 +112,13 @@ defineOptions({
 <template>
     <Head title="Word Logger: Build Term"/>
     <div id="app-head">
-        <h1>Word Logger</h1>
+        <h1>{{ $t('pages.word-logger.title') }}</h1>
     </div>
     <div id="app-body">
         <LoadingSpinner v-if="isLoadingForm"/>
         <template v-else-if="termsNotFound">
             <AppTip>
-                <p>Sorry, the requested Term could not be found.</p>
+                <p>{{ $t('pages.common.not-found', {model: $t('actions.models.term')}) }}</p>
             </AppTip>
             <Link class="portal-button" :href="route('word-logger.index')">Back to Word Logger</Link>
         </template>

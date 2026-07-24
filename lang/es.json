@@ -711,7 +711,6 @@
         "common": {
             "index": "índice",
             "loading": "Cargando {model}...",
-            "load-error": "No se pudo cargar {model}.",
             "displaying-all": "Mostrando todos los {count} {model} en la Biblioteca.",
             "displaying-none": "Ningún {model} coincide con esta consulta.",
             "displaying-results": "Mostrando {count} {model} que coinciden con esta consulta.",

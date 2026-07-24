@@ -73,7 +73,7 @@ const isValidRequest = computed(() => {
     <LoadingSpinner v-if="isLoadingActivity"/>
     <template v-else-if="activityNotFound">
         <AppTip>
-            <p>Sorry, but the requested Activity could not be found.</p>
+            <p>{{ $t('pages.common.not-found', {model: $t('actions.models.activity')}) }}</p>
         </AppTip>
     </template>
     <template v-else-if="ActivitySession.activity">

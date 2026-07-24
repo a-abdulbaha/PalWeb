@@ -45,11 +45,9 @@ watch(() => props.lessonId, async () => {
     <Head :title="`Academy: Lesson ${lesson?.global_position}`"/>
 
     <LoadingSpinner v-if="isLoadingLesson"/>
-    <div v-else-if="lessonNotFound" id="app-body">
-        <AppTip>
-            <p>Sorry, but the requested Lesson could not be found.</p>
-        </AppTip>
-    </div>
+    <AppTip v-else-if="lessonNotFound">
+        <p>{{ $t('pages.common.not-found', {model: $t('actions.models.lesson')}) }}</p>
+    </AppTip>
     <template v-else-if="lesson">
         <div id="lesson-nav">
             <UnitNav v-if="unit" :unit="unit" :lesson="lesson" :activeLesson="lesson.global_position"/>

@@ -82,7 +82,7 @@ watch(() => props.dialogId, async () => {
         <LoadingSpinner v-if="isLoadingForm"/>
         <template v-else-if="dialogNotFound">
             <AppTip>
-                <p>Sorry, the requested Dialog could not be found.</p>
+                <p>{{ $t('pages.common.not-found', {model: $t('actions.models.dialog')}) }}</p>
             </AppTip>
             <Link class="portal-button" :href="route('speech-maker.index')">
                 Back to Speech Maker

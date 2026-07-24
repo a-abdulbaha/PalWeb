@@ -94,7 +94,7 @@ watch(
 <template>
     <Head title="Academy: Lessons"/>
     <div id="app-head">
-        <h1>lesson planner</h1>
+        <h1>{{ $t('pages.lesson-planner.title') }}</h1>
     </div>
     <div id="app-body">
         <div class="form-body" style="width: min(96rem, 100%); padding: 0">
