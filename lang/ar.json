@@ -548,6 +548,7 @@
         "common": {
             "by": "لـ",
             "by-author": "لـ{author}",
+            "anonymous": "مجهول",
             "copied": "تم نسخ إلى الحافظة.",
             "copy-error": "تعذر نسخ النص:",
             "never": "لم يقم بالفعل",

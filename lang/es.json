@@ -548,6 +548,7 @@
         "common": {
             "by": "por",
             "by-author": "por {author}",
+            "anonymous": "Anónimo",
             "copied": "Copiado al portapapeles.",
             "copy-error": "No se pudo copiar el texto:",
             "never": "Nunca",
@@ -788,7 +789,7 @@
         "deck-master": {
             "title": "deckMaster",
             "subtitle": "crea & estudia Barajas",
-            "build": "construye",
+            "build": "crea",
             "study": "estudia",
             "select-deck": "select deck"
         },

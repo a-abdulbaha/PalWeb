@@ -548,6 +548,7 @@
         "common": {
             "by": "by",
             "by-author": "by {author}",
+            "anonymous": "Anonymous",
             "copied": "Copied to clipboard.",
             "copy-error": "Could not copy text:",
             "never": "Never",

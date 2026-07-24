@@ -38,7 +38,7 @@ watch(
     <AppTip v-else-if="sentenceNotFound">
         <p>{{ $t('pages.common.not-found', {model: $t('actions.models.sentence')}) }}</p>
     </AppTip>
-    <div id="app-body">
-        <SentenceContainer v-else-if="sentence" :model="sentence"/>
+    <div v-else-if="sentence" id="app-body">
+        <SentenceContainer :model="sentence"/>
     </div>
 </template>

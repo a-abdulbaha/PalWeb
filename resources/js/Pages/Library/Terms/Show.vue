@@ -46,7 +46,7 @@ const pageTitle = computed(() => {
     <AppTip v-else-if="termsNotFound">
         <p>{{ $t('pages.common.not-found', {model: $t('actions.models.term')}) }}</p>
     </AppTip>
-    <div id="app-body">
-        <TermContainer v-else-if="terms?.length > 0" v-for="term in terms" :key="term.id" :model="term"/>
+    <div v-else-if="terms?.length > 0" id="app-body">
+        <TermContainer v-for="term in terms" :key="term.id" :model="term"/>
     </div>
 </template>

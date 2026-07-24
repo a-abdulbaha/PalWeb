@@ -38,7 +38,7 @@ watch(
     <AppTip v-else-if="deckNotFound">
         <p>{{ $t('pages.common.not-found', {model: $t('actions.models.deck')}) }}</p>
     </AppTip>
-    <div id="app-body">
-        <DeckContainer v-else-if="deck" :model="deck"/>
+    <div v-else-if="deck" id="app-body">
+        <DeckContainer :model="deck"/>
     </div>
 </template>
