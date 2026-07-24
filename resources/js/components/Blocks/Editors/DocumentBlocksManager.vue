@@ -176,7 +176,7 @@ const handleFlattenContainer = (containerId) => {
     </div>
 
     <div v-if="!isNested && documentBlocks.some(block => block.type === 'exercises')" class="featured-title s" style="margin-block-start: 1rem">
-        Total Exercises:
+        {{ $t('pages.lesson-planner.total-exercises') }}:
         <span style="color: var(--color-dark-primary)">
             {{ totalExerciseCount }}
         </span>

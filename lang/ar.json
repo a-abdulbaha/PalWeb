@@ -135,7 +135,7 @@
             "highest": "لقد تعلمت هذا المصطلح"
         },
         "messages": {
-            "not-encountered": "لم تستكشف هذه المصطلح بعد.",
+            "not-encountered": "لم تستكشف هذا المصطلح بعد.",
             "mastery-tooltip": "درجة إتقانك لهذا المصطلح هي {score} ({label})، مما يعني أن {message}."
         }
     },
@@ -520,7 +520,7 @@
         },
         "messages": {
             "current-status": "{model} حاليًّا {status}.",
-            "has-validation-errors": "{model} لا يمكن حفطه بحالته الحاليّة.",
+            "has-validation-errors": "{model} لا يمكن حفظه بحالته الحاليّة.",
             "has-publish-issues": "{model} لا يمكن نشره بحالته الحاليّة.",
             "has-confirmable-issues": "هل أنت متأكّد أنّ {model} كامل؟"
         },
@@ -592,22 +592,22 @@
             "created-on": "بـ{date}."
         },
         "deck": {
-            "title": "رزمة",
+            "title": "الرزمة",
             "empty": "هذه الرزمة فارغة.",
             "locked": "لم تقم بفتح هذه الرزمة بعد في الأكاديمية.",
-            "no-description": "للأسف، لم يخبرنا {author} بعد عن هذه الرزمة.",
+            "description-placeholder": "للأسف، لم يخبرنا {author} بعد عن هذه الرزمة.",
             "created-by": "تم إنشاؤها بواسطة {author} بـ{date}.",
             "terms": {
                 "load-error": "تعذّر تحميل مصطلحات الرزم."
             }
         },
         "dialog": {
-            "title": "محادثة",
+            "title": "المحادثة",
             "locked": "لم تقم بفتح هذه المحادثة بعد في الأكاديمية.",
             "sections": {
                 "media": "وسائط",
                 "options": "خيارات",
-                "transcript": "نصّ"
+                "transcript": "النصّ"
             },
             "options": {
                 "show-terms": "عرض المصطلحات",
@@ -615,7 +615,7 @@
             }
         },
         "lesson": {
-            "number": "درس {number}",
+            "number": "الدرس {number}",
             "scored-perfect": "حصلت على 100% ({count}/{total})",
             "start-quiz": "ابدأ الامتحان",
             "open": "فتح الدرس",
@@ -673,7 +673,7 @@
             "no-results": "لا نتائج"
         },
         "sentence": {
-            "title": "جملة",
+            "title": "الجملة",
             "loading": "يتمّ تحميل الجملة...",
             "speaker": "المتحدّث"
         },
@@ -694,8 +694,8 @@
                 "antonym-abbr": "عكس"
             },
             "sections": {
-                "info": "معلومات",
-                "glosses": "معاني"
+                "info": "المعلومات",
+                "glosses": "المعاني"
             },
             "deck-toggle": {
                 "loading": "جاري تحميل الرزم",
@@ -813,6 +813,7 @@
             "title": "مخطّط الدروس",
             "subtitle": "صنع دروس وأنشطة",
             "course": "الدورة",
+            "total-exercises": "مجموع التمارين",
             "messages": {
                 "info-deck-search": "إنّ لم تستطيع العثور على الرزمة المطلوبة، تأكّد أنّها لا تعود إلى درس آخر.",
                 "info-unit-removal": "يجب عليك الذهاب إلى صفحة تعديل الوحدة لحذفها.",

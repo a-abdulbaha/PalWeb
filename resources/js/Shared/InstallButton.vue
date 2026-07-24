@@ -115,7 +115,7 @@ onMounted(() => {
                     class="app-hint__dismiss"
                     @click="dismissInstallHint"
                 >
-                    {{ $t('dismiss') }}
+                    {{ $t('components.hint.dismiss') }}
                 </button>
             </div>
         </Teleport>

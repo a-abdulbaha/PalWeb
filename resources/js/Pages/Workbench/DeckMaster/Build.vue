@@ -113,9 +113,14 @@ watch(() => props.deckId, async () => {
                 </button>
             </div>
             <AppTip>
-                <p>The Deck is currently {{ deck?.private ? 'Private' : 'Public' }}.</p>
+                <p>{{
+                        $t('forms.messages.current-status', {
+                            model: $t('actions.models.deck'),
+                            status: deck?.private ? $t('forms.status.private') : $t('forms.status.public')
+                        })
+                    }}</p>
                 <template v-if="Object.keys(validationErrors).length">
-                    <p style="font-weight: 700">The Deck cannot be saved in the current state.</p>
+                    <p style="font-weight: 700">{{ $t('forms.messages.has-validation-errors', {model: $t('actions.models.deck')}) }}</p>
                     <ul>
                         <li v-for="(issue, i) in validationErrors" :key="i">{{ issue }}</li>
                     </ul>
@@ -128,13 +133,13 @@ watch(() => props.deckId, async () => {
             </div>
             <div class="window-content-head">
                 <input class="window-content-head-title" v-model="form.name"
-                       placeholder="Required: Deck Name"
+                       :placeholder="$t('forms.fields.title')"
                 />
             </div>
             <UserItem :user="form.author" size="m" comment>
                 <template #comment>
                         <textarea class="user-comment-content" v-model="form.description"
-                                  :placeholder="`Sadly, ${form.author.name} hasn't told us anything about this Deck yet.`"
+                                  :placeholder="$t('components.deck.description-placeholder', {author: form.author.name})"
                         />
                     <div v-if="form.id" class="user-comment-data">
                         {{ $t('components.deck.created-by', {author: form.author.name, date: form.created_at}) }}
@@ -159,13 +164,13 @@ watch(() => props.deckId, async () => {
                 </template>
             </draggable>
 
-            <div class="terms-count">{{ form.terms.length }} Terms</div>
+            <div class="terms-count">{{ $t('components.common.counts.terms', {count: form.terms.length}) }}</div>
         </div>
     </div>
 
     <ModalWrapper v-model="showAlert">
         <NavGuard
-            message="You have unsaved changes. Are you sure you want to leave this page? Unsaved changes will be lost."
+            :message="$t('modals.nav-guard.messages.unsaved-changes')"
             @confirm="handleConfirm"
             @cancel="handleCancel"
         />

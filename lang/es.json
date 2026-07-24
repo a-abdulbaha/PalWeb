@@ -136,7 +136,7 @@
         },
         "messages": {
             "not-encountered": "Aún no has encontrado este Término.",
-            "mastery-tooltip": "Tu Puntaje de Maestría para este Término es {score} ({label}), lo que significa {message}."
+            "mastery-tooltip": "Tu Puntaje de Maestría para este Término es {score} ({label}), lo que significa que {message}."
         }
     },
     "dialect": {
@@ -495,18 +495,18 @@
         "actions": {
             "edit": "editar {title}",
             "create": "crear {title}",
-            "save": "guardar",
-            "reset": "resetear",
-            "insert": "insertar",
+            "save": "Guardar",
+            "reset": "Resetear",
+            "insert": "Insertar",
             "set-status": {
-                "draft": "devolver a borrador",
-                "published": "publicar"
+                "draft": "Revertir a Borrador",
+                "published": "Publicar"
             }
         },
         "status": {
             "public": "public",
             "private": "private",
-            "draft": "borrador",
+            "draft": "en borrador",
             "published": "publicado"
         },
         "fields": {
@@ -595,7 +595,7 @@
             "title": "baraja",
             "empty": "Esta Baraja está vacía.",
             "locked": "Aún no has desbloqueado esta Baraja en la Academia.",
-            "no-description": "Lamentablemente, {author} aún no nos ha contado nada sobre esta Baraja.",
+            "description-placeholder": "Lamentablemente, {author} aún no nos ha contado nada sobre esta Baraja.",
             "created-by": "Creada por {author} el {date}.",
             "terms": {
                 "load-error": "No se pudo cargar los Términos de la Baraja."
@@ -813,6 +813,7 @@
             "title": "lessonPlanner",
             "subtitle": "crea Lecciones & Actividades",
             "course": "curso",
+            "total-exercises": "total de ejercicios",
             "messages": {
                 "info-deck-search": "Si no puedes encontrar la Baraja deseada, asegúrate de que no pertenezca ya a otra Lección.",
                 "info-unit-removal": "Para eliminar una Unidad, debes ir a su página de edición.",

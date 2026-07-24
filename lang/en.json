@@ -495,12 +495,12 @@
         "actions": {
             "edit": "edit {title}",
             "create": "create {title}",
-            "save": "save",
-            "reset": "reset",
-            "insert": "insert",
+            "save": "Save",
+            "reset": "Reset",
+            "insert": "Insert",
             "set-status": {
-                "draft": "revert to draft",
-                "published": "publish"
+                "draft": "Revert to Draft",
+                "published": "Publish"
             }
         },
         "status": {
@@ -595,7 +595,7 @@
             "title": "deck",
             "empty": "This Deck is empty.",
             "locked": "You haven't unlocked this Deck in the Academy yet.",
-            "no-description": "Sadly, {author} hasn't told us anything about this Deck yet.",
+            "description-placeholder": "Sadly, {author} hasn't told us anything about this Deck yet.",
             "created-by": "Created by {author} on {date}.",
             "terms": {
                 "load-error": "Unable to load Deck Terms."
@@ -813,6 +813,7 @@
             "title": "lessonPlanner",
             "subtitle": "create Lessons & Activities",
             "course": "course",
+            "total-exercises": "total exercises",
             "messages": {
                 "info-deck-search": "If you cannot find the desired Deck, make sure it doesn't already belong to another Lesson.",
                 "info-unit-removal": "You must go to the edit page for a Unit to delete it.",

@@ -56,7 +56,7 @@ const {deck, isLoading, isLoadingTerms, loadTermsError} = useDeck(props, {loadTe
                             {{ deck.description }}
                         </template>
                         <template v-else>
-                            <i>{{ $t('components.deck.no-description', {author: deck.author.name}) }}</i>
+                            <i>{{ $t('components.deck.description-placeholder', {author: deck.author.name}) }}</i>
                         </template>
                     </div>
                     <div class="user-comment-data">
