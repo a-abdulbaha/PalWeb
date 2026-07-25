@@ -58,7 +58,7 @@ const {dialog, isLoading, isLoadingTerms} = useDialog(props);
                 </div>
                 <div class="settings-wrapper">
                     <ToggleSingle v-model="showTerms" :label="$t('components.dialog.options.show-terms')"/>
-                    <ToggleSingle v-model="showTranscription" :label="$t('components.dialog.options.show-transcription')"/>
+                    <ToggleSingle v-model="showTranscription" :label="$t('components.common.options.show-transcription')"/>
                 </div>
             </template>
 

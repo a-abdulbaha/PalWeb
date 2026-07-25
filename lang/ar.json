@@ -97,6 +97,7 @@
         "audios": "تسجلات صوت",
         "attributes": "نسب",
         "badges": "شارات",
+        "cards": "كروت",
         "decks": "رزم",
         "inflections": "تصاريف",
         "glosses": "معاني",
@@ -113,10 +114,22 @@
     },
     "card": {
         "fields": {
+            "status": "وضع",
+            "mastery-level": "مرحلة الإتقان",
             "mastery-score": "درجة الإتقان",
             "times-seen": "عدد المشاهدة",
             "last-seen": "آخر مشاهدة",
             "due-on": "تاريخ الاستحقاق"
+        },
+        "status": {
+            "active": "فعّال",
+            "suspended": "معلّق"
+        },
+        "grade": {
+            "fail": "غلط",
+            "low": "يا دوب",
+            "medium": "عرفت",
+            "high": "سهل"
         },
         "mastery-level": {
             "new": "جديد",
@@ -315,7 +328,10 @@
         "subscriptions": {
             "manage": "أدر"
         },
-        "profile": "الملف الشخصيّ"
+        "profile": "الملف الشخصيّ",
+        "notifications": {
+            "preferences-saved": "Your preferences have been saved!"
+        }
     },
     "modals": {
         "popup": {
@@ -351,7 +367,9 @@
             "confirm": "تأكيد",
             "cancel": "إلغاء",
             "messages": {
-                "unsaved-changes": "لديك تغييرات غير محفوظة. هل أنت متأكد من أنك تريد ترك هذه الصفحة؟ سيتم فقدان التغييرات."
+                "unsaved-changes": "لديك تغييرات غير محفوظة. هل أنت متأكد من أنك تريد ترك هذه الصفحة؟ سيتم فقدان التغييرات.",
+                "unsaved-score": "You haven't saved your Score yet. Are you sure you want to leave this page? Your Score will not be saved.",
+                "unfinished-quiz": "You haven't finished the Quiz yet. Are you sure you want to leave this page? Your progress will not be saved."
             }
         },
         "purge-scores": {
@@ -446,6 +464,7 @@
             "deck": "الرزمة",
             "dialog": "المحادثة",
             "lesson": "الدرس",
+            "gloss": "المعنى",
             "page": "الصفحة",
             "root": "الجذر",
             "scores": "العلامة",
@@ -561,7 +580,14 @@
             },
             "sections": {
                 "stats": "الإحصائيات",
-                "terms": "المصطلحات"
+                "terms": "المصطلحات",
+                "settings": "إعدادات",
+                "options": "خيارات"
+            },
+            "options": {
+                "show-transcription": "إظهار الترجمة",
+                "shuffle": "خلط",
+                "reset": "reset"
             },
             "counts": {
                 "terms": "{count} مصطلح"
@@ -576,6 +602,15 @@
         "activity": {
             "title": "النشاط",
             "start": "بدء النشاط"
+        },
+        "quiz": {
+            "answer": {
+                "user-input": "جوابك:",
+                "see-dictionary": "نظر بالقاموس",
+                "mark-correct": "Mark as Correct",
+                "add-to": "Add to Deck",
+                "remove-from": "Remove from Deck"
+            }
         },
         "hint": {
             "dismiss": "صرف"
@@ -610,8 +645,7 @@
                 "transcript": "النصّ"
             },
             "options": {
-                "show-terms": "عرض المصطلحات",
-                "show-transcription": "عرض النصّ"
+                "show-terms": "عرض المصطلحات"
             }
         },
         "lesson": {
@@ -763,6 +797,48 @@
                 "subtitle": "مشاهدة تاريخ العلامات"
             }
         },
+        "cards": {
+            "index": {
+                "title": "الكروت",
+                "filters": {
+                    "due": "أقرب مراجعة",
+                    "latest": "آخر مراجعة",
+                    "mastery": "مرحلة الإتقان"
+                },
+                "messages": {
+                    "results": "Displaying {count} Cards, {message}.",
+                    "no-results": "You have no Cards matching these filters.",
+                    "no-cards": "You don't have any Cards yet. Start reviewing to get started!"
+                },
+                "sort-message": {
+                    "due": "sorted by soonest due",
+                    "latest": "sorted by most recent review",
+                    "mastery": "sorted by Mastery Level"
+                }
+            },
+            "review": {
+                "title": "مراجعة",
+                "learn": "علّم",
+                "review": "راجع",
+                "sections": {
+                    "options": "إعداد",
+                    "card": "الكرت"
+                },
+                "tooltips": {
+                    "processed-cards": "Processed Session Cards",
+                    "session-progress": "Review Session Progress",
+                    "total-cards": "Total Session Cards",
+                    "remaining-learning": "Remaining (New) Learning Cards",
+                    "remaining-learning-relearning": "Remaining Learning & Relearning Cards",
+                    "remaining-relearning": "Remaining (Owned) Relearning Cards",
+                    "remaining-owned": "Remaining Owned Cards"
+                },
+                "notifications": {
+                    "mastered": "تمّ إتقان الكرت!",
+                    "suspended": "تمّ تعليق الكرت!"
+                }
+            }
+        },
         "users": {
             "index": {
                 "title": "المركز",
@@ -791,7 +867,37 @@
             "subtitle": "بناء ودراسة الرزم",
             "build": "إبني",
             "study": "أدرس",
-            "select-deck": "اختر رزمة"
+            "quiz": "quiz",
+            "results": "results",
+            "select-deck": "اختر رزمة",
+            "card-index": "{index} من {total}",
+            "quiz-types": {
+                "practice": "practice"
+            },
+            "buttons": {
+                "card-dealer": "load in Card Dealer",
+                "start-practice": "start practice",
+                "start-quiz": "start quiz"
+            },
+            "options": {
+                "initial-face": "initial face",
+                "front": "front",
+                "back": "back",
+                "show-term": "show term (back)",
+                "show-inflections": "show inflections"
+            },
+            "messages": {
+                "no-created-decks": "It looks like you haven't created any Decks yet. Click the + button to get started!",
+                "no-pinned-decks": "It looks like you haven't pinned any Decks yet. Watch this space.",
+                "select-quiz-type": "Select the type of Quiz & adjust how you'd like for it to be generated.",
+                "student-required": "You must be a Student to enable Quizzes.",
+                "glosses-prompt": "Select the meaning of the Term in English.",
+                "inflections-prompt": "Write the indicated inflection of the Term in Arabic.",
+                "sentences-prompt": "Select the Term that best fits the blank in the Sentence."
+            },
+            "notifications": {
+                "insufficient-items": "Couldn't generate a Quiz with at least 5 questions."
+            }
         },
         "card-dealer": {
             "title": "موزّع الكروت",
@@ -820,6 +926,66 @@
                 "info-lesson-removal": "إزالة درس من هذه القائمة سيفكّ الرابط عن هذه الوحدة. يجب عليك الذهاب إلى صفحة تعديله لحذفه بالكامل.",
                 "warning-incomplete": "هذه الوحدة غير كاملة، إذ تحتوي على أقل من تسعة دروس نُشرت."
             }
+        }
+    },
+    "card-dealer": {
+        "scope": "نطاق",
+        "review-progress": {
+            "exposure": "تعرّض",
+            "progress": "تقدّم",
+            "mastery": "إتقان",
+            "created": "منشأة",
+            "reviewed": "مراجعة",
+            "suspended": "معلّقة",
+            "total": "إجماليّ",
+            "points": "نقاط",
+            "manage-cards": "إدارة الكروت",
+            "messages": {
+                "created": "{createdActiveCount} ({createdTotalCount}) من {activeCount} ({totalCount}) موجودة في المجموعة ({percentCreated})",
+                "reviewed": "{reviewedCount} من {activeCount} ({percentOfActive})، من {potentialCount} موجودة في المجموعة ({percentOfTotal})",
+                "suspended": "{suspendedCount} من {createdCount} كروت منشأة من إجماليّ {totalCount} مصطلحات في المجموعة",
+                "not-student": "يجب أن تكون طالبًا لتمكين الدراسة خلال التكرار المتباعد."
+            },
+            "tooltips": {
+                "exposure": "% من الكروت التي تمّت مراجعتها في المجموعة.",
+                "progress": "نسبة الإتقان للمجموعة، يتمّ حسابها عن طريق إضافة نسبة الإتقان لكل مصطلح."
+            }
+        },
+        "session-preview": {
+            "title": "مراجعة اليوم",
+            "due": "متوقّعة",
+            "new": "جديدة",
+            "review": "للمراجعة",
+            "start": "بدء",
+            "tooltips": {
+                "purge": "يمحو جميع بطاقاتك الجديدة."
+            }
+        },
+        "session-settings": {
+            "title": "إعداد",
+            "new-limit": "حدّ الكروت الجديدة",
+            "review-limit": "حدّ الكروت للمراجعة",
+            "learning-steps": "مراحل التعلّم",
+            "prompt-type": "نوع السؤال"
+        },
+        "review-queue": {
+            "title": "قائمة الانتظار للمراجعة",
+            "today": "اليوم",
+            "due": "متوقّعة"
+        },
+        "review-history": {
+            "title": "تاريخ المراجعة",
+            "cards": "كروت",
+            "owned": "مملوكة",
+            "new": "جديدة",
+            "actions": "عمليات",
+            "reviews": "مراجعات",
+            "right": "صحيحة",
+            "wrong": "خاطئة",
+            "steps": "مراحل",
+            "learning": "في التعلّم",
+            "relearning": "في إعادة التعلّم",
+            "trends": "إحصائيّات"
         }
     },
     "sound-booth": {

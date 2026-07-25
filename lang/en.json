@@ -97,6 +97,7 @@
         "audios": "Audios",
         "attributes": "Attributes",
         "badges": "Badges",
+        "cards": "Cards",
         "decks": "Decks",
         "inflections": "Inflections",
         "glosses": "Glosses",
@@ -113,10 +114,22 @@
     },
     "card": {
         "fields": {
+            "status": "Status",
+            "mastery-level": "Mastery Level",
             "mastery-score": "Mastery Score",
             "times-seen": "Times Seen",
             "last-seen": "Last Seen",
             "due-on": "Due On"
+        },
+        "status": {
+            "active": "Active",
+            "suspended": "Suspended"
+        },
+        "grade": {
+            "fail": "Wrong",
+            "low": "Barely",
+            "medium": "Know",
+            "high": "Easy"
         },
         "mastery-level": {
             "new": "New",
@@ -315,7 +328,10 @@
         "subscriptions": {
             "manage": "manage"
         },
-        "profile": "profile"
+        "profile": "profile",
+        "notifications": {
+            "preferences-saved": "Your preferences have been saved!"
+        }
     },
     "modals": {
         "popup": {
@@ -351,7 +367,9 @@
             "confirm": "Confirm",
             "cancel": "Cancel",
             "messages": {
-                "unsaved-changes": "You have unsaved changes. Are you sure you want to leave this page? Unsaved changes will be lost."
+                "unsaved-changes": "You have unsaved changes. Are you sure you want to leave this page? Unsaved changes will be lost.",
+                "unsaved-score": "You haven't saved your Score yet. Are you sure you want to leave this page? Your Score will not be saved.",
+                "unfinished-quiz": "You haven't finished the Quiz yet. Are you sure you want to leave this page? Your progress will not be saved."
             }
         },
         "purge-scores": {
@@ -445,6 +463,7 @@
             "card": "Card",
             "deck": "Deck",
             "dialog": "Dialog",
+            "gloss": "Gloss",
             "lesson": "Lesson",
             "page": "Page",
             "root": "Root",
@@ -561,7 +580,14 @@
             },
             "sections": {
                 "stats": "stats",
-                "terms": "terms"
+                "terms": "terms",
+                "settings": "settings",
+                "options": "options"
+            },
+            "options": {
+                "show-transcription": "show transcription",
+                "shuffle": "shuffle",
+                "reset": "reset"
             },
             "counts": {
                 "terms": "{count} Terms"
@@ -576,6 +602,15 @@
         "activity": {
             "title": "activity",
             "start": "Start Activity"
+        },
+        "quiz": {
+            "answer": {
+                "user-input": "you said:",
+                "see-dictionary": "See in Dictionary",
+                "mark-correct": "Mark as Correct",
+                "add-to": "Add to Deck",
+                "remove-from": "Remove from Deck"
+            }
         },
         "hint": {
             "dismiss": "Dismiss"
@@ -610,8 +645,7 @@
                 "transcript": "transcript"
             },
             "options": {
-                "show-terms": "Show Terms",
-                "show-transcription": "Show Transcription"
+                "show-terms": "Show Terms"
             }
         },
         "lesson": {
@@ -763,6 +797,48 @@
                 "subtitle": "view your Score history"
             }
         },
+        "cards": {
+            "index": {
+                "title": "cards",
+                "filters": {
+                    "due": "Soonest Due",
+                    "latest": "Latest Review",
+                    "mastery": "Mastery Level"
+                },
+                "messages": {
+                    "results": "Displaying {count} Cards, {message}.",
+                    "no-results": "You have no Cards matching these filters.",
+                    "no-cards": "You don't have any Cards yet. Start reviewing to get started!"
+                },
+                "sort-message": {
+                    "due": "sorted by soonest due",
+                    "latest": "sorted by most recent review",
+                    "mastery": "sorted by Mastery Level"
+                }
+            },
+            "review": {
+                "title": "review",
+                "learn": "Learn",
+                "review": "Review",
+                "sections": {
+                    "options": "options",
+                    "card": "card"
+                },
+                "tooltips": {
+                    "processed-cards": "Processed Session Cards",
+                    "session-progress": "Review Session Progress",
+                    "total-cards": "Total Session Cards",
+                    "remaining-learning": "Remaining (New) Learning Cards",
+                    "remaining-learning-relearning": "Remaining Learning & Relearning Cards",
+                    "remaining-relearning": "Remaining (Owned) Relearning Cards",
+                    "remaining-owned": "Remaining Owned Cards"
+                },
+                "notifications": {
+                    "mastered": "Mastered Card!",
+                    "suspended": "Suspended Card!"
+                }
+            }
+        },
         "users": {
             "index": {
                 "title": "hub",
@@ -791,7 +867,37 @@
             "subtitle": "build & study Decks",
             "build": "build",
             "study": "study",
-            "select-deck": "select deck"
+            "quiz": "quiz",
+            "results": "results",
+            "select-deck": "select deck",
+            "card-index": "{index} of {total}",
+            "quiz-types": {
+                "practice": "practice"
+            },
+            "buttons": {
+                "card-dealer": "load in Card Dealer",
+                "start-practice": "start practice",
+                "start-quiz": "start quiz"
+            },
+            "options": {
+                "initial-face": "initial face",
+                "front": "front",
+                "back": "back",
+                "show-term": "show term (back)",
+                "show-inflections": "show inflections"
+            },
+            "messages": {
+                "no-created-decks": "It looks like you haven't created any Decks yet. Click the + button to get started!",
+                "no-pinned-decks": "It looks like you haven't pinned any Decks yet. Watch this space.",
+                "select-quiz-type": "Select the type of Quiz & adjust how you'd like for it to be generated.",
+                "student-required": "You must be a Student to enable Quizzes.",
+                "glosses-prompt": "Select the meaning of the Term in English.",
+                "inflections-prompt": "Write the indicated inflection of the Term in Arabic.",
+                "sentences-prompt": "Select the Term that best fits the blank in the Sentence."
+            },
+            "notifications": {
+                "insufficient-items": "Couldn't generate a Quiz with at least 5 questions."
+            }
         },
         "card-dealer": {
             "title": "cardDealer",
@@ -820,6 +926,66 @@
                 "info-lesson-removal": "Removing a Lesson from this list will unlink it from this Unit. You must go to its edit page to delete the Lesson altogether.",
                 "warning-incomplete": "This Unit is incomplete, as it contains fewer than 9 published Lessons."
             }
+        }
+    },
+    "card-dealer": {
+        "scope": "scope",
+        "review-progress": {
+            "exposure": "Exposure",
+            "progress": "Progress",
+            "mastery": "Mastery",
+            "created": "Created",
+            "suspended": "Suspended",
+            "reviewed": "Reviewed",
+            "total": "Total",
+            "points": "Points",
+            "manage-cards": "manage cards",
+            "messages": {
+                "created": "{createdActiveCount} ({createdTotalCount}) out of {activeCount} ({totalCount}) available in the set ({percentCreated})",
+                "reviewed": "{reviewedCount} out of {activeCount} ({percentOfActive}), out of {potentialCount} available in the set ({percentOfTotal})",
+                "suspended": "{suspendedCount} out of {createdCount} created Cards out of {totalCount} total Terms in the set",
+                "not-student": "You must be a Student to enable SRS Review."
+            },
+            "tooltips": {
+                "exposure": "% of Cards you have reviewed in the set.",
+                "progress": "Mastery Score for the set, determined by adding up your Mastery Score for each Term."
+            }
+        },
+        "session-preview": {
+            "title": "today’s review",
+            "due": "due",
+            "new": "new",
+            "review": "review",
+            "start": "start",
+            "tooltips": {
+                "purge": "Purges all your New Cards."
+            }
+        },
+        "session-settings": {
+            "title": "settings",
+            "new-limit": "new limit",
+            "review-limit": "review limit",
+            "learning-steps": "learning steps",
+            "prompt-type": "prompt type"
+        },
+        "review-queue": {
+            "title": "review queue",
+            "today": "today",
+            "due": "Due"
+        },
+        "review-history": {
+            "title": "review history",
+            "cards": "Cards",
+            "owned": "Owned",
+            "new": "New",
+            "actions": "Actions",
+            "reviews": "Reviews",
+            "right": "Right",
+            "wrong": "Wrong",
+            "steps": "Steps",
+            "learning": "Learning",
+            "relearning": "Relearning",
+            "trends": "Trends"
         }
     },
     "sound-booth": {
