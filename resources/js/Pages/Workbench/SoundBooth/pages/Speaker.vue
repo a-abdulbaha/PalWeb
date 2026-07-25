@@ -108,7 +108,7 @@ onMounted(async () => {
 
 <template>
     <div class="window-section-head">
-        <h2>{{ $t('speaker.speaker') }}</h2>
+        <h2>{{ $t('speaker.title') }}</h2>
 
         <PopupWindow title="Sound Booth (Speaker)">
             <div>What is my Speaker profile?</div>
