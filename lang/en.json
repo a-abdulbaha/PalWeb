@@ -95,21 +95,21 @@
     },
     "models": {
         "audios": "Audios",
-        "attributes": "attributes",
+        "attributes": "Attributes",
         "badges": "Badges",
         "decks": "Decks",
-        "inflections": "inflections",
-        "glosses": "glosses",
-        "lessons": "lessons",
-        "pages": "pages",
-        "patterns": "patterns",
-        "pronunciations": "pronunciations",
+        "inflections": "Inflections",
+        "glosses": "Glosses",
+        "lessons": "Lessons",
+        "pages": "Pages",
+        "patterns": "Patterns",
+        "pronunciations": "Pronunciations",
         "sentences": "Sentences",
         "speakers": "Speakers",
-        "spellings": "spellings",
+        "spellings": "Spellings",
         "teachers": "Teachers",
         "terms": "Terms",
-        "units": "units"
+        "units": "Units"
     },
     "card": {
         "fields": {
@@ -890,7 +890,6 @@
     "decks.term.added": "Added :term to \":deck\"!",
     "decks.term.removed": "Removed :term from \":deck\"!",
     "badges.get": "You got the \":badge\" Badge! Good job!",
-
     "wiki": "wiki",
     "lessons": "lessons",
     "texts": "texts",

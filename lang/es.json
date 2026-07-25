@@ -838,22 +838,22 @@
             }
         },
         "queue": {
-            "queue": "lista",
+            "queue": "cola",
             "status": {
-                "full": "Ya tienes 100 artículos en la Lista.",
-                "empty": "La Lista ya está vacía."
+                "full": "Ya tienes 100 artículos en la Cola.",
+                "empty": "La Cola ya está vacía."
             },
             "load": {
                 "button": "cargar baraja",
                 "message": "Agrega todos los Términos de una Baraja para grabar."
             },
             "auto": {
-                "button": "lista automática",
-                "message": "Llena la Lista automáticamente con hasta 100 artículos."
+                "button": "cola automática",
+                "message": "Llena la Cola automáticamente con hasta 100 artículos."
             },
             "clear": {
-                "button": "vaciar lista",
-                "message": "Saca todos los artículos de la Lista."
+                "button": "vaciar cola",
+                "message": "Saca todos los artículos de la Cola."
             }
         },
         "record": {
@@ -887,10 +887,9 @@
     "pin.added": ":thing añadido a tus Pines!",
     "pin.removed": ":thing eliminado de tus Pines!",
     "deck.copied": "Created a copy of \":deck\"!",
-    "decks.term.added": "Added :term to \":deck\"!",
-    "decks.term.removed": "Removed :term from \":deck\"!",
-    "badges.get": "You got the \":badge\" Badge! Good job!",
-
+    "decks.term.added": ":term ha sido añadido a \":deck\"!",
+    "decks.term.removed": ":term ha sido eliminado de \":deck\"!",
+    "badges.get": "¡Conseguiste la Insignia \":badge\"! ¡Bien hecho!",
     "documentation": "documentación",
     "dictionary": "diccionario",
     "lessons": "cursos",

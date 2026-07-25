@@ -457,7 +457,7 @@
             "user": "المستخدم"
         },
         "card": {
-            "master": "إتقن الكرت",
+            "master": "إتقان الكرت",
             "restore": "استعادة الكرت",
             "suspend": "تعليق الكرت",
             "reset": "إعادة تعيين الكرت"
@@ -637,7 +637,7 @@
             "new-record": "سجل جديد!",
             "answered-correctly": "أجبت على {correct} من {total} أسئلة بشكل صحيح.",
             "review-answers": "راجع إجاباتك بالأسفل.",
-            "history": "انظر سجل النتائج",
+            "history": "نظر سجل النتائج",
             "feedback": {
                 "highest": "مثالي!",
                 "high": "أبدعت!",
@@ -838,7 +838,7 @@
             }
         },
         "queue": {
-            "queue": "قائمة الإنتظار",
+            "queue": "قائمة الانتظار",
             "status": {
                 "full": "لديك 100 عنصر في قائمة الإنتظار.",
                 "empty": "القائمة فارغة."
@@ -890,7 +890,6 @@
     "decks.term.added": "تمّت إضافة :term إلى \":deck\"!",
     "decks.term.removed": "تمّت إزالة :term من \":deck\"!",
     "badges.get": "حصلت على شارة \":badge\"! أبدعت!",
-
     "documentation": "توثيق",
     "dictionary": "قاموس",
     "lessons": "دروس",
