@@ -172,6 +172,12 @@
             "select": "اختيار",
             "sort": "ترتيب"
         },
+        "prompts": {
+            "input": "Answer the prompt with a complete sentence, following the format of the example.",
+            "match": "Match the two columns based on the prompt. Only one distribution of answers is possible.",
+            "select": "Put the items in the correct order to build the sentence or dialog.",
+            "sort": "Select the most appropriate answer in response to the prompt."
+        },
         "example": "مثال",
         "shuffle": "خلط"
     },
@@ -369,7 +375,8 @@
             "messages": {
                 "unsaved-changes": "لديك تغييرات غير محفوظة. هل أنت متأكد من أنك تريد ترك هذه الصفحة؟ سيتم فقدان التغييرات.",
                 "unsaved-score": "You haven't saved your Score yet. Are you sure you want to leave this page? Your Score will not be saved.",
-                "unfinished-quiz": "You haven't finished the Quiz yet. Are you sure you want to leave this page? Your progress will not be saved."
+                "unfinished-quiz": "You haven't finished the Quiz yet. Are you sure you want to leave this page? Your progress will not be saved.",
+                "unfinished-activity": "You haven't finished the Activity yet. Are you sure you want to leave this page? Your progress will not be saved."
             }
         },
         "purge-scores": {
@@ -561,6 +568,11 @@
             "row": "صفّ",
             "person": "شخص",
             "inflection": "تصريف"
+        },
+        "messages": {
+            "empty-sentence": "Empty Sentence Block. Please create a custom Sentence or load in a Sentence model.",
+            "unsupported-block": "Unsupported Exercise Block type:",
+            "unsupported-exercise-block": "Unsupported Block:"
         }
     },
     "components": {
@@ -601,7 +613,8 @@
         },
         "activity": {
             "title": "النشاط",
-            "start": "بدء النشاط"
+            "start": "بدء النشاط",
+            "exit": "Exit to Lesson"
         },
         "quiz": {
             "answer": {
@@ -705,6 +718,9 @@
                 }
             }
         },
+        "skill": {
+            "title": "Skill"
+        },
         "search-select": {
             "placeholder": "إبحث",
             "searching": "يبحث",
@@ -783,10 +799,23 @@
                 "empty": "{speaker} لم يرفع أي تسجيلات صوت بعد."
             }
         },
+        "academy": {
+            "index": {
+                "title": "academy"
+            }
+        },
         "lessons": {
             "index": {
                 "title": "الدروس",
                 "subtitle": "تعلّم اللهجة الفلسطينيّة"
+            },
+            "show": {
+                "skill-list": "In this Lesson, you'll learn to:",
+                "no-description": "(No description has been written for the Lesson yet.)",
+                "missing-deck": "No Deck available for this Lesson yet.",
+                "missing-activity": "No Activity available for this Lesson yet.",
+                "missing-dialog": "No Dialog available for this Lesson yet.",
+                "ready": "ready to go?"
             }
         },
         "dialogs": {

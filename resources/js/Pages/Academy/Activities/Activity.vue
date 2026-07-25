@@ -80,9 +80,9 @@ const isValidRequest = computed(() => {
         <div class="activity-head" v-if="!ActivitySession.isViewingResults">
             <Link class="feature-callout" style="justify-self: center"
                   :href="route('lessons.show', ActivitySession.activity.lesson.global_position)">
-                Exit to Lesson
+                {{ $t('components.activity.exit') }}
             </Link>
-            <h1>activity</h1>
+            <h1>{{ $t('components.activity.title') }}</h1>
         </div>
         <div id="app-body">
             <div class="activity-container" v-if="!ActivitySession.isViewingResults">
@@ -101,7 +101,7 @@ const isValidRequest = computed(() => {
 
     <ModalWrapper v-model="showAlert">
         <NavGuard
-            message="You haven't finished the Activity yet. Are you sure you want to leave this page? Your progress will not be saved."
+            :message="$t('modals.nav-guard.messages.unfinished-activity')"
             @confirm="handleConfirm"
             @cancel="handleCancel"
         />

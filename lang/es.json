@@ -172,6 +172,12 @@
             "select": "elegir",
             "sort": "ordenar"
         },
+        "prompts": {
+            "input": "Contesta a la pregunta con una oración completa, siguiendo el formato del ejemplo.",
+            "match": "Empareja las dos columnas en base a la pregunta. Solo una distribución de respuestas es posible.",
+            "select": "Coloca los elementos en el orden correcto para construir la oración o el diálogo.",
+            "sort": "Selecciona la respuesta más adecuada en respuesta a la pregunta."
+        },
         "example": "ejemplo",
         "shuffle": "barajar"
     },
@@ -369,7 +375,8 @@
             "messages": {
                 "unsaved-changes": "Tienes cambios no guardados. ¿Estás seguro de que quieres abandonar esta página? Se perderán los cambios no guardados.",
                 "unsaved-score": "Aún no has guardado tu Puntaje. ¿Estás seguro de que quieres abandonar esta página? Tu Puntaje no será guardado.",
-                "unfinished-quiz": "Aún no has terminado el Quiz. ¿Estás seguro de que quieres abandonar esta página? Tu progreso no será guardado."
+                "unfinished-quiz": "Aún no has terminado el Quiz. ¿Estás seguro de que quieres abandonar esta página? Tu progreso no será guardado.",
+                "unfinished-activity": "Aún no has terminado la Actividad. ¿Estás seguro de que quieres abandonar esta página? Tu progreso no será guardado."
             }
         },
         "purge-scores": {
@@ -561,6 +568,11 @@
             "row": "fila",
             "person": "persona",
             "inflection": "inflección"
+        },
+        "messages": {
+            "empty-sentence": "Bloque de Oración vacío. Por favor, crea una Oración a la medida o carga un modelo de Oración.",
+            "unsupported-block": "Tipo de Bloque de Ejercicio no compatible:",
+            "unsupported-exercise-block": "Bloque no compatible:"
         }
     },
     "components": {
@@ -601,7 +613,8 @@
         },
         "activity": {
             "title": "Actividad",
-            "start": "Iniciar Actividad"
+            "start": "Iniciar Actividad",
+            "exit": "Salir a la Lección"
         },
         "quiz": {
             "answer": {
@@ -650,7 +663,7 @@
         },
         "lesson": {
             "number": "Lección {number}",
-            "scored-perfect": "Sacaste un 100% ({count}/{total})",
+            "scored-perfect": "Obtuviste 100% ({count}/{total})",
             "start-quiz": "Comenzar Quiz",
             "open": "abrir Lección",
             "no-skills": "(Ninguna habilidad ha sido agregada a esta Lección aún.)",
@@ -704,6 +717,9 @@
                     "withTranslation": "withTranslation"
                 }
             }
+        },
+        "skill": {
+            "title": "Habilidad"
         },
         "search-select": {
             "placeholder": "Buscar",
@@ -783,15 +799,28 @@
                 "empty": "{speaker} aún no ha subido ningún Audio."
             }
         },
+        "academy": {
+            "index": {
+                "title": "academia"
+            }
+        },
         "lessons": {
             "index": {
                 "title": "lecciones",
                 "subtitle": "aprende árabe palestino"
+            },
+            "show": {
+                "skill-list": "En esta Lección, aprenderás a:",
+                "no-description": "(Aún no se ha escrito ninguna descripción para esta Lección.)",
+                "missing-deck": "Aún no hay una Baraja disponible para esta Lección.",
+                "missing-activity": "Aún no hay una Actividad disponible para esta Lección.",
+                "missing-dialog": "Aún no hay un Diálogo disponible para esta Lección.",
+                "ready": "¿listo para empezar?"
             }
         },
         "dialogs": {
             "index": {
-                "title": "dialogos",
+                "title": "diálogos",
                 "subtitle": "entrada de lenguaje natural"
             }
         },
@@ -1095,7 +1124,6 @@
     "origin": "orígen",
     "inherited": "heredado",
     "borrowed": "prestado",
-    "pattern": "patrón",
     "variants": "variantes",
     "spellings": "ortografías",
     "root": "raíz",
@@ -1122,7 +1150,6 @@
     "palestinian.arabic": "el Árabe Palestino",
     "curriculum": "currículo",
     "level": "nivel",
-    "unit": "unidad",
     "lesson": "lección",
     "module": "módulo",
     "grammar": "gramática",
