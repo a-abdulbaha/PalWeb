@@ -600,7 +600,7 @@
             }
         },
         "activity": {
-            "title": "activity",
+            "title": "Activity",
             "start": "Start Activity"
         },
         "quiz": {
@@ -627,7 +627,7 @@
             "created-on": "on {date}."
         },
         "deck": {
-            "title": "deck",
+            "title": "Deck",
             "empty": "This Deck is empty.",
             "locked": "You haven't unlocked this Deck in the Academy yet.",
             "description-placeholder": "Sadly, {author} hasn't told us anything about this Deck yet.",
@@ -637,7 +637,7 @@
             }
         },
         "dialog": {
-            "title": "dialog",
+            "title": "Dialog",
             "locked": "You haven't unlocked this Dialog in the Academy yet.",
             "sections": {
                 "media": "media",
@@ -672,6 +672,10 @@
             "answered-correctly": "You answered {correct} out of {total} questions correctly.",
             "review-answers": "Review your answers below.",
             "history": "See Score History",
+            "sections": {
+                "history": "history",
+                "detail": "detail"
+            },
             "feedback": {
                 "highest": "Flawless!",
                 "high": "Impressive!",
@@ -707,12 +711,12 @@
             "no-results": "No results."
         },
         "sentence": {
-            "title": "sentence",
+            "title": "Sentence",
             "loading": "Loading Sentence...",
             "speaker": "speaker"
         },
         "term": {
-            "title": "term",
+            "title": "Term",
             "construct": "construct:",
             "editor-note": "editor’s note",
             "featured": "featured",
@@ -794,7 +798,18 @@
         "scores": {
             "index": {
                 "title": "scores",
-                "subtitle": "view your Score history"
+                "subtitle": "view your Score history",
+                "latest-scored": "Latest Scored",
+                "messages": {
+                    "deck-list": "Here are all the Decks you've studied, from most to least recent, except for Decks associated with Lessons, which are shown in the Lessons tab.",
+                    "no-decks": "You have not studied any Decks yet. When you do, you will see your most recently scored Decks here."
+                }
+            },
+            "history": {
+                "messages": {
+                    "displaying-all": "Displaying all {count} Scores for this {model}, from most to least recent.",
+                    "no-scores": "You have not studied this {model} yet. When you do, you will see a history of your Scores here."
+                }
             }
         },
         "cards": {

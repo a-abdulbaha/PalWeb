@@ -672,6 +672,10 @@
             "answered-correctly": "أجبت على {correct} من {total} أسئلة بشكل صحيح.",
             "review-answers": "راجع إجاباتك بالأسفل.",
             "history": "نظر سجل النتائج",
+            "sections": {
+                "history": "سجل",
+                "detail": "تفصيل"
+            },
             "feedback": {
                 "highest": "مثالي!",
                 "high": "أبدعت!",
@@ -794,7 +798,18 @@
         "scores": {
             "index": {
                 "title": "العلامات",
-                "subtitle": "مشاهدة تاريخ العلامات"
+                "subtitle": "مشاهدة تاريخ العلامات",
+                "latest-scored": "Latest Scored",
+                "messages": {
+                    "deck-list": "Here are all the Decks you've studied, from most to least recent, except for Decks associated with Lessons, which are shown in the Lessons tab.",
+                    "no-decks": "You have not studied any Decks yet. When you do, you will see your most recently scored Decks here."
+                }
+            },
+            "history": {
+                "messages": {
+                    "displaying-all": "Displaying all {count} Scores for this {model}, from most to least recent.",
+                    "no-scores": "You have not studied this {model} yet. When you do, you will see a history of your Scores here."
+                }
             }
         },
         "cards": {

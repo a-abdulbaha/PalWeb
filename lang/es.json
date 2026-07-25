@@ -600,7 +600,7 @@
             }
         },
         "activity": {
-            "title": "actividad",
+            "title": "Actividad",
             "start": "Iniciar Actividad"
         },
         "quiz": {
@@ -627,7 +627,7 @@
             "created-on": "el {date}."
         },
         "deck": {
-            "title": "baraja",
+            "title": "Baraja",
             "empty": "Esta Baraja está vacía.",
             "locked": "Aún no has desbloqueado esta Baraja en la Academia.",
             "description-placeholder": "Lamentablemente, {author} aún no nos ha contado nada sobre esta Baraja.",
@@ -637,7 +637,7 @@
             }
         },
         "dialog": {
-            "title": "diálogo",
+            "title": "Diálogo",
             "locked": "Aún no has desbloqueado este Diálogo en la Academia.",
             "sections": {
                 "media": "multimedia",
@@ -649,7 +649,7 @@
             }
         },
         "lesson": {
-            "number": "lección {number}",
+            "number": "Lección {number}",
             "scored-perfect": "Sacaste un 100% ({count}/{total})",
             "start-quiz": "Comenzar Quiz",
             "open": "abrir Lección",
@@ -672,6 +672,10 @@
             "answered-correctly": "Contestaste a {correct} de {total} preguntas correctamente.",
             "review-answers": "Revisa tus respuestas a continuación.",
             "history": "Ver Historial de Puntajes",
+            "sections": {
+                "history": "Historial",
+                "detail": "Detalle"
+            },
             "feedback": {
                 "highest": "¡Impecable!",
                 "high": "¡Impresionante!",
@@ -707,12 +711,12 @@
             "no-results": "Ningún resultado."
         },
         "sentence": {
-            "title": "oración",
+            "title": "Oración",
             "loading": "Cargando Oración...",
             "speaker": "hablante"
         },
         "term": {
-            "title": "término",
+            "title": "Término",
             "construct": "forma de construcción:",
             "editor-note": "nota del editor",
             "featured": "destacado",
@@ -794,7 +798,18 @@
         "scores": {
             "index": {
                 "title": "puntajes",
-                "subtitle": "ver historial de Puntajes"
+                "subtitle": "ver historial de Puntajes",
+                "latest-scored": "Últimas Estudiadas",
+                "messages": {
+                    "deck-list": "Aquí están todas las Barajas que has estudiado, de más a menos reciente, excepto las que están asociadas a Lecciones, que se muestran en la pestaña de Lecciones.",
+                    "no-decks": "Aún no has estudiado ninguna Baraja. Cuando lo hagas, verás las últimas Barajas estudiadas aquí."
+                }
+            },
+            "history": {
+                "messages": {
+                    "displaying-all": "Mostrando todos los {count} Puntajes para esta {model}, de más a menos reciente.",
+                    "no-scores": "Aún no has estudiado esta {model}. Cuando lo hagas, verás un historial de tus Puntajes aquí."
+                }
             }
         },
         "cards": {
@@ -863,7 +878,7 @@
             "title": "wiki"
         },
         "deck-master": {
-            "title": "deckMaster",
+            "title": "Barajador",
             "subtitle": "crea & estudia Barajas",
             "build": "crea",
             "study": "estudia",
@@ -900,23 +915,23 @@
             }
         },
         "card-dealer": {
-            "title": "cardDealer",
+            "title": "Repartidor",
             "subtitle": "estudio x repetición espaciada"
         },
         "sound-booth": {
-            "title": "soundBooth",
+            "title": "Grabadora",
             "subtitle": "inmortaliza el árabe palestino"
         },
         "word-logger": {
-            "title": "wordLogger",
+            "title": "Registrador",
             "subtitle": "gestiona entradas de Diccionario"
         },
         "speech-maker": {
-            "title": "speechMaker",
+            "title": "Dialogador",
             "subtitle": "crea Frases & Diálogos"
         },
         "lesson-planner": {
-            "title": "lessonPlanner",
+            "title": "Planificador",
             "subtitle": "crea Lecciones & Actividades",
             "course": "curso",
             "total-exercises": "total de ejercicios",
