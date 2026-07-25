@@ -87,8 +87,8 @@
                 "alphabetical": "الترتيب الأبجديّ",
                 "frequency": "حسب التكرار",
                 "latest": "حسب التوقيت",
-                "pinned": "محفوطات",
-                "fluency": "by Fluency",
+                "pinned": "مفضّلات",
+                "fluency": "حسب الطلاقة",
                 "popularity": "حسب الشعبيّة"
             }
         }
@@ -173,10 +173,10 @@
             "sort": "ترتيب"
         },
         "prompts": {
-            "input": "Answer the prompt with a complete sentence, following the format of the example.",
-            "match": "Match the two columns based on the prompt. Only one distribution of answers is possible.",
-            "select": "Put the items in the correct order to build the sentence or dialog.",
-            "sort": "Select the most appropriate answer in response to the prompt."
+            "input": "جاوب السؤال بجملة كاملة، مقلّدًا صيفة المثال. لا يمكن إلا توزيع واحد للإجابات.",
+            "match": "أوصل الأعمدة مع الأجوبة الصحيحة.",
+            "select": "ضع العناصر في الترتيب الصحيح لتبني الجملة أو المحادثة.",
+            "sort": "اختر الأجوبة الأكثر مناسبة في الرد على السؤال."
         },
         "example": "مثال",
         "shuffle": "خلط"
@@ -336,7 +336,7 @@
         },
         "profile": "الملف الشخصيّ",
         "notifications": {
-            "preferences-saved": "Your preferences have been saved!"
+            "preferences-saved": "تمّ حفظ إعداداتك!"
         }
     },
     "modals": {
@@ -374,9 +374,9 @@
             "cancel": "إلغاء",
             "messages": {
                 "unsaved-changes": "لديك تغييرات غير محفوظة. هل أنت متأكد من أنك تريد ترك هذه الصفحة؟ سيتم فقدان التغييرات.",
-                "unsaved-score": "You haven't saved your Score yet. Are you sure you want to leave this page? Your Score will not be saved.",
-                "unfinished-quiz": "You haven't finished the Quiz yet. Are you sure you want to leave this page? Your progress will not be saved.",
-                "unfinished-activity": "You haven't finished the Activity yet. Are you sure you want to leave this page? Your progress will not be saved."
+                "unsaved-score": "لم تقم بعد بحفظ العلامة. هل أنت متأكد من أنك تريد ترك هذه الصفحة؟ لن يتم حفظ العلامة.",
+                "unfinished-quiz": "لم تقم بعد بحل هذا الاختبار. هل أنت متأكد من أنك تريد ترك هذه الصفحة؟ لن يتم حفظ التقدّم.",
+                "unfinished-activity": "لم تقم بعد بحل هذه النشاط. هل أنت متأكد من أنك تريد ترك هذه الصفحة؟ لن يتم حفظ التقدّم."
             }
         },
         "purge-scores": {
@@ -570,9 +570,9 @@
             "inflection": "تصريف"
         },
         "messages": {
-            "empty-sentence": "Empty Sentence Block. Please create a custom Sentence or load in a Sentence model.",
-            "unsupported-block": "Unsupported Exercise Block type:",
-            "unsupported-exercise-block": "Unsupported Block:"
+            "empty-sentence": "صندوق الجملة فارغ. الرجاء إنشاء جملة جديدة أو تحميل نموذج جملة.",
+            "unsupported-block": "نوع غير مدعوم من صندوق التمارين:",
+            "unsupported-exercise-block": "صندوق غير مدعوم:"
         }
     },
     "components": {
@@ -614,15 +614,15 @@
         "activity": {
             "title": "النشاط",
             "start": "بدء النشاط",
-            "exit": "Exit to Lesson"
+            "exit": "الخروج إلى الدرس"
         },
         "quiz": {
             "answer": {
                 "user-input": "جوابك:",
                 "see-dictionary": "نظر بالقاموس",
-                "mark-correct": "Mark as Correct",
-                "add-to": "Add to Deck",
-                "remove-from": "Remove from Deck"
+                "mark-correct": "اختيار كصحيح",
+                "add-to": "إضافة للرزمة",
+                "remove-from": "حذف من الرزمة"
             }
         },
         "hint": {
@@ -664,7 +664,6 @@
         "lesson": {
             "number": "الدرس {number}",
             "scored-perfect": "حصلت على 100% ({count}/{total})",
-            "start-quiz": "ابدأ الامتحان",
             "open": "فتح الدرس",
             "no-skills": "(لم يتم إضافة مهارات بعد)",
             "skill": "مهارة {number}",
@@ -680,7 +679,7 @@
         },
         "score": {
             "student-required": "يجب أن تكون طالب لتتمكّن من حصول على علامات.",
-            "quizzed-on": "تم الامتحان بـ{date}.",
+            "quizzed-on": "تم الاختبار بـ{date}.",
             "new-record": "سجل جديد!",
             "answered-correctly": "أجبت على {correct} من {total} أسئلة بشكل صحيح.",
             "review-answers": "راجع إجاباتك بالأسفل.",
@@ -700,12 +699,12 @@
                 "latest-score": "آخر علامة",
                 "highest-score": "أعلى علامة",
                 "average-score": "متوسط العلامات",
-                "latest-quiz": "الامتحان الأخير",
-                "highest-quiz": "أعلى امتحان",
-                "times-quizzed": "عدد الامتحانات"
+                "latest-quiz": "الاختبار الأخير",
+                "highest-quiz": "أعلى اختبار",
+                "times-quizzed": "عدد الاختبارات"
             },
             "quiz": {
-                "type": "نوع الامتحان",
+                "type": "نوع الاختبار",
                 "types": {
                     "glosses": "معاني",
                     "sentences": "جمل",
@@ -719,7 +718,7 @@
             }
         },
         "skill": {
-            "title": "Skill"
+            "title": "مهارة"
         },
         "search-select": {
             "placeholder": "إبحث",
@@ -766,10 +765,15 @@
         "common": {
             "index": "فهرس",
             "loading": "جاري التحميل {model}...",
-            "displaying-all": "عرض جميع {count} {model} في المكتبة.",
+            "displaying-all": "عرض جميع ال{model} الـ{count} في المكتبة.",
             "displaying-none": "لا يوجد {model} تطابق لهذا الطلب.",
             "displaying-results": "عرض {count} {model} مطابقًا لهذا الطلب.",
-            "not-found": "للأسف، لم يتمّ العثور على ال{model} المطلوب."
+            "not-found": "للأسف، لم يتمّ العثور على ال{model} المطلوب.",
+            "sort-messages": {
+                "alphabetical": "يتم الفرز أبجديًا حسب الجذر.",
+                "frequency": "يتم الفرز حسب التكرار في جميع أنحاء المدوّنة اللغويّة.",
+                "latest": "يتم الفرز حسب تاريخ الإنشاء."
+            }
         },
         "terms": {
             "index": {
@@ -795,13 +799,13 @@
                 "subtitle": "Audio::all()"
             },
             "speaker": {
-                "is-private": "ملفّك حاليَّا بالوضع الخاصّ.",
+                "is-private": "ملفّك حاليًّا بالوضع الخاصّ.",
                 "empty": "{speaker} لم يرفع أي تسجيلات صوت بعد."
             }
         },
         "academy": {
             "index": {
-                "title": "academy"
+                "title": "أكاديمية"
             }
         },
         "lessons": {
@@ -810,12 +814,12 @@
                 "subtitle": "تعلّم اللهجة الفلسطينيّة"
             },
             "show": {
-                "skill-list": "In this Lesson, you'll learn to:",
-                "no-description": "(No description has been written for the Lesson yet.)",
-                "missing-deck": "No Deck available for this Lesson yet.",
-                "missing-activity": "No Activity available for this Lesson yet.",
-                "missing-dialog": "No Dialog available for this Lesson yet.",
-                "ready": "ready to go?"
+                "skill-list": "في هذا الدرس ستتعلّم التالي:",
+                "no-description": "(لم يتمّ كتابة أيّ وصف لهذا الدرس بعد.)",
+                "missing-deck": "لا رزمة متوفّرة لهذا الدرس بعد.",
+                "missing-activity": "لا نشاط متوفّر لهذا الدرس بعد.",
+                "missing-dialog": "لا محادثة متوفّرة لهذا الدرس بعد.",
+                "ready": "جاهز للذهاب؟"
             }
         },
         "dialogs": {
@@ -828,16 +832,16 @@
             "index": {
                 "title": "العلامات",
                 "subtitle": "مشاهدة تاريخ العلامات",
-                "latest-scored": "Latest Scored",
+                "latest-scored": "آخر العلامات",
                 "messages": {
-                    "deck-list": "Here are all the Decks you've studied, from most to least recent, except for Decks associated with Lessons, which are shown in the Lessons tab.",
-                    "no-decks": "You have not studied any Decks yet. When you do, you will see your most recently scored Decks here."
+                    "deck-list": "هنا لديك جميع الرزم التي درستها، من الأحدث إلى الأقدم، ما عدا الرزم التابع للدروس، ستجدها معروضة في تبويب الدروس.",
+                    "no-decks": "لم تدرس أيّ رزم بعد. عندما تفعل، سترى أحدث الرزم التي درستها هنا."
                 }
             },
             "history": {
                 "messages": {
-                    "displaying-all": "Displaying all {count} Scores for this {model}, from most to least recent.",
-                    "no-scores": "You have not studied this {model} yet. When you do, you will see a history of your Scores here."
+                    "displaying-all": "يعرض جميع العلامات ال{count} لهذا ال{model}، من الأحدث إلى الأقدم.",
+                    "no-scores": "لم تدرس هذا ال{model} بعد. عندما تفعل، سترى تاريخ علاماتك هنا."
                 }
             }
         },
@@ -850,14 +854,14 @@
                     "mastery": "مرحلة الإتقان"
                 },
                 "messages": {
-                    "results": "Displaying {count} Cards, {message}.",
-                    "no-results": "You have no Cards matching these filters.",
-                    "no-cards": "You don't have any Cards yet. Start reviewing to get started!"
+                    "results": "يعرض {count} كروت, {message}.",
+                    "no-results": "لا توجد لديك كروت مطابقة لهذه الفلاتر.",
+                    "no-cards": "لا توجد لديك كروت بعد. ابدأ بالمراجعة للبدء!"
                 },
                 "sort-message": {
-                    "due": "sorted by soonest due",
-                    "latest": "sorted by most recent review",
-                    "mastery": "sorted by Mastery Level"
+                    "due": "مرتبة حسب تاريخ الاستحقاق الأقرب",
+                    "latest": "مرتبة حسب أحدث مراجعة",
+                    "mastery": "مرتبة حسب مرحلة الإتقان"
                 }
             },
             "review": {
@@ -869,13 +873,13 @@
                     "card": "الكرت"
                 },
                 "tooltips": {
-                    "processed-cards": "Processed Session Cards",
-                    "session-progress": "Review Session Progress",
-                    "total-cards": "Total Session Cards",
-                    "remaining-learning": "Remaining (New) Learning Cards",
-                    "remaining-learning-relearning": "Remaining Learning & Relearning Cards",
-                    "remaining-relearning": "Remaining (Owned) Relearning Cards",
-                    "remaining-owned": "Remaining Owned Cards"
+                    "processed-cards": "كروت الجلسة المعالجة",
+                    "session-progress": "تقدّم جلسة المراجعة",
+                    "total-cards": "إجمالي كروت الجلسة",
+                    "remaining-learning": "كروت التعلّم (الجديدة) المتبقّية",
+                    "remaining-learning-relearning": "كروت التعلّم وإعادة التعلّم",
+                    "remaining-relearning": "كروت إعادة التعلّم (المملوكة) المتبقّية",
+                    "remaining-owned": "الكروت المملوكة المتبقّية"
                 },
                 "notifications": {
                     "mastered": "تمّ إتقان الكرت!",
@@ -897,9 +901,9 @@
             },
             "edit": {
                 "messages": {
-                    "teacher-eligible": "You are eligible to create a Teacher profile. Click the + button to start creating one now.",
-                    "teacher-instructions": "Fill out the following form to create your Teacher profile. It will only be created once you Save.",
-                    "teacher-bio-placeholder": "What would you like us to know about you as a teacher?"
+                    "teacher-eligible": "يمكنك إنشاء ملفّ شخصيّ للمعلّم. اكبس على زر الـ+ للبدء!.",
+                    "teacher-instructions": "املأ الاستمارة التالي لإنشاء ملفّك الشخصيّ للمعلّم. سينشئ فقط بعد الحفظ.",
+                    "teacher-bio-placeholder": "ماذا تريد أن نعرف عنك كمعلّم؟"
                 }
             }
         },
@@ -911,36 +915,36 @@
             "subtitle": "بناء ودراسة الرزم",
             "build": "إبني",
             "study": "أدرس",
-            "quiz": "quiz",
-            "results": "results",
-            "select-deck": "اختر رزمة",
+            "quiz": "اختبار",
+            "results": "نتائج",
+            "select-deck": "اختيار الرزمة",
             "card-index": "{index} من {total}",
             "quiz-types": {
-                "practice": "practice"
+                "practice": "تدريب"
             },
             "buttons": {
-                "card-dealer": "load in Card Dealer",
-                "start-practice": "start practice",
-                "start-quiz": "start quiz"
+                "card-dealer": "تحميل في موزّع الكروت",
+                "start-practice": "بدء التدريب",
+                "start-quiz": "بدء الاختبار"
             },
             "options": {
-                "initial-face": "initial face",
-                "front": "front",
-                "back": "back",
-                "show-term": "show term (back)",
-                "show-inflections": "show inflections"
+                "initial-face": "الوجه الأوّلي",
+                "front": "الواجهة",
+                "back": "الظهر",
+                "show-term": "عرض المصطلح (ظهر)",
+                "show-inflections": "عرض التصاريف"
             },
             "messages": {
-                "no-created-decks": "It looks like you haven't created any Decks yet. Click the + button to get started!",
-                "no-pinned-decks": "It looks like you haven't pinned any Decks yet. Watch this space.",
-                "select-quiz-type": "Select the type of Quiz & adjust how you'd like for it to be generated.",
-                "student-required": "You must be a Student to enable Quizzes.",
-                "glosses-prompt": "Select the meaning of the Term in English.",
-                "inflections-prompt": "Write the indicated inflection of the Term in Arabic.",
-                "sentences-prompt": "Select the Term that best fits the blank in the Sentence."
+                "no-created-decks": "يبدو أنّك لم تنشئ أيّ رزم بعد. اكبس على زر الـ+ للبدء!",
+                "no-pinned-decks": "يبدو أنك لم تضف أي رزم إلى مفضلاتك بعد. سننتظرك هنا.",
+                "select-quiz-type": "اختر نوع الاختبار وقم بضبط الطريقة التي تريد أن يتم بها إنشاؤه.",
+                "student-required": "يجب أن تكون طالبًا لتمكين الاختبارات.",
+                "glosses-prompt": "اختر معنى المصطلح باللغة الإنجليزية.",
+                "inflections-prompt": "أكتب التصريف المحدد للمصطلح باللغة العربية.",
+                "sentences-prompt": "اختر المصطلح الذي يناسب الفراغ في الجملة."
             },
             "notifications": {
-                "insufficient-items": "Couldn't generate a Quiz with at least 5 questions."
+                "insufficient-items": "لم يكن من الممكن إنشاء اختبار يحتوي على 5 أسئلة على الأقل."
             }
         },
         "card-dealer": {
@@ -968,7 +972,7 @@
                 "info-deck-search": "إنّ لم تستطيع العثور على الرزمة المطلوبة، تأكّد أنّها لا تعود إلى درس آخر.",
                 "info-unit-removal": "يجب عليك الذهاب إلى صفحة تعديل الوحدة لحذفها.",
                 "info-lesson-removal": "إزالة درس من هذه القائمة سيفكّ الرابط عن هذه الوحدة. يجب عليك الذهاب إلى صفحة تعديله لحذفه بالكامل.",
-                "warning-incomplete": "هذه الوحدة غير كاملة، إذ تحتوي على أقل من تسعة دروس نُشرت."
+                "warning-incomplete": "هذه الوحدة غير كاملة، إذ تحتوي على أقل من تسعة دروس نشرت."
             }
         }
     },
@@ -1094,8 +1098,8 @@
     "created": "تمّ إنشاء :thing بنجاح!",
     "updated": "تمّ تحديث :thing بنجاح!",
     "deleted": "تمّ حذف :thing بنجاح!",
-    "pin.added": "تمّت إضافة :thing عالكلمات المحفوظة",
-    "pin.removed": "تمّت إزالة :thing من الكلمات المحفوظة",
+    "pin.added": "تمّت إضافة :thing عالمفضّلات",
+    "pin.removed": "تمّت إزالة :thing من عالمفضّلات",
     "deck.copied": "تمّ إنشاء نسخة لـ\":deck\"!",
     "decks.term.added": "تمّت إضافة :term إلى \":deck\"!",
     "decks.term.removed": "تمّت إزالة :term من \":deck\"!",

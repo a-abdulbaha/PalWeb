@@ -35,7 +35,7 @@ defineProps({
                 }) }}
             </div>
             <Link v-if="model.model_class === 'deck'" :href="route('deck-master.study', model)">
-                {{ $t('components.lesson.start-quiz') }}
+                {{ $t('pages.deck-master.buttons.start-quiz') }}
             </Link>
             <Link v-else-if="model.model_class === 'activity'" :href="route('activities.activity', model)">
                 {{ $t('components.activity.start') }}

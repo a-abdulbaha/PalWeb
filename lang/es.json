@@ -571,7 +571,7 @@
         },
         "messages": {
             "empty-sentence": "Bloque de Oración vacío. Por favor, crea una Oración a la medida o carga un modelo de Oración.",
-            "unsupported-block": "Tipo de Bloque de Ejercicio no compatible:",
+            "unsupported-block": "Tipo de Bloque de Ejercicios no compatible:",
             "unsupported-exercise-block": "Bloque no compatible:"
         }
     },
@@ -664,7 +664,6 @@
         "lesson": {
             "number": "Lección {number}",
             "scored-perfect": "Obtuviste 100% ({count}/{total})",
-            "start-quiz": "Comenzar Quiz",
             "open": "abrir Lección",
             "no-skills": "(Ninguna habilidad ha sido agregada a esta Lección aún.)",
             "skill": "habilidad {number}",
@@ -769,7 +768,12 @@
             "displaying-all": "Mostrando todos los {count} {model} en la Biblioteca.",
             "displaying-none": "Ningún {model} coincide con esta consulta.",
             "displaying-results": "Mostrando {count} {model} que coinciden con esta consulta.",
-            "not-found": "Disculpa, no se pudo encontrar el {model} solicitado."
+            "not-found": "Disculpa, no se pudo encontrar el {model} solicitado.",
+            "sort-messages": {
+                "alphabetical": "Ordenando alfabéticamente por raíz.",
+                "frequency": "Ordenando por frecuencia en el Corpus.",
+                "latest": "Ordenando por más recientemente creado."
+            }
         },
         "terms": {
             "index": {
@@ -925,8 +929,8 @@
             },
             "options": {
                 "initial-face": "cara inicial",
-                "front": "frente",
-                "back": "dorso",
+                "front": "anverso",
+                "back": "reverso",
                 "show-term": "mostrar término (dorso)",
                 "show-inflections": "mostrar inflecciones"
             },

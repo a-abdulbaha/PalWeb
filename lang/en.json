@@ -571,7 +571,7 @@
         },
         "messages": {
             "empty-sentence": "Empty Sentence Block. Please create a custom Sentence or load in a Sentence model.",
-            "unsupported-block": "Unsupported Exercise Block type:",
+            "unsupported-block": "Unsupported Exercises Block type:",
             "unsupported-exercise-block": "Unsupported Block:"
         }
     },
@@ -664,7 +664,6 @@
         "lesson": {
             "number": "Lesson {number}",
             "scored-perfect": "Scored 100% ({count}/{total})",
-            "start-quiz": "Start Quiz",
             "open": "open lesson",
             "no-skills": "(No Skills have been added to the Lesson yet.)",
             "skill": "skill {number}",
@@ -769,7 +768,12 @@
             "displaying-all": "Displaying all {count} {model} in the Library.",
             "displaying-none": "No {model} matching this query.",
             "displaying-results": "Displaying {count} {model} matching this query.",
-            "not-found": "Sorry, the requested {model} could not be found."
+            "not-found": "Sorry, the requested {model} could not be found.",
+            "sort-messages": {
+                "alphabetical": "Sorting alphabetically by root.",
+                "frequency": "Sorting by frequency across the Corpus.",
+                "latest": "Sorting by most recently created."
+            }
         },
         "terms": {
             "index": {
