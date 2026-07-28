@@ -16,7 +16,7 @@
             "search": "Búsqueda",
             "settings": "Ajustes",
             "menu": "Menú",
-            "push-subscribe-hint": "Enciende tus Notificaciones en Ajustes para recibir un recordatorio diario para estudiar tus Cartas!"
+            "push-subscribe-hint": "Enciende tus Notificaciones en Ajustes para recibir un recordatorio diario para estudiar tus Fichas!"
         },
         "auth": {
             "user-avatar": "Avatar del Usuario",
@@ -66,7 +66,7 @@
     },
     "search": {
         "genie": {
-            "title": "Search Genie",
+            "title": "Genio de Búsqueda",
             "insert-title": "Insertar {model}",
             "empty": "Aún no hay nada.",
             "see-all-results": "Ver todos los resultados.",
@@ -97,7 +97,7 @@
         "audios": "Audios",
         "attributes": "Atributos",
         "badges": "Insignias",
-        "cards": "Cartas",
+        "cards": "Fichas",
         "decks": "Barajas",
         "inflections": "Inflecciones",
         "glosses": "Definiciones",
@@ -110,7 +110,8 @@
         "spellings": "Ortografías",
         "teachers": "Profes",
         "terms": "Términos",
-        "units": "Unidades"
+        "units": "Unidades",
+        "users": "Pals"
     },
     "card": {
         "fields": {
@@ -479,7 +480,7 @@
         },
         "models": {
             "activity": "Actividad",
-            "card": "Carta",
+            "card": "Ficha",
             "deck": "Baraja",
             "dialog": "Diálogo",
             "gloss": "Definición",
@@ -495,10 +496,10 @@
             "user": "Usuario"
         },
         "card": {
-            "master": "Dominar Carta",
-            "restore": "Restaurar Carta",
-            "suspend": "Suspender Carta",
-            "reset": "Resetear Carta"
+            "master": "Dominar Ficha",
+            "restore": "Restaurar Ficha",
+            "suspend": "Suspender Ficha",
+            "reset": "Resetear Ficha"
         },
         "deck": {
             "empty": "La Baraja está vacía.",
@@ -790,6 +791,107 @@
                 "latest": "Ordenando por más recientemente creado."
             }
         },
+        "home": {
+            "release-notes": "Notas de la Versión {version}",
+            "titles": {
+                "palweb": {
+                    "title": "así que estás {action} el árabe {dialect}",
+                    "subtitle": "PalWeb es tu centro",
+                    "actions": {
+                        "learning": "aprendiendo",
+                        "teaching": "enseñando",
+                        "researching": "investigando"
+                    },
+                    "dialects": {
+                        "spoken": "hablado",
+                        "levantine": "levantino",
+                        "palestinian": "palestino",
+                        "jordanian": "jordano"
+                    }
+                },
+                "language": {
+                    "title": "el lenguaje es una red",
+                    "subtitle": "PalWeb es la Red del Árabe Palestino"
+                },
+                "arabic": {
+                    "title": "haz el árabe tuyo",
+                    "subtitle": "por fin descomplicamos el aprendizaje de idiomas"
+                },
+                "community": {
+                    "title": "nosotros creamos. tú aprendes.",
+                    "subtitle": "todo en PalWeb está hecho por otros como tú"
+                }
+            },
+            "features": {
+                "dictionary": {
+                    "title": "diccionario de hipertexto",
+                    "subtitle": "Ve a donde te lleve tu curiosidad.",
+                    "description": "Las entradas super detalladas son solo el comienzo: escucha todo en voz alta; salta entre sinónimos y antónimos; explora las Oraciones para ver los Términos en su contexto, ¡y mucho más!"
+                },
+                "search-genie": {
+                    "title": "encuéntralo todo",
+                    "subtitle": "Solo llama al Genio de Búsqueda.",
+                    "description": "Busca en árabe o inglés y refina tu búsqueda con una variedad de filtros hechos a medida para el sistema de raíces del árabe. ¡Házle Pin a las cosas para encontrarlas fácilmente más tarde!",
+                    "try-me": "pruébame"
+                },
+                "sound-booth": {
+                    "title": "la grabadora",
+                    "subtitle": "Deja que tu voz brille.",
+                    "description": "Dale vida al idioma grabando muestras de pronunciación de todo en tu dialecto y representa la diversidad del árabe palestino."
+                },
+                "build-decks": {
+                    "title": "construye barajas",
+                    "subtitle": "Construye tu vocabulario, Baraja por Baraja.",
+                    "description": "Olvídate de la tediosa tarea de crear tus propios conjuntos de vocabulario y gestionar minuciosamente aplicaciones de fichas de memoria. Usa el Barajador para crear tus propias Barajas en un instante y estúdialas con total flexibilidad, ajustando la visualización con un solo clic. ¡Explora la Biblioteca para ver Barajas creadas por los demás!"
+                },
+                "card-dealer": {
+                    "title": "repetición espaciada",
+                    "subtitle": "No seas terco; estudia con inteligencia.",
+                    "description": "Mejora tu dominio de los Términos en tus Barajas y en todo el Diccionario con el Repartidor, que programará las revisiones de los Términos según tu nivel de conocimiento. PalWeb conocerá tus puntos débiles incluso mejor que tú."
+                },
+                "study-decks": {
+                    "title": "quizzes y puntajes",
+                    "subtitle": "Ponte a prueba antes de que sea demasiado tarde.",
+                    "description": "Repasa tus Barajas de Fichas con Quizzes personalizables que pondrán a prueba tu vocabulario árabe. ¡Guarda tus Puntuaciones y mira cómo evoluciona tu aprendizaje con el tiempo!"
+                },
+                "academy": {
+                    "title": "lecciones y actividades",
+                    "subtitle": "De Don Nadie a campeón.",
+                    "description": "¡Recorre las Lecciones para descubrir nuevas palabras, aprender nuevas habilidades y practicar con plantillas de diálogo! Cada Lección incluye una Actividad diseñada para que integres todo lo aprendido."
+                },
+                "community": {
+                    "title": "construyendo comunidad",
+                    "subtitle": "Conéctate y comparte con los demás."
+                }
+            },
+            "prompts": {
+                "join-discord": {
+                    "message": "sigue la conversación",
+                    "button": "¡Únete al Discord!"
+                },
+                "sign-up": {
+                    "message": "¿qué esperas?",
+                    "button": "¡inscríbeme!"
+                }
+            },
+            "windows": {
+                "together": {
+                    "title": "métanse todos",
+                    "subtitle": "Estamos reuniendo a estudiantes, educadores y hablantes.",
+                    "description": "Tanto si estás empezando a aprender árabe como si eres un hablante nativo interesado en la preservación del idioma, el conjunto de herramientas de aprendizaje y documentación de PalWeb, basadas en bases de datos, reúne a todos para celebrar el árabe palestino."
+                },
+                "arabic": {
+                    "title": "escalera al árabe",
+                    "subtitle-1": "¿Por qué el árabe hablado?",
+                    "description-1": "",
+                    "subtitle-2": "¿Por qué el árabe palestino?",
+                    "description-2": ""
+                }
+            },
+            "notifications": {
+                "signed-in": "¡Ya estás ingresado en tu cuenta!"
+            }
+        },
         "terms": {
             "index": {
                 "title": "diccionario",
@@ -862,14 +964,14 @@
         },
         "cards": {
             "index": {
-                "title": "cartas",
+                "title": "fichas",
                 "filters": {
                     "due": "Más Próximo Repaso",
                     "latest": "Último Repaso",
                     "mastery": "Nivel de Maestría"
                 },
                 "messages": {
-                    "results": "Mostrando {count} Cartas, {message}.",
+                    "results": "Mostrando {count} Fichas, {message}.",
                     "no-results": "You have no Cards matching these filters.",
                     "no-cards": "You don't have any Cards yet. Start reviewing to get started!"
                 },
@@ -885,20 +987,20 @@
                 "review": "Repasa",
                 "sections": {
                     "options": "opciones",
-                    "card": "carta"
+                    "card": "ficha"
                 },
                 "tooltips": {
-                    "processed-cards": "Cartas de la sesión procesadas",
+                    "processed-cards": "Fichas de la sesión procesadas",
                     "session-progress": "Progreso de la sesión de repaso",
-                    "total-cards": "Total de Cartas de la sesión",
-                    "remaining-learning": "Cartas de Aprendizaje (Nuevas) Restantes",
-                    "remaining-learning-relearning": "Cartas de Aprendizaje y Reaprendizaje Restantes",
-                    "remaining-relearning": "Cartas de Reaprendizaje (Propias) Restantes",
-                    "remaining-owned": "Cartas Propias Restantes"
+                    "total-cards": "Total de Fichas de la sesión",
+                    "remaining-learning": "Fichas de Aprendizaje (Nuevas) Restantes",
+                    "remaining-learning-relearning": "Fichas de Aprendizaje y Reaprendizaje Restantes",
+                    "remaining-relearning": "Fichas de Reaprendizaje (Propias) Restantes",
+                    "remaining-owned": "Fichas Propias Restantes"
                 },
                 "notifications": {
-                    "mastered": "¡Carta dominada!",
-                    "suspended": "¡Carta suspendida!"
+                    "mastered": "¡Ficha dominada!",
+                    "suspended": "¡Ficha suspendida!"
                 }
             }
         },
@@ -1006,15 +1108,15 @@
             "suspended": "Suspendidas",
             "total": "Total",
             "points": "Puntos",
-            "manage-cards": "gestionar cartas",
+            "manage-cards": "gestionar fichas",
             "messages": {
                 "created": "{createdActiveCount} ({createdTotalCount}) de {activeCount} ({totalCount}) disponibles en el conjunto ({percentCreated})",
                 "reviewed": "{reviewedCount} de {activeCount} ({percentOfActive}), de {potentialCount} disponibles en el conjunto ({percentOfTotal})",
-                "suspended": "{suspendedCount} de {createdCount} Cartas creadas de {totalCount} Términos en total en el conjunto",
+                "suspended": "{suspendedCount} de {createdCount} Fichas creadas de {totalCount} Términos en total en el conjunto",
                 "not-student": "Debes ser un Estudiante para habilitar el estudio por repetición espaciada."
             },
             "tooltips": {
-                "exposure": "% de Cartas que has repasado del conjunto.",
+                "exposure": "% de Fichas que has repasado del conjunto.",
                 "progress": "Puntaje de Maestría para el conjunto, calculado sumando tu Puntaje de Maestría para cada Término."
             }
         },
@@ -1025,7 +1127,7 @@
             "review": "repaso",
             "start": "iniciar",
             "tooltips": {
-                "purge": "Purga todas tus Cartas Nuevas."
+                "purge": "Purga todas tus Fichas Nuevas."
             }
         },
         "session-settings": {
@@ -1042,7 +1144,7 @@
         },
         "review-history": {
             "title": "historial de repaso",
-            "cards": "Cartas",
+            "cards": "Fichas",
             "owned": "Propias",
             "new": "Nuevas",
             "actions": "Acciones",

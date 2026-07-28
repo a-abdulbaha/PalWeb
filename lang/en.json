@@ -110,7 +110,8 @@
         "spellings": "Spellings",
         "teachers": "Teachers",
         "terms": "Terms",
-        "units": "Units"
+        "units": "Units",
+        "users": "Pals"
     },
     "card": {
         "fields": {
@@ -788,6 +789,107 @@
                 "alphabetical": "Sorting alphabetically by root.",
                 "frequency": "Sorting by frequency across the Corpus.",
                 "latest": "Sorting by most recently created."
+            }
+        },
+        "home": {
+            "release-notes": "{version} Release Notes",
+            "titles": {
+                "palweb": {
+                    "title": "so, you’re {action} {dialect} Arabic",
+                    "subtitle": "PalWeb is your hub",
+                    "actions": {
+                        "learning": "learning",
+                        "teaching": "teaching",
+                        "researching": "researching"
+                    },
+                    "dialects": {
+                        "spoken": "Spoken",
+                        "levantine": "Levantine",
+                        "palestinian": "Palestinian",
+                        "jordanian": "Jordanian"
+                    }
+                },
+                "language": {
+                    "title": "language is a web",
+                    "subtitle": "PalWeb is the Web of Palestinian Arabic"
+                },
+                "arabic": {
+                    "title": "make arabic yours",
+                    "subtitle": "hassle-free language learning is here"
+                },
+                "community": {
+                    "title": "we create. you learn.",
+                    "subtitle": "everything on PalWeb is made by others like you"
+                }
+            },
+            "features": {
+                "dictionary": {
+                    "title": "hypertext dictionary",
+                    "subtitle": "Go where your curiosity takes you.",
+                    "description": "Highly detailed entries are just the beginning: hear everything out loud; jump between synonyms & antonyms; browse Sentences to see Terms in their context — & more!"
+                },
+                "search-genie": {
+                    "title": "find anything",
+                    "subtitle": "Just call the Search Genie.",
+                    "description": "Search in Arabic or English & narrow down your search with a variety of filters tailored for the Arabic root-pattern system. Pin things to find them easily later!",
+                    "try-me": "try me"
+                },
+                "sound-booth": {
+                    "title": "sound booth",
+                    "subtitle": "Let your voice shine through.",
+                    "description": "Breathe life into language by recording pronunciation samples of everything in your dialect — & represent the diversity of Palestinian Arabic."
+                },
+                "build-decks": {
+                    "title": "deck builder",
+                    "subtitle": "Build your vocabulary, Deck by Deck.",
+                    "description": "Say goodbye to the busy work of piecing together your own vocabulary sets & micro-managing flashcard applications. Use the Deck Master to build your own Decks in a flash, then study them with total flexibility to adjust how you view them with just one click. Browse the Library to see Decks others have made!"
+                },
+                "card-dealer": {
+                    "title": "srs review",
+                    "subtitle": "Don’t study hard; study smart.",
+                    "description": "Raise your Mastery Level for the Terms in your Decks & across the whole Dictionary with the Card Dealer, which will schedule Terms for review based on how well you know them. PalWeb will know your weak points even better than you yourself."
+                },
+                "study-decks": {
+                    "title": "quiz & score",
+                    "subtitle": "Test yourself before you wreck yourself.",
+                    "description": "Drill your flashcard Decks with customizable Quizzes that will put your knowledge of Arabic vocabulary to the test. Save your Scores & see how your learning journey evolves over time!"
+                },
+                "academy": {
+                    "title": "lessons & activities",
+                    "subtitle": "Go from zero to hero.",
+                    "description": "Go through the Lessons to discover new words, learn new skills & practice with dialog templates! Each Lesson has an Activity designed to integrate everything you learn."
+                },
+                "community": {
+                    "title": "building community",
+                    "subtitle": "Connect & share with others."
+                }
+            },
+            "prompts": {
+                "join-discord": {
+                    "message": "keep the convo going",
+                    "button": "Join Our Discord!"
+                },
+                "sign-up": {
+                    "message": "what are you waiting for?",
+                    "button": "Sign Me Up!"
+                }
+            },
+            "windows": {
+                "together": {
+                    "title": "everyone get in",
+                    "subtitle": "We’re bringing learners, educators & speakers together.",
+                    "description": "Whether you're just starting to learn Arabic or you're a native speaker interested in language preservation, PalWeb's suite of database-powered learning & documentation tools bring everyone together to celebrate Palestinian Arabic."
+                },
+                "arabic": {
+                    "title": "stairway to Arabic",
+                    "subtitle-1": "Why Spoken Arabic?",
+                    "description-1": "",
+                    "subtitle-2": "Why Palestinian Arabic?",
+                    "description-2": ""
+                }
+            },
+            "notifications": {
+                "signed-in": "You're already signed in!"
             }
         },
         "terms": {
