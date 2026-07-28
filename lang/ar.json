@@ -14,7 +14,7 @@
     "nav": {
         "sticky": {
             "search": "بحث",
-            "settings": "إعدادات",
+            "settings": "الإعدادات",
             "menu": "قائمة",
             "push-subscribe-hint": "من الإعدادات إسمح بتلقّي الإشعارات للتذكير اليوميّ لدراسة كروتك"
         },
@@ -43,18 +43,18 @@
                 "subtitle": "للمعلّمين فقط"
             },
             "my-admin": "للإدارة",
-            "send-mail": "أرسل بريد إلكترونيّ",
-            "view-feedback": "شاهد التغذية الراجعة",
+            "send-mail": "إرسال بريد إلكترونيّ",
+            "view-feedback": "مشاهدة التغذية الراجعة",
             "admin-actions": {
                 "restore-admin-view": "استعادة عرض المدير",
-                "view-as-student": "شاهد كطالب",
-                "view-as-pal": "شاهد كرفيق"
+                "view-as-student": "الشاهدة كطالب",
+                "view-as-pal": "الشاهدة كرفيق"
             },
             "my-account": "حسابي",
             "manage-subscription": "إدارة الإشتراك",
             "change-password": "تغيير كلمة السرّ",
-            "link-discord": "ربط بديسكورد",
-            "unlink-discord": "إلغاء ربط بديسكورد",
+            "link-discord": "الربط بديسكورد",
+            "unlink-discord": "إلغاء الربط بديسكورد",
             "get-help": "الحصول على مساعدة",
             "send-feedback": "إرسال تغذية راجعة"
         }
@@ -108,7 +108,7 @@
         "sentences": "جمل",
         "speakers": "ناطقون",
         "spellings": "تهجئة",
-        "teachers": "معلّمين",
+        "teachers": "معلّمون",
         "terms": "مصطلحات",
         "units": "وحدات"
     },
@@ -234,10 +234,22 @@
             "other": "غير ذلك"
         }
     },
+    "subscription": {
+        "title": "الإشتراك",
+        "manage": "إدارة الإشتراك",
+        "current-plan": "الإشتراك الحاليّ",
+        "free": "مجّانيّ",
+        "price": "{monthlyPrice}/شهر {yearlyPrice}/سنة",
+        "messages": {
+            "access-denied": "عذراً، ليس لديك حالياً إمكانية الوصول إلى هذا المحتوى.",
+            "sign-in-prompt": "يرجى تسجيل الدخول أو إنشاء حساب أوّلاً.",
+            "update-subscription-prompt": "يرجى مراجعة اشتراكك وتحديثه ثم المحاولة مرة أخرى."
+        }
+    },
     "teacher": {
         "bio": "وصف المعلّم",
         "bio-placeholder": "للأسف، لم يخبرنا {user} بعد عن نفسه كمعلّم. يجب على المعلّم العمل على ذلك في أقرب وقت ممكن.",
-        "create": "انشئ ملف شخصيّ للمعلّم"
+        "create": "انشئ ملفّ شخصيّ للمعلّم"
     },
     "term": {
         "category": {
@@ -332,9 +344,9 @@
             "guest": "ضيف"
         },
         "subscriptions": {
-            "manage": "أدر"
+            "manage": "إدارة"
         },
-        "profile": "الملف الشخصيّ",
+        "profile": "الملفّ الشخصيّ",
         "notifications": {
             "preferences-saved": "تمّ حفظ إعداداتك!"
         }
@@ -346,7 +358,7 @@
             }
         },
         "settings": {
-            "title": "إعدادات",
+            "title": "الإعدادات",
             "fields": {
                 "color-theme": "لوحة الألوان",
                 "language": "اللغة",
@@ -399,17 +411,17 @@
             "submit": "محو"
         },
         "send-feedback": {
-            "title": "إرسل تغدية راجعة",
+            "title": "إرسال تغدية راجعة",
             "placeholder": "هل هناك مشكلة؟ هل هناك كلمات مفقودة من القاموس؟ اخبرنا!",
             "submit": "قدّم"
         },
         "send-mail": {
-            "title": "أرسل بريد إلكتروني",
+            "title": "إرسال بريد إلكتروني",
             "fields": {
                 "subject": "الموضوع"
             },
             "placeholder": "ماذا تريد أن تقول؟",
-            "submit": "أرسل"
+            "submit": "إرسال"
         },
         "sign-in": {
             "title": "تسجيل الدخول",
@@ -430,7 +442,7 @@
             "title": "نسيت كلمة السرّ",
             "action": "نسيت?",
             "prompt": "لا كلمة سر؟ لا مشكلة. اكتب عنوان بريدك الإلكتروني وسأرسل لك رابطًا لإعادة تعيينه.",
-            "submit": "أرسل رابط"
+            "submit": "إرسال رابط"
         },
         "avatar-picker": {
             "title": "صورة أفاتار",
@@ -441,7 +453,7 @@
             "confirm-delete": "هل تريد حذف صورة الأفاتار؟",
             "errors": {
                 "file-size": "يجب أن يكون حجم صورة الأفاتار 5 ميغابايت أو أقل.",
-                "file-type": "يجب أن تكون صورة الأفاتار ملفات JPG أو JPEG أو PNG أو WEBP.",
+                "file-type": "يجب أن تكون صورة الأفاتار ملفّات JPG أو JPEG أو PNG أو WEBP.",
                 "upload-limit": "يمكنك تحميل حتى {count} صورة أفاتار.",
                 "crop": "صورة الأفاتار لا يمكن تقطيعها.",
                 "upload": "صورة الأفاتار لا يمكن تحميلها.",
@@ -593,7 +605,7 @@
             "sections": {
                 "stats": "الإحصائيات",
                 "terms": "المصطلحات",
-                "settings": "إعدادات",
+                "settings": "الإعدادات",
                 "options": "خيارات"
             },
             "options": {
@@ -758,7 +770,10 @@
         "user": {
             "bio-placeholder": "للأسف {name} لم يخبرنا بشيء عنه بعد.",
             "location-placeholder": "الارض، ربما.",
-            "joined-on": "انضم بـ{date} ({ago})."
+            "joined-on": "انضم بـ{date} ({ago}).",
+            "sections": {
+                "decks": "الرزم"
+            }
         }
     },
     "pages": {
@@ -866,7 +881,7 @@
             },
             "review": {
                 "title": "مراجعة",
-                "learn": "علّم",
+                "learn": "تعلّم",
                 "review": "راجع",
                 "sections": {
                     "options": "إعداد",
@@ -890,14 +905,18 @@
         "users": {
             "index": {
                 "title": "المركز",
+                "teachers": "المعلّمون",
+                "decks": "الرزم",
                 "latest": "الأحدث",
                 "popular": "الشعبية",
+                "audios": "تسجيلات الصوت",
                 "creators": "المبدعين",
                 "create-prompt": "دورك تعمل واحد!",
                 "record-prompt": "دورك تسجّل كمان!"
             },
             "show": {
-                "empty": "{user} لم ينشئ أي رزم عامة بعد."
+                "empty": "{user} لم ينشئ أي رزم عامة بعد.",
+                "badges": "الشارات"
             },
             "edit": {
                 "messages": {
@@ -1208,7 +1227,7 @@
     "dash.change": "غيّر",
     "dash.manage": "عدّل",
     "dash.submit": "أحفظ",
-    "settings": "إعدادات",
+    "settings": "الإعدادات",
     "settings.updated": "تحدّث الحساب بالنجاح!",
     "passwords.updated": "Your password has been updated!",
     "passwords.reset": "Your password has been reset!",

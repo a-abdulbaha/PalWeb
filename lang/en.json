@@ -234,6 +234,18 @@
             "other": "Other"
         }
     },
+    "subscription": {
+        "title": "subscription",
+        "manage": "manage subscription",
+        "current-plan": "Current Plan",
+        "free": "free",
+        "price": "{monthlyPrice}/m {yearlyPrice}/y",
+        "messages": {
+            "access-denied": "Sorry, but you currently don't have access to this content.",
+            "sign-in-prompt": "Please sign in or create an account first.",
+            "update-subscription-prompt": "Please review & update your Subscription & try again."
+        }
+    },
     "teacher": {
         "bio": "teacher bio",
         "bio-placeholder": "Sadly, {user} hasn't told us anything about themselves as a Teacher yet. They should probably fix that soon.",
@@ -758,7 +770,10 @@
         "user": {
             "bio-placeholder": "Sadly, {name} hasn't told us anything about themselves yet.",
             "location-placeholder": "Earth, probably.",
-            "joined-on": "Joined on {date} ({ago})."
+            "joined-on": "Joined on {date} ({ago}).",
+            "sections": {
+                "decks": "decks"
+            }
         }
     },
     "pages": {
@@ -890,14 +905,18 @@
         "users": {
             "index": {
                 "title": "hub",
+                "teachers": "teachers",
+                "decks": "decks",
                 "latest": "latest",
                 "popular": "popular",
+                "audios": "audios",
                 "creators": "creators",
                 "create-prompt": "Create your own!",
                 "record-prompt": "Record your own!"
             },
             "show": {
-                "empty": "{user} has not created any public Decks yet."
+                "empty": "{user} has not created any public Decks yet.",
+                "badges": "badges"
             },
             "edit": {
                 "messages": {

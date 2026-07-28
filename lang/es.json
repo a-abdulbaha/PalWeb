@@ -234,6 +234,18 @@
             "other": "Otro"
         }
     },
+    "subscription": {
+        "title": "suscripción",
+        "manage": "gestionar suscripción",
+        "current-plan": "plan actual",
+        "free": "gratis",
+        "price": "{monthlyPrice}/mes {yearlyPrice}/año",
+        "messages": {
+            "access-denied": "Disculpa, pero actualmente no tienes acceso a este contenido.",
+            "sign-in-prompt": "Por favor, inicia sesión o crea una cuenta primero.",
+            "update-subscription-prompt": "Por favor, revisa y actualiza tu Suscripción y vuelve a intentarlo."
+        }
+    },
     "teacher": {
         "bio": "bio del profe",
         "bio-placeholder": "Lamentablemente, {user} aún no nos ha contado nada sobre de sí mismo como Profesor. Deberían arreglar eso pronto.",
@@ -758,7 +770,10 @@
         "user": {
             "bio-placeholder": "Lamentablemente, {name} aún no nos ha contado nada sobre sí mismo.",
             "location-placeholder": "La Tierra, probablemente.",
-            "joined-on": "Alta el {date} ({ago})."
+            "joined-on": "Alta el {date} ({ago}).",
+            "sections": {
+                "decks": "barajas"
+            }
         }
     },
     "pages": {
@@ -890,14 +905,18 @@
         "users": {
             "index": {
                 "title": "hub",
+                "teachers": "profes",
+                "decks": "barajas",
                 "latest": "recientes",
                 "popular": "populares",
+                "audios": "audios",
                 "creators": "creadores",
                 "create-prompt": "¡Crea la tuya!",
                 "record-prompt": "¡Graba el tuyo!"
             },
             "show": {
-                "empty": "{user} aún no ha subido ninguna Baraja pública."
+                "empty": "{user} aún no ha subido ninguna Baraja pública.",
+                "badges": "insignias"
             },
             "edit": {
                 "messages": {

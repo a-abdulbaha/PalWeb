@@ -109,7 +109,7 @@ defineOptions({
             </UserItem>
 
             <div class="window-section-head">
-                <h2>{{ $t('models.decks') }}</h2>
+                <h2>{{ $t('components.user.sections.decks') }}</h2>
             </div>
             <div class="search-filters-container">
                 <div class="search-filters">
@@ -134,7 +134,7 @@ defineOptions({
 
         <div class="app-body-section">
             <AppHeading>
-                {{ $t('models.badges') }}
+                {{ $t('pages.users.show.badges') }}
             </AppHeading>
             <div class="badge-wrapper">
                 <BadgeItem v-for="badge in unlockedBadges" :badge="badge" :key="badge.id"/>
