@@ -428,7 +428,7 @@
         },
         "forgot-password": {
             "title": "نسيت كلمة السرّ",
-            "action": "نسيت?",
+            "action": "نسيت؟",
             "prompt": "لا كلمة سر؟ لا مشكلة. اكتب عنوان بريدك الإلكتروني وسأرسل لك رابطًا لإعادة تعيينه.",
             "submit": "أرسل رابط"
         },
@@ -1091,7 +1091,7 @@
             }
         }
     },
-    "signin.message": "أهلًا بعودتك، يا :user!",
+    "signin.message": "أهلًا بعودتك، يا {user}!",
     "signin.message.head": "هلا!",
     "signout.message": "منشوفك قريبًا، يا :user!",
     "signout.message.head": "سلامات!",

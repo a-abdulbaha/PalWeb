@@ -14,10 +14,6 @@ class AuthenticatedSessionController extends Controller
     {
         if (Auth::attempt($request->only('email', 'password'), $request->filled('remember'))) {
             $request->session()->regenerate();
-
-            session()->flash('notification',
-                ['type' => 'success', 'message' => __('signin.message', ['user' => auth()->user()->name])]);
-
             return back();
         }
 

@@ -4,6 +4,13 @@ import {route} from "ziggy-js";
 import {computed, ref} from "vue";
 import AppTip from "../AppTip.vue";
 import ToggleSingle from "../ToggleSingle.vue";
+import {useI18n} from "vue-i18n";
+import {useNotificationStore} from "../../stores/NotificationStore.js";
+import {useUserStore} from "../../stores/UserStore.js";
+
+const { t, locale } = useI18n();
+const NotificationStore = useNotificationStore();
+const UserStore = useUserStore();
 
 const emit = defineEmits(['close', 'signUp']);
 
@@ -24,6 +31,11 @@ const isValidRequest = computed(() => {
 const signIn = () => {
     signInForm.post(route('signin'), {
         onSuccess: () => {
+            NotificationStore.addNotification(t('signin.message', {
+                user: locale.value === 'ar'
+                    ? UserStore.user.ar_name
+                    : UserStore.user.name
+            }));
             emit('close');
         }
     });
