@@ -19,8 +19,7 @@
             "push-subscribe-hint": "Enable Notifications in Settings to get a daily reminder to review your Cards!"
         },
         "auth": {
-            "user-avatar": "User Avatar",
-            "resend-link": "Resend Link"
+            "user-avatar": "User Avatar"
         },
         "sidebar": {
             "home": {
@@ -113,6 +112,9 @@
         "units": "Units",
         "users": "Pals"
     },
+    "activity": {
+        "key": "Activity"
+    },
     "card": {
         "fields": {
             "status": "Status",
@@ -153,7 +155,11 @@
             "mastery-tooltip": "Your Mastery Score for this Term is {score} ({label}), meaning {message}."
         }
     },
+    "deck": {
+        "key": "Deck"
+    },
     "dialect": {
+        "key": "Dialect",
         "palestinian-bedouin": "Palestinian Bedouin",
         "palestinian-druze": "Palestinian Druze",
         "central-urban-palestinian": "Central Urban Palestinian",
@@ -166,32 +172,68 @@
         "rural-palestinian": "Rural Palestinian",
         "general-palestinian": "General Palestinian"
     },
-    "exercises": {
-        "types": {
+    "dialog": {
+        "key": "Dialog"
+    },
+    "exercise": {
+        "key": "Exercise",
+        "type": {
             "input": "input",
             "match": "match",
             "select": "select",
             "sort": "sort"
         },
+        "fields": {
+            "example-prompt": "Example {index} Prompt",
+            "example-answer": "Example {index} Answer",
+            "prompt": "Prompt {index} ({type})",
+            "select-options": "Select Options",
+            "pairs": "Pairs",
+            "pair-start": "Pair {index} Start Side",
+            "pair-end": "Pair {index} End Side",
+            "sort-items": "Sort Items",
+            "input-answer": "Answer"
+        },
         "prompts": {
             "input": "Answer the prompt with a complete sentence, following the format of the example.",
             "match": "Match the two columns based on the prompt. Only one distribution of answers is possible.",
-            "select": "Put the items in the correct order to build the sentence or dialog.",
-            "sort": "Select the most appropriate answer in response to the prompt."
+            "select": "Select the most appropriate option in response to the prompt.",
+            "sort": "Put the items in the correct order to build the sentence or dialog."
         },
         "example": "example",
         "shuffle": "shuffle"
     },
     "gloss": {
-        "fields": {
-            "gloss": "gloss"
-        }
+        "key": "Gloss"
     },
     "inflection": {
+        "key": "Inflection",
         "fields": {
             "form": "form",
             "inflection": "inflection",
             "transcription": "transcription"
+        }
+    },
+    "lesson": {
+        "key": "Lesson",
+        "key-index": "Lesson {index}",
+        "fields": {
+            "unlock-conditions": "Unlock Conditions"
+        },
+        "unlock-condition": {
+            "key": "Unlock Condition",
+            "type": "Type",
+            "value": "Value"
+        },
+        "validation": {
+            "min-unlock-conditions": "Extra Lessons must have at least one Unlock Condition."
+        }
+    },
+    "page": {
+        "key": "Page",
+        "validation": {
+            "self-is-parent": "Page cannot be its own parent.",
+            "child-is-parent": "Page child cannot be its parent."
         }
     },
     "pattern": {
@@ -207,6 +249,18 @@
             "dialects": "dialects",
             "borrowed": "borrowed"
         }
+    },
+    "sentence": {
+        "fields": {
+            "translation": "Translation",
+            "transcription": "Transcription",
+            "speaker": "Speaker",
+            "position": "Position"
+        }
+    },
+    "skill": {
+        "key": "Skill",
+        "key-index": "Skill {index}"
     },
     "speaker": {
         "title": "speaker",
@@ -248,11 +302,22 @@
         }
     },
     "teacher": {
-        "bio": "teacher bio",
-        "bio-placeholder": "Sadly, {user} hasn't told us anything about themselves as a Teacher yet. They should probably fix that soon.",
-        "create": "create teacher profile"
+        "create": "create teacher profile",
+        "fields": {
+            "bio": "Teacher Bio",
+            "bio-placeholder": "Sadly, {user} hasn't told us anything about themselves as a Teacher yet. They should probably fix that soon.",
+            "email": "Contact Email"
+        }
     },
     "term": {
+        "key": "Term",
+        "fields": {
+            "category": "Category",
+            "attribute": "Attribute",
+            "root": "Root",
+            "spelling": "Spelling",
+            "relative": "Relative"
+        },
         "category": {
             "verb": "verb",
             "noun": "noun",
@@ -267,7 +332,6 @@
             "affix": "affix"
         },
         "filters": {
-            "category": "category",
             "categories": {
                 "verbs": "verbs",
                 "nouns": "nouns",
@@ -281,7 +345,6 @@
                 "phrases": "phrases",
                 "affixes": "affixes"
             },
-            "attribute": "attribute",
             "attributes": {
                 "masculine": "masculine",
                 "feminine": "feminine",
@@ -322,6 +385,15 @@
             "source": "source",
             "image-url": "image URL",
             "usage-notes": "usage notes"
+        },
+        "validation": {
+            "relative-gloss": "Gloss is required for this relationship type.",
+            "verb-missing-root": "Verb has no Root.",
+            "verb-missing-pattern": "Verb has no Pattern.",
+            "verb-missing-gloss-attribute": "Verb has a Gloss with no Attribute.",
+            "noun-missing-gender": "Noun has no gender.",
+            "adjective-missing-inflections": "Adjective has no Inflections.",
+            "idiom-missing-components": "Idiom has no components."
         }
     },
     "unit": {
@@ -335,7 +407,8 @@
             "email": "Email",
             "password": "Password",
             "confirm-password": "Confirm Password",
-            "bio": "Bio"
+            "bio": "Bio",
+            "home": "Home"
         },
         "roles": {
             "student": "student",
@@ -350,6 +423,9 @@
         "profile": "profile",
         "notifications": {
             "preferences-saved": "Your preferences have been saved!"
+        },
+        "validation": {
+            "username-characters": "Username may only contain Latin-script characters & numbers, as well as underscores & periods between letters."
         }
     },
     "modals": {
@@ -550,6 +626,7 @@
         },
         "fields": {
             "slug": "slug",
+            "type": "type",
             "title": "title",
             "summary": "summary",
             "description": "description",
@@ -563,18 +640,17 @@
             "has-publish-issues": "The {model} cannot be published in the current state.",
             "has-confirmable-issues": "Are you sure the {model} is complete?"
         },
-        "blocks": "blocks"
+        "notifications": {
+            "delete-confirm": "Are you sure you want to delete this {model}?",
+            "delete-success": "OK, {model} was successfully deleted.",
+            "delete-error": "Oops — {model} could not be deleted."
+        }
     },
-    "blocks": {
-        "container": "container",
-        "heading": "heading",
-        "text": "text",
-        "image": "image",
-        "audio": "audio",
-        "chart": "chart",
-        "table": "table",
-        "sentence": "sentence",
-        "exercises": "exercises",
+    "document": {
+        "key": "Document",
+        "fields": {
+            "blocks": "Blocks"
+        },
         "add": {
             "model": "model",
             "custom": "custom",
@@ -583,9 +659,54 @@
             "inflection": "inflection"
         },
         "messages": {
+            "no-blocks": "No Blocks have been added yet.",
+            "no-columns": "Add at least one column to start entering row data."
+        },
+        "validation": {
+            "invalid-block": "This Block type is not allowed here.",
+            "heading-type": "Heading type must be h1, h2, or h3.",
+            "sentence-block-content": "Sentence Block must have Sentence model or custom Sentence.",
+            "exercises-block-type": "Exercises Block type must be input, match, select or sort.",
+            "exercise-prompt": "Must have at least one non-empty Text or Audio prompt.",
+            "select-exercise-answer": "Must select a correct answer for the Exercise."
+        }
+    },
+    "block": {
+        "key": "Block",
+        "type": {
+            "container": "container",
+            "heading": "heading",
+            "text": "text",
+            "image": "image",
+            "audio": "audio",
+            "chart": "chart",
+            "table": "table",
+            "sentence": "sentence",
+            "exercises": "exercises"
+        },
+        "element": {
+            "column": "column",
+            "row": "row"
+        },
+        "fields": {
+            "column-label": "Column {index} Label",
+            "column-row-cell": "Column {columnIndex} Row {rowIndex} Cell",
+            "row-items": "Row {index} Items",
+            "row-item-key": "Row {rowIndex} Item {itemIndex} Key",
+            "row-item-arabic": "Row {rowIndex} Item {itemIndex} Arabic",
+            "row-item-transcription": "Row {rowIndex} Item {itemIndex} Transcription"
+        },
+        "buttons": {
+            "flatten": "Flatten"
+        },
+        "messages": {
             "empty-sentence": "Empty Sentence Block. Please create a custom Sentence or load in a Sentence model.",
             "unsupported-block": "Unsupported Exercises Block type:",
             "unsupported-exercise-block": "Unsupported Block:"
+        },
+        "notifications": {
+            "flatten-container": "Flatten this Container? Its nested Blocks will be moved up one level and the Container will be removed.",
+            "remove-block": "Are you sure you want to remove this Block?"
         }
     },
     "components": {
@@ -675,11 +796,9 @@
             }
         },
         "lesson": {
-            "number": "Lesson {number}",
             "scored-perfect": "Scored 100% ({count}/{total})",
             "open": "open lesson",
             "no-skills": "(No Skills have been added to the Lesson yet.)",
-            "skill": "skill {number}",
             "sections": {
                 "skills": "skills"
             }
@@ -730,9 +849,6 @@
                 }
             }
         },
-        "skill": {
-            "title": "Skill"
-        },
         "search-select": {
             "placeholder": "Search",
             "searching": "Searching...",
@@ -774,6 +890,14 @@
             "joined-on": "Joined on {date} ({ago}).",
             "sections": {
                 "decks": "decks"
+            }
+        },
+        "nav-auth": {
+            "resend-link": "Resend Link",
+            "notifications": {
+                "already-verified": "Your email is already verified!",
+                "link-sent": "Verification link has been sent to your email.",
+                "link-sent-error": "Unable to send verification link. Please try again later."
             }
         }
     },
@@ -1026,6 +1150,10 @@
                     "teacher-instructions": "Fill out the following form to create your Teacher profile. It will only be created once you Save.",
                     "teacher-bio-placeholder": "What would you like us to know about you as a teacher?"
                 }
+            },
+            "new-password": {
+                "title": "new password",
+                "set-password": "set password"
             }
         },
         "wiki": {
@@ -1212,6 +1340,24 @@
             }
         }
     },
+    "validation": {
+        "non-empty": "{field} cannot be empty.",
+        "object": "{field} must be an object.",
+        "array": "{field} must be an array.",
+        "min-items": "Must have at least {min} {item}.",
+        "non-empty-field": "{field} cannot contain an empty field.",
+        "required": "{field} is required.",
+        "max-chars": "{field} must not be greater than {max} characters.",
+        "min-chars": "{field} must be at least {min} characters.",
+        "email": "Must be a valid email address.",
+        "script": {
+            "latin": "{field} may only contain Latin-script characters & hyphens.",
+            "arabic": "{field} may only contain Arabic-script characters."
+        },
+        "required-dependency": "Must have an assigned {model}.",
+        "invalid-dependency": "Selected {model} is invalid.",
+        "hidden-dependency": "{model} must be publicly visible."
+    },
     "auth.failed": "These credentials do not match our records.",
     "auth.throttle": "Too many sign-in attempts. Please try again in :seconds seconds.",
     "signin.message": "Welcome back, {user}!",
@@ -1229,15 +1375,6 @@
     "decks.term.added": "Added :term to \":deck\"!",
     "decks.term.removed": "Removed :term from \":deck\"!",
     "badges.get": "You got the \":badge\" Badge! Good job!",
-    "activity.yes-no": "Answer the following yes-or-no questions.",
-    "activity.true-false": "Indicate whether the following statements are true or false.",
-    "activity.multiple-choice": "Choose the correct response to the following questions.",
-    "activity.fill-in": "Complete the following sentences with the correct word.",
-    "activity.complete-sentence": "Answer the following questions with a complete sentence.",
-    "verification": "verify account",
-    "verification.prompt": "Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn't receive the email, we will gladly send you another.",
-    "verification.sent": "A new verification link has been sent to your email.",
-    "verification.send.link": "Send me another verification link.",
     "mail.greeting": "Hey",
     "mail.farewell": "Cheers",
     "mail.subject.registered": "Verify Account",
@@ -1247,44 +1384,5 @@
     "mail.registered": "We're so excited to have you join us at PalWeb! But first, would you mind clicking this link to verify your email address?",
     "mail.verified": "Awesome — thank you for verifying your account! We invite all verified users to join our Discord server to get to know others interested in Palestine & Palestinian Arabic — just click the link below. See you there!",
     "mail.subscribed": "Yay! You've just upgraded to the Student Plan on PalWeb, meaning you've gained access to all sections of the site. Are you ready to learn Palestinian Arabic? Let's get going!",
-    "mail.passwordchanged": "Just FYI: the password for your account at PalWeb has been changed.",
-    "field.label.email": "email",
-    "field.description.email": "Enter a valid email address.",
-    "field.label.password": "password",
-    "field.description.password": "Must be at least 8 characters long.",
-    "field.label.password_confirmation": "confirm password",
-    "field.description.password_confirmation": "You know the drill.",
-    "field.label.password_old": "old password",
-    "field.description.password_old": "Your current password.",
-    "field.label.password_new": "new password",
-    "field.description.password_new": "Must be at least 8 characters long.",
-    "field.label.password_new_confirmation": "confirm password",
-    "field.description.password_new_confirmation": "You know the drill.",
-    "field.label.name": "name",
-    "field.description.name": "Your name. Only Latin-script letters & hyphens.",
-    "field.label.ar_name": "arabic name",
-    "field.description.ar_name": "Your Arabic name. Only Arabic-script letters.",
-    "field.label.username": "username",
-    "field.description.username": "Your unique identifier. Change it anytime.",
-    "field.label.home": "home",
-    "field.description.home": "Not where you are. Not where you were born. Only you know the answer.",
-    "field.label.bio": "bio",
-    "field.description.bio": "What brings you here?",
-    "field.label.dialect": "dialect",
-    "field.description.dialect": "Which variety of Palestinian Arabic are you interested in learning?",
-    "field.label.category": "category",
-    "field.description.category": "(Optional) What part of speech does the term belong to?",
-    "field.label.translit": "term",
-    "field.description.translit": "What term would you like to be added? Write it in any language.",
-    "validation.error": "Something went wrong:",
-    "validation.alpha": "Only Latin-script letters; no numbers or special characters.",
-    "validation.alpha_dash": "Only Latin-script letters, hyphens & underscores.",
-    "validation.unique": "Already taken.",
-    "validation.required": "Required.",
-    "validation.confirmed": "Passwords don't match.",
-    "validation.min.string": "Your input for this field is too short.",
-    "validation.max.string": "Your input for this field is too long.",
-    "validation.same": "The old password is the same as the new password.",
-    "validation.string": "The input must be a string.",
-    "validation.regex": "The input contains invalid characters."
+    "mail.passwordchanged": "Just FYI: the password for your account at PalWeb has been changed."
 }

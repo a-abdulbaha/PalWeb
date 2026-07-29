@@ -2,7 +2,7 @@
     "meta": {
         "app": {
             "title": "PalWeb",
-            "subtitle": "la Red del Árabe Palestino!"
+            "subtitle": "¡la Red del Árabe Palestino!"
         }
     },
     "layout": {
@@ -16,11 +16,10 @@
             "search": "Búsqueda",
             "settings": "Ajustes",
             "menu": "Menú",
-            "push-subscribe-hint": "Enciende tus Notificaciones en Ajustes para recibir un recordatorio diario para estudiar tus Fichas!"
+            "push-subscribe-hint": "¡Enciende tus Notificaciones en Ajustes para recibir un recordatorio diario para estudiar tus Fichas!"
         },
         "auth": {
-            "user-avatar": "Avatar del Usuario",
-            "resend-link": "Reenviar Enlace"
+            "user-avatar": "Avatar del Usuario"
         },
         "sidebar": {
             "home": {
@@ -113,6 +112,9 @@
         "units": "Unidades",
         "users": "Pals"
     },
+    "activity": {
+        "key": "Actividad"
+    },
     "card": {
         "fields": {
             "status": "Estado",
@@ -153,7 +155,11 @@
             "mastery-tooltip": "Tu Puntaje de Maestría para este Término es {score} ({label}), lo que significa que {message}."
         }
     },
+    "deck": {
+        "key": "Baraja"
+    },
     "dialect": {
+        "key": "Dialecto",
         "palestinian-bedouin": "Palestino Beduino",
         "palestinian-druze": "Palestino Druso",
         "central-urban-palestinian": "Palestino Central Urbano",
@@ -166,32 +172,68 @@
         "rural-palestinian": "Palestino Rural",
         "general-palestinian": "Palestino General"
     },
-    "exercises": {
-        "types": {
+    "dialog": {
+        "key": "Diálogo"
+    },
+    "exercise": {
+        "key": "Ejercicio",
+        "type": {
             "input": "escribir",
             "match": "emparejar",
             "select": "elegir",
             "sort": "ordenar"
         },
+        "fields": {
+            "example-prompt": "Indicación del Ejemplo {index}",
+            "example-answer": "Respuesta del Ejemplo {index}",
+            "prompt": "Indicación {index} ({type})",
+            "select-options": "Opciones de Selección",
+            "pairs": "Pares",
+            "pair-start": "Lado Inicial del Par {index}",
+            "pair-end": "Lado Final del Par {index}",
+            "sort-items": "Elementos a Ordenar",
+            "input-answer": "Respuesta"
+        },
         "prompts": {
             "input": "Contesta a la pregunta con una oración completa, siguiendo el formato del ejemplo.",
             "match": "Empareja las dos columnas en base a la pregunta. Solo una distribución de respuestas es posible.",
-            "select": "Coloca los elementos en el orden correcto para construir la oración o el diálogo.",
-            "sort": "Selecciona la respuesta más adecuada en respuesta a la pregunta."
+            "select": "Selecciona la respuesta más adecuada en respuesta a la pregunta.",
+            "sort": "Coloca los elementos en el orden correcto para construir la oración o el diálogo."
         },
         "example": "ejemplo",
         "shuffle": "barajar"
     },
     "gloss": {
-        "fields": {
-            "gloss": "definición"
-        }
+        "key": "Definición"
     },
     "inflection": {
+        "key": "Inflección",
         "fields": {
             "form": "forma",
             "inflection": "inflección",
             "transcription": "transcripción"
+        }
+    },
+    "lesson": {
+        "key": "Lección",
+        "key-index": "Lección {index}",
+        "fields": {
+            "unlock-conditions": "Condiciones de Desbloqueo"
+        },
+        "unlock-condition": {
+            "key": "Condición de Desbloqueo",
+            "type": "Tipo",
+            "value": "Valor"
+        },
+        "validation": {
+            "min-unlock-conditions": "Las Lecciones Extra deben tener al menos una Condición de Desbloqueo."
+        }
+    },
+    "page": {
+        "key": "Página",
+        "validation": {
+            "self-is-parent": "La Página no puede ser su propio nodo padre.",
+            "child-is-parent": "Un hijo de la Página no puede ser su nodo padre."
         }
     },
     "pattern": {
@@ -207,6 +249,18 @@
             "dialects": "dialectos",
             "borrowed": "prestado"
         }
+    },
+    "sentence": {
+        "fields": {
+            "translation": "Traducción",
+            "transcription": "Transcripción",
+            "speaker": "Hablante",
+            "position": "Posición"
+        }
+    },
+    "skill": {
+        "key": "Habilidad",
+        "key-index": "Habilidad {index}"
     },
     "speaker": {
         "title": "hablante",
@@ -248,11 +302,22 @@
         }
     },
     "teacher": {
-        "bio": "bio del profe",
-        "bio-placeholder": "Lamentablemente, {user} aún no nos ha contado nada sobre de sí mismo como Profesor. Deberían arreglar eso pronto.",
-        "create": "crear perfil de profe"
+        "create": "crear perfil de profe",
+        "fields": {
+            "bio": "bio del profe",
+            "bio-placeholder": "Lamentablemente, {user} aún no nos ha contado nada sobre de sí mismo como Profesor. Deberían arreglar eso pronto.",
+            "create": "crear perfil de profe"
+        }
     },
     "term": {
+        "key": "Término",
+        "fields": {
+            "category": "Categoría",
+            "attribute": "Atributo",
+            "root": "Raíz",
+            "spelling": "Ortografía",
+            "relative": "Pariente"
+        },
         "category": {
             "verb": "verbo",
             "noun": "nombre",
@@ -267,7 +332,6 @@
             "affix": "afijo"
         },
         "filters": {
-            "category": "categoría",
             "categories": {
                 "verbs": "verbos",
                 "nouns": "nombres",
@@ -281,7 +345,6 @@
                 "phrases": "expresiones",
                 "affixes": "afijos"
             },
-            "attribute": "atributos",
             "attributes": {
                 "masculine": "masculino",
                 "feminine": "femenino",
@@ -322,6 +385,15 @@
             "source": "fuente",
             "image-url": "URL de imagen",
             "usage-notes": "notas de uso"
+        },
+        "validation": {
+            "relative-gloss": "Se requiere una Definición para este tipo de relación.",
+            "verb-missing-root": "El verbo no tiene Raíz.",
+            "verb-missing-pattern": "El verbo no tiene Patrón.",
+            "verb-missing-gloss-attribute": "El verbo tiene una Definición sin Atributo.",
+            "noun-missing-gender": "El nombre no tiene género.",
+            "adjective-missing-inflections": "El adjetivo no tiene Inflecciones.",
+            "idiom-missing-components": "El Modismo no tiene componentes."
         }
     },
     "unit": {
@@ -335,7 +407,8 @@
             "email": "Correo Electrónico",
             "password": "Contraseña",
             "confirm-password": "Confirmar Contraseña",
-            "bio": "Bio"
+            "bio": "Bio",
+            "home": "Hogar"
         },
         "roles": {
             "student": "estudiante",
@@ -350,6 +423,9 @@
         "profile": "perfil",
         "notifications": {
             "preferences-saved": "¡Tu preferencias han sido guardadas!"
+        },
+        "validation": {
+            "username-characters": "El Nombre de Usuario solo puede contener caracteres del alfabeto latino y números, además de guiones bajos y puntos entre letras."
         }
     },
     "modals": {
@@ -460,13 +536,13 @@
                 "upload": "El Avatar no pudo ser subido.",
                 "delete": "El Avatar no pudo ser eliminado."
             },
+            "messages": {
+                "upload-limit": "Puedes subir hasta {count} avatares personalizados. Elimina uno antes de subir otro.",
+                "upload-format": "Puedes subir una imagen en formato JPG, JPEG, PNG o WEBP (máximo 5MB)."
+            },
             "notifications": {
                 "uploaded": "OK, tu Avatar se subió con éxito.",
                 "deleted": "OK, tu Avatar se eliminó con éxito."
-            },
-            "tips": {
-                "upload-limit": "Puedes subir hasta {count} avatares personalizados. Elimina uno antes de subir otro.",
-                "upload-format": "Puedes subir una imagen en formato JPG, JPEG, PNG o WEBP (máximo 5MB)."
             }
         }
     },
@@ -543,18 +619,19 @@
             }
         },
         "status": {
-            "public": "public",
-            "private": "private",
+            "public": "público",
+            "private": "privado",
             "draft": "en borrador",
             "published": "publicado"
         },
         "fields": {
             "slug": "encabezado",
+            "type": "tipo",
             "title": "título",
             "summary": "resumen",
             "description": "descripción",
             "locale": "idioma",
-            "parent": "padre",
+            "parent": "nodo padre",
             "position": "posición"
         },
         "messages": {
@@ -563,18 +640,17 @@
             "has-publish-issues": "El {model} no puede publicarse en el estado actual.",
             "has-confirmable-issues": "¿Está seguro de que el {model} está completo?"
         },
-        "blocks": "bloques"
+        "notifications": {
+            "delete-confirm": "¿Estás seguro de que quieres eliminar este {model}?",
+            "delete-success": "Listo, {model} fue eliminado con éxito.",
+            "delete-error": "¡Ups! — {model} no pudo ser eliminado."
+        }
     },
-    "blocks": {
-        "container": "contenedor",
-        "heading": "titular",
-        "text": "texto",
-        "image": "imagen",
-        "audio": "audio",
-        "chart": "diagrama",
-        "table": "tabla",
-        "sentence": "oración",
-        "exercises": "ejercicios",
+    "document": {
+        "key": "Documento",
+        "fields": {
+            "blocks": "Bloques"
+        },
         "add": {
             "model": "modelo",
             "custom": "a medida",
@@ -583,9 +659,54 @@
             "inflection": "inflección"
         },
         "messages": {
+            "no-blocks": "Aún no se ha agregado ningún Bloque.",
+            "no-columns": "Agrega al menos una columna para comenzar a ingresar datos en las filas."
+        },
+        "validation": {
+            "invalid-block": "Este tipo de Bloque no está permitido aquí.",
+            "heading-type": "El tipo de Titular debe ser h1, h2 o h3.",
+            "sentence-block-content": "El Bloque de Oración debe tener un modelo de Oración o una Oración hecha a medida.",
+            "exercises-block-type": "El tipo de Bloque de Ejercicios debe ser escribir, emparejar, elegir u ordenar.",
+            "exercise-prompt": "Debe haber al menos una indicación de Texto o Audio no vacía.",
+            "select-exercise-answer": "Se debe seleccionar una respuesta correcta para el Ejercicio."
+        }
+    },
+    "block": {
+        "key": "Bloque",
+        "type": {
+            "container": "contenedor",
+            "heading": "titular",
+            "text": "texto",
+            "image": "imagen",
+            "audio": "audio",
+            "chart": "diagrama",
+            "table": "tabla",
+            "sentence": "oración",
+            "exercises": "ejercicios"
+        },
+        "element": {
+            "column": "columna",
+            "row": "fila"
+        },
+        "fields": {
+            "column-label": "Etiqueta de la Columna {index}",
+            "column-row-cell": "Celda en la Columna {columnIndex}, Fila {rowIndex}",
+            "row-items": "Elementos de la Fila {index}",
+            "row-item-key": "Título del Elemento {itemIndex}, Fila {rowIndex}",
+            "row-item-arabic": "Árabe del Elemento {itemIndex}, Fila {rowIndex}",
+            "row-item-transcription": "Transcripción del Elemento {itemIndex}, Fila {rowIndex}"
+        },
+        "buttons": {
+            "flatten": "Aplanar"
+        },
+        "messages": {
             "empty-sentence": "Bloque de Oración vacío. Por favor, crea una Oración a la medida o carga un modelo de Oración.",
             "unsupported-block": "Tipo de Bloque de Ejercicios no compatible:",
             "unsupported-exercise-block": "Bloque no compatible:"
+        },
+        "notifications": {
+            "flatten-container": "¿Aplanar este Contenedor? Sus Bloques anidados serán movidos un nivel hacia arriba y el Contenedor será eliminado.",
+            "remove-block": "¿Estás seguro de que quieres eliminar este Bloque?"
         }
     },
     "components": {
@@ -675,11 +796,9 @@
             }
         },
         "lesson": {
-            "number": "Lección {number}",
             "scored-perfect": "Obtuviste 100% ({count}/{total})",
             "open": "abrir Lección",
             "no-skills": "(Ninguna habilidad ha sido agregada a esta Lección aún.)",
-            "skill": "habilidad {number}",
             "sections": {
                 "skills": "habilidades"
             }
@@ -693,7 +812,7 @@
         "score": {
             "student-required": "Debes ser un Estudiante para habilitar Puntajes.",
             "quizzed-on": "Quiz completado el {date}.",
-            "new-record": "nuevo record!",
+            "new-record": "¡nuevo record!",
             "answered-correctly": "Contestaste a {correct} de {total} preguntas correctamente.",
             "review-answers": "Revisa tus respuestas a continuación.",
             "history": "Ver Historial de Puntajes",
@@ -729,9 +848,6 @@
                     "withTranslation": "withTranslation"
                 }
             }
-        },
-        "skill": {
-            "title": "Habilidad"
         },
         "search-select": {
             "placeholder": "Buscar",
@@ -774,6 +890,14 @@
             "joined-on": "Alta el {date} ({ago}).",
             "sections": {
                 "decks": "barajas"
+            }
+        },
+        "nav-auth": {
+            "resend-link": "Reenviar Enlace",
+            "notifications": {
+                "already-verified": "¡Tu correo electrónico ya está verificado!",
+                "link-sent": "Enlace de verificación enviado a tu correo electrónico.",
+                "link-sent-error": "No se pudo enviar el enlace de verificación. Inténtalo de nuevo más tarde."
             }
         }
     },
@@ -871,7 +995,7 @@
                 },
                 "sign-up": {
                     "message": "¿qué esperas?",
-                    "button": "¡inscríbeme!"
+                    "button": "¡Inscríbeme!"
                 }
             },
             "windows": {
@@ -972,8 +1096,8 @@
                 },
                 "messages": {
                     "results": "Mostrando {count} Fichas, {message}.",
-                    "no-results": "You have no Cards matching these filters.",
-                    "no-cards": "You don't have any Cards yet. Start reviewing to get started!"
+                    "no-results": "No tienes Fichas que coincidan con estos filtros.",
+                    "no-cards": "Aún no tienes ninguna Ficha. ¡Comienza a estudiar para empezar!"
                 },
                 "sort-message": {
                     "due": "comenzando por la más próxima fecha de entrega",
@@ -1026,6 +1150,10 @@
                     "teacher-instructions": "Llena el siguiente formulario para crear tu perfil de Profe. Solo será creado al Guardar.",
                     "teacher-bio-placeholder": "¿Qué te gustaría que supieramos sobre ti como profesor?"
                 }
+            },
+            "new-password": {
+                "title": "nueva contraseña",
+                "set-password": "establecer contraseña"
             }
         },
         "wiki": {
@@ -1056,7 +1184,7 @@
                 "show-inflections": "mostrar inflecciones"
             },
             "messages": {
-                "no-created-decks": "Parece que todavía no has creado ninguna Baraja. Haz click en el botón + para comenzar!",
+                "no-created-decks": "Parece que todavía no has creado ninguna Baraja. ¡Haz click en el botón + para comenzar!",
                 "no-pinned-decks": "Parece que todavía no has pineado ninguna Baraja. Te esperamos aquí.",
                 "select-quiz-type": "Selecciona el tipo de Quiz y ajusta cómo quieres que se genere.",
                 "student-required": "Debes ser un Estudiante para habilitar los Quizzes.",
@@ -1212,137 +1340,49 @@
             }
         }
     },
-    "signin.message": "Bienvenido de vuelta, :user!",
-    "signin.message.head": "Hola!",
-    "signout.message": "Hasta pronto, :user!",
-    "signout.message.head": "Chao!",
-    "created": ":thing creado con éxito!",
-    "updated": ":thing actualizado con éxito!",
-    "deleted": ":thing eliminado con éxito!",
-    "pin.added": ":thing añadido a tus Pines!",
-    "pin.removed": ":thing quitado de tus Pines!",
-    "deck.copied": "Created a copy of \":deck\"!",
-    "decks.term.added": ":term ha sido añadido a \":deck\"!",
-    "decks.term.removed": ":term ha sido quitado de \":deck\"!",
+    "validation": {
+        "non-empty": "{field} no puede estár vacio.",
+        "object": "{field} debe ser un objeto.",
+        "array": "{field} debe ser una matriz.",
+        "min-items": "Debe haber un mínimo de {min} {item}.",
+        "non-empty-field": "{field} no puede contener un campo vacío.",
+        "required": "Se requiere {field}.",
+        "max-chars": "{field} no debe tener más de {max} caracteres.",
+        "min-chars": "{field} debe tener un mínimo de {min} caracteres.",
+        "email": "Debe ser una dirección de correo electrónico válida.",
+        "script": {
+            "latin": "{field} solo puede contener caracteres del alfabeto latino y guiones.",
+            "arabic": "{field} solo puede contener caracteres árabes."
+        },
+        "required-dependency": "Debe tener un {model} asignado.",
+        "invalid-dependency": "{model} seleccionado es inválido.",
+        "hidden-dependency": "{model} debe ser visible al público."
+    },
+    "auth.failed": "Estas credenciales no coinciden con nuestros registros.",
+    "auth.throttle": "Demasiados intentos de inicio de sesión. Vuelve a intentarlo en :segundos segundos.",
+    "signin.message": "¡Bienvenido de vuelta, {user}!",
+    "signin.message.head": "¡Hola!",
+    "signout.message": "¡Hasta pronto, {user}!",
+    "signout.message.head": "¡Chao!",
+    "signup.message": "¡Encantados de conocerte, :user!",
+    "signup.message.head": "¡Bienvenido!",
+    "created": "¡:thing creado con éxito!",
+    "updated": "¡:thing actualizado con éxito!",
+    "deleted": "¡:thing eliminado con éxito!",
+    "pin.added": "¡:thing añadido a tus Pines!",
+    "pin.removed": "¡:thing quitado de tus Pines!",
+    "deck.copied": "¡Se ha creado una copia de \":deck\"!",
+    "decks.term.added": "¡:term ha sido añadido a \":deck\"!",
+    "decks.term.removed": "¡:term ha sido sacado de \":deck\"!",
     "badges.get": "¡Conseguiste la Insignia \":badge\"! ¡Bien hecho!",
-    "documentation": "documentación",
-    "dictionary": "diccionario",
-    "lessons": "cursos",
-    "texts": "textos",
-    "all": "todos",
-    "pronouns": "pronombres",
-    "questions": "preguntas",
-    "subtype": "subtipo",
-    "masculine": "masculino",
-    "feminine": "femenino",
-    "singular": "singular",
-    "plural": "plural",
-    "defect": "defecto",
-    "elative": "elativo",
-    "participle": "participio",
-    "m": "m",
-    "f": "f",
-    "p": "p",
-    "new": "nuevo",
-    "edit": "editar",
-    "info": "info",
-    "origin": "orígen",
-    "inherited": "heredado",
-    "borrowed": "prestado",
-    "variants": "variantes",
-    "spellings": "ortografías",
-    "root": "raíz",
-    "definition": "definición",
-    "synonyms": "sinónimos",
-    "antonyms": "antónimos",
-    "usage.notes": "notas de uso",
-    "see.also": "véase también",
-    "see": "véase",
-    "form": "forma",
-    "conjugation": "conjugación",
-    "past": "pasado",
-    "present": "presente",
-    "command": "mandato",
-    "dialects.change": "cambiar dialecto",
-    "dialects.updated": "¡Tu dialecto ha sido actualizado!",
-    "dialects.target": "dialecto deseado",
-    "dialects.urban": "Palestino Urbano",
-    "dialects.rural": "Palestino Rural",
-    "dialects.northern": "Palestinino Norteño",
-    "dialects.bedouin": "Beduino General",
-    "it.tafsir": "it-Tafsīr",
-    "the.dictionary": "el Diccionario",
-    "palestinian.arabic": "el Árabe Palestino",
-    "curriculum": "currículo",
-    "level": "nivel",
-    "lesson": "lección",
-    "module": "módulo",
-    "grammar": "gramática",
-    "vocabulary": "vocabulario",
-    "dialogue": "diálogo",
-    "concept": "concepto",
-    "terms": "términos",
-    "exercise": "ejercicio",
-    "soon": "pronto",
-    "back": "p'atrás",
-    "next": "p'alante",
-    "go": "vamos",
-    "signup": "crear cuenta",
-    "signup.already": "¿Ya estás registrado?",
     "mail.greeting": "Hola",
-    "mail.farewell": "Sinceramente",
-    "mail.subject.registered": "Bienvenido a it-Tafsir! 🙌",
-    "mail.subject.verified": "Cuenta it-Tafsir Verificada! 🎉",
-    "mail.subject.subscribed": "Bienvenido al Plan Estudiante! 🧠",
-    "mail.subject.passwordchanged": "Contraseña it-Tafsir Cambiada ⚠️",
+    "mail.farewell": "Saludos",
+    "mail.subject.registered": "Verifica tu Cuenta",
+    "mail.subject.verified": "¡Cuenta Verificada! ¡Únete al Discord!",
+    "mail.subject.subscribed": "¡Bienvenido al Plan Estudiante!",
+    "mail.subject.passwordchanged": "Contraseña Cambiada",
     "mail.registered": "We're so excited to have you join us at it-Tafsir! But first, would you mind clicking this link to verify your email address?",
     "mail.verified": "Awesome — thank you for verifying your account! We invite all verified users to join our Discord server to get to know others interested in Palestine & Palestinian Arabic — just click the link below. See you there!",
     "mail.subscribed": "Yay! You've just upgraded to a Scholar account at it-Tafsir, meaning you've gained access to all sections of the site. Are you ready to Learn Palestinian Arabic? Let's get going!",
-    "mail.passwordchanged": "Just FYI: the password for your account at it-Tafsir has been changed.",
-    "name": "nombre",
-    "name.display": "nombre personal",
-    "name.arabic": "nombre árabe",
-    "name.change": "cambiar nombre",
-    "email": "correo",
-    "password": "contraseña",
-    "password.change": "cambiar contraseña",
-    "password.old": "contraseña antigua",
-    "password.new": "contraseña nueva",
-    "password.confirm": "confirmar contraseña",
-    "password.forgot": "¿Olvidaste tu contraseña?",
-    "password.forgot.message": "No hay problema. Háganos saber su dirección de correo electrónico y le enviaremos un enlace de restablecimiento de contraseña para que pueda elegir una nueva.",
-    "password.send.link": "enviar enlace",
-    "language": "idioma",
-    "user.language": "español",
-    "role": "rol",
-    "auth.remember.me": "recuérdame",
-    "auth.failed": "Contraseña incorrecta. Vuelve a intentar.",
-    "auth.throttle": "Demasiados intentos de inicio de sesión. Vuelva a intentarlo en :segundos segundos.",
-    "dash": "panel",
-    "dash.welcome": "bienvenido",
-    "dash.profile": "perfil",
-    "dash.bookmarks": "palabras marcadas",
-    "dash.subscription": "suscripción",
-    "dash.plan": "plan",
-    "dash.change": "cambiar",
-    "dash.manage": "administrar",
-    "dash.submit": "guardar",
-    "settings": "settings",
-    "settings.updated": "Cuenta actualizada con éxito!",
-    "passwords.updated": "Your password has been updated!",
-    "passwords.reset": "Tu contraseña ha sido restablecida!",
-    "passwords.sent": "Le hemos enviado por correo electrónico su enlace de restablecimiento de contraseña!",
-    "passwords.throttled": "Espere antes de volver a intentarlo.",
-    "passwords.token": "Este token de restablecimiento de contraseña no es válido.",
-    "passwords.user": "No encontramos un usuario con esa dirección de correo electrónico.",
-    "validation.error": "Tuvimos un problema:",
-    "validation.alpha": "El nombre contiene caracteres inválidos.",
-    "validation.unique": "Ya existe una cuenta registrada con este correo.",
-    "validation.confirmed": "Las contraseñas no concuerdan.",
-    "validation.min.string": "Your password must be at least 8 characters.",
-    "verification": "verificación",
-    "verification.prompt": "Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\\'t receive the email, we will gladly send you another.",
-    "verification.sent": "A new verification link has been sent to the email address you provided during registration.",
-    "verification.send.link": "resend link",
-    "dismiss": "Descartar"
+    "mail.passwordchanged": "Just FYI: the password for your account at it-Tafsir has been changed."
 }

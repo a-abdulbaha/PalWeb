@@ -7,6 +7,7 @@ use App\Providers\AppServiceProvider;
 use Flasher\Prime\FlasherInterface;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
@@ -33,17 +34,18 @@ class EmailVerificationController extends Controller
     /**
      * Sends a new verification link to the user's email.
      */
-    public function link(Request $request): RedirectResponse
+    public function link(Request $request): JsonResponse
     {
         if ($request->user()->hasVerifiedEmail()) {
-            session()->flash('notification', ['type' => 'info', 'message' => 'Your email is already verified.']);
-
-            return back();
+            return response()->json([
+                'outcome' => 'already_verified',
+            ]);
         }
 
         $request->user()->sendEmailVerificationNotification();
-        session()->flash('notification', ['type' => 'success', 'message' => 'Verification link has been sent to your email!']);
 
-        return back();
+        return response()->json([
+            'outcome' => 'sent',
+        ]);
     }
 }

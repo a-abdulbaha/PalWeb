@@ -15,7 +15,7 @@ import {generateArabicName} from "../../../utils/NameGenerator.js";
 import {useUser} from "../../../composables/users/useUser.js";
 import {useUserStore} from "../../../stores/UserStore.js";
 import {useUserValidation} from "../../../composables/users/useUserValidation.js";
-import AvatarPicker from "../../../components/AvatarPicker.vue";
+import AvatarPicker from "../../../components/modals/AvatarPicker.vue";
 
 const props = defineProps({
     userId: {
@@ -230,7 +230,7 @@ const localeKey = (value) => value?.toString().toLowerCase().replace(/[^a-z0-9]+
                             <div style="display: flex; align-items: center; gap: 3.2rem;">
                                 <label>{{ $t('user.fields.arabic-name') }}</label>
                                 <button type="button" @click="userForm.ar_name = generateArabicName()">
-                                    Randomize
+                                    {{ $t('modals.sign-up.randomize-name') }}
                                 </button>
                             </div>
                             <div class="field-input">

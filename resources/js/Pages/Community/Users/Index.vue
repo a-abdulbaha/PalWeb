@@ -49,7 +49,7 @@ defineOptions({
                             {{ user.teacher.bio }}
                         </template>
                         <template v-else>
-                            <i>{{ $t('teacher.bio-placeholder', {user: user.name}) }}</i>
+                            <i>{{ $t('teacher.fields.bio-placeholder', {user: user.name}) }}</i>
                         </template>
                     </div>
                 </CommentItem>

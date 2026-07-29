@@ -19,8 +19,7 @@
             "push-subscribe-hint": "من الإعدادات إسمح بتلقّي الإشعارات للتذكير اليوميّ لدراسة كروتك"
         },
         "auth": {
-            "user-avatar": "صورة أفاتار للمستخدم",
-            "resend-link": "إعادة إرسال الرابط"
+            "user-avatar": "صورة أفاتار للمستخدم"
         },
         "sidebar": {
             "home": {
@@ -113,6 +112,9 @@
         "units": "وحدات",
         "users": "رفقاء"
     },
+    "activity": {
+        "key": "نشاط"
+    },
     "card": {
         "fields": {
             "status": "وضع",
@@ -153,7 +155,11 @@
             "mastery-tooltip": "درجة إتقانك لهذا المصطلح هي {score} ({label})، مما يعني أن {message}."
         }
     },
+    "deck": {
+        "key": "رزمة"
+    },
     "dialect": {
+        "key": "لهجة",
         "palestinian-bedouin": "فلسطيني بدويّ",
         "palestinian-druze": "فلسطيني درزيّ",
         "central-urban-palestinian": "فلسطيني مدنيّ أوسط",
@@ -166,32 +172,68 @@
         "rural-palestinian": "فلسطيني فلّاحيّ",
         "general-palestinian": "فلسطيني عامّ"
     },
-    "exercises": {
-        "types": {
+    "dialog": {
+        "key": "محادثة"
+    },
+    "exercise": {
+        "key": "تمرين",
+        "type": {
             "input": "إدخال",
             "match": "مطابقة",
             "select": "اختيار",
             "sort": "ترتيب"
         },
+        "fields": {
+            "example-prompt": "إشارة المثال {index}",
+            "example-answer": "جواب المثال {index}",
+            "prompt": "إشارة {index} ({type})",
+            "select-options": "خيارات للاختيار",
+            "pairs": "أزواج",
+            "pair-start": "جانب البداية للزوج {index}",
+            "pair-end": "جانب النهاية للزوج {index}",
+            "sort-items": "العناصر للترتيب",
+            "input-answer": "جواب"
+        },
         "prompts": {
             "input": "جاوب السؤال بجملة كاملة، مقلّدًا صيفة المثال. لا يمكن إلا توزيع واحد للإجابات.",
             "match": "أوصل الأعمدة مع الأجوبة الصحيحة.",
-            "select": "ضع العناصر في الترتيب الصحيح لتبني الجملة أو المحادثة.",
-            "sort": "اختر الأجوبة الأكثر مناسبة في الرد على السؤال."
+            "select": "اختر الخيار الأكثر مناسب في الردّ على السؤال.",
+            "sort": "ضع العناصر في الترتيب الصحيح لتبني الجملة أو المحادثة."
         },
         "example": "مثال",
         "shuffle": "خلط"
     },
     "gloss": {
-        "fields": {
-            "gloss": "المعنى"
-        }
+        "key": "معنى"
     },
     "inflection": {
+        "key": "تصريف",
         "fields": {
             "form": "النوع",
             "inflection": "التصريف",
             "transcription": "الترجمة الصوتيّة"
+        }
+    },
+    "lesson": {
+        "key": "درس",
+        "key-index": "الدرس {index}",
+        "fields": {
+            "unlock-conditions": "شروط الفتح"
+        },
+        "unlock-condition": {
+            "key": "شرط الفتح",
+            "type": "النوع",
+            "value": "القيمة"
+        },
+        "validation": {
+            "min-unlock-conditions": "يجب أن تتضمن الدروس الإضافية شرط فتحًا واحدًا على الأقلّ."
+        }
+    },
+    "page": {
+        "key": "صفحة",
+        "validation": {
+            "self-is-parent": "لا يمكن أن تكون الصفحة هي الصفحة الأم لنفسها.",
+            "child-is-parent": "لا يمكن أن يكون طفلًا للصفحة هو الصفحة الأم للصفحة."
         }
     },
     "pattern": {
@@ -207,6 +249,18 @@
             "dialects": "لهجات",
             "borrowed": "منقول"
         }
+    },
+    "sentence": {
+        "fields": {
+            "translation": "الترجمة",
+            "transcription": "الترجمة الصوتيّة",
+            "speaker": "الناطق",
+            "position": "الموقع"
+        }
+    },
+    "skill": {
+        "key": "مهارة",
+        "key-index": "المهارة {index}"
     },
     "speaker": {
         "title": "الناطق",
@@ -248,11 +302,22 @@
         }
     },
     "teacher": {
-        "bio": "وصف المعلّم",
-        "bio-placeholder": "للأسف، لم يخبرنا {user} بعد عن نفسه كمعلّم. يجب على المعلّم العمل على ذلك في أقرب وقت ممكن.",
-        "create": "انشئ ملفّ شخصيّ للمعلّم"
+        "create": "انشئ ملفّ شخصيّ للمعلّم",
+        "fields": {
+            "bio": "وصف المعلّم",
+            "bio-placeholder": "للأسف، لم يخبرنا {user} بعد عن نفسه كمعلّم. يجب على المعلّم العمل على ذلك في أقرب وقت ممكن.",
+            "email": "البريد الإلكتروني للاتّصال"
+        }
     },
     "term": {
+        "key": "مصطلح",
+        "fields": {
+            "category": "التصنيف",
+            "attribute": "النسبة",
+            "root": "الجذر",
+            "spelling": "Spelling",
+            "relative": "Relative"
+        },
         "category": {
             "verb": "فعل",
             "noun": "إسم",
@@ -267,7 +332,6 @@
             "affix": "حرف زائد"
         },
         "filters": {
-            "category": "التصنيف",
             "categories": {
                 "verbs": "أفعال",
                 "nouns": "أسامي",
@@ -281,7 +345,6 @@
                 "phrases": "عبارات",
                 "affixes": "حروف زائدة"
             },
-            "attribute": "النسبة",
             "attributes": {
                 "masculine": "مذكّر",
                 "feminine": "مؤنّث",
@@ -322,6 +385,15 @@
             "source": "المصدر",
             "image-url": "عنوان الصورة",
             "usage-notes": "ملاحظات الاستخدام"
+        },
+        "validation": {
+            "relative-gloss": "يجب تحديد معنى لهذا النوع من العلاقات.",
+            "verb-missing-root": "ليس للفعل جذر.",
+            "verb-missing-pattern": "ليس للفعل نمط.",
+            "verb-missing-gloss-attribute": "للفعل معنى بدون نسبة.",
+            "noun-missing-gender": "ليس للاسم جنس.",
+            "adjective-missing-inflections": "ليس للصفة تصاريف.",
+            "idiom-missing-components": "ليس للتعبير الاطلاحي مكوّنات."
         }
     },
     "unit": {
@@ -332,10 +404,11 @@
             "name": "الاسم",
             "username": "اسم المستخدم",
             "arabic-name": "الاسم العربيّ",
-            "email": "البريد الإلكتروني",
+            "email": "عنوان البريد الإلكترونيّ",
             "password": "كلمة السرّ",
             "confirm-password": "تأكيد كلمة السرّ",
-            "bio": "Bio"
+            "bio": "الوصف",
+            "home": "البيت"
         },
         "roles": {
             "student": "طالب",
@@ -350,6 +423,9 @@
         "profile": "الملفّ الشخصيّ",
         "notifications": {
             "preferences-saved": "تمّ حفظ إعداداتك!"
+        },
+        "validation": {
+            "username-characters": "يجب أن يحتوي اسم المستخدم على أحرف لاتينية وأرقام فقط، بالإضافة إلى الشرطات السفلية والنقاط بين الأحرف."
         }
     },
     "modals": {
@@ -453,7 +529,7 @@
             "defaults": "الافتراضي",
             "confirm-delete": "هل تريد حذف صورة الأفاتار؟",
             "errors": {
-                "file-size": "يجب أن يكون حجم صورة الأفاتار 5 ميغابايت أو أقل.",
+                "file-size": "يجب أن يكون حجم صورة الأفاتار 5 ميغابايت أو أقلّ.",
                 "file-type": "يجب أن تكون صورة الأفاتار ملفّات JPG أو JPEG أو PNG أو WEBP.",
                 "upload-limit": "يمكنك تحميل حتى {count} صورة أفاتار.",
                 "crop": "صورة الأفاتار لا يمكن تقطيعها.",
@@ -550,11 +626,12 @@
         },
         "fields": {
             "slug": "العنوان الفرعيّ",
+            "type": "النوع",
             "title": "العنوان",
             "summary": "الملخّص",
             "description": "الوصف",
             "locale": "الإعداد المحلّي",
-            "parent": "الأصل",
+            "parent": "الصفحة الأم",
             "position": "الموقع"
         },
         "messages": {
@@ -563,18 +640,17 @@
             "has-publish-issues": "{model} لا يمكن نشره بحالته الحاليّة.",
             "has-confirmable-issues": "هل أنت متأكّد أنّ {model} كامل؟"
         },
-        "blocks": "صناديق"
+        "notifications": {
+            "delete-confirm": "هل أنت متأكّد أنّك تريد حذف هذا {model}؟",
+            "delete-success": "حسناً، تم حذف {model} بنجاح.",
+            "delete-error": "عفواً — تعذر حذف {model}."
+        }
     },
-    "blocks": {
-        "container": "جارور المحتويات",
-        "heading": "عنوان",
-        "text": "نصّ",
-        "image": "صورة",
-        "audio": "صوت",
-        "chart": "مخطّط",
-        "table": "جدول",
-        "sentence": "جملة",
-        "exercises": "تمارين",
+    "document": {
+        "key": "مستند",
+        "fields": {
+            "blocks": "الكتل"
+        },
         "add": {
             "model": "نموذج",
             "custom": "مفصّل",
@@ -583,9 +659,54 @@
             "inflection": "تصريف"
         },
         "messages": {
-            "empty-sentence": "صندوق الجملة فارغ. الرجاء إنشاء جملة جديدة أو تحميل نموذج جملة.",
-            "unsupported-block": "نوع غير مدعوم من صندوق التمارين:",
-            "unsupported-exercise-block": "صندوق غير مدعوم:"
+            "no-blocks": "لم يتم إضافة كتل بعد.",
+            "no-columns": "أضف عمودًا واحدًا على الأقلّ لبدء إدخال بيانات في الصفوف."
+        },
+        "validation": {
+            "invalid-block": "نوع الكتلة غير مسموح به هنا.",
+            "heading-type": "يجب أن يكون نوع العنوان h1 أو h2 أو h3.",
+            "sentence-block-content": "يجب أن تحتوي كتلة الجملة على نموذج جملة أو جملة مفصّلة.",
+            "exercises-block-type": "يجب أن يكون نوع كتلة التمارين إدخال أو مطابقة أو اختيار أو ترتيب.",
+            "exercise-prompt": "يجب أن يحتوي على إشارة نصيّة أو صوتيّة واحدة غير فارغة على الأقل.",
+            "select-exercise-answer": "يجب اختيار الإجابة الصحيحة للتمرين."
+        }
+    },
+    "block": {
+        "key": "كتلة",
+        "type": {
+            "container": "حاوية",
+            "heading": "عنوان",
+            "text": "نصّ",
+            "image": "صورة",
+            "audio": "صوت",
+            "chart": "مخطّط",
+            "table": "جدول",
+            "sentence": "جملة",
+            "exercises": "تمارين"
+        },
+        "element": {
+            "column": "عمود",
+            "row": "صفّ"
+        },
+        "fields": {
+            "column-label": "عنوان العمود {index}",
+            "column-row-cell": "الخليّة في العمود {columnIndex} والصفّ {rowIndex}",
+            "row-items": "عناصر الصفّ {index}",
+            "row-item-key": "عنوان العنصر {itemIndex} في الصفّ {rowIndex}",
+            "row-item-arabic": "العربيّ للعنصر {itemIndex} في الصفّ {rowIndex}",
+            "row-item-transcription": "الترجمة الصوتيّة للعنصر {itemIndex} في الصفّ {rowIndex}"
+        },
+        "buttons": {
+            "flatten": "تسطيح"
+        },
+        "messages": {
+            "empty-sentence": "كتلة الجملة فارغ. الرجاء إنشاء جملة جديدة أو تحميل نموذج جملة.",
+            "unsupported-block": "نوع غير مدعوم من كتلة التمارين:",
+            "unsupported-exercise-block": "كتلة غير مدعومة:"
+        },
+        "notifications": {
+            "flatten-container": "هل تريد تسطيح هذا الحاوية؟ سيتم نقل الكتل المتداخلة فيه إلى مستوى أعلى، وسيتم إزالة الحاوية.",
+            "remove-block": "هل أنت متأكد أنك تريد إزالة هذه الكتلة؟"
         }
     },
     "components": {
@@ -675,11 +796,9 @@
             }
         },
         "lesson": {
-            "number": "الدرس {number}",
             "scored-perfect": "حصلت على 100% ({count}/{total})",
             "open": "فتح الدرس",
             "no-skills": "(لم يتم إضافة مهارات بعد)",
-            "skill": "مهارة {number}",
             "sections": {
                 "skills": "مهارات"
             }
@@ -730,9 +849,6 @@
                 }
             }
         },
-        "skill": {
-            "title": "مهارة"
-        },
         "search-select": {
             "placeholder": "إبحث",
             "searching": "يبحث",
@@ -774,6 +890,14 @@
             "joined-on": "انضم بـ{date} ({ago}).",
             "sections": {
                 "decks": "الرزم"
+            }
+        },
+        "nav-auth": {
+            "resend-link": "إعادة إرسال الرابط",
+            "notifications": {
+                "already-verified": "تم التحقق من بريدك الإلكترونيّ بالفعل!",
+                "link-sent": "تم إرسال رابط التحقق إلى بريدك الإلكترونيّ.",
+                "link-sent-error": "تعذر إرسال رابط التحقق. يرجى المحاولة مرة أخرى لاحقاً."
             }
         }
     },
@@ -1022,7 +1146,7 @@
             },
             "edit": {
                 "messages": {
-                    "teacher-eligible": "يمكنك إنشاء ملفّ شخصيّ للمعلّم. اكبس على زر الـ+ للبدء!.",
+                    "teacher-eligible": "يمكنك إنشاء ملفّ شخصيّ للمعلّم. اكبس على زر الـ+ للبدء!",
                     "teacher-instructions": "املأ الاستمارة التالي لإنشاء ملفّك الشخصيّ للمعلّم. سينشئ فقط بعد الحفظ.",
                     "teacher-bio-placeholder": "ماذا تريد أن نعرف عنك كمعلّم؟"
                 }
@@ -1065,7 +1189,7 @@
                 "sentences-prompt": "اختر المصطلح الذي يناسب الفراغ في الجملة."
             },
             "notifications": {
-                "insufficient-items": "لم يكن من الممكن إنشاء اختبار يحتوي على 5 أسئلة على الأقل."
+                "insufficient-items": "لم يكن من الممكن إنشاء اختبار يحتوي على 5 أسئلة على الأقلّ."
             }
         },
         "card-dealer": {
@@ -1093,8 +1217,12 @@
                 "info-deck-search": "إنّ لم تستطيع العثور على الرزمة المطلوبة، تأكّد أنّها لا تعود إلى درس آخر.",
                 "info-unit-removal": "يجب عليك الذهاب إلى صفحة تعديل الوحدة لحذفها.",
                 "info-lesson-removal": "إزالة درس من هذه القائمة سيفكّ الرابط عن هذه الوحدة. يجب عليك الذهاب إلى صفحة تعديله لحذفه بالكامل.",
-                "warning-incomplete": "هذه الوحدة غير كاملة، إذ تحتوي على أقل من تسعة دروس نشرت."
+                "warning-incomplete": "هذه الوحدة غير كاملة، إذ تحتوي على أقلّ من تسعة دروس نشرت."
             }
+        },
+        "new-password": {
+            "title": "كلمة سرّ جديدة",
+            "set-password": "تعيين كلمة السرّ"
         }
     },
     "card-dealer": {
@@ -1212,10 +1340,32 @@
             }
         }
     },
+    "validation": {
+        "non-empty": "لا يمكن أن يكون {field} فارغًا",
+        "object": "يجب أن يكون {field} كائن.",
+        "array": "يجب أن يكون {field} مصفوفة.",
+        "min-items": "يجب أن يحتوي على {min} {item} على الأقلّ.",
+        "non-empty-field": "لا يمكن أن تحتوي {field} على حقل فارغ.",
+        "required": "{field} مطلوب.",
+        "max-chars": "يجب ألا يتجاوز طول {field} {max} أحرف.",
+        "min-chars": "يجب أن يكون {field} {min} أحرف على الأقلّ.",
+        "email": "يجب أن يكون عنوان بريد إلكتروني صالحًا.",
+        "script": {
+            "latin": "يجب أن يحتوي {field} على أحرف لاتينيّة وواصلات فقط.",
+            "arabic": "يجب أن يحتوي {field} على أحرف عربيّة فقط."
+        },
+        "required-dependency": "يجب أن يكون هناك {model} محدّد.",
+        "invalid-dependency": "{model} المختار غير صالح.",
+        "hidden-dependency": "يجب أن يكون {model} مرئيًّا للجميع."
+    },
+    "auth.failed": "هدا غلط، إيش مالك؟",
+    "auth.throttle": "عدد محاولات تسجيل الدخول كبير جدًا. يرجى المحاولة مرة أخرى بعد :seconds seconds.",
     "signin.message": "أهلًا بعودتك، يا {user}!",
     "signin.message.head": "هلا!",
     "signout.message": "منشوفك قريبًا، يا :user!",
     "signout.message.head": "سلامات!",
+    "signup.message": "انبسطنا من معرفتك، يا :user!",
+    "signup.message.head": "أهلا وسهلا!",
     "created": "تمّ إنشاء :thing بنجاح!",
     "updated": "تمّ تحديث :thing بنجاح!",
     "deleted": "تمّ حذف :thing بنجاح!",
@@ -1225,126 +1375,14 @@
     "decks.term.added": "تمّت إضافة :term إلى \":deck\"!",
     "decks.term.removed": "تمّت إزالة :term من \":deck\"!",
     "badges.get": "حصلت على شارة \":badge\"! أبدعت!",
-    "documentation": "توثيق",
-    "dictionary": "قاموس",
-    "lessons": "دروس",
-    "texts": "نصوص",
-    "all": "الجميع",
-    "pronouns": "ضمائر",
-    "questions": "أسئلة",
-    "subtype": "تصنيف فرعي",
-    "masculine": "مذكّر",
-    "feminine": "مؤنّث",
-    "singular": "مفرد",
-    "plural": "جمع",
-    "defect": "صفة مشبهة",
-    "elative": "إسم تفضيل",
-    "participle": "صفة فعليّة",
-    "m": "ذ",
-    "f": "ث",
-    "p": "ج",
-    "new": "جديد",
-    "edit": "عدّل",
-    "info": "معلومات",
-    "origin": "أصل",
-    "inherited": "موروث",
-    "borrowed": "مستعار",
-    "variants": "أشكال",
-    "spellings": "تهجئات",
-    "root": "جذر",
-    "definition": "معنى",
-    "synonyms": "مرادفات",
-    "antonyms": "عكس",
-    "usage.notes": "ملاحظات الاستخدام",
-    "see.also": "شوف كمان",
-    "see": "شوف",
-    "form": "وزن",
-    "conjugation": "تصريف",
-    "past": "الماضي",
-    "present": "المضارع",
-    "command": "الأمر",
-    "dialects.change": "تغيير اللهجة",
-    "dialects.updated": "!تمّ تحديث لهجتك",
-    "dialects.target": "اللهجة المرغوب",
-    "dialects.urban": "الفلسطينيّة المدنيّة",
-    "dialects.rural": "الفلسطينيّة الفلّاحيّة",
-    "dialects.northern": "الفلسطينيّة الشماليّة",
-    "dialects.bedouin": "البدويّة العامّة",
-    "it.tafsir": "التفسير",
-    "the.dictionary": "القاموس",
-    "palestinian.arabic": "اللهجة الفلسطينيّة",
-    "curriculum": "منهاج",
-    "level": "مرحلة",
-    "lesson": "درس",
-    "module": "وحدة",
-    "grammar": "قواعد",
-    "vocabulary": "مفردات",
-    "dialogue": "محادثة",
-    "concept": "مفهوم",
-    "terms": "مصطلحات",
-    "exercise": "تمرين",
-    "soon": "قريبًا",
-    "back": "لورا",
-    "next": "لقدّام",
-    "go": "يلّا",
-    "signin": "أدخل",
-    "signout": "إطلع",
-    "signup": "سجّل",
-    "signup.already": "صرت مسجّل؟",
     "mail.greeting": "مرحبا",
     "mail.farewell": "سلامات",
-    "mail.subject.registered": "أهلا وسهلا فيك بالتفسير! \uD83D\uDE4C",
-    "mail.subject.verified": "تمّ تأكيد حساب التفسير! \uD83C\uDF89",
-    "mail.subject.subscribed": "أهلا وسهلا فيك بحزمة الطالب! \uD83E\uDDE0",
-    "mail.subject.passwordchanged": "تمّ تغيير كلمة سرّ التفسير ⚠️",
-    "mail.registered": "We're happy to have you join us at it-Tafsir! Would you mind clicking this link to verify your email address?",
+    "mail.subject.registered": "حقّق من حسابك",
+    "mail.subject.verified": "تم التحقق من حسابك! انضم إلينا على ديسكورد!",
+    "mail.subject.subscribed": "أهلا بك في خطة الطالب!",
+    "mail.subject.passwordchanged": "تم تغيير كلمة السرّ",
+    "mail.registered": "We're so excited to have you join us at PalWeb! But first, would you mind clicking this link to verify your email address?",
     "mail.verified": "Awesome — thank you for verifying your account! We invite all verified users to join our Discord server to get to know others interested in Palestine & Palestinian Arabic — just click the link below. See you there!",
-    "mail.subscribed": "Yay! You've just upgraded to a Scholar account at it-Tafsir, meaning you've gained access to all sections of the site. Are you ready to Learn Palestinian Arabic? Let's get going!",
-    "mail.passwordchanged": "Just FYI: the password for your account at it-Tafsir has been changed.",
-    "name": "إسم",
-    "name.display": "الإسم الشخصي",
-    "name.arabic": "الإسم العربي",
-    "name.change": "تغيير الإسم",
-    "email": "عنوان",
-    "password": "كلمة السرّ",
-    "password.change": "تغيير كلمة السرّ",
-    "password.old": "كلمة السرّ القديمة",
-    "password.new": "كلمة السرّ الجديدة",
-    "password.confirm": "أكّد كلمة السرّ",
-    "password.forgot": "نسيت كلمتك السرّ؟",
-    "password.forgot.message": "معليش. خبّرنا شو عنوانك للبريد الإلكتروني عشان نبعتلك رابط لتجديد كلمة السرّ عشان تنقي واحدة جديدة.",
-    "password.send.link": "إبعت الرابط",
-    "language": "لغة",
-    "user.language": "عربي",
-    "role": "دور",
-    "auth.remember.me": "تذكّرني",
-    "auth.failed": "هدا غلط، إيش مالك؟",
-    "auth.throttle": "Stop guessing! Please try again in :seconds seconds.",
-    "dash": "اللوح",
-    "dash.welcome": "أهلا وسهلا",
-    "dash.profile": "حساب",
-    "dash.bookmarks": "كلمات محفوظة",
-    "dash.subscription": "اشتراك",
-    "dash.plan": "حزمة",
-    "dash.change": "غيّر",
-    "dash.manage": "عدّل",
-    "dash.submit": "أحفظ",
-    "settings": "الإعدادات",
-    "settings.updated": "تحدّث الحساب بالنجاح!",
-    "passwords.updated": "Your password has been updated!",
-    "passwords.reset": "Your password has been reset!",
-    "passwords.sent": "بعتنالك الرابط لتجديد كلمة السرّ!",
-    "passwords.throttled": "Please wait before retrying.",
-    "passwords.token": "This password reset token is invalid.",
-    "passwords.user": "ملقيناش حساب مسجّل بهالعنوان.",
-    "validation.error": "ييي صار إشي:",
-    "validation.alpha": "الإسم فيّه أحرف غير صالحة.",
-    "validation.unique": "فيه حساب موجود مسجّل بهالعنوان.",
-    "validation.confirmed": "كلمتين السرّ مش زي بعض",
-    "validation.min.string": "كلمتك السرّ لازم تكون عالأقلّ ٨ أحرف",
-    "verification": "تأكيد",
-    "verification.prompt": "Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\\'t receive the email, we will gladly send you another.",
-    "verification.sent": "A new verification link has been sent to the email address you provided during registration.",
-    "verification.send.link": "عيد إبعت الرابط",
-    "dismiss": "إغلاق"
+    "mail.subscribed": "Yay! You've just upgraded to the Student Plan on PalWeb, meaning you've gained access to all sections of the site. Are you ready to learn Palestinian Arabic? Let's get going!",
+    "mail.passwordchanged": "Just FYI: the password for your account at PalWeb has been changed."
 }
