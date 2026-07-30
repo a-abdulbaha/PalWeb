@@ -12,11 +12,14 @@ import ModalWrapper from "../components/Modals/ModalWrapper.vue";
 import SendFeedback from "../components/Modals/SendFeedback.vue";
 import SendMail from "../components/Modals/SendMail.vue";
 import {useI18n} from "vue-i18n";
+import {syncCsrfToken} from "../utils/csrfToken.js";
+import {useNotificationStore} from "../stores/NotificationStore.js";
 
-const { locale } = useI18n();
+const {t, locale} = useI18n();
 
 const UserStore = useUserStore();
 const NavigationStore = useNavigationStore();
+const NotificationStore = useNotificationStore();
 
 const carouselRef = ref(null);
 const sidebarRef = ref(null);
@@ -43,6 +46,23 @@ const navigateOrPrompt = (page) => {
     } else {
         NavigationStore.showSignIn = true;
     }
+}
+
+const signOut = async () => {
+    const {data} = await axios.post(route('signout'));
+    syncCsrfToken(data.csrf_token);
+
+    NavigationStore.closeSidebar();
+
+    UserStore.clearUser();
+
+    setTimeout(() => {
+        NotificationStore.addNotification(t('signout.message', {
+            user: locale.value === 'ar' ? data.user.ar_name : data.user.name
+        }));
+    }, 300);
+
+    router.get(route('homepage'));
 }
 
 const onSlideStart = () => {
@@ -95,7 +115,7 @@ onMounted(() => {
                     </Link>
                 </div>
                 <template v-if="UserStore.isUser">
-                    <button class="material-symbols-rounded" @click="router.post(route('signout'))">logout</button>
+                    <button class="material-symbols-rounded" @click="signOut">logout</button>
                 </template>
                 <template v-else>
                     <button class="material-symbols-rounded" @click="NavigationStore.showSignUp = true">person_add
@@ -114,10 +134,10 @@ onMounted(() => {
                         <div>{{ $t('nav.sidebar.' + NavigationStore.data.section + '.title') }}</div>
                     </div>
                     <Carousel :dir="locale === 'ar' ? 'rtl' : 'ltr'"
-                        :items-to-show="1"
-                        ref="carouselRef"
-                        @slide-start="onSlideStart"
-                        @slide-end="onSlideEnd"
+                              :items-to-show="1"
+                              ref="carouselRef"
+                              @slide-start="onSlideStart"
+                              @slide-end="onSlideEnd"
                     >
                         <Slide key="0">
                             <div @click="toSection('academy', 1)" class="nav-carousel-page-item"
