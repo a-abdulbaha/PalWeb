@@ -153,6 +153,14 @@
         "messages": {
             "not-encountered": "Aún no has encontrado este Término.",
             "mastery-tooltip": "Tu Puntaje de Maestría para este Término es {score} ({label}), lo que significa que {message}."
+        },
+        "notifications": {
+            "reset-confirm": "¿Estás seguro de que quieres eliminar tus datos para esta Ficha y restablecerla como Ficha Nueva?",
+            "reset-success": "¡Ficha reseteada!",
+            "master-confirm": "¿Estás seguro de que quieres sobrescribir los datos de esta Ficha y dominarla inmediatamente?",
+            "master-success": "¡Ficha dominada!",
+            "suspend-success": "¡Ficha suspendida!",
+            "restore-success": "¡Ficha restaurada!"
         }
     },
     "deck": {
@@ -1132,10 +1140,6 @@
                     "remaining-learning-relearning": "Fichas de Aprendizaje y Reaprendizaje Restantes",
                     "remaining-relearning": "Fichas de Reaprendizaje (Propias) Restantes",
                     "remaining-owned": "Fichas Propias Restantes"
-                },
-                "notifications": {
-                    "mastered": "¡Ficha dominada!",
-                    "suspended": "¡Ficha suspendida!"
                 }
             }
         },

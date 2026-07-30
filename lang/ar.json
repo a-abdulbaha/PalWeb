@@ -153,6 +153,14 @@
         "messages": {
             "not-encountered": "لم تستكشف هذا المصطلح بعد.",
             "mastery-tooltip": "درجة إتقانك لهذا المصطلح هي {score} ({label})، مما يعني أن {message}."
+        },
+        "notifications": {
+            "reset-confirm": "هل أنت متأكد أنك تريد حذف بياناتك الخاصة بهذا الكرت وإعادة ضبطه إلى كرت جديد؟",
+            "reset-success": "تمّ إعادة ضبط الكرت!",
+            "master-confirm": "هل أنت متأكد أنك تريد استبدال بيانات هذا الكرت لإتقانها على الفور؟",
+            "master-success": "تمّ إتقان الكرت!",
+            "suspend-success": "تمّ تعليق الكرت!",
+            "restore-success": "تمّ استعادة الكرت!"
         }
     },
     "deck": {
@@ -778,7 +786,7 @@
                 "success": "نجاح",
                 "error": "غلط",
                 "warning": "تحذير",
-                "info": "معلومات"
+                "info": "معلومة"
             }
         },
         "comment": {
@@ -1132,10 +1140,6 @@
                     "remaining-learning-relearning": "كروت التعلّم وإعادة التعلّم",
                     "remaining-relearning": "كروت إعادة التعلّم (المملوكة) المتبقّية",
                     "remaining-owned": "الكروت المملوكة المتبقّية"
-                },
-                "notifications": {
-                    "mastered": "تمّ إتقان الكرت!",
-                    "suspended": "تمّ تعليق الكرت!"
                 }
             }
         },

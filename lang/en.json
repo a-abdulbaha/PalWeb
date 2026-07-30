@@ -153,6 +153,14 @@
         "messages": {
             "not-encountered": "You haven't encountered this Term yet.",
             "mastery-tooltip": "Your Mastery Score for this Term is {score} ({label}), meaning {message}."
+        },
+        "notifications": {
+            "reset-confirm": "Are you sure you want to delete your data for this Card & reset it to a New Card?",
+            "reset-success": "Reset Card!",
+            "master-confirm": "Are you sure you want to overwrite this Card's data to immediately master it?",
+            "master-success": "Mastered Card!",
+            "suspend-success": "Suspended Card!",
+            "restore-success": "Restored Card!"
         }
     },
     "deck": {
@@ -1132,10 +1140,6 @@
                     "remaining-learning-relearning": "Remaining Learning & Relearning Cards",
                     "remaining-relearning": "Remaining (Owned) Relearning Cards",
                     "remaining-owned": "Remaining Owned Cards"
-                },
-                "notifications": {
-                    "mastered": "Mastered Card!",
-                    "suspended": "Suspended Card!"
                 }
             }
         },
