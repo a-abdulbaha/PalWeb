@@ -1373,13 +1373,20 @@
         "invalid-dependency": "{model} المختار غير صالح.",
         "hidden-dependency": "يجب أن يكون {model} مرئيًّا للجميع."
     },
+    "passwords": {
+        "sent": "تمّ إرسال رابط إعادة تعيين كلمة السرّ!",
+        "reset": "تمّ إعادة تعيين كلمة السرّ!",
+        "user": "لم نتمكّن من العثور على مستخدم يحمل عنوان البريد الإلكترونيّ هذا.",
+        "token": "رمز إعادة تعيين كلمة السرّ هذا غير صالح.",
+        "throttled": "يرجى الانتظار قبل إعادة المحاولة."
+    },
     "auth.failed": "هدا غلط، إيش مالك؟",
     "auth.throttle": "عدد محاولات تسجيل الدخول كبير جدًا. يرجى المحاولة مرة أخرى بعد :seconds seconds.",
     "signin.message": "أهلًا بعودتك، يا {user}!",
     "signin.message.head": "هلا!",
-    "signout.message": "منشوفك قريبًا، يا :user!",
+    "signout.message": "منشوفك قريبًا، يا {user}!",
     "signout.message.head": "سلامات!",
-    "signup.message": "انبسطنا من معرفتك، يا :user!",
+    "signup.message": "انبسطنا من معرفتك، يا {user}!",
     "signup.message.head": "أهلا وسهلا!",
     "created": "تمّ إنشاء :thing بنجاح!",
     "updated": "تمّ تحديث :thing بنجاح!",

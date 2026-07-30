@@ -74,16 +74,38 @@ const signIn = async () => {
 
 const forgotPassword = ref(false);
 
-const resetLinkForm = useForm({
+const {
+    form: sendLinkForm,
+    errors: sendLinkErrors,
+    clearErrors: clearSendLinkErrors,
+    setErrors: setSendLinkErrors,
+    payload: sendLinkPayload,
+} = useForm({
     email: '',
 });
 
-const sendResetLink = () => {
-    resetLinkForm.post(route('password.email'), {
-        onSuccess: () => {
-            emit('close');
+const sendLinkProcessing = ref(false);
+
+const sendLink = async () => {
+    sendLinkProcessing.value = true;
+    clearSendLinkErrors();
+
+    try {
+        const {data} = await axios.post(route('password.email'), sendLinkPayload());
+
+        syncCsrfToken(data.csrf_token);
+        NotificationStore.addNotification(t(data.status), data.success ? 'success' : 'warning');
+
+        emit('close');
+
+    } catch (error) {
+        if (error?.response?.status === 422) {
+            setSendLinkErrors(error.response.data.errors ?? {});
         }
-    });
+
+    } finally {
+        sendLinkProcessing.value = false;
+    }
 };
 </script>
 <template>
@@ -137,18 +159,18 @@ const sendResetLink = () => {
             <AppTip>
                 <p>{{ $t('modals.forgot-password.prompt') }}</p>
             </AppTip>
-            <form @submit.prevent="sendResetLink">
+            <form @submit.prevent="sendLink">
                 <div class="modal-container-body form-body">
                     <div class="field-item">
                         <label>{{ $t('user.fields.email') }}</label>
                         <div class="field-input">
-                            <input type="text" v-model="resetLinkForm.email" placeholder="free@palestine.com" required>
+                            <input type="text" v-model="sendLinkForm.email" placeholder="free@palestine.com" required>
                         </div>
-                        <div v-if="resetLinkForm.errors.email" v-text="resetLinkForm.errors.email" class="field-error"/>
+                        <div v-if="sendLinkErrors.email" v-text="sendLinkErrors.email" class="field-error"/>
                     </div>
                 </div>
                 <div class="window-footer">
-                    <button type="submit" :disabled="resetLinkForm.processing || !isValidRequest">
+                    <button type="submit" :disabled="sendLinkProcessing || !isValidRequest">
                         {{ $t('modals.forgot-password.submit') }}
                     </button>
                 </div>

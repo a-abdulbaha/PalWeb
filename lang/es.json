@@ -1373,13 +1373,20 @@
         "invalid-dependency": "{model} seleccionado es inválido.",
         "hidden-dependency": "{model} debe ser visible al público."
     },
+    "passwords": {
+        "sent": "¡Se ha enviado el enlace para restablecer la contraseña!",
+        "reset": "¡Se ha restablecido la contraseña!",
+        "user": "No pudimos encontrar un usuario con esa dirección de correo electrónico.",
+        "token": "Este token de restablecimiento de contraseña es inválido.",
+        "throttled": "Por favor, espera antes de volver a intentarlo."
+    },
     "auth.failed": "Estas credenciales no coinciden con nuestros registros.",
     "auth.throttle": "Demasiados intentos de inicio de sesión. Vuelve a intentarlo en :segundos segundos.",
     "signin.message": "¡Bienvenido de vuelta, {user}!",
     "signin.message.head": "¡Hola!",
     "signout.message": "¡Hasta pronto, {user}!",
     "signout.message.head": "¡Chao!",
-    "signup.message": "¡Encantados de conocerte, :user!",
+    "signup.message": "¡Encantados de conocerte, {user}!",
     "signup.message.head": "¡Bienvenido!",
     "created": "¡:thing creado con éxito!",
     "updated": "¡:thing actualizado con éxito!",

@@ -1373,13 +1373,20 @@
         "invalid-dependency": "Selected {model} is invalid.",
         "hidden-dependency": "{model} must be publicly visible."
     },
+    "passwords": {
+        "sent": "Password reset link has been sent!",
+        "reset": "Password has been reset!",
+        "user": "We couldn't find a user with that email address.",
+        "token": "This password reset token is invalid.",
+        "throttled": "Please wait before retrying."
+    },
     "auth.failed": "These credentials do not match our records.",
     "auth.throttle": "Too many sign-in attempts. Please try again in :seconds seconds.",
     "signin.message": "Welcome back, {user}!",
     "signin.message.head": "Hey!",
     "signout.message": "See you soon, {user}!",
     "signout.message.head": "Bye!",
-    "signup.message": "Glad to have you join us, :user!",
+    "signup.message": "Glad to have you join us, {user}!",
     "signup.message.head": "Welcome!",
     "created": "Created :thing!",
     "updated": "Updated :thing!",
