@@ -158,9 +158,6 @@
     "deck": {
         "key": "Baraja",
         "notifications": {
-            "term-added": "¡El Término ha sido añadido a la Baraja!",
-            "term-removed": "¡El Término ha sido sacado de la Baraja!",
-            "term-already-present": "¡Este Término ya está en la Baraja!",
             "copy-link-success": "Enlace a la Baraja ha sido copiado al portapapeles.",
             "copy-confirm": "¿Estás seguro de que quieres crear una copia de esta Baraja?",
             "copy-success": "¡Se ha creado una copia de la Baraja!"
@@ -650,6 +647,9 @@
             "has-confirmable-issues": "¿Está seguro de que el {model} está completo?"
         },
         "notifications": {
+            "model-added": "¡{model} ha sido añadido a {target}!",
+            "model-removed": "¡{model} ha sido sacado de {target}!",
+            "model-already-present": "¡{model} ya está en {target}!",
             "save-success": "Listo, {model} fue guardado con éxito.",
             "save-error": "¡Ups! — {model} no pudo ser guardado.",
             "delete-confirm": "¿Estás seguro de que quieres eliminar este {model}?",

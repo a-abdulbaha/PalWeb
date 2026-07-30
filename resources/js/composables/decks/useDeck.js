@@ -102,7 +102,11 @@ export function useDeck(props = {}, options = {}) {
                 }
             }
 
-            NotificationStore.addNotification(t('deck.notifications.term-' + (response.data.isPresent ? 'added' : 'removed')));
+            NotificationStore.addNotification(t('forms.notifications.model-' + (response.data.isPresent ? 'added' : 'removed'), {
+                model: t('actions.models.term'),
+                target: t('actions.models.deck'),
+            }));
+
             return response.data.isPresent;
 
         } catch (error) {

@@ -82,7 +82,10 @@ export function useDeckEditor({
         const termExists = editor.form.terms.some(existingTerm => existingTerm.id === term.id);
 
         if (termExists) {
-            NotificationStore.addNotification(t('deck.notifications.term-already-present'), 'error');
+            NotificationStore.addNotification(t('forms.notifications.model-already-present', {
+                model: t('actions.models.term'),
+                target: t('actions.models.deck'),
+            }), 'error');
             return;
         }
 
@@ -102,7 +105,10 @@ export function useDeckEditor({
         });
 
         updatePosition();
-        NotificationStore.addNotification(t('deck.notifications.term-added'));
+        NotificationStore.addNotification(t('forms.notifications.model-added', {
+            model: t('actions.models.term'),
+            target: t('actions.models.deck'),
+        }));
     };
 
     const removeTerm = (index) => {

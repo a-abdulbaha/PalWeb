@@ -158,9 +158,6 @@
     "deck": {
         "key": "Deck",
         "notifications": {
-            "term-added": "Added Term to Deck!",
-            "term-removed": "Removed Term from Deck!",
-            "term-already-present": "This Term is already in the Deck!",
             "copy-link-success": "Link to Deck copied to clipboard.",
             "copy-confirm": "Are you sure you want to create a copy of this Deck?",
             "copy-success": "Created a copy of the Deck!"
@@ -650,6 +647,9 @@
             "has-confirmable-issues": "Are you sure the {model} is complete?"
         },
         "notifications": {
+            "model-added": "Added {model} to {target}!",
+            "model-removed": "Removed {model} from {target}!",
+            "model-already-present": "{model} is already in {target}!",
             "save-success": "OK, {model} was successfully saved.",
             "save-error": "Oops — {model} could not be saved.",
             "delete-confirm": "Are you sure you want to delete this {model}?",

@@ -158,9 +158,6 @@
     "deck": {
         "key": "رزمة",
         "notifications": {
-            "term-added": "تمّت إضافة المصطلح إلى الرزمة!",
-            "term-removed": "تمّت إزالة المصطلح من الرزمة!",
-            "term-already-present": "هذا المصطلح موجود بالفعل في الرزمة!",
             "copy-link-success": "تم نسخ رابط الرزمة إلى الحافظة.",
             "copy-confirm": "هل أنت متأكد أنك تريد إنشاء نسخة من هذه الرزمة؟",
             "copy-success": "تمّ إنشاء نسخة للرزمة!"
@@ -650,6 +647,9 @@
             "has-confirmable-issues": "هل أنت متأكّد أنّ {model} كامل؟"
         },
         "notifications": {
+            "model-added": "تمّت إضافة {model} إلى {target}!",
+            "model-removed": "تمّت إزالة {model} من {target}!",
+            "model-already-present": "{model} موجود بالفعل في {target}!",
             "save-success": "حسناً، تم حفظ {model} بنجاح.",
             "save-error": "عفواً — تعذر حفظ {model}.",
             "delete-confirm": "هل أنت متأكّد أنّك تريد حذف هذا {model}؟",
