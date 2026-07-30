@@ -263,6 +263,13 @@
             "borrowed": "منقول"
         }
     },
+    "score": {
+        "key": "علامة",
+        "notifications": {
+            "purge-confirm": "هل أنت متأكّد من أنّك تريد محو هذه العلامات؟ لا يمكن التراجع عن هذا الإجراء.",
+            "purge-success": "تمّ محو {count} علامات بنجاح."
+        }
+    },
     "sentence": {
         "fields": {
             "translation": "الترجمة",
@@ -483,7 +490,6 @@
         },
         "purge-scores": {
             "title": "محو العلامات",
-            "confirm": "هل أنت متأكّد من أنّك تريد حذف هذه العلامات؟ لا يمكن التراجع عن هذا الإجراء.",
             "fields": {
                 "time-limit": "الحد الزمنيّ"
             },
@@ -565,7 +571,8 @@
             "edit": "تعديل {model}",
             "delete": "حذف {model}",
             "copy": "نسخ {model}",
-            "select": "اختيار {thing}"
+            "select": "اختيار {thing}",
+            "view-scores": "مشاهدة العلامات"
         },
         "models": {
             "activity": "النشاط",
@@ -577,7 +584,7 @@
             "gloss": "المعنى",
             "page": "الصفحة",
             "root": "الجذر",
-            "scores": "العلامة",
+            "score": "العلامة",
             "sentence": "الجملة",
             "speaker": "الناطق",
             "teacher": "المعلّم",
@@ -1274,7 +1281,7 @@
             },
             "notifications": {
                 "purge-confirm": "هل أنت متأكّد أنّك تريد محو جميع كروتك الجديدة؟",
-                "purge-success": "تمّ محو {count} كروت جديدة."
+                "purge-success": "تمّ محو {count} كروت جديدة بنجاح."
             }
         },
         "session-settings": {

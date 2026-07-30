@@ -263,6 +263,13 @@
             "borrowed": "prestado"
         }
     },
+    "score": {
+        "key": "Puntaje",
+        "notifications": {
+            "purge-confirm": "¿Estás seguro de que quieres borrar estos Puntajes? Esta acción no puede ser revertida.",
+            "purge-success": "{count} Puntajes borrados con éxito."
+        }
+    },
     "sentence": {
         "fields": {
             "translation": "Traducción",
@@ -483,7 +490,6 @@
         },
         "purge-scores": {
             "title": "Purgar Puntajes",
-            "confirm": "Estás seguro de que quieres eliminar estos Puntajes? Esta acción no puede ser revertida.",
             "fields": {
                 "time-limit": "Plazo"
             },
@@ -565,7 +571,8 @@
             "edit": "Editar {model}",
             "delete": "Eliminar {model}",
             "copy": "Copiar {model}",
-            "select": "Seleccionar {thing}"
+            "select": "Seleccionar {thing}",
+            "view-scores": "Ver Puntajes"
         },
         "models": {
             "activity": "Actividad",
@@ -577,7 +584,7 @@
             "lesson": "Lección",
             "page": "Página",
             "root": "Raíz",
-            "scores": "Puntajes",
+            "score": "Puntaje",
             "sentence": "Oración",
             "speaker": "Hablante",
             "teacher": "Profe",
@@ -655,14 +662,14 @@
             "has-confirmable-issues": "¿Está seguro de que el {model} está completo?"
         },
         "notifications": {
-            "model-added": "¡{model} ha sido añadido a {target}!",
-            "model-removed": "¡{model} ha sido sacado de {target}!",
+            "model-added": "¡{model} se añadió a {target}!",
+            "model-removed": "¡{model} se sacó de {target}!",
             "model-already-present": "¡{model} ya está en {target}!",
-            "save-success": "Listo, {model} fue guardado con éxito.",
-            "save-error": "¡Ups! — {model} no pudo ser guardado.",
+            "save-success": "Listo, {model} se guardó con éxito.",
+            "save-error": "¡Ups! — {model} no pudo guardarse.",
             "delete-confirm": "¿Estás seguro de que quieres eliminar este {model}?",
-            "delete-success": "Listo, {model} fue eliminado con éxito.",
-            "delete-error": "¡Ups! — {model} no pudo ser eliminado."
+            "delete-success": "Listo, {model} se eliminó con éxito.",
+            "delete-error": "¡Ups! — {model} no pudo eliminarse."
         }
     },
     "document": {
@@ -1274,7 +1281,7 @@
             },
             "notifications": {
                 "purge-confirm": "¿Estás seguro de que quieres borrar todas tus Fichas Nuevas?",
-                "purge-success": "{count} Fichas Nuevas han sido borradas."
+                "purge-success": "{count} Fichas Nuevas borradas con éxito."
             }
         },
         "session-settings": {

@@ -263,6 +263,13 @@
             "borrowed": "borrowed"
         }
     },
+    "score": {
+        "key": "Score",
+        "notifications": {
+            "purge-confirm": "Are you sure you want to delete these Scores? This action cannot be undone.",
+            "purge-success": "Successfully deleted {count} Scores."
+        }
+    },
     "sentence": {
         "fields": {
             "translation": "Translation",
@@ -483,7 +490,6 @@
         },
         "purge-scores": {
             "title": "Purge Scores",
-            "confirm": "Are you sure you want to delete these Scores? This action cannot be undone.",
             "fields": {
                 "time-limit": "Time Limit"
             },
@@ -565,7 +571,8 @@
             "edit": "Edit {model}",
             "delete": "Delete {model}",
             "copy": "Copy {model}",
-            "select": "Select {thing}"
+            "select": "Select {thing}",
+            "view-scores": "View Scores"
         },
         "models": {
             "activity": "Activity",
@@ -577,7 +584,7 @@
             "lesson": "Lesson",
             "page": "Page",
             "root": "Root",
-            "scores": "Scores",
+            "score": "Score",
             "sentence": "Sentence",
             "speaker": "Speaker",
             "teacher": "Teacher",
@@ -1274,7 +1281,7 @@
             },
             "notifications": {
                 "purge-confirm": "Are you sure you want to delete all your New Cards?",
-                "purge-success": "Deleted {count} New Cards."
+                "purge-success": "Successfully deleted {count} New Cards."
             }
         },
         "session-settings": {
