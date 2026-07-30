@@ -329,7 +329,7 @@ const localeKey = (value) => value?.toString().toLowerCase().replace(/[^a-z0-9]+
                         <label>{{ $t('user.fields.bio') }}</label>
                         <div class="field-input">
                             <textarea v-model="teacherForm.bio" rows="10"
-                                      :placeholder="$t('pages.users.edit.messages.bio-placeholder')"/>
+                                      :placeholder="$t('pages.users.edit.messages.teacher-bio-placeholder')"/>
                             <div class="field-chars" :class="{'invalid': teacherForm.bio.length > 5000}"
                                  v-text="5000 - teacherForm.bio.length"/>
                         </div>

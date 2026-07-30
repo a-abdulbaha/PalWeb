@@ -156,7 +156,15 @@
         }
     },
     "deck": {
-        "key": "Baraja"
+        "key": "Baraja",
+        "notifications": {
+            "term-added": "¡El Término ha sido añadido a la Baraja!",
+            "term-removed": "¡El Término ha sido sacado de la Baraja!",
+            "term-already-present": "¡Este Término ya está en la Baraja!",
+            "copy-link-success": "Enlace a la Baraja ha sido copiado al portapapeles.",
+            "copy-confirm": "¿Estás seguro de que quieres crear una copia de esta Baraja?",
+            "copy-success": "¡Se ha creado una copia de la Baraja!"
+        }
     },
     "dialect": {
         "key": "Dialecto",
@@ -1374,9 +1382,6 @@
     "deleted": "¡:thing eliminado con éxito!",
     "pin.added": "¡:thing añadido a tus Pines!",
     "pin.removed": "¡:thing quitado de tus Pines!",
-    "deck.copied": "¡Se ha creado una copia de \":deck\"!",
-    "decks.term.added": "¡:term ha sido añadido a \":deck\"!",
-    "decks.term.removed": "¡:term ha sido sacado de \":deck\"!",
     "badges.get": "¡Conseguiste la Insignia \":badge\"! ¡Bien hecho!",
     "mail.greeting": "Hola",
     "mail.farewell": "Saludos",

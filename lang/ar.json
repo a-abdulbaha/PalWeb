@@ -156,7 +156,15 @@
         }
     },
     "deck": {
-        "key": "رزمة"
+        "key": "رزمة",
+        "notifications": {
+            "term-added": "تمّت إضافة المصطلح إلى الرزمة!",
+            "term-removed": "تمّت إزالة المصطلح من الرزمة!",
+            "term-already-present": "هذا المصطلح موجود بالفعل في الرزمة!",
+            "copy-link-success": "تم نسخ رابط الرزمة إلى الحافظة.",
+            "copy-confirm": "هل أنت متأكد أنك تريد إنشاء نسخة من هذه الرزمة؟",
+            "copy-success": "تمّ إنشاء نسخة للرزمة!"
+        }
     },
     "dialect": {
         "key": "لهجة",
@@ -1374,9 +1382,6 @@
     "deleted": "تمّ حذف :thing بنجاح!",
     "pin.added": "تمّت إضافة :thing عالمفضّلات",
     "pin.removed": "تمّت إزالة :thing من عالمفضّلات",
-    "deck.copied": "تمّ إنشاء نسخة لـ\":deck\"!",
-    "decks.term.added": "تمّت إضافة :term إلى \":deck\"!",
-    "decks.term.removed": "تمّت إزالة :term من \":deck\"!",
     "badges.get": "حصلت على شارة \":badge\"! أبدعت!",
     "mail.greeting": "مرحبا",
     "mail.farewell": "سلامات",
