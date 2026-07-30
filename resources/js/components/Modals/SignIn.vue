@@ -9,10 +9,16 @@ import {useUserStore} from "../../stores/UserStore.js";
 import {useI18n} from "vue-i18n";
 import {syncCsrfToken} from "../../utils/csrfToken.js";
 import {router} from "@inertiajs/vue3";
+import {useAuth} from "../../composables/useAuth.js";
 
 const {t, locale} = useI18n();
 const NotificationStore = useNotificationStore();
 const UserStore = useUserStore();
+
+const {
+    startingDiscordAuth,
+    startDiscordAuth,
+} = useAuth();
 
 const emit = defineEmits(['close', 'signUp']);
 
@@ -147,10 +153,18 @@ const sendLink = async () => {
                     <ToggleSingle v-model="signInForm.remember" :label="$t('modals.sign-in.remember-me')"/>
                 </div>
                 <div class="window-footer">
-                    <button type="submit" :disabled="signInProcessing || !isValidRequest">
+                    <button type="submit"
+                            :disabled="signInProcessing || !isValidRequest"
+                    >
                         {{ $t('modals.sign-in.submit') }}
                     </button>
-                    <a :href="route('auth.discord')">{{ $t('modals.sign-in.discord') }}</a>
+                    <button
+                        type="button"
+                        :disabled="startingDiscordAuth"
+                        @click="startDiscordAuth"
+                    >
+                        {{ $t('modals.sign-in.discord') }}
+                    </button>
                 </div>
             </form>
         </template>

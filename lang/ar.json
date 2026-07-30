@@ -166,7 +166,7 @@
     "deck": {
         "key": "رزمة",
         "notifications": {
-            "copy-link-success": "تم نسخ رابط الرزمة إلى الحافظة.",
+            "copy-link-success": "تمّ نسخ رابط الرزمة إلى الحافظة.",
             "copy-confirm": "هل أنت متأكد أنك تريد إنشاء نسخة من هذه الرزمة؟",
             "copy-success": "تمّ إنشاء نسخة للرزمة!"
         }
@@ -475,10 +475,10 @@
             "confirm": "تأكيد",
             "cancel": "إلغاء",
             "messages": {
-                "unsaved-changes": "لديك تغييرات غير محفوظة. هل أنت متأكد من أنك تريد ترك هذه الصفحة؟ سيتم فقدان التغييرات.",
-                "unsaved-score": "لم تقم بعد بحفظ العلامة. هل أنت متأكد من أنك تريد ترك هذه الصفحة؟ لن يتم حفظ العلامة.",
-                "unfinished-quiz": "لم تقم بعد بحل هذا الاختبار. هل أنت متأكد من أنك تريد ترك هذه الصفحة؟ لن يتم حفظ التقدّم.",
-                "unfinished-activity": "لم تقم بعد بحل هذه النشاط. هل أنت متأكد من أنك تريد ترك هذه الصفحة؟ لن يتم حفظ التقدّم."
+                "unsaved-changes": "لديك تغييرات غير محفوظة. هل أنت متأكد من أنك تريد ترك هذه الصفحة؟ سيتمّ فقدان التغييرات.",
+                "unsaved-score": "لم تقم بعد بحفظ العلامة. هل أنت متأكد من أنك تريد ترك هذه الصفحة؟ لن يتمّ حفظ العلامة.",
+                "unfinished-quiz": "لم تقم بعد بحل هذا الاختبار. هل أنت متأكد من أنك تريد ترك هذه الصفحة؟ لن يتمّ حفظ التقدّم.",
+                "unfinished-activity": "لم تقم بعد بحل هذه النشاط. هل أنت متأكد من أنك تريد ترك هذه الصفحة؟ لن يتمّ حفظ التقدّم."
             }
         },
         "purge-scores": {
@@ -658,10 +658,10 @@
             "model-added": "تمّت إضافة {model} إلى {target}!",
             "model-removed": "تمّت إزالة {model} من {target}!",
             "model-already-present": "{model} موجود بالفعل في {target}!",
-            "save-success": "حسناً، تم حفظ {model} بنجاح.",
+            "save-success": "حسناً، تمّ حفظ {model} بنجاح.",
             "save-error": "عفواً — تعذر حفظ {model}.",
             "delete-confirm": "هل أنت متأكّد أنّك تريد حذف هذا {model}؟",
-            "delete-success": "حسناً، تم حذف {model} بنجاح.",
+            "delete-success": "حسناً، تمّ حذف {model} بنجاح.",
             "delete-error": "عفواً — تعذر حذف {model}."
         }
     },
@@ -678,7 +678,7 @@
             "inflection": "تصريف"
         },
         "messages": {
-            "no-blocks": "لم يتم إضافة كتل بعد.",
+            "no-blocks": "لم يتمّ إضافة كتل بعد.",
             "no-columns": "أضف عمودًا واحدًا على الأقلّ لبدء إدخال بيانات في الصفوف."
         },
         "validation": {
@@ -724,7 +724,7 @@
             "unsupported-exercise-block": "كتلة غير مدعومة:"
         },
         "notifications": {
-            "flatten-container": "هل تريد تسطيح هذا الحاوية؟ سيتم نقل الكتل المتداخلة فيه إلى مستوى أعلى، وسيتم إزالة الحاوية.",
+            "flatten-container": "هل تريد تسطيح هذا الحاوية؟ سيتمّ نقل الكتل المتداخلة فيه إلى مستوى أعلى، وسيتمّ إزالة الحاوية.",
             "remove-block": "هل أنت متأكد أنك تريد إزالة هذه الكتلة؟"
         }
     },
@@ -733,7 +733,7 @@
             "by": "لـ",
             "by-author": "لـ{author}",
             "anonymous": "مجهول",
-            "copied": "تم نسخ إلى الحافظة.",
+            "copied": "تمّ نسخ إلى الحافظة.",
             "copy-error": "تعذر نسخ النص:",
             "never": "لم يقم بالفعل",
             "hide": "إخفاء",
@@ -797,7 +797,7 @@
             "empty": "هذه الرزمة فارغة.",
             "locked": "لم تقم بفتح هذه الرزمة بعد في الأكاديمية.",
             "description-placeholder": "للأسف، لم يخبرنا {author} بعد عن هذه الرزمة.",
-            "created-by": "تم إنشاؤها بواسطة {author} بـ{date}.",
+            "created-by": "تمّ إنشاؤها بواسطة {author} بـ{date}.",
             "terms": {
                 "load-error": "تعذّر تحميل مصطلحات الرزم."
             }
@@ -817,7 +817,7 @@
         "lesson": {
             "scored-perfect": "حصلت على 100% ({count}/{total})",
             "open": "فتح الدرس",
-            "no-skills": "(لم يتم إضافة مهارات بعد)",
+            "no-skills": "(لم يتمّ إضافة مهارات بعد)",
             "sections": {
                 "skills": "مهارات"
             }
@@ -830,7 +830,7 @@
         },
         "score": {
             "student-required": "يجب أن تكون طالب لتتمكّن من حصول على علامات.",
-            "quizzed-on": "تم الاختبار بـ{date}.",
+            "quizzed-on": "تمّ الاختبار بـ{date}.",
             "new-record": "سجل جديد!",
             "answered-correctly": "أجبت على {correct} من {total} أسئلة بشكل صحيح.",
             "review-answers": "راجع إجاباتك بالأسفل.",
@@ -914,8 +914,8 @@
         "nav-auth": {
             "resend-link": "إعادة إرسال الرابط",
             "notifications": {
-                "already-verified": "تم التحقق من بريدك الإلكترونيّ بالفعل!",
-                "link-sent": "تم إرسال رابط التحقق إلى بريدك الإلكترونيّ.",
+                "already-verified": "تمّ التحقق من بريدك الإلكترونيّ بالفعل!",
+                "link-sent": "تمّ إرسال رابط التحقق إلى بريدك الإلكترونيّ.",
                 "link-sent-error": "تعذر إرسال رابط التحقق. يرجى المحاولة مرة أخرى لاحقاً."
             }
         }
@@ -929,9 +929,9 @@
             "displaying-results": "عرض {count} {model} مطابقًا لهذا الطلب.",
             "not-found": "للأسف، لم يتمّ العثور على ال{model} المطلوب.",
             "sort-messages": {
-                "alphabetical": "يتم الفرز أبجديًا حسب الجذر.",
-                "frequency": "يتم الفرز حسب التكرار في جميع أنحاء المدوّنة اللغويّة.",
-                "latest": "يتم الفرز حسب تاريخ الإنشاء."
+                "alphabetical": "يتمّ الفرز أبجديًا حسب الجذر.",
+                "frequency": "يتمّ الفرز حسب التكرار في جميع أنحاء المدوّنة اللغويّة.",
+                "latest": "يتمّ الفرز حسب تاريخ الإنشاء."
             }
         },
         "home": {
@@ -1197,7 +1197,7 @@
             "messages": {
                 "no-created-decks": "يبدو أنّك لم تنشئ أيّ رزم بعد. اكبس على زر الـ+ للبدء!",
                 "no-pinned-decks": "يبدو أنك لم تضف أي رزم إلى مفضلاتك بعد. سننتظرك هنا.",
-                "select-quiz-type": "اختر نوع الاختبار وقم بضبط الطريقة التي تريد أن يتم بها إنشاؤه.",
+                "select-quiz-type": "اختر نوع الاختبار وقم بضبط الطريقة التي تريد أن يتمّ بها إنشاؤه.",
                 "student-required": "يجب أن تكون طالبًا لتمكين الاختبارات.",
                 "glosses-prompt": "اختر معنى المصطلح باللغة الإنجليزية.",
                 "inflections-prompt": "أكتب التصريف المحدد للمصطلح باللغة العربية.",
@@ -1394,12 +1394,21 @@
     "pin.added": "تمّت إضافة :thing عالمفضّلات",
     "pin.removed": "تمّت إزالة :thing من عالمفضّلات",
     "badges.get": "حصلت على شارة \":badge\"! أبدعت!",
+    "oauth.discord.already-linked": "حساب ديسكورد الخاص بك مرتبط بالفعل.",
+    "oauth.discord.link-canceled": "لقد ألغيت عملية المصادقة على ديسكورد.",
+    "oauth.discord.no-linked-account": "لم نتمكن من تسجيل دخولك لعدم وجود حساب بالويب مرتبط بحساب ديسكورد المُقدّم أو يحمل نفس البريد الإلكتروني. يُرجى تسجيل الدخول بالطريقة المعتادة أولاً، ثم ربط حساب ديسكورد الخاص بك قبل محاولة تسجيل الدخول بهذه الطريقة.",
+    "oauth.discord.auth-failed": "لا يمكنك المصادقة على ديسكورد.",
+    "oauth.discord.no-password": "لم تقم بتعيين كلمة سرّ بعد. لا يمكنك قطع الاتّصال بديسكورد حتى تقوم بتعيين كلمة سرّ على بالويب. قم بتعيين كلمة مرور أولاً، ثم حاول مرة أخرى.",
+    "oauth.discord.no-token": "فشل فصل حساب ديسكورد. لم يتمّ العثور على رمز ديسكورد.",
+    "oauth.discord.connection-failed": "فشل فصل حساب ديسكورد. تعذر الاتّصال بديسكورد.",
+    "oauth.discord.revoke-failed": "فشل فصل حساب ديسكورد.",
+    "oauth.discord.revoke-success": "تمّ فصل حسابك على ديسكورد بنجاح.",
     "mail.greeting": "مرحبا",
     "mail.farewell": "سلامات",
     "mail.subject.registered": "حقّق من حسابك",
-    "mail.subject.verified": "تم التحقق من حسابك! انضم إلينا على ديسكورد!",
+    "mail.subject.verified": "تمّ التحقق من حسابك! انضم إلينا على ديسكورد!",
     "mail.subject.subscribed": "أهلا بك في خطة الطالب!",
-    "mail.subject.passwordchanged": "تم تغيير كلمة السرّ",
+    "mail.subject.passwordchanged": "تمّ تغيير كلمة السرّ",
     "mail.registered": "We're so excited to have you join us at PalWeb! But first, would you mind clicking this link to verify your email address?",
     "mail.verified": "Awesome — thank you for verifying your account! We invite all verified users to join our Discord server to get to know others interested in Palestine & Palestinian Arabic — just click the link below. See you there!",
     "mail.subscribed": "Yay! You've just upgraded to the Student Plan on PalWeb, meaning you've gained access to all sections of the site. Are you ready to learn Palestinian Arabic? Let's get going!",

@@ -12,14 +12,21 @@ import ModalWrapper from "../components/Modals/ModalWrapper.vue";
 import SendFeedback from "../components/Modals/SendFeedback.vue";
 import SendMail from "../components/Modals/SendMail.vue";
 import {useI18n} from "vue-i18n";
-import {syncCsrfToken} from "../utils/csrfToken.js";
-import {useNotificationStore} from "../stores/NotificationStore.js";
+import {useAuth} from "../composables/useAuth.js";
 
-const {t, locale} = useI18n();
+const {locale} = useI18n();
 
 const UserStore = useUserStore();
 const NavigationStore = useNavigationStore();
-const NotificationStore = useNotificationStore();
+
+const {
+    signingOut,
+    startingDiscordAuth,
+    revokingDiscord,
+    signOut,
+    startDiscordAuth,
+    revokeDiscord,
+} = useAuth();
 
 const carouselRef = ref(null);
 const sidebarRef = ref(null);
@@ -48,23 +55,6 @@ const navigateOrPrompt = (page) => {
     }
 }
 
-const signOut = async () => {
-    const {data} = await axios.post(route('signout'));
-    syncCsrfToken(data.csrf_token);
-
-    NavigationStore.closeSidebar();
-
-    UserStore.clearUser();
-
-    setTimeout(() => {
-        NotificationStore.addNotification(t('signout.message', {
-            user: locale.value === 'ar' ? data.user.ar_name : data.user.name
-        }));
-    }, 300);
-
-    router.get(route('homepage'));
-}
-
 const onSlideStart = () => {
     if (NavigationStore.data.section !== 'home') {
         Object.keys(zIndices.value).forEach((sectionKey) => {
@@ -88,6 +78,14 @@ const handleClickOutside = (event) => {
     }
 };
 
+const handleSignOut = async () => {
+    await signOut({
+        afterSignOut: () => {
+            NavigationStore.closeSidebar();
+        },
+    });
+}
+
 onMounted(() => {
     const removeNavigationListener = router.on('navigate', () => {
         NavigationStore.closeSidebar();
@@ -99,8 +97,6 @@ onMounted(() => {
         document.removeEventListener('click', handleClickOutside);
     });
 });
-
-
 </script>
 <template>
     <div class="nav-sidebar-container" :class="{ 'show': NavigationStore.data.isOpen }">
@@ -115,7 +111,12 @@ onMounted(() => {
                     </Link>
                 </div>
                 <template v-if="UserStore.isUser">
-                    <button class="material-symbols-rounded" @click="signOut">logout</button>
+                    <button class="material-symbols-rounded"
+                            @click="handleSignOut"
+                            :disabled="signingOut"
+                    >
+                        logout
+                    </button>
                 </template>
                 <template v-else>
                     <button class="material-symbols-rounded" @click="NavigationStore.showSignUp = true">person_add
@@ -328,10 +329,16 @@ onMounted(() => {
                     <div class="nav-user-menu-items">
                         <Link :href="route('subscription.index')">{{ $t('nav.sidebar.manage-subscription') }}</Link>
                         <Link :href="route('password.edit')">{{ $t('nav.sidebar.change-password') }}</Link>
-                        <a v-if="!UserStore.user.has_discord" :href="route('auth.discord')">
+                        <button v-if="!UserStore.user.has_discord"
+                                @click="startDiscordAuth"
+                                :disabled="startingDiscordAuth"
+                        >
                             {{ $t('nav.sidebar.link-discord') }}
-                        </a>
-                        <button v-else @click="router.post(route('auth.discord.revoke'))">
+                        </button>
+                        <button v-else
+                                @click="revokeDiscord"
+                                :disabled="revokingDiscord"
+                        >
                             {{ $t('nav.sidebar.unlink-discord') }}
                         </button>
                     </div>
