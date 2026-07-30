@@ -93,7 +93,6 @@ const sendLink = async () => {
     try {
         const {data} = await axios.post(route('password.email'), sendLinkPayload());
 
-        syncCsrfToken(data.csrf_token);
         NotificationStore.addNotification(t(data.status), data.success ? 'success' : 'warning');
 
         emit('close');

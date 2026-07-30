@@ -18,7 +18,6 @@ class PasswordResetLinkController extends Controller
         return response()->json([
             'success' => $status === Password::RESET_LINK_SENT,
             'status' => $status,
-            'csrf_token' => csrf_token(),
         ]);
     }
 }
