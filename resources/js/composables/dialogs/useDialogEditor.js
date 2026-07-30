@@ -50,7 +50,7 @@ export function useDialogEditor({
             include: 'edit',
         }),
         resetModel: dialogLoader.setDialog,
-        label: 'Dialog',
+        label: 'dialog',
         routeBase: 'dialogs',
         afterSave: (response, savedDialog) => {
             redirectToEditRoute(savedDialog);

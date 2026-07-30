@@ -268,7 +268,7 @@
         "byline": "ناطق {gender} {fluency} من {ar} ({en})",
         "anonymous-bracketed": "[مجهول]",
         "anonymous-number": "الناطق #{id}",
-        "audios": "تسجيلات الصوت",
+        "audios": "التسجيلات الصوتيّة",
         "fields": {
             "dialect": "اللهجة",
             "location": "الموقع",
@@ -556,6 +556,7 @@
         },
         "models": {
             "activity": "النشاط",
+            "audio": "التسجيل الصوتيّ",
             "card": "الكرت",
             "deck": "الرزمة",
             "dialog": "المحادثة",
@@ -641,6 +642,8 @@
             "has-confirmable-issues": "هل أنت متأكّد أنّ {model} كامل؟"
         },
         "notifications": {
+            "save-success": "حسناً، تم حفظ {model} بنجاح.",
+            "save-error": "عفواً — تعذر حفظ {model}.",
             "delete-confirm": "هل أنت متأكّد أنّك تريد حذف هذا {model}؟",
             "delete-success": "حسناً، تم حذف {model} بنجاح.",
             "delete-error": "عفواً — تعذر حذف {model}."
@@ -1041,7 +1044,7 @@
             },
             "speaker": {
                 "is-private": "ملفّك حاليًّا بالوضع الخاصّ.",
-                "empty": "{speaker} لم يرفع أي تسجيلات صوت بعد."
+                "empty": "{speaker} لم يرفع أي تسجيلات صوتيّة بعد."
             }
         },
         "academy": {
@@ -1135,7 +1138,7 @@
                 "decks": "الرزم",
                 "latest": "الأحدث",
                 "popular": "الشعبية",
-                "audios": "تسجيلات الصوت",
+                "audios": "التسجيلات الصوتيّة",
                 "creators": "المبدعين",
                 "create-prompt": "دورك تعمل واحد!",
                 "record-prompt": "دورك تسجّل كمان!"

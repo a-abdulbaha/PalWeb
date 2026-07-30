@@ -10,8 +10,8 @@ export function useCard() {
         isDeleting: isDeletingCard,
         deleteResource: deleteCard,
     } = useResourceDelete({
+        label: 'card',
         routeBase: 'cards',
-        label: 'Card',
         onDeleteSuccess: () => {
             router.get(route('card-dealer.cards'));
         },

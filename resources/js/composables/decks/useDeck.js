@@ -11,8 +11,8 @@ export function useDeck(props = {}, options = {}) {
         isDeleting: isDeletingDeck,
         deleteResource: deleteDeck,
     } = useResourceDelete({
+        label: 'deck',
         routeBase: 'decks',
-        label: 'Deck',
         onDeleteSuccess: () => {
             router.get(route('decks.index'));
         },

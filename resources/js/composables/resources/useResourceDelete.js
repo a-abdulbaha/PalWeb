@@ -48,7 +48,7 @@ export function useResourceDelete({
 
         if (!hasIdentifier(identifier)) return null;
 
-        if (!confirm(t('forms.notifications.delete-confirm', {model: label}))) {
+        if (!confirm(t('forms.notifications.delete-confirm', {model: t(`actions.models.${label}`)}))) {
             return null;
         }
 
@@ -72,14 +72,14 @@ export function useResourceDelete({
                     router.get(route('homepage'));
                 }
 
-                NotificationStore.addNotification(t('forms.notifications.delete-success', {model: label}), 'success');
+                NotificationStore.addNotification(t('forms.notifications.delete-success', {model: t(`actions.models.${label}`)}), 'success');
 
                 return response;
 
             } catch (error) {
                 await onDeleteError?.(error, model, identifier, options);
                 await options.onError?.(error, model, identifier, options);
-                NotificationStore.addNotification(t('forms.notifications.delete-error', {model: label}), 'error');
+                NotificationStore.addNotification(t('forms.notifications.delete-error', {model: t(`actions.models.${label}`)}), 'error');
 
                 return null;
             }

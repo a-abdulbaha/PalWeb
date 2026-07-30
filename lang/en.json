@@ -556,6 +556,7 @@
         },
         "models": {
             "activity": "Activity",
+            "audio": "Audio",
             "card": "Card",
             "deck": "Deck",
             "dialog": "Dialog",
@@ -641,6 +642,8 @@
             "has-confirmable-issues": "Are you sure the {model} is complete?"
         },
         "notifications": {
+            "save-success": "OK, {model} was successfully saved.",
+            "save-error": "Oops — {model} could not be saved.",
             "delete-confirm": "Are you sure you want to delete this {model}?",
             "delete-success": "OK, {model} was successfully deleted.",
             "delete-error": "Oops — {model} could not be deleted."

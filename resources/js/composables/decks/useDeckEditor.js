@@ -63,7 +63,7 @@ export function useDeckEditor({
             include: 'edit',
         }),
         resetModel: deckLoader.setDeck,
-        label: 'Deck',
+        label: 'deck',
         routeBase: 'decks',
         afterSave: (response, savedDeck) => {
             redirectToEditRoute(savedDeck);

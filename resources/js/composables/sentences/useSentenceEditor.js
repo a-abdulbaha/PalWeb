@@ -60,7 +60,7 @@ export function useSentenceEditor({
             include: 'edit',
         }),
         resetModel: sentenceLoader.setSentence,
-        label: 'Sentence',
+        label: 'sentence',
         routeBase: 'sentences',
         afterSave: (response, savedSentence) => {
             redirectToEditRoute(savedSentence);

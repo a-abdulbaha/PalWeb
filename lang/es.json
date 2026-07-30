@@ -556,6 +556,7 @@
         },
         "models": {
             "activity": "Actividad",
+            "audio": "Audio",
             "card": "Ficha",
             "deck": "Baraja",
             "dialog": "Diálogo",
@@ -641,6 +642,8 @@
             "has-confirmable-issues": "¿Está seguro de que el {model} está completo?"
         },
         "notifications": {
+            "save-success": "Listo, {model} fue guardado con éxito.",
+            "save-error": "¡Ups! — {model} no pudo ser guardado.",
             "delete-confirm": "¿Estás seguro de que quieres eliminar este {model}?",
             "delete-success": "Listo, {model} fue eliminado con éxito.",
             "delete-error": "¡Ups! — {model} no pudo ser eliminado."
