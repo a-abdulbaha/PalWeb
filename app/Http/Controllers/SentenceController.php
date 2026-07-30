@@ -137,7 +137,6 @@ class SentenceController extends Controller
 
         return response()->json([
             'sentence' => new SentenceResource($sentence),
-            'message' => __('created', ['thing' => $sentence->sentence]),
         ], 201);
     }
 
@@ -152,7 +151,6 @@ class SentenceController extends Controller
 
         return response()->json([
             'sentence' => new SentenceResource($sentence),
-            'message' => __('updated', ['thing' => $sentence->sentence]),
         ]);
     }
 
@@ -293,8 +291,6 @@ class SentenceController extends Controller
         try {
             Gate::authorize('delete', $sentence);
 
-            $deletedSentence = $sentence->sentence;
-
             $affectedTermIds = DB::transaction(function () use ($sentence) {
                 $affectedTermIds = DB::table('sentence_term')
                     ->where('sentence_id', $sentence->id)
@@ -313,7 +309,6 @@ class SentenceController extends Controller
 
             return response()->json([
                 'success' => true,
-                'message' => __('deleted', ['thing' => $deletedSentence]),
             ]);
 
         } catch (Throwable $e) {

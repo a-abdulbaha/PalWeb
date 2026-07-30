@@ -90,7 +90,6 @@ class CardController extends Controller
 
             return response()->json([
                 'success' => true,
-                'message' => __('deleted', ['thing' => 'Card']),
             ]);
 
         } catch (Throwable $e) {
