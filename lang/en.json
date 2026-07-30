@@ -1270,7 +1270,11 @@
             "review": "review",
             "start": "start",
             "tooltips": {
-                "purge": "Purges all your New Cards."
+                "purge": "Deletes all your New Cards."
+            },
+            "notifications": {
+                "purge-confirm": "Are you sure you want to delete all your New Cards?",
+                "purge-success": "Deleted {count} New Cards."
             }
         },
         "session-settings": {

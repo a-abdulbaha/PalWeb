@@ -1270,7 +1270,11 @@
             "review": "repaso",
             "start": "iniciar",
             "tooltips": {
-                "purge": "Purga todas tus Fichas Nuevas."
+                "purge": "Borra todas tus Fichas Nuevas."
+            },
+            "notifications": {
+                "purge-confirm": "¿Estás seguro de que quieres borrar todas tus Fichas Nuevas?",
+                "purge-success": "{count} Fichas Nuevas han sido borradas."
             }
         },
         "session-settings": {
