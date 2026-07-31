@@ -20,14 +20,16 @@ export function useUser(user) {
     });
 
     const toggleStudentRole = async () => {
-        const response = await axios.patch(route('api.users.roles.toggleStudent', resolvedUser.value.id));
-        if (response.data.success) {
-            resolvedUser.value.roles = response.data.user.roles;
-            isStudent.value
-                ? NotificationStore.addNotification(t('user.notifications.role-granted-success'))
-                : NotificationStore.addNotification(t('user.notifications.role-revoked-success'));
+        try {
+            const {data} = await axios.patch(route('api.users.roles.toggle-student', resolvedUser.value.id));
 
-        } else {
+            resolvedUser.value.roles = data.user.roles;
+            isStudent.value
+                ? NotificationStore.addNotification(t('user.notifications.role-granted'))
+                : NotificationStore.addNotification(t('user.notifications.role-revoked'));
+
+        } catch (e) {
+            console.error(t('user.notifications.role-toggle-error'), e);
             NotificationStore.addNotification(t('user.notifications.role-toggle-error'), 'error');
         }
     };

@@ -131,7 +131,6 @@ class UserController extends Controller
         $user->save();
 
         return response()->json([
-            'success' => true,
             'preferences' => $user->preferences
         ]);
     }
@@ -152,7 +151,6 @@ class UserController extends Controller
         $user->load('roles');
 
         return response()->json([
-            'success' => true,
             'user' => new UserShowResource($user)
         ]);
     }

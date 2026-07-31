@@ -439,8 +439,9 @@
         "profile": "perfil",
         "notifications": {
             "preferences-saved": "¡Tu preferencias han sido guardadas!",
-            "role-granted-success": "Rol de Estudiante otorgado con éxito.",
-            "role-revoked-success": "Rol de Estudiante revocado con éxito.",
+            "preferences-saved-error": "No se pudo guardar las preferencias de usuario.",
+            "role-granted": "Rol de Estudiante otorgado con éxito.",
+            "role-revoked": "Rol de Estudiante revocado con éxito.",
             "role-toggle-error": "No se pudo cambiar el estado del rol de Estudiante."
         },
         "validation": {
@@ -1236,7 +1237,8 @@
                 "sentences-prompt": "Selecciona el Término que mejor se ajusta al espacio en blanco en la frase."
             },
             "notifications": {
-                "insufficient-items": "No se pudo generar un Quiz con al menos 5 preguntas."
+                "insufficient-items": "No se pudo generar un Quiz con al menos 5 preguntas.",
+                "quiz-generation-error": "No se pudo generar el Quiz."
             }
         },
         "card-dealer": {
@@ -1371,7 +1373,15 @@
             "upload": "subir",
             "prompt-start": "¡Graba algo para comenzar!"
         },
-        "check": "revisar"
+        "check": "revisar",
+        "notifications": {
+            "flush-queue-confirm": "¿Estás seguro de que quieres vaciar la Cola, eliminando todas tus grabaciones aún no subidas, si las hubiera?",
+            "remove-item-confirm": "Tienes grabaciones aún no subidas para este elemento. ¿Estás seguro de que quieres sacarlo de la Cola antes de subirlo? Tu grabación no subida se perderá.",
+            "auto-queue-success": "¡{count} Pronunciaciones fueron agregadas a la Cola!",
+            "auto-queue-error": "No se pudo agregar Pronunciaciones automáticamente a la Cola.",
+            "deck-queue-success": "¡{count} Pronunciaciones de la Baraja fueron agregadas a la Cola!",
+            "deck-queue-error": "No se pudo agregar Pronunciaciones de la Baraja a la Cola."
+        }
     },
     "footer": {
         "links": {
