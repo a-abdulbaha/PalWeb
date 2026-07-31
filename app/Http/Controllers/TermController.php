@@ -51,11 +51,11 @@ class TermController extends Controller
             event(new ModelPinned($user));
         }
 
+        dd('test');
+
         return response()->json([
             'isPinned' => $isPinned,
-            'message' => $isPinned
-                ? __('pin.added', ['thing' => $term->term])
-                : __('pin.removed', ['thing' => $term->term]),
+            'modelKey' => $term->term,
         ]);
     }
 

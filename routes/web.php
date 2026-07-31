@@ -12,7 +12,6 @@ use App\Http\Controllers\CardController;
 use App\Http\Controllers\CommunityController;
 use App\Http\Controllers\DeckController;
 use App\Http\Controllers\EmailAnnouncementController;
-use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\FeedbackCommentController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\Office\LessonPlannerController;
@@ -294,11 +293,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
             Route::get('/{scorable_type}/{scorable_id}', 'history')->name('scores.history');
             Route::post('/purge', 'purge')->name('scores.purge');
             Route::delete('/{score}', 'destroy')->name('scores.destroy');
-        });
-
-        Route::prefix('/explore')->controller(ExploreController::class)->group(function () {
-            Route::get('/', 'index')->name('explore.index');
-            Route::get('/{page}', 'show')->name('explore.show');
         });
     });
 

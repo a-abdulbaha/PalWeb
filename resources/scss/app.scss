@@ -158,7 +158,7 @@ html[lang="ar"] {
     font-family: var(--head-font);
     color: var(--color-dark-primary);
 
-    p {
+    & > p {
         background: var(--color-accent-light);
         border-radius: 0.8rem;
         padding: 1.6rem 2.0rem;

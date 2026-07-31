@@ -264,11 +264,7 @@
         }
     },
     "score": {
-        "key": "Puntaje",
-        "notifications": {
-            "purge-confirm": "¿Estás seguro de que quieres borrar estos Puntajes? Esta acción no puede ser revertida.",
-            "purge-success": "{count} Puntajes borrados con éxito."
-        }
+        "key": "Puntaje"
     },
     "sentence": {
         "fields": {
@@ -442,7 +438,10 @@
         },
         "profile": "perfil",
         "notifications": {
-            "preferences-saved": "¡Tu preferencias han sido guardadas!"
+            "preferences-saved": "¡Tu preferencias han sido guardadas!",
+            "role-granted-success": "Rol de Estudiante otorgado con éxito.",
+            "role-revoked-success": "Rol de Estudiante revocado con éxito.",
+            "role-toggle-error": "No se pudo cambiar el estado del rol de Estudiante."
         },
         "validation": {
             "username-characters": "El Nombre de Usuario solo puede contener caracteres del alfabeto latino y números, además de guiones bajos y puntos entre letras."
@@ -490,9 +489,12 @@
         },
         "purge-scores": {
             "title": "Purgar Puntajes",
+            "message": "Borra todos los Puntajes para este modelo.",
             "fields": {
-                "time-limit": "Plazo"
+                "time-limit": "Plazo",
+                "keep": "Mantener"
             },
+            "older-than": "más antiguos que {age}.",
             "time-limits": {
                 "none": "Ninguno",
                 "day": "1 Día",
@@ -500,11 +502,16 @@
                 "month": "1 Mes",
                 "year": "1 Año"
             },
-            "keep": {
-                "highest": "Mantener el más alto",
-                "latest": "Mantener el más reciente"
+            "except-for": "excepto {scores}.",
+            "exceptions": {
+                "highest": "el Puntaje más alto",
+                "latest": "el Puntaje más reciente"
             },
-            "submit": "purgar"
+            "submit": "purgar",
+            "notifications": {
+                "purge-confirm": "¿Estás seguro de que quieres borrar estos Puntajes? Esta acción no puede ser revertida.",
+                "purge-success": "{count} Puntajes borrados con éxito."
+            }
         },
         "send-feedback": {
             "title": "enviar feedback",
@@ -796,6 +803,16 @@
                 "info": "información"
             }
         },
+        "pin-button": {
+            "tooltips": {
+                "must-verify-email": "Debes verificar tu correo electrónico para habilitar los Pines."
+            },
+            "notifications": {
+                "pin-added": "¡\"{model}\" añadido a tus Pines!",
+                "pin-removed": "¡\"{model}\" quitado de tus Pines!",
+                "pin-error": "No se pudo cambiar el estado del Pin."
+            }
+        },
         "comment": {
             "created-on": "el {date}."
         },
@@ -938,7 +955,8 @@
             "sort-messages": {
                 "alphabetical": "Ordenando alfabéticamente por raíz.",
                 "frequency": "Ordenando por frecuencia en el Corpus.",
-                "latest": "Ordenando por más recientemente creado."
+                "latest": "Ordenando por más recientemente creado.",
+                "popular": "Ordenando por más agregado a Pines."
             }
         },
         "home": {
@@ -1033,9 +1051,12 @@
                 "arabic": {
                     "title": "escalera al árabe",
                     "subtitle-1": "¿Por qué el árabe hablado?",
-                    "description-1": "",
+                    "description-1": "{highlight} El árabe estándar es difícil, ¡incluso para los hablantes nativos! Aprender el árabe hablado antes refleja como los hablantes nativos adquieren el idioma — de manera social y contextual — y no solo facilita la transición al árabe estándar sino que hace que tenga más sentido, pues ya tendrás un sentido intuitivo de su estructura, sonido y ritmo.",
+                    "description-1-highlight": "Si quieres aprender árabe en serio, comienza con el árabe hablado.",
                     "subtitle-2": "¿Por qué el árabe palestino?",
-                    "description-2": ""
+                    "description-2": "El árabe palestino es una forma del árabe levantino, una de las familias dialectales mejor comprendidas a lo largo y ancho del mundo árabe, {highlight-1} en Palestina, Jordania, Líbano, Siria y más allá. Es uno de los dialectos más conservadores del árabe hablado, con similitudes importantes con el árabe estándar (¡hasta un 80% de solapamiento en el vocabulario!), lo que hace que sea {highlight-2} para quienes quieran construir una fundación sólida en el vocabulario y la gramática del árabe.",
+                    "description-2-highlight-1": "hablada por hasta 40 millones de personas",
+                    "description-2-highlight-2": "un punto de partida perfecto"
                 }
             },
             "notifications": {
@@ -1402,8 +1423,6 @@
     "created": "¡:thing creado con éxito!",
     "updated": "¡:thing actualizado con éxito!",
     "deleted": "¡:thing eliminado con éxito!",
-    "pin.added": "¡:thing añadido a tus Pines!",
-    "pin.removed": "¡:thing quitado de tus Pines!",
     "badges.get": "¡Conseguiste la Insignia \":badge\"! ¡Bien hecho!",
     "oauth.discord.already-linked": "Tu cuenta de Discord ya está vinculada.",
     "oauth.discord.link-canceled": "Cancelaste el proceso de autenticación con Discord.",

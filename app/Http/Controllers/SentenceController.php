@@ -34,9 +34,7 @@ class SentenceController extends Controller
 
         return response()->json([
             'isPinned' => $isPinned,
-            'message' => $isPinned
-                ? __('pin.added', ['thing' => $sentence->sentence])
-                : __('pin.removed', ['thing' => $sentence->sentence]),
+            'modelKey' => $sentence->sentence,
         ]);
     }
 

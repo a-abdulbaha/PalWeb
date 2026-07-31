@@ -43,9 +43,7 @@ class DeckController extends Controller
         return response()->json([
             'pinCount' => Bookmark::count($deck),
             'isPinned' => $isPinned,
-            'message' => $isPinned
-                ? __('pin.added', ['thing' => $deck->name])
-                : __('pin.removed', ['thing' => $deck->name]),
+            'modelKey' => $deck->name,
         ]);
     }
 
@@ -162,10 +160,13 @@ class DeckController extends Controller
         event(new ModelPinned($user));
         event(new DeckBuilt($user));
 
-        $deck->load([
-            'terms' => fn ($q) => $q
-                ->withItemData(),
-        ]);
+        $deck = Deck::query()
+            ->whereKey($deck->getKey())
+            ->with([
+                'terms' => fn ($q) => $q
+                    ->withItemData(),
+            ])
+            ->firstOrFail();
 
         $this->termService->hydratePronunciations($deck->terms);
 
@@ -181,10 +182,13 @@ class DeckController extends Controller
         $deck->update($request->all());
         $this->linkTerms($deck, $request->terms);
 
-        $deck->refresh()->load([
-            'terms' => fn ($q) => $q
-                ->withItemData(),
-        ]);
+        $deck = Deck::query()
+            ->whereKey($deck->getKey())
+            ->with([
+                'terms' => fn ($q) => $q
+                    ->withItemData(),
+            ])
+            ->firstOrFail();
 
         $this->termService->hydratePronunciations($deck->terms);
 

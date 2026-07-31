@@ -242,20 +242,28 @@ defineOptions({
             <div class="homepage-panel-content faq-panel">
                 <div class="feature-panel-title">{{ $t('pages.home.windows.arabic.title') }}</div>
                 <div class="feature-panel-subtitle">{{ $t('pages.home.windows.arabic.subtitle-1') }}</div>
-                <div class="feature-panel-description"><b>If you really want to learn Arabic, start with Spoken
-                    Arabic.</b> Standard Arabic is hard, even for native Arabic speakers. Learning Spoken Arabic
-                    first mirrors how native speakers acquire language — socially & contextually — & makes
-                    transitioning to Standard Arabic not only easier but more meaningful, as you’ll already have an
-                    intuitive feel for structure, sound, and flow.
-                </div>
+                <i18n-t
+                    tag="div"
+                    class="feature-panel-description"
+                    keypath="pages.home.windows.arabic.description-1"
+                >
+                    <template #highlight>
+                        <strong>{{ $t('pages.home.windows.arabic.description-1-highlight') }}</strong>
+                    </template>
+                </i18n-t>
                 <div class="feature-panel-subtitle">{{ $t('pages.home.windows.arabic.subtitle-2') }}</div>
-                <div class="feature-panel-description">Palestinian Arabic is a form of Levantine Arabic, one of the
-                    most widely understood dialect families in the Arab world, <b>spoken by up to 40 million
-                        people</b> in Palestine, Jordan, Lebanon, Syria & beyond. It’s one of the more conservative
-                    dialects of Spoken Arabic, with strong similarities to Standard Arabic (up to 80% lexical
-                    overlap!), making it <b>a perfect starting point</b> for learners to build a solid foundation in
-                    Arabic vocabulary & grammar.
-                </div>
+                <i18n-t
+                    tag="div"
+                    class="feature-panel-description"
+                    keypath="pages.home.windows.arabic.description-2"
+                >
+                    <template #highlight-1>
+                        <strong>{{ $t('pages.home.windows.arabic.description-2-highlight-1') }}</strong>
+                    </template>
+                    <template #highlight-2>
+                        <strong>{{ $t('pages.home.windows.arabic.description-2-highlight-2') }}</strong>
+                    </template>
+                </i18n-t>
             </div>
         </div>
 

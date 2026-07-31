@@ -56,7 +56,7 @@ watch(
 );
 
 watch(
-    props.filters,
+    () => props.filters,
     (newPropFilters) => {
         for (const key in newPropFilters) {
             if (newPropFilters[key] !== filters.value[key]) {
@@ -64,7 +64,8 @@ watch(
                 previousFilters[key] = newPropFilters[key];
             }
         }
-    }
+    },
+    {deep: true, immediate: true}
 );
 
 // watch(

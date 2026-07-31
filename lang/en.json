@@ -264,11 +264,7 @@
         }
     },
     "score": {
-        "key": "Score",
-        "notifications": {
-            "purge-confirm": "Are you sure you want to delete these Scores? This action cannot be undone.",
-            "purge-success": "Successfully deleted {count} Scores."
-        }
+        "key": "Score"
     },
     "sentence": {
         "fields": {
@@ -442,7 +438,10 @@
         },
         "profile": "profile",
         "notifications": {
-            "preferences-saved": "Your preferences have been saved!"
+            "preferences-saved": "Your preferences have been saved!",
+            "role-granted-success": "Successfully granted Student role.",
+            "role-revoked-success": "Successfully revoked Student role.",
+            "role-toggle-error": "Failed to toggle Student role."
         },
         "validation": {
             "username-characters": "Username may only contain Latin-script characters & numbers, as well as underscores & periods between letters."
@@ -490,9 +489,12 @@
         },
         "purge-scores": {
             "title": "Purge Scores",
+            "message": "Delete all Scores for this model.",
             "fields": {
-                "time-limit": "Time Limit"
+                "time-limit": "Time Limit",
+                "keep": "Keep"
             },
+            "older-than": "that are older than {age}.",
             "time-limits": {
                 "none": "None",
                 "day": "1 Day",
@@ -500,11 +502,16 @@
                 "month": "1 Month",
                 "year": "1 Year"
             },
-            "keep": {
-                "highest": "Keep Highest",
-                "latest": "Keep Latest"
+            "except-for": "except for {scores}.",
+            "exceptions": {
+                "highest": "highest Score",
+                "latest": "latest Score"
             },
-            "submit": "purge"
+            "submit": "purge",
+            "notifications": {
+                "purge-confirm": "Are you sure you want to delete these Scores? This action cannot be undone.",
+                "purge-success": "Successfully deleted {count} Scores."
+            }
         },
         "send-feedback": {
             "title": "send feedback",
@@ -796,6 +803,16 @@
                 "info": "info"
             }
         },
+        "pin-button": {
+            "tooltips": {
+                "must-verify-email": "You must verify your email to enable Pins."
+            },
+            "notifications": {
+                "pin-added": "Pinned \"{model}\"!",
+                "pin-removed": "Unpinned \"{model}\"!",
+                "pin-error": "Failed to toggle Pin."
+            }
+        },
         "comment": {
             "created-on": "on {date}."
         },
@@ -938,7 +955,8 @@
             "sort-messages": {
                 "alphabetical": "Sorting alphabetically by root.",
                 "frequency": "Sorting by frequency across the Corpus.",
-                "latest": "Sorting by most recently created."
+                "latest": "Sorting by most recently created.",
+                "popular": "Sorting by most Pinned."
             }
         },
         "home": {
@@ -1033,9 +1051,12 @@
                 "arabic": {
                     "title": "stairway to Arabic",
                     "subtitle-1": "Why Spoken Arabic?",
-                    "description-1": "",
+                    "description-1": "{highlight} Standard Arabic is hard — even for native Arabic speakers! Learning Spoken Arabic first mirrors how native speakers acquire language — socially & contextually — & makes transitioning to Standard Arabic not only easier but more meaningful, as you’ll already have an intuitive feel for structure, sound, and flow.",
+                    "description-1-highlight": "If you really want to learn Arabic, start with Spoken Arabic.",
                     "subtitle-2": "Why Palestinian Arabic?",
-                    "description-2": ""
+                    "description-2": "Palestinian Arabic is a form of Levantine Arabic, one of the most widely understood dialect families in the Arab world, {highlight-1} in Palestine, Jordan, Lebanon, Syria & beyond. It's one of the more conservative dialects of Spoken Arabic, with strong similarities to Standard Arabic (up to 80% lexical overlap!), making it {highlight-2} for learners to build a solid foundation in Arabic vocabulary & grammar.",
+                    "description-2-highlight-1": "spoken by up to 40 million people",
+                    "description-2-highlight-2": "a perfect starting point"
                 }
             },
             "notifications": {
@@ -1402,8 +1423,6 @@
     "created": "Created :thing!",
     "updated": "Updated :thing!",
     "deleted": "Deleted :thing!",
-    "pin.added": "Pinned :thing!",
-    "pin.removed": "Unpinned :thing!",
     "badges.get": "You got the \":badge\" Badge! Good job!",
     "oauth.discord.already-linked": "Your Discord account is already linked.",
     "oauth.discord.link-canceled": "You canceled the Discord authentication process.",

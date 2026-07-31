@@ -104,7 +104,7 @@ onMounted(() => {
             <div class="nav-sidebar-head">
                 <div>
                     {{
-                        $t(UserStore.user ? $t(`user.roles.${UserStore.highestRole}`) : $t('user.roles.guest'))
+                        UserStore.user ? $t(`user.roles.${UserStore.highestRole}`) : $t('user.roles.guest')
                     }}
                     <Link v-if="UserStore.user" class="auth-role" :href="route('subscription.index')">
                         {{ $t('user.subscriptions.manage') }}
