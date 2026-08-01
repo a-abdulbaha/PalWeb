@@ -55,10 +55,10 @@ onMounted(() => {
     if (userId) {
         window.Echo.private(`users.${userId}`)
             .listen('LessonProgressUpdated', (e) => {
-                NotificationStore.addNotification(e.message, e.type);
+                NotificationStore.notify(e.notification ?? e);
             })
             .listen('UserNotificationSent', (e) => {
-                NotificationStore.addNotification(e.message, e.type);
+                NotificationStore.notify(e.notification ?? e);
             });
     }
 });
@@ -84,12 +84,15 @@ watch(browserOnline, (isOnline) => {
     NotificationStore.addNotification(t('layout.notifications.online'));
 }, {immediate: true});
 
-watch(() => page.props.flash.notification,
+watch(
+    () => page.props.flash.notification,
     (notification) => {
         if (notification) {
-            NotificationStore.addNotification(notification.message, notification.type);
+            NotificationStore.notify(notification);
         }
-    });
+    },
+    {immediate: true}
+);
 
 watch(
     () => page.props.locale,
@@ -110,7 +113,7 @@ watch(
         <Footer/>
 
         <div class="app-container-pattern" aria-hidden="true">
-            <BackgroundPattern :section="section" />
+            <BackgroundPattern :section="section"/>
         </div>
     </div>
 

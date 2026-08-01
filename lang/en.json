@@ -115,6 +115,11 @@
     "activity": {
         "key": "Activity"
     },
+    "badge": {
+        "notifications": {
+            "awarded": "You got the \"{badge}\" Badge! Good job!"
+        }
+    },
     "card": {
         "fields": {
             "status": "Status",
@@ -438,6 +443,9 @@
         },
         "profile": "profile",
         "notifications": {
+            "signed-up": "Glad to have you join us, {user}!",
+            "signed-in": "Welcome back, {user}!",
+            "signed-out": "See you soon, {user}!",
             "preferences-saved": "Your preferences have been saved!",
             "preferences-saved-error": "Failed to save user preferences.",
             "role-granted": "Successfully granted Student role.",
@@ -1424,16 +1432,9 @@
     },
     "auth.failed": "These credentials do not match our records.",
     "auth.throttle": "Too many sign-in attempts. Please try again in :seconds seconds.",
-    "signin.message": "Welcome back, {user}!",
-    "signin.message.head": "Hey!",
-    "signout.message": "See you soon, {user}!",
-    "signout.message.head": "Bye!",
-    "signup.message": "Glad to have you join us, {user}!",
-    "signup.message.head": "Welcome!",
     "created": "Created :thing!",
     "updated": "Updated :thing!",
     "deleted": "Deleted :thing!",
-    "badges.get": "You got the \":badge\" Badge! Good job!",
     "oauth.discord.already-linked": "Your Discord account is already linked.",
     "oauth.discord.link-success": "Successfully linked your account to Discord!",
     "oauth.discord.link-canceled": "You canceled the Discord authentication process.",
