@@ -15,7 +15,7 @@ import BackgroundPattern from "./Backgrounds/BackgroundPattern.vue";
 import {useConnectionStatus} from "../composables/useConnectionStatus.js";
 import {useI18n} from "vue-i18n";
 
-const { t } = useI18n();
+const {t, locale} = useI18n();
 
 defineProps({
     section: {
@@ -31,7 +31,6 @@ const NotificationStore = useNotificationStore();
 const page = usePage();
 const {browserOnline} = useConnectionStatus(Echo);
 
-const locale = computed(() => page.props.locale ?? 'en');
 const syncDocumentLocale = (newLocale) => {
     document.documentElement.lang = newLocale;
 };
@@ -78,15 +77,11 @@ watch(browserOnline, (isOnline) => {
     lastBrowserOnlineState = isOnline;
 
     if (!isOnline) {
-        NotificationStore.addNotification(
-            t('layout.notifications.offline'),
-            'warning',
-            5000
-        );
+        NotificationStore.addNotification(t('layout.notifications.offline'), 'warning');
         return;
     }
 
-    NotificationStore.addNotification(t('layout.notifications.online'), 'success', 3000);
+    NotificationStore.addNotification(t('layout.notifications.online'));
 }, {immediate: true});
 
 watch(() => page.props.flash.notification,

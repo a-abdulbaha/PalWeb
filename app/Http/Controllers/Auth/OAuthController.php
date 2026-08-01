@@ -56,6 +56,11 @@ class OAuthController extends Controller
                 $this->updateUser($user, $discordUser);
                 $this->checkMembership($user, $discordUser->token);
 
+                session()->flash('notification', [
+                    'type' => 'success',
+                    'message' => __('oauth.discord.link-success'),
+                ]);
+
             } else {
                 $user = User::where('discord_id', $discordUser->id)->first();
 

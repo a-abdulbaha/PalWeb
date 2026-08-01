@@ -1435,6 +1435,7 @@
     "deleted": "¡:thing eliminado con éxito!",
     "badges.get": "¡Conseguiste la Insignia \":badge\"! ¡Bien hecho!",
     "oauth.discord.already-linked": "Tu cuenta de Discord ya está vinculada.",
+    "oauth.discord.link-success": "¡Se conectó tu cuenta a Discord con éxito!",
     "oauth.discord.link-canceled": "Cancelaste el proceso de autenticación con Discord.",
     "oauth.discord.no-linked-account": "No pudimos iniciar sesión porque no hay ninguna cuenta de PalWeb vinculada a la cuenta de Discord proporcionada o que tenga el mismo correo electrónico. Inicia sesión normalmente primero y vincula tu cuenta de Discord antes de intentar iniciar sesión de esta manera.",
     "oauth.discord.auth-failed": "No se pudo autenticar con Discord.",
