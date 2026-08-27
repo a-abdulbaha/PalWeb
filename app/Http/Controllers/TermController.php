@@ -386,14 +386,12 @@ class TermController extends Controller
     {
         $term->load('relatives');
 
-        $existingRelatives = $term->relatives
-            ->keyBy(fn (Term $relative) => $this->relativeKey(
-                $relative->id,
-                $relative->pivot->type,
-                $relative->pivot->gloss_id,
-            ));
+        $existingPivotIds = $term->relatives
+            ->pluck('pivot.id')
+            ->filter()
+            ->values();
 
-        $requestKeys = [];
+        $requestPivotIds = [];
 
         foreach ($relatives as $relative) {
             $relativeTerm = Term::firstWhere('slug', $relative['slug']);
@@ -404,18 +402,20 @@ class TermController extends Controller
 
             $type = $relative['type'];
             $glossId = $relative['gloss_id'] ?? null;
-            $key = $this->relativeKey($relativeTerm->id, $type, $glossId);
+            $pivotId = $relative['pivot_id'] ?? null;
 
-            $requestKeys[] = $key;
-
-            if ($existingRelatives->has($key)) {
+            if ($pivotId && $existingPivotIds->contains($pivotId)) {
                 DB::table('term_relative')
-                    ->where('id', $existingRelatives[$key]->pivot->id)
+                    ->where('id', $pivotId)
+                    ->where('term_id', $term->id)
                     ->update([
+                        'relative_id' => $relativeTerm->id,
                         'type' => $type,
                         'gloss_id' => $glossId,
                         'updated_at' => now(),
                     ]);
+
+                $requestPivotIds[] = $pivotId;
 
                 continue;
             }
@@ -425,38 +425,60 @@ class TermController extends Controller
                 'gloss_id' => $glossId,
             ]);
 
-            switch ($type) {
-                default:
-                    $relativeTerm->relatives()->attach($term, ['type' => $type]);
-                    break;
-                case 'component':
-                    $relativeTerm->relatives()->attach($term, ['type' => 'descendant']);
-                    break;
-                case 'descendant':
-                    $relativeTerm->relatives()->attach($term, ['type' => 'component']);
-                    break;
-                case 'ap':
-                case 'pp':
-                case 'vn':
-                    $relativeTerm->relatives()->attach($term, ['type' => 'source']);
-                    break;
-            }
+            $this->stageReciprocalRelative($term, $relativeTerm, $type);
         }
 
-        $detachableRelatives = $existingRelatives->except($requestKeys);
+        $deletedRelatives = $term->relatives
+            ->filter(fn (Term $relative) => ! in_array($relative->pivot->id, $requestPivotIds));
 
-        foreach ($detachableRelatives as $detachableRelative) {
+        foreach ($deletedRelatives as $deletedRelative) {
             DB::table('term_relative')
-                ->where('id', $detachableRelative->pivot->id)
+                ->where('id', $deletedRelative->pivot->id)
                 ->delete();
 
-            $detachableRelative->relatives()->detach($term);
+            $relationshipStillExists = $term->relatives()
+                ->where('relative_id', $deletedRelative->id)
+                ->wherePivot('type', $deletedRelative->pivot->type)
+                ->exists();
+
+            if (! $relationshipStillExists) {
+                DB::table('term_relative')
+                    ->where('term_id', $deletedRelative->id)
+                    ->where('relative_id', $term->id)
+                    ->where('type', $deletedRelative->pivot->type)
+                    ->delete();
+            }
         }
     }
 
-    private function relativeKey(int $relativeId, string $type, ?int $glossId): string
+    private function stageReciprocalRelative(Term $term, Term $relativeTerm, string $type): void
     {
-        return $relativeId.'|'.$type.'|'.($glossId ?? 'null');
+        $reciprocalType = $this->reciprocalRelativeType($type);
+
+        $reciprocalAlreadyExists = DB::table('term_relative')
+            ->where('term_id', $relativeTerm->id)
+            ->where('relative_id', $term->id)
+            ->where('type', $reciprocalType)
+            ->exists();
+
+        if ($reciprocalAlreadyExists) {
+            return;
+        }
+
+        $relativeTerm->relatives()->attach($term, [
+            'type' => $reciprocalType,
+            'gloss_id' => null,
+        ]);
+    }
+
+    private function reciprocalRelativeType(string $type): string
+    {
+        return match ($type) {
+            'component' => 'descendant',
+            'descendant' => 'component',
+            'ap', 'pp', 'vn' => 'source',
+            default => $type,
+        };
     }
 
     private function handleDependents(

@@ -360,8 +360,8 @@ const etymology = computed(() => {
             </div>
             <AppTip v-if="term.derived_type === 'ap'">
                 <p>You're viewing the page for a verb's <b>Active Participle</b>. Because its meaning is determined by
-                    the verb it's derived from, the following definitions are abridged. Refer to the source verb for a
-                    full list of this Term's Glosses & related Terms.</p>
+                    the verb it's derived from, some definitions may be abridged. Refer to the source verb for a full
+                    list of this Term's Glosses & related Terms.</p>
             </AppTip>
             <div class="term-glosses">
                 <GlossItem v-for="(gloss, index) in term.glosses" :key="gloss.id" :gloss="gloss" :position="index + 1">
@@ -444,7 +444,8 @@ const etymology = computed(() => {
 
             <!--            note that my user is hard-coded -->
             <div v-if="term.usage" class="user-item comment-item l" style="padding: 2.4rem">
-                <UserAvatarWrapper :user="{username: 'permanent.intifada', avatar_url: '/img/avatars/character02.webp'}"/>
+                <UserAvatarWrapper
+                    :user="{username: 'permanent.intifada', avatar_url: '/img/avatars/character02.webp'}"/>
                 <div class="user-data-wrapper">
                     <div class="user-comment">
                         <div class="user-comment-title">
