@@ -22,6 +22,7 @@ class TermShowResource extends TermResource
             'usage' => $this->usage,
             'image' => $this->image,
             'etymology' => $this->etymology,
+            'derived_type' => $this->derived_type,
             'attributes' => $this->whenLoaded('attributes', fn () => $this->sorted_tags),
             'pronunciations_count' => $this->whenCounted('pronunciations'),
             'spellings' => $this->whenLoaded('spellings'),

@@ -140,6 +140,7 @@ class TermController extends Controller
                     'glosses.attributes',
                     'inflections',
                     'relatives',
+                    'relatedBy',
                     'cards',
                     'decks' => fn ($q) => $q->limit(10),
                 ])
@@ -368,6 +369,8 @@ class TermController extends Controller
 
     public function handleAttributes(object $model, array $attributes, string $relation): void
     {
+        $model->load('attributes');
+
         $requestAttributes = array_map(fn ($item) => $item['attribute'], $attributes);
         foreach ($requestAttributes as $attribute) {
             Attribute::firstWhere('attribute', $attribute)->{$relation}()->syncWithoutDetaching($model->id);
@@ -381,47 +384,79 @@ class TermController extends Controller
 
     private function handleRelatives(Term $term, array $relatives): void
     {
-        $attachedTerms = $term->relatives->pluck('slug')->toArray();
+        $term->load('relatives');
 
-        $requestTerms = [];
+        $existingRelatives = $term->relatives
+            ->keyBy(fn (Term $relative) => $this->relativeKey(
+                $relative->id,
+                $relative->pivot->type,
+                $relative->pivot->gloss_id,
+            ));
+
+        $requestKeys = [];
+
         foreach ($relatives as $relative) {
             $relativeTerm = Term::firstWhere('slug', $relative['slug']);
-            $requestTerms[] = $relativeTerm->slug;
 
-            if (! in_array($relativeTerm->slug, $attachedTerms)) {
-                $term->relatives()->attach($relativeTerm, [
-                    'type' => $relative['type'],
-                    'gloss_id' => $relative['gloss_id'] ?? null,
-                ]);
+            if (! $relativeTerm) {
+                continue;
+            }
 
-                switch ($relative['type']) {
-                    default:
-                        $relativeTerm->relatives()->attach($term, ['type' => $relative['type']]);
-                        break;
-                    case 'component':
-                        $relativeTerm->relatives()->attach($term, ['type' => 'descendant']);
-                        break;
-                    case 'descendant':
-                        $relativeTerm->relatives()->attach($term, ['type' => 'component']);
-                        break;
-                    case in_array($relative['type'], ['ap', 'pp', 'vn']):
-                        $relativeTerm->relatives()->attach($term, ['type' => 'source']);
-                        break;
-                }
-            } else {
-                $term->relatives()->updateExistingPivot($relativeTerm->id, [
-                    'type' => $relative['type'],
-                    'gloss_id' => $relative['gloss_id'] ?? null,
-                ]);
+            $type = $relative['type'];
+            $glossId = $relative['gloss_id'] ?? null;
+            $key = $this->relativeKey($relativeTerm->id, $type, $glossId);
+
+            $requestKeys[] = $key;
+
+            if ($existingRelatives->has($key)) {
+                DB::table('term_relative')
+                    ->where('id', $existingRelatives[$key]->pivot->id)
+                    ->update([
+                        'type' => $type,
+                        'gloss_id' => $glossId,
+                        'updated_at' => now(),
+                    ]);
+
+                continue;
+            }
+
+            $term->relatives()->attach($relativeTerm, [
+                'type' => $type,
+                'gloss_id' => $glossId,
+            ]);
+
+            switch ($type) {
+                default:
+                    $relativeTerm->relatives()->attach($term, ['type' => $type]);
+                    break;
+                case 'component':
+                    $relativeTerm->relatives()->attach($term, ['type' => 'descendant']);
+                    break;
+                case 'descendant':
+                    $relativeTerm->relatives()->attach($term, ['type' => 'component']);
+                    break;
+                case 'ap':
+                case 'pp':
+                case 'vn':
+                    $relativeTerm->relatives()->attach($term, ['type' => 'source']);
+                    break;
             }
         }
 
-        $detachableSlugs = array_diff($attachedTerms, $requestTerms);
-        foreach ($detachableSlugs as $slug) {
-            $detachableTerm = Term::firstWhere('slug', $slug);
-            $term->relatives()->detach($detachableTerm);
-            $detachableTerm->relatives()->detach($term);
+        $detachableRelatives = $existingRelatives->except($requestKeys);
+
+        foreach ($detachableRelatives as $detachableRelative) {
+            DB::table('term_relative')
+                ->where('id', $detachableRelative->pivot->id)
+                ->delete();
+
+            $detachableRelative->relatives()->detach($term);
         }
+    }
+
+    private function relativeKey(int $relativeId, string $type, ?int $glossId): string
+    {
+        return $relativeId.'|'.$type.'|'.($glossId ?? 'null');
     }
 
     private function handleDependents(
