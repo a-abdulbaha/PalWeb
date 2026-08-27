@@ -155,13 +155,13 @@ class Term extends Model
     public function relatives(): BelongsToMany
     {
         return $this->belongsToMany(Term::class, 'term_relative', 'term_id', 'relative_id')
-            ->withPivot('id', 'type', 'gloss_id');
+            ->withPivot('id', 'reciprocal_id', 'type', 'gloss_id');
     }
 
     public function relatedBy(): BelongsToMany
     {
         return $this->belongsToMany(Term::class, 'term_relative', 'relative_id', 'term_id')
-            ->withPivot('id', 'type', 'gloss_id');
+            ->withPivot('id', 'reciprocal_id', 'type', 'gloss_id');
     }
 
     #[Scope]
