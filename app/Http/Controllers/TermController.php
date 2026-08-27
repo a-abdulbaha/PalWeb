@@ -127,6 +127,10 @@ class TermController extends Controller
 
             $terms = Term::query()
                 ->whereIn('id', $termIds)
+                ->orderByRaw(
+                    'FIELD(id, '.$termIds->map(fn () => '?')->implode(',').')',
+                    $termIds->all()
+                )
                 ->with([
                     'spellings',
                     'attributes',

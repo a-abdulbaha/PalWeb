@@ -81,24 +81,24 @@ const handleRelativeTypeChange = (relative) => {
 
 onMounted(async () => {
     await loadForm();
-
-    watch(
-        () => SearchStore.data.selectedModel,
-        (newModel) => {
-            if (newModel) {
-                console.log(newModel.id, term?.id)
-                if (newModel.id === term?.id) {
-                    SearchStore.deselectModel();
-                    NotificationStore.addNotification('Term cannot be a relative of itself.');
-                    return;
-                }
-
-                insertRelative(newModel);
-                SearchStore.deselectModel();
-            }
-        }
-    );
 });
+
+watch(
+    () => SearchStore.data.selectedModel,
+    (newModel) => {
+        if (newModel) {
+            console.log(newModel.id, term?.id)
+            if (newModel.id === term?.id) {
+                SearchStore.deselectModel();
+                NotificationStore.addNotification('Term cannot be a relative of itself.');
+                return;
+            }
+
+            insertRelative(newModel);
+            SearchStore.deselectModel();
+        }
+    }
+);
 
 watch(() => props.termId, async () => {
     await reloadForm();
@@ -226,10 +226,12 @@ defineOptions({
                                         <img src="/img/trash.svg" alt="Delete" v-show="form.attributes.length > 0"
                                              @click="removeItem(index, form.attributes)"/>
                                         <div class="field-item">
-<!--                                            todo: v-model="attribute.id"; this requires refactoring `handleAttributes`in the backend & looping through Gloss Attributes further down the same way-->
+                                            <!--                                            todo: v-model="attribute.id"; this requires refactoring `handleAttributes`in the backend & looping through Gloss Attributes further down the same way-->
                                             <select v-model="attribute.attribute">
-                                                <option v-for="attribute in editorData.attributes.filter(a => a.model === 'term')" :key="attribute.id"
-                                                        :value="attribute.attribute">
+                                                <option
+                                                    v-for="attribute in editorData.attributes.filter(a => a.model === 'term')"
+                                                    :key="attribute.id"
+                                                    :value="attribute.attribute">
                                                     {{ $t(`term.filters.attributes.${attribute.attribute}`) }}
                                                 </option>
                                             </select>
@@ -666,7 +668,7 @@ defineOptions({
                                                  v-show="gloss.attributes.length > 1 || (form.category !== 'verb' && gloss.attributes.length > 0)"
                                                  @click="removeItem(i, gloss.attributes)"/>
                                             <div class="field-item">
-<!--                                                todo: loop over these & group them -->
+                                                <!--                                                todo: loop over these & group them -->
                                                 <select v-model="attribute.attribute">
                                                     <option value="auxiliary">auxiliary</option>
                                                     <option value="participle" v-if="form.category === 'adjective'">
