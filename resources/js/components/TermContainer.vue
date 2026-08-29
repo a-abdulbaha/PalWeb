@@ -252,7 +252,7 @@ const etymology = computed(() => {
                         </template>
                         <template v-if="term.category === 'verb'">
                             <a :href="route('wiki.show', 'verb-forms')" target="_blank" style="font-style: italic">
-                                {{ $t('term.filters.form.option', {form: term.patterns[0].form}) }}.</a>
+                                {{ $t('term.filters.form.option', {form: term.patterns[0]?.form}) }}.</a>
                             {{ ' ' }}
                             <template v-for="derivative in derivatives">
                                 <span style="font-weight: 400">{{ derivative.type }}:</span>
