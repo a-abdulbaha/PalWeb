@@ -18,27 +18,30 @@ use App\Models\Spelling;
 use App\Models\Term;
 use App\Repositories\TermRepository;
 use App\Services\SearchService;
+use App\Services\TermRelativeService;
 use App\Services\TermService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Log;
-use Inertia\Inertia;
-use Maize\Markable\Models\Bookmark;
 use Illuminate\Support\Facades\URL;
+use Inertia\Inertia;
+use Inertia\Response;
+use Maize\Markable\Models\Bookmark;
 use Throwable;
 
 class TermController extends Controller
 {
     public function __construct(
         protected TermRepository $termRepository,
-        protected TermService $termService
-    ) {
-    }
+        protected TermService $termService,
+        protected TermRelativeService $termRelativeService,
+    ) {}
 
     public function pin(Request $request, Term $term): JsonResponse
     {
@@ -57,7 +60,7 @@ class TermController extends Controller
         ]);
     }
 
-    public function index(): \Inertia\Response
+    public function index(): Response
     {
         $featuredTerm = Cache::get('word-of-the-day') ?? Term::whereNotNull('image')->inRandomOrder()->first();
         $featuredTerm?->load(['attributes', 'glosses.attributes']);
@@ -67,7 +70,7 @@ class TermController extends Controller
         ]);
     }
 
-    public function show(Term $term): \Inertia\Response
+    public function show(Term $term): Response
     {
         return Inertia::render('Library/Terms/Show', [
             'termId' => $term->id,
@@ -90,7 +93,7 @@ class TermController extends Controller
         $currentPage = $request->integer('page', 1);
 
         $termsCollection = $searchService->search($filters)['terms'];
-        $terms = new \Illuminate\Pagination\LengthAwarePaginator(
+        $terms = new LengthAwarePaginator(
             $termsCollection->forPage($currentPage, $perPage)->values(),
             $termsCollection->count(),
             $perPage,
@@ -169,7 +172,7 @@ class TermController extends Controller
         }
 
         return response()->json([
-            'terms' => $payload
+            'terms' => $payload,
         ]);
     }
 
@@ -219,7 +222,7 @@ class TermController extends Controller
                 Attribute::firstWhere('attribute', $attribute)->terms()->attach($term);
             }
 
-            $this->handleRelatives($term, $formData['relatives']);
+            $this->termRelativeService->sync($term, $formData['relatives']);
             $this->handlePatterns($term, $formData['patterns']);
 
             $this->handleDependents($term, $formData['spellings'], Spelling::class);
@@ -271,7 +274,7 @@ class TermController extends Controller
             $term->refresh();
 
             $this->handleAttributes($term, $formData['attributes'], 'terms');
-            $this->handleRelatives($term, $formData['relatives']);
+            $this->termRelativeService->sync($term, $formData['relatives']);
             $this->handlePatterns($term, $formData['patterns']);
 
             $this->handleDependents($term, $formData['spellings'], Spelling::class, $term->spellings);
@@ -380,105 +383,6 @@ class TermController extends Controller
         foreach ($detachableAttributes as $attribute) {
             Attribute::firstWhere('attribute', $attribute)->{$relation}()->detach($model);
         }
-    }
-
-    private function handleRelatives(Term $term, array $relatives): void
-    {
-        $term->load('relatives');
-
-        $existingPivotIds = $term->relatives
-            ->pluck('pivot.id')
-            ->filter()
-            ->values();
-
-        $requestPivotIds = [];
-
-        foreach ($relatives as $relative) {
-            $relativeTerm = Term::firstWhere('slug', $relative['slug']);
-
-            if (! $relativeTerm) {
-                continue;
-            }
-
-            $type = $relative['type'];
-            $glossId = $relative['gloss_id'] ?? null;
-            $pivotId = $relative['pivot_id'] ?? null;
-
-            if ($pivotId && $existingPivotIds->contains($pivotId)) {
-                DB::table('term_relative')
-                    ->where('id', $pivotId)
-                    ->where('term_id', $term->id)
-                    ->update([
-                        'relative_id' => $relativeTerm->id,
-                        'type' => $type,
-                        'gloss_id' => $glossId,
-                        'updated_at' => now(),
-                    ]);
-
-                $requestPivotIds[] = $pivotId;
-
-                continue;
-            }
-
-            $term->relatives()->attach($relativeTerm, [
-                'type' => $type,
-                'gloss_id' => $glossId,
-            ]);
-
-            $this->stageReciprocalRelative($term, $relativeTerm, $type);
-        }
-
-        $deletedRelatives = $term->relatives
-            ->filter(fn (Term $relative) => ! in_array($relative->pivot->id, $requestPivotIds));
-
-        foreach ($deletedRelatives as $deletedRelative) {
-            DB::table('term_relative')
-                ->where('id', $deletedRelative->pivot->id)
-                ->delete();
-
-            $relationshipStillExists = $term->relatives()
-                ->where('relative_id', $deletedRelative->id)
-                ->wherePivot('type', $deletedRelative->pivot->type)
-                ->exists();
-
-            if (! $relationshipStillExists) {
-                DB::table('term_relative')
-                    ->where('term_id', $deletedRelative->id)
-                    ->where('relative_id', $term->id)
-                    ->where('type', $deletedRelative->pivot->type)
-                    ->delete();
-            }
-        }
-    }
-
-    private function stageReciprocalRelative(Term $term, Term $relativeTerm, string $type): void
-    {
-        $reciprocalType = $this->reciprocalRelativeType($type);
-
-        $reciprocalAlreadyExists = DB::table('term_relative')
-            ->where('term_id', $relativeTerm->id)
-            ->where('relative_id', $term->id)
-            ->where('type', $reciprocalType)
-            ->exists();
-
-        if ($reciprocalAlreadyExists) {
-            return;
-        }
-
-        $relativeTerm->relatives()->attach($term, [
-            'type' => $reciprocalType,
-            'gloss_id' => null,
-        ]);
-    }
-
-    private function reciprocalRelativeType(string $type): string
-    {
-        return match ($type) {
-            'component' => 'descendant',
-            'descendant' => 'component',
-            'ap', 'pp', 'vn' => 'source',
-            default => $type,
-        };
     }
 
     private function handleDependents(

@@ -33,11 +33,11 @@ class TermShowResource extends TermResource
                 'term' => $relative->term,
                 'translit' => $relative->translit,
                 'pivot_id' => $relative->pivot->id,
+                'type' => $relative->pivot->type,
+                'gloss_id' => $relative->pivot->gloss_id,
                 'reciprocal_type' => $relative->pivot->reciprocal_id
                     ? DB::table('term_relative')->where('id', $relative->pivot->reciprocal_id)->value('type')
                     : null,
-                'type' => $relative->pivot->type,
-                'gloss_id' => $relative->pivot->gloss_id,
             ])),
             'patterns' => $this->whenLoaded('patterns', fn () => $this->patterns->map(fn ($pattern) => [
                 'type' => $pattern->type,
