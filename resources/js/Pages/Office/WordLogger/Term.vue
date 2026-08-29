@@ -14,6 +14,7 @@ import LoadingSpinner from "../../../Shared/LoadingSpinner.vue";
 import PinButton from "../../../components/PinButton.vue";
 import TermActions from "../../../components/Actions/TermActions.vue";
 import {Link} from "@inertiajs/vue3";
+import TermRelativesEditor from "./TermRelativesEditor.vue";
 
 const props = defineProps({
     termId: {
@@ -68,15 +69,12 @@ const {
 const hasNavigationGuard = computed(() => isDirty.value);
 const {showAlert, handleConfirm, handleCancel} = useNavGuard(hasNavigationGuard);
 
-const glossRelativeTypes = ['synonym', 'antonym', 'isPatient', 'noPatient', 'hasObject'];
+const openRelativeSearch = () => {
+    SearchStore.openSearchGenie('insert', 'terms');
+};
 
-const handleRelativeTypeChange = (relative) => {
-    if (!glossRelativeTypes.includes(relative.type)) {
-        delete relative.gloss_id;
-        return;
-    }
-
-    relative.gloss_id ??= '';
+const removeRelative = (index) => {
+    removeItem(index, form.relatives);
 };
 
 onMounted(async () => {
@@ -149,7 +147,7 @@ defineOptions({
                         Please review the form inputs.
                     </p>
                     <template v-if="confirmableIssues.length">
-                        <p><b>{{ $t('forms.messages.has-confirmable-issues') }}</b></p>
+                        <p><b>{{ $t('forms.messages.has-confirmable-issues', {model: $t('actions.models.term')}) }}</b></p>
                         <ul>
                             <li v-for="issue in confirmableIssues">{{ issue }}</li>
                         </ul>
@@ -563,68 +561,18 @@ defineOptions({
                             </div>
                         </div>
                     </div>
+                    <TermRelativesEditor
+                        :relatives="form.relatives"
+                        :glosses="form.glosses"
+                        :validation-errors="validationErrors"
+                        @add="openRelativeSearch"
+                        @remove="removeRelative"
+                    />
                     <div class="field-block">
                         <div class="field-block-head">
                             <div>{{ $t('components.term.sections.info') }}</div>
                         </div>
                         <div class="field-block-body">
-                            <div class="field-block">
-                                <div class="field-block-head" @click="SearchStore.openSearchGenie('insert', 'terms')">
-                                    <div>{{ $t('components.term.relatives.title') }}</div>
-                                    <div class="field-item-add">+</div>
-                                </div>
-                                <div class="field-block-body" v-if="form.relatives.length > 0">
-                                    <div class="field-set" v-for="(relative, index) in form.relatives" :key="index">
-                                        <img src="/img/trash.svg" alt="Delete" v-show="form.relatives.length > 0"
-                                             @click="removeItem(index, form.relatives)"/>
-                                        <div class="field-item">
-                                            <input :placeholder="relative.slug" disabled/>
-                                            <div v-if="validationErrors[`relatives.${index}.slug`]" class="field-error">
-                                                {{ validationErrors[`relatives.${index}.slug`] }}
-                                            </div>
-                                            <select v-model="relative.type"
-                                                    @change="handleRelativeTypeChange(relative)">
-                                                <optgroup label="Term Relative">
-                                                    <option value="variant">variant</option>
-                                                    <option value="reference">reference</option>
-                                                    <option value="component">component</option>
-                                                    <option value="descendant">descendant</option>
-                                                </optgroup>
-                                                <optgroup label="Derivative">
-                                                    <option value="source">source</option>
-                                                    <option value="ap">AP</option>
-                                                    <option value="pp">PP</option>
-                                                    <option value="vn">VN</option>
-                                                </optgroup>
-                                                <optgroup label="Gloss Relative">
-                                                    <option value="synonym">synonym</option>
-                                                    <option value="antonym">antonym</option>
-                                                    <option value="isPatient">isPatient</option>
-                                                    <option value="noPatient">noPatient</option>
-                                                    <option value="hasObject">hasObject</option>
-                                                </optgroup>
-                                            </select>
-                                            <div v-if="validationErrors[`relatives.${index}.type`]" class="field-error">
-                                                {{ validationErrors[`relatives.${index}.type`] }}
-                                            </div>
-
-                                            <template v-if="glossRelativeTypes.includes(relative.type)">
-                                                <select v-model="relative.gloss_id">
-                                                    <option value=""></option>
-                                                    <option v-for="(gloss, index) in form.glosses.filter(g => g.id)"
-                                                            :key="index" :value="gloss.id">
-                                                        {{ gloss.gloss }}
-                                                    </option>
-                                                </select>
-                                                <div v-if="validationErrors[`relatives.${index}.gloss_id`]"
-                                                     class="field-error">
-                                                    {{ validationErrors[`relatives.${index}.gloss_id`] }}
-                                                </div>
-                                            </template>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="field-item">
                                 <label>{{ $t('term.data.image-url') }}</label>
                                 <input v-model="form.image"/>
