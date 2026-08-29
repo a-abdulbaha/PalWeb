@@ -35,6 +35,7 @@ class TermShowResource extends TermResource
                 'pivot_id' => $relative->pivot->id,
                 'type' => $relative->pivot->type,
                 'gloss_id' => $relative->pivot->gloss_id,
+                'reciprocal_id' => $relative->pivot->reciprocal_id,
                 'reciprocal_type' => $relative->pivot->reciprocal_id
                     ? DB::table('term_relative')->where('id', $relative->pivot->reciprocal_id)->value('type')
                     : null,
