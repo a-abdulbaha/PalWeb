@@ -49,9 +49,19 @@ class WordLoggerController extends Controller
             )
         );
 
+        $missingTypeTerms = $this->termResources(
+            $this->termsWithRelativeRows(
+                DB::table('term_relative')
+                    ->whereNull('type')
+                    ->select('term_id')
+                    ->distinct()
+            )
+        );
+
         return response()->json([
             'unlinkedReciprocalTerms' => $unlinkedReciprocalTerms,
             'missingGlossTerms' => $missingGlossTerms,
+            'missingTypeTerms' => $missingTypeTerms,
         ]);
     }
 

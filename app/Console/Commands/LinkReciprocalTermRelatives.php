@@ -38,6 +38,7 @@ class LinkReciprocalTermRelatives extends Command
             'missing' => 0,
             'ambiguous' => 0,
             'mismatched' => 0,
+            'missing_type' => 0,
         ];
 
         DB::table('term_relative')
@@ -51,14 +52,23 @@ class LinkReciprocalTermRelatives extends Command
                         continue;
                     }
 
+                    if ($current->type === null) {
+                        $stats['missing_type']++;
+                        $this->logAmbiguity('missing_type', $current, []);
+
+                        continue;
+                    }
+
                     $expectedType = $this->termRelativeService->reciprocalRelativeType($current->type);
                     $candidates = DB::table('term_relative')
                         ->where('term_id', $current->relative_id)
                         ->where('relative_id', $current->term_id)
-                        ->where('type', $expectedType)
                         ->where('id', '!=', $current->id)
-                        ->whereNull('reciprocal_id')
-                        ->get();
+                        ->whereNull('reciprocal_id');
+
+                    $this->whereType($candidates, $expectedType);
+
+                    $candidates = $candidates->get();
 
                     if ($candidates->count() === 1) {
                         $candidate = $candidates->first();
@@ -80,7 +90,6 @@ class LinkReciprocalTermRelatives extends Command
                         }
 
                         $stats['linked']++;
-//                        $this->line("Linked term_relative {$current->id} <-> {$candidate->id}");
 
                         continue;
                     }
@@ -125,11 +134,12 @@ class LinkReciprocalTermRelatives extends Command
             });
 
         $this->info(sprintf(
-            'Finished linking term relatives. Linked: %d. Missing: %d. Ambiguous: %d. Mismatched: %d.',
+            'Finished linking term relatives. Linked: %d. Missing: %d. Ambiguous: %d. Mismatched: %d. Missing type: %d.',
             $stats['linked'],
             $stats['missing'],
             $stats['ambiguous'],
             $stats['mismatched'],
+            $stats['missing_type'],
         ));
 
         return self::SUCCESS;
@@ -148,5 +158,16 @@ class LinkReciprocalTermRelatives extends Command
 
         Log::warning('Unable to link reciprocal term relative.', $payload);
         $this->warn('Unable to link term_relative '.$row->id.': '.$reason);
+    }
+
+    private function whereType(\Illuminate\Database\Query\Builder $query, ?string $type): void
+    {
+        if ($type === null) {
+            $query->whereNull('type');
+
+            return;
+        }
+
+        $query->where('type', $type);
     }
 }

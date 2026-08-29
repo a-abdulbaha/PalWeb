@@ -18,12 +18,9 @@ return new class extends Migration
                 ->constrained('term_relative')
                 ->cascadeOnUpdate()
                 ->nullOnDelete();
-
-//            $table->unique(
-//                ['gloss_id', 'relative_id', 'type'],
-//                'term_relative_unique_gloss_relative',
-//            );
         });
+
+        DB::statement('ALTER TABLE term_relative MODIFY type VARCHAR(255) NULL');
     }
 
     /**
@@ -32,9 +29,15 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('term_relative', function (Blueprint $table) {
-//            $table->dropUnique('term_relative_unique_gloss_relative');
             $table->dropForeign(['reciprocal_id']);
             $table->dropColumn('reciprocal_id');
         });
+
+        DB::table('term_relative')
+            ->whereNull('type')
+            ->update(['type' => 'unknown']);
+
+        DB::statement('ALTER TABLE term_relative MODIFY type VARCHAR(255) NOT NULL');
+
     }
 };
